@@ -181,3 +181,15 @@ p {
   border: none;
   outline: none;
 }
+
+.page-width {
+  padding: 20px;
+  margin: 0;
+  @include media-breakpoint-up(md) {
+    max-width: 1342px;
+    width: 100%;
+  }
+  @include media-breakpoint-up(xxl) {
+    padding: 0 5rem;
+  }
+}
