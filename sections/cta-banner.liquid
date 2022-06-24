@@ -1,0 +1,103 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.cta-banner--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .cta-banner--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+.cta-banner--{{ s.id }}::after {
+    background-color: rgba(0, 0, 0, {{ ss.image_overlay_opacity | divided_by: 100.0 }});
+}
+{%- endstyle -%}
+
+<section class="cta-banner cta-banner--{{ s.id }}">
+    <img 
+        {% render 'src-set', image: ss.image %}
+        sizes="100vw"
+        src="{{ ss.image | image_url: width: 3000 }}"
+        alt="{{ ss.image.alt }}" class="d-none d-sm-block">
+    <img 
+        {% render 'src-set', image: ss.image_mob %}
+        sizes="100vw"
+        src="{{ ss.image_mob | image_url: width: 1500 }}"
+        alt="{{ ss.image_mob.alt }}" class="d-sm-none">
+    <div class="cta-banner__center">
+        <h1 class="text-center c-white my-0">{{ ss.heading | upcase }}</h1>
+        {%- if ss.button_name != blank -%}
+            <a href="{{ ss.button_link }}" class="button button__black mx-auto"><span>{{ ss.button_name }}</span></a>
+        {%- endif -%}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "CTA banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Section image"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_mob",
+            "label": "Section image (mobile)"
+        },
+        {
+            "type": "range",
+            "id": "image_overlay_opacity",
+            "min": 0,
+            "max": 100,
+            "step": 10,
+            "unit": "%",
+            "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
+            "default": 0
+        },
+        {
+            "type": "text",
+            "id": "heading_small",
+            "label": "Small heading"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+        },          
+        {
+            "type": "text",
+            "id": "button_name",
+            "label": "Button name"
+        },                        
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "CTA banner",
+            "category": "banner"
+        }
+    ]
+}
+{% endschema %}
