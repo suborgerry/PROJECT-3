@@ -1,0 +1,180 @@
+.text-56px {
+  @include text-48px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-56px;
+  }
+}
+.text-52px {
+  @include text-32px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-52px;
+  }
+}
+.text-48px {
+  @include text-36px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-48px;
+  }
+}
+.text-44px {
+  @include text-44px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-26px;
+  }
+}
+.text-40px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-40px
+  }
+}
+.text-36px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-36px
+  }
+}
+.text-32px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-32px
+  }
+}
+.text-26px-all {
+  @include text-26px;
+}
+.text-26px {
+  @include text-24px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-26px;
+  }
+}
+.text-24px-all {
+  @include text-24px;
+}
+.text-22px-all {
+  @include text-22px;
+}
+.text-21px-all {
+  @include text-21px;
+}
+.text-20px {
+  @include text-18px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-20px;
+  }
+}
+.text-18px-all {
+  @include text-18px;
+}
+.text-18px {
+  @include text-16px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-18px;
+  }
+}
+.text-17px {
+  @include text-17px;
+}
+.text-16px-all {
+  @include text-16px;
+}
+.text-16px {
+  @include text-14px;
+
+  @include media-breakpoint-up(sm) {
+    @include text-16px;
+  }
+}
+.text-14px {
+  @include text-14px;
+}
+.text-12px {
+  @include text-12px;
+}
+.text-11px {
+  @include text-11px;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+.font-weight-medium {
+  font-weight: 500;
+}
+.font-weight-semibold {
+  font-weight: 600;
+}
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.font-gotham {
+  font-family: 'Gotham';
+}
+.font-gotham-light {
+  font-family: 'Gotham Light';
+}
+.font-gotham-medium {
+  font-family: 'Gotham Medium';
+}
+
+.color-text {
+  color: $c-text-second;
+}
+
+h1, .h1 {
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 61px;
+  color: $c-text-first;
+  font-family: 'Didot';
+  @include media-breakpoint-down(lg) {
+    font-size: 42px;
+    line-height: normal;
+  }
+  @include media-breakpoint-down(md) {
+    font-size: 36px;
+    line-height: 110%;
+  }
+}
+h2, .h2 {
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 45px;
+  font-family: 'Didot';
+  color: $c-text-first;
+  @include media-breakpoint-down(md) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+}
+h3, .h3 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  font-family: 'Didot';
+  color: $c-text-first;
+}
+h4, .h4 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  font-family: 'Didot';
+  color: $c-text-first;
+}
+
+p {
+  margin: 0;
+  color: $c-text-first;
+}
