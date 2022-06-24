@@ -4,16 +4,16 @@
 
 // --------------------------------------------------
 // Colors
-$c-black: rgb(0, 0, 0);
-$c-black-middle: rgb(38, 38, 38);
-$c-black-light: rgb(50, 50, 50);
-$c-gold: rgb(214, 173, 141);
-$c-powder: rgb(249, 219, 208);
-$c-powder-light: rgb(254, 243, 238);
-$c-text-first: rgb(0, 0, 0);
-$c-text-second: rgb(255, 255, 255);
+$c-black: #000;
+$c-white: #fff;
+$c-red-1: #CF322D;
+$c-red-2: #CA3433;
 
-
+$c-grey-1: #414240;
+$c-grey-2: #555555;
+$c-grey-3: #6D6D6D;
+$c-grey-4: #949494;
+$c-grey-5: #EFEFEF;
 
 // Breackpoins
 $grid-breakpoints: (
@@ -21,12 +21,11 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  lg1: 1024px,
-  lg2: 1299px,
-  xl: 1431px,
+  xl: 1200px,
+  xxl: 1440px,
 );
 
 // Box shadows
-$shadow-1: 0px 4px 20px rgba(0, 0, 0, 0.25);
-$shadow-2: 6px 4px 18px rgba(0, 0, 0, 0.14);
-$shadow-3: -6px 4px 18px rgba(0, 0, 0, 0.14);
+// $shadow-1: 0px 4px 20px rgba(0, 0, 0, 0.25);
+// $shadow-2: 6px 4px 18px rgba(0, 0, 0, 0.14);
+// $shadow-3: -6px 4px 18px rgba(0, 0, 0, 0.14);
