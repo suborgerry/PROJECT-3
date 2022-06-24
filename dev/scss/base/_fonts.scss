@@ -1,8 +1,48 @@
 @font-face {
-  font-family: 'Font';
+  font-family: 'Jersey M54';
   src:
-      url('font.woff2') format('woff2'),
-      url('font.woff') format('woff');
+      url('jersey.woff2') format('woff2'),
+      url('jersey.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma-Light';
+  src:
+      url('Axiforma-Light.woff2') format('woff2'),
+      url('Axiforma-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma-Medium';
+  src:
+      url('Axiforma-Medium.woff2') format('woff2'),
+      url('Axiforma-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma-Regular';
+  src:
+      url('Axiforma-Regular.woff2') format('woff2'),
+      url('Axiforma-Regulars.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Axiforma-Bold';
+  src:
+      url('Axiforma-Bold.woff2') format('woff2'),
+      url('Axiforma-Bold.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
