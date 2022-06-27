@@ -1,0 +1,22 @@
+.blog-tags {
+    @include media-breakpoint-up(md) {
+        margin-top: 3.1rem;
+        &__title {
+            margin-right: 4.7rem;
+        }
+        &__item {
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                padding: 6px 10px;
+                border: 1px solid $c-red-1;
+                height: 31px;
+                display: flex;
+                align-items: flex-end;
+            }
+            & + & {
+                margin-left: 1rem;
+            }
+        }
+    }
+}
