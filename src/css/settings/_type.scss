@@ -87,6 +87,9 @@
 .font-weight-light {
   font-weight: 300;
 }
+.font-weight-regular {
+  font-weight: 400;
+}
 .font-weight-medium {
   font-weight: 500;
 }
@@ -100,7 +103,7 @@
 
 // Font family
 .font-jersey {
-  font-family: 'Jersey M54';
+  font-family: 'jersey';
 }
 .font-axiforma-light {
   font-family: 'Axiforma-Light';
@@ -120,7 +123,7 @@ h1, .h1 {
   font-size: 4.8rem;
   line-height: 6.1rem;
   color: $c-black;
-  font-family: 'Jersey M54';
+  font-family: 'jersey';
   @include media-breakpoint-down(md) {
     font-size: 3.6rem;
     line-height: 4.8rem;
@@ -130,21 +133,21 @@ h2, .h2 {
   font-weight: 400;
   font-size: 3.6rem;
   line-height: 4.5rem;
-  font-family: 'Jersey M54';
+  font-family: 'jersey';
   color: $c-black;
 }
 h3, .h3 {
   font-weight: 400;
   font-size: 2.8rem;
   line-height: 3.2rem;
-  font-family: 'Jersey M54';
+  font-family: 'jersey';
   color: $c-black;
 }
 h4, .h4 {
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.5rem;
-  font-family: 'Jersey M54';
+  font-family: 'jersey';
   color: $c-black;
 }
 
