@@ -1,9 +1,6 @@
 // ==========================================================================
 // ## LAYOUT: BASE
 // ==========================================================================
-// Variables (replace Bootstrap variable defaults)
-@import './settings/variables';
-
 @import './mixins/helpers';
 
 // --------------------------------------------------
@@ -44,7 +41,12 @@
 /// Button..............Specific styles for btn component and its variations.
 /// Typeface............Specific styles for heading component and its size variations.
 /// Field...............Specific styles for field and input component.
-///
+
+// Variables (replace Bootstrap variable defaults)
+@import './settings/variables';
+@import './settings/type';
+@import './settings/utilities';
+
 @import './components/button';
 @import './components/field';
 // @import './components/price';
@@ -58,3 +60,4 @@
 @import './sections/header';
 @import './sections/footer';
 @import './sections/cta-banner';
+@import './sections/blog-tags';
