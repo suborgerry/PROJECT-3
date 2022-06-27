@@ -1,56 +1,7 @@
-# ignore all files starting with . or ~
-.*
-~*
-
-# ignore project files/directories
 node_modules/
-dev/node_modules
-dev/package-lock.json
-dev/dist/
-dev/public/
-
-# ignore OS generated files
-ehthumbs.db
-Thumbs.db
-
-# ignore Editor files
-*.sublime-project
-*.sublime-workspace
-*.komodoproject
-
-# ignore log files and databases
+.DS_Store
 *.log
-*.sql
-*.sqlite
 
-# ignore compiled files
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-# ignore packaged files
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# -------------------------
-# BEGIN Whitelisted Files
-# -------------------------
-
-# track these files, if they exist
-!.gitignore
-!.editorconfig
-!README.md
-!CHANGELOG.md
-!composer.json
-config.yml
-
-index.html
+# ignore all files inside shopify/assets/ except files with 'static' keyword in their filename
+shopify/assets/*
+!shopify/assets/*static*
