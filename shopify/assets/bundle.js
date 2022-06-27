@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/main.scss */ \"./src/css/main.scss\");\n/**\n * imports\n */\n\n// import Cookies from 'js-cookie';\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  window.console.log('Hello from main.js 👋.');\n});\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/main.scss */ \"./src/css/main.scss\");\n/**\r\n * imports\r\n */\r\n\r\n// import Cookies from 'js-cookie';\r\n\r\ndocument.addEventListener('DOMContentLoaded', function () {\r\n  window.console.log('Hello from main.js 👋.');\r\n});\r\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/main.js?");
 
 /***/ })
 
