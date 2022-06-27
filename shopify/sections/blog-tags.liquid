@@ -1,0 +1,57 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+    .cta-banner--{{ s.id }} {
+        padding: {{ ss.padding_section_sm }};
+    }
+    @media (min-width: 768px) {
+        .cta-banner--{{ s.id }} {
+            padding: {{ ss.padding_section }};
+        }
+    }
+    .cta-banner--{{ s.id }}::after {
+        background-color: rgba(0, 0, 0, {{ ss.image_overlay_opacity | divided_by: 100.0 }});
+    }
+{%- endstyle -%}
+
+<section class="blog-tags cta-banner--{{ s.id }} page-width d-flex align-items-center">
+    <h2 class="blog-tags__title font-weight-regular text-uppercase">blog</h2>
+    <ul class="blog-tags__list list-style-none flex-wrap">
+        {%- for block in s.blocks -%}
+            <li class="blog-tags__item">
+                <a class="font-weight-regular text-12px font-axiforma-medium c-black" src="{{ block.settings.link }}">{{ block.settings.name }}</a>
+            </li>
+        {%- endfor -%}
+    </ul>
+</section>
+
+{% schema %}
+{
+    "name": "Blog tags",
+    "blocks": [
+        {
+            "type": "tag",
+            "name": "Tag",
+            "limit": 10,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Tag name"
+                },
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Tag link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Blog tags"
+        }
+    ]
+}
+{% endschema %} 

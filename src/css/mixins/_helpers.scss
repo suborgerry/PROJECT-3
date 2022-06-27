@@ -55,12 +55,16 @@ $image-path: '{{ asset_url }}' !default;
 // --------------------------------------------------
 // fonts
 
-@mixin font-file($asset-font-name) {
-  src: url('{{ "#{$asset-font-name}.eot" | asset_url }}');
-  src: url('{{ "#{$asset-font-name}.eot" | asset_url }}?#iefix') format("embedded-opentype"),
-    url('{{ "#{$asset-font-name}.woff" | asset_url }}') format("woff"),
-    url('{{ "#{$asset-font-name}.ttf" | asset_url }}') format("truetype"),
-    url('{{ "#{$asset-font-name}.svg" | asset_url }}') format("svg");
+@mixin font-face($font-name) {
+  @font-face {
+    font-family: '#{$font-name}';
+    src:
+      url('/shopify/assets/#{$font-name}.woff') format('woff'),
+      url('/shopify/assets/#{$font-name}.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 // --------------------------------------------------

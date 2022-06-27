@@ -50,3 +50,30 @@
   border: none;
   outline: none;
 }
+
+:root {
+  --page-width-x-paddings-mobile: 2rem;
+  --page-width-x-paddings-mobile-reverse: -2rem;
+  --page-width-x-paddings-tablet: 3.5vw;
+  --page-width-x-paddings-tablet-reverse: -3.5vw;
+}
+
+/* base */
+
+.page-width {
+  margin: 0 auto;
+  padding: 0 var(--page-width-x-paddings-mobile);
+}
+
+@media (min-width: 576px) {
+  .page-width {
+    padding: 0 var(--page-width-x-paddings-tablet);
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-width {
+    padding: 0;
+    max-width: var(--page-width);
+  }
+}

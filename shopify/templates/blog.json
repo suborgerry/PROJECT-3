@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "main-blog",
+      "disabled": true,
       "settings": {
         "layout": "collage",
         "show_image": true,
@@ -11,9 +12,99 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1656321767d64b911b": {
+      "type": "blog-tags",
+      "blocks": {
+        "877e8731-a255-4841-a9d2-370eb08dd751": {
+          "type": "tag",
+          "settings": {
+            "name": "Maryland",
+            "link": ""
+          }
+        },
+        "96f9421b-8063-44ea-a41c-29afbcd91958": {
+          "type": "tag",
+          "settings": {
+            "name": "new",
+            "link": ""
+          }
+        },
+        "a9645532-88df-48b2-b268-5e91d46154d8": {
+          "type": "tag",
+          "settings": {
+            "name": "brands",
+            "link": ""
+          }
+        },
+        "1f767dda-7c4b-485b-9ae5-fea67e958ea3": {
+          "type": "tag",
+          "settings": {
+            "name": "america",
+            "link": ""
+          }
+        },
+        "0304cfc1-31b7-482f-8baf-1a5d6dab3e27": {
+          "type": "tag",
+          "settings": {
+            "name": "recommendation",
+            "link": ""
+          }
+        },
+        "765f45e3-6fe0-4096-b23d-8cb9bde5ed93": {
+          "type": "tag",
+          "settings": {
+            "name": "baltimore",
+            "link": ""
+          }
+        },
+        "12027242-38e0-4abc-b27e-df2580044d4d": {
+          "type": "tag",
+          "settings": {
+            "name": "popular",
+            "link": ""
+          }
+        },
+        "099ee28a-e654-42f8-862a-01dd515304e0": {
+          "type": "tag",
+          "settings": {
+            "name": "featured",
+            "link": ""
+          }
+        },
+        "4a82af88-c74c-48cc-a262-b1879f348a02": {
+          "type": "tag",
+          "settings": {
+            "name": "old bay",
+            "link": ""
+          }
+        },
+        "f236ab1e-f50c-4ad2-9e29-0059bf5ca976": {
+          "type": "tag",
+          "settings": {
+            "name": "Design Projects",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "877e8731-a255-4841-a9d2-370eb08dd751",
+        "96f9421b-8063-44ea-a41c-29afbcd91958",
+        "a9645532-88df-48b2-b268-5e91d46154d8",
+        "1f767dda-7c4b-485b-9ae5-fea67e958ea3",
+        "0304cfc1-31b7-482f-8baf-1a5d6dab3e27",
+        "765f45e3-6fe0-4096-b23d-8cb9bde5ed93",
+        "12027242-38e0-4abc-b27e-df2580044d4d",
+        "099ee28a-e654-42f8-862a-01dd515304e0",
+        "4a82af88-c74c-48cc-a262-b1879f348a02",
+        "f236ab1e-f50c-4ad2-9e29-0059bf5ca976"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1656321767d64b911b"
   ]
 }
