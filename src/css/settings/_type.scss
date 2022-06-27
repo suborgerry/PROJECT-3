@@ -11,12 +11,6 @@
     @include text-52px;
   }
 }
-.text-48px {
-  @include text-36px;
-  @include media-breakpoint-up(sm) {
-    @include text-48px;
-  }
-}
 .text-44px {
   @include text-44px;
   @include media-breakpoint-up(sm) {
@@ -27,12 +21,6 @@
   @include text-24px;
   @include media-breakpoint-up(sm) {
     @include text-40px
-  }
-}
-.text-36px {
-  @include text-24px;
-  @include media-breakpoint-up(sm) {
-    @include text-36px
   }
 }
 .text-32px {
@@ -73,9 +61,6 @@
   @include media-breakpoint-up(sm) {
     @include text-18px;
   }
-}
-.text-17px {
-  @include text-17px;
 }
 .text-16px-all {
   @include text-16px;
