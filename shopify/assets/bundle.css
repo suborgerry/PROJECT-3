@@ -1,6 +1,6 @@
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/css/main.scss ***!
-  \**********************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./node_modules/sass-loader/dist/cjs.js!./src/scss/main.scss ***!
+  \***********************************************************************************************************************************************************************************/
 .align-baseline {
   vertical-align: baseline !important;
 }
@@ -5577,7 +5577,6 @@ p {
 
 @media (min-width: 1440px) {
   .page-width {
-    padding: 0;
     max-width: var(--page-width);
   }
 }
@@ -5694,6 +5693,40 @@ body {
   color: rgb(var(--color-base-background-1));
 }
 
+.breadcrumbs {
+  margin: 2rem 0 3.1rem;
+}
+
+.breadcrumbs span,
+.breadcrumbs a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+@media (max-width: 767.98px) {
+  .breadcrumbs span,
+.breadcrumbs a {
+    font-size: 9px;
+  }
+}
+
+.breadcrumbs * + *::before {
+  content: " /";
+  margin: 0 0.9rem 0 0.6rem;
+}
+
+.breadcrumbs * {
+  color: #949494;
+}
+
+@media (max-width: 575.98px) {
+  .breadcrumbs {
+    line-height: 14px;
+  }
+}
+
 @media (max-width: 991.98px) {
   .blog-tags__title {
     margin: auto;
@@ -5707,9 +5740,6 @@ body {
 }
 
 @media (min-width: 992px) {
-  .blog-tags {
-    margin-top: 3.1rem;
-  }
   .blog-tags__title {
     margin-right: 4.7rem;
     min-width: max-content;
@@ -5736,14 +5766,31 @@ body {
   }
 }
 
+@media (max-width: 1199.98px) {
+  .article-banner__wrapper {
+    width: 100%;
+    margin-bottom: -3.2rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .article-banner__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
 .article-banner-section {
   margin-top: 3rem;
-  padding-bottom: 11.3rem;
+  margin-bottom: 11.3rem;
 }
 
 @media (max-width: 991.98px) {
   .article-banner-section {
     margin-top: 2rem;
+    background: linear-gradient(to top, #EFEFEF 83%, transparent 0);
   }
 }
 
@@ -5755,17 +5802,18 @@ body {
   .article-banner__info {
     align-items: center !important;
     margin-top: -1rem;
+    width: 100%;
   }
 }
 
 .article-banner__info_container {
-  padding: 4.5rem;
-  max-width: 77rem;
+  padding: 4.5rem 0;
+  max-width: 70rem;
 }
 
 @media (max-width: 1359.98px) {
   .article-banner__info_container {
-    max-width: 50rem;
+    max-width: 40rem;
   }
 }
 
@@ -5820,7 +5868,8 @@ body {
   display: none;
   width: max-content;
   height: max-content;
-  margin-left: 21.6rem;
+  margin-left: 16.6rem;
+  margin-bottom: -3.2rem;
 }
 
 @media (min-width: 992px) {
@@ -5831,8 +5880,7 @@ body {
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
   .article-banner__scroll {
-    width: 100%;
-    margin-left: 0;
+    margin: auto;
   }
 }
 
@@ -5988,9 +6036,6 @@ body {
 }
 
 @media (min-width: 992px) {
-  .blog-tags {
-    margin-top: 3.1rem;
-  }
   .blog-tags__title {
     margin-right: 4.7rem;
     min-width: max-content;
