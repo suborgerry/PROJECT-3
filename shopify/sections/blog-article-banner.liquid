@@ -1,0 +1,58 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+<div id="Banner-{{ section.id }}" class="article-banner d-flex position-relative">
+  <div>
+    <div class="c-grey-5-bg article-banner__info d-flex flex-column align-items-start">
+      <div class="d-flex flex-column align-items-start article-banner__info_container">
+        <p class="text-16px-all text-uppercase article-banner__date">{%- if ss.article.tags[0] -%}{{ ss.article.tags[0] }},&nbsp;{%- endif -%}{{ ss.article.published_at | date: '%B %d' }}</p>
+        <p class="text-32px text-uppercase font-axiforma-bold font-weight-bold article-banner__title">{{ ss.article.title }}</p>
+        <p class="article-banner__description">{{ ss.article.excerpt }}</p>
+        <a href="{{ ss.article.url }}" class="btn-unstyled c-red-1-bg c-white font-weight-bold font-axiforma-bold">READ MORE</a>
+      </div>
+    </div>
+    <div class="article-banner__scroll d-flex flex-column align-items-center position-relative">
+      <p class="article-banner__scroll_text">Scroll down for more articles</p>
+      <div class="article-banner__scroll_bowls d-flex flex-column align-items-center position-absolute">
+        <div class="article-banner__scroll_bowl"></div>
+        <div class="article-banner__scroll_bowl"></div>
+        <div class="article-banner__scroll_bowl"></div>
+        <img src="{{ 'arrowdown.png' | asset_url }}">
+      </div>
+    </div>
+  </div>
+  <div class="article-banner__images position-absolute">
+    <img src="{{ ss.image_desctop | image_url }}" loading="lazy" alt="{{ ss.image_desctop.alt | escape }}" class="article-banner__desctop">
+    <img src="{{ ss.image_mobile | image_url }}" loading="lazy" alt="{{ ss.image_mobile.alt | escape }}" class="article-banner__mobile">
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Blog article banner",
+  "tag": "section",
+  "class": "article-banner-section",
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desctop",
+      "label": "Desctop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog article banner"
+    }
+  ]
+}
+{% endschema %}

@@ -67,6 +67,17 @@ $image-path: '{{ asset_url }}' !default;
   }
 }
 
+// Animation
+@mixin animate($animation,$duration,$method,$times){
+  animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+  @keyframes #{$name}{
+      @content;
+  }
+}
+
 // --------------------------------------------------
 // aspect ratio
 // e.g. @include aspect-ratio(16,9);
