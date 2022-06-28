@@ -5320,6 +5320,11 @@ h3 {
   }
 }
 
+.text-32px {
+  font-size: 24px;
+  line-height: 29px;
+}
+
 @media (min-width: 576px) {
   .text-32px {
     font-size: 32px;
@@ -5712,6 +5717,47 @@ body {
 
 .c-grey-5-bg {
   background-color: #EFEFEF;
+}
+
+.cta-banner {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+@media (min-width: 576px) {
+  .cta-banner {
+    height: 630px;
+  }
+}
+
+.cta-banner::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-banner img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cta-banner__center {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
