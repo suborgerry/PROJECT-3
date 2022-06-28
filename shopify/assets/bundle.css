@@ -5584,46 +5584,6 @@ p {
   }
 }
 
-@font-face {
-  font-family: "jersey";
-  src: url(c8a059cf09a9ca23c945.woff) format("woff"), url(11aac5e9054474efc2b8.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Light";
-  src: url(bbb27e30906f29b01295.woff) format("woff"), url(2eda7463cbabc440bf97.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Medium";
-  src: url(27f762a5c4f1236bf738.woff) format("woff"), url(1470f64529db935191c3.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Regular";
-  src: url(2b258adf3be92e4cc1ad.woff) format("woff"), url(7f1cf476b4119c8b770e.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Bold";
-  src: url(a5763688e85a57f1a5f6.woff) format("woff"), url(a3329a3314dd825fab49.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 * {
   transition: all ease-in 0.3s;
 }
