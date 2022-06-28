@@ -49,6 +49,11 @@
   background-color: unset;
   border: none;
   outline: none;
+  text-decoration: none;
+  &:focus {
+    border: none;
+    outline: none;
+  }
 }
 
 :root {
@@ -76,4 +81,9 @@
     padding: 0;
     max-width: var(--page-width);
   }
+}
+
+.page-width-blog {
+  margin: 0 auto;
+  padding: 0 4.8rem;
 }
