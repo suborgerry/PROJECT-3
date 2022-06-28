@@ -1,4 +1,8 @@
 .article-banner {
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column;
+    }
     &-section {
         margin-top: 3rem;
         padding-bottom: 11.3rem;
@@ -31,10 +35,10 @@
         width: max-content;
         height: max-content;
         margin-left: 21.6rem;
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             display: flex;
         }
-        @include media-breakpoint-between(md, lg) {
+        @include media-breakpoint-between(lg, lg) {
             width: 100%;
             margin-left: 0;
         }
@@ -89,8 +93,13 @@
         }
     }
     &__images {
-        right: 0;
-        padding: 4.5rem;
+        @include media-breakpoint-down(md) {
+            position: relative !important;
+        }
+        @include media-breakpoint-up(lg) {
+            right: 0;
+            padding: 4.5rem;
+        }
     }
     &__desctop {
         display: none;

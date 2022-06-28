@@ -5602,46 +5602,6 @@ body {
   overflow-x: hidden;
 }
 
-@font-face {
-  font-family: "jersey";
-  src: url(c8a059cf09a9ca23c945.woff) format("woff"), url(11aac5e9054474efc2b8.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Light";
-  src: url(bbb27e30906f29b01295.woff) format("woff"), url(2eda7463cbabc440bf97.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Medium";
-  src: url(27f762a5c4f1236bf738.woff) format("woff"), url(1470f64529db935191c3.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Regular";
-  src: url(2b258adf3be92e4cc1ad.woff) format("woff"), url(7f1cf476b4119c8b770e.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Axiforma-Bold";
-  src: url(a5763688e85a57f1a5f6.woff) format("woff"), url(a3329a3314dd825fab49.woff2) format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 .c-black {
   color: #000;
 }
@@ -5745,6 +5705,13 @@ body {
   }
 }
 
+@media (max-width: 991.98px) {
+  .article-banner {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .article-banner-section {
   margin-top: 3rem;
   padding-bottom: 11.3rem;
@@ -5791,13 +5758,13 @@ body {
   margin-left: 21.6rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .article-banner__scroll {
     display: flex;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
   .article-banner__scroll {
     width: 100%;
     margin-left: 0;
@@ -5862,9 +5829,17 @@ body {
   }
 }
 
-.article-banner__images {
-  right: 0;
-  padding: 4.5rem;
+@media (max-width: 991.98px) {
+  .article-banner__images {
+    position: relative !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .article-banner__images {
+    right: 0;
+    padding: 4.5rem;
+  }
 }
 
 .article-banner__desctop {
