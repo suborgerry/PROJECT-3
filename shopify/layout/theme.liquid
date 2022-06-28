@@ -15,7 +15,7 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
-
+    {{ 'font-style.css' | asset_url | stylesheet_tag }}
     <title>
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
@@ -212,7 +212,7 @@
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
   </head>
 
-  <body class="gradient template-{{ request.page_type | handle }}">
+  <body class="gradient {{ template.suffix}} template-{{ request.page_type | handle }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>

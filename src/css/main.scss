@@ -43,6 +43,7 @@
 /// Field...............Specific styles for field and input component.
 
 // Variables (replace Bootstrap variable defaults)
+@import './base/functions';
 @import './settings/variables';
 @import './settings/type';
 @import './settings/utilities';
@@ -50,7 +51,6 @@
 @import './base/colors';
 
 @import './components/button';
-@import './components/field';
 // @import './components/price';
 
 /// - SECTIONS

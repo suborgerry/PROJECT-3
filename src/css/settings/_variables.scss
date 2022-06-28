@@ -8,16 +8,18 @@
 // --------------------------------------------------
 // Colors
 
-$c-black: #000;
-$c-white: #fff;
-$c-red-1: #CF322D;
-$c-red-2: #CA3433;
+$c-black: c_rgb(var(--color-base-outline-button-labels));
+$c-white: c_rgb(var(--color-base-background-1));
+$c-red-1: c_rgb(var(--color-base-accent-1));
+$c-red-2: c_rgb(var(--color-base-accent-2));
+$c-text: c_rgb(var(--color-base-text));
 
 $c-grey-1: #414240;
 $c-grey-2: #555555;
 $c-grey-3: #6D6D6D;
 $c-grey-4: #949494;
 $c-grey-5: #EFEFEF;
+
 
 // --------------------------------------------------
 // Links
@@ -38,14 +40,14 @@ $grid-breakpoints: (
   xxl: 1440px
 );
 
-// $container-max-widths: (
-//   sm: 540px,
-//   md: 720px,
-//   lg: 1024px,
-//   xl: 1342px,
-// );
 
 
 
+// Box shadows
+$shadow-1: 0 1px 3px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.05);
+$shadow-2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.05);
+$shadow-3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.05);
+$shadow-4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$shadow-5: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 
 
