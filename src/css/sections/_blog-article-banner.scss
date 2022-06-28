@@ -1,34 +1,57 @@
 .article-banner {
     @include media-breakpoint-down(md) {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     &-section {
         margin-top: 3rem;
         padding-bottom: 11.3rem;
+        @include media-breakpoint-down(md) {
+            margin-top: 2rem;
+        }
     }
     &__info {
         width: 100vw;
+        @include media-breakpoint-down(md) {
+            align-items: center !important;
+            margin-top: -1rem;
+        }
         &_container {
             padding: 4.5rem;
             max-width: 77rem;
             @include media-breakpoint-down(xl) {
-                max-width: 60rem;
-            }
-            @include media-breakpoint-down(xl) {
                 max-width: 50rem;
+            }
+            @include media-breakpoint-down(md) {
+                align-items: center !important;
+                padding-top: 1.5rem;
+            }
+            @include media-breakpoint-down(sm) {
+                padding: 1.5rem 2rem 4rem 1.5rem;
             }
             a {
                 margin-top: 4.5rem;
                 padding: 1.9rem 5.8rem 2.2rem;
+                @include media-breakpoint-down(md) {
+                    margin-top: 5.2rem;
+                    padding: 2.1rem 7.8rem 2.1rem;
+                    font-size: 1.6rem;
+                }
             }
         }
     }
     &__title {
         margin-top: 1.5rem;
+        @include media-breakpoint-down(md) {
+            text-align: center;
+        }
     }
     &__description {
         margin-top: 4rem;
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
     }
     &__scroll {
         display: none;
@@ -71,7 +94,8 @@
             &:not(:first-of-type) {
                 width: 1rem;
                 height: 1rem;
-                background-color: #{$c-red-1}7f;
+                background-color: $c-red-1;
+                opacity: 0.5;
             }
             &:first-of-type {
                 width: 2rem;
@@ -111,6 +135,7 @@
         }
     }
     &__mobile {
+        width: 101%;
         @include media-breakpoint-up(lg) {
             display: none;
         }
