@@ -34,6 +34,10 @@
         @include media-breakpoint-up(md) {
             display: flex;
         }
+        @include media-breakpoint-between(md, lg) {
+            width: 100%;
+            margin-left: 0;
+        }
         &_text {
             margin-top: 1rem;
         }
@@ -46,7 +50,6 @@
         &_bowl {
             border-radius: 50%;
             & + & {
-                // margin-top: -1.2rem;
                 margin-top: 1.2rem;
                 @include keyframes(margin) {
                     0% {
@@ -94,7 +97,7 @@
         @include media-breakpoint-up(lg) {
             display: block;
         };
-        @include media-breakpoint-down(xl) {
+        @include media-breakpoint-down(lg) {
             width: 50rem;
         }
     }
