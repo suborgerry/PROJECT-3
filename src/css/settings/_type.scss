@@ -24,9 +24,7 @@
   }
 }
 .text-32px {
-  @include media-breakpoint-up(sm) {
     @include text-32px
-  }
 }
 .text-26px-all {
   @include text-26px;
