@@ -77,3 +77,26 @@
     max-width: var(--page-width);
   }
 }
+
+.page-width-small {
+  margin: 0 auto;
+  padding: 0 var(--page-width-x-paddings-mobile);
+  max-width: calc(940px + var(--page-width-x-paddings-mobile)*2);
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .page-width-small {
+    padding: 0 var(--page-width-x-paddings-tablet);
+    max-width: calc(940px + var(--page-width-x-paddings-tablet)*2);
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-width-small {
+    padding: 0;
+    max-width: 940px;
+    width: 100%;
+  }
+}

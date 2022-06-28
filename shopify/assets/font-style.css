@@ -1,0 +1,45 @@
+@font-face {
+    font-family: 'Axiforma';
+    src: url('Axiforma-Bold.woff2') format('woff2'),
+        url('Axiforma-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: url('Axiforma-Light.woff2') format('woff2'),
+        url('Axiforma-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: url('Axiforma-Medium.woff2') format('woff2'),
+        url('Axiforma-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Axiforma';
+    src: url('Axiforma-Regular.woff2') format('woff2'),
+        url('Axiforma-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'jersey';
+    src: url('JerseyM54.woff2') format('woff2'),
+        url('JerseyM54.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
