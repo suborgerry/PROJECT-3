@@ -1,0 +1,102 @@
+.flex-center {
+  display: flex;
+  // in order to disable this class prop added via SCSS,
+  // not via @extend to disable it's rules using .d-block, .d-inline-block classes
+  @extend .justify-content-center, .align-items-center;
+}
+.bg-center {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.list-unstyled {
+  list-style: none;
+}
+
+.absolute-fill {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @extend .position-absolute;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bg-muted {
+  background-color: $text-muted;
+}
+.fit-cover {
+  object-fit: cover;
+  @extend .w-100, .h-100;
+}
+
+// Other 
+
+.list-style-none {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-unstyled {
+  background-color: unset;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+:root {
+  --page-width-x-paddings-mobile: 2rem;
+  --page-width-x-paddings-mobile-reverse: -2rem;
+  --page-width-x-paddings-tablet: 3.5vw;
+  --page-width-x-paddings-tablet-reverse: -3.5vw;
+}
+
+/* base */
+
+.page-width {
+  margin: 0 auto;
+  padding: 0 var(--page-width-x-paddings-mobile);
+}
+
+@media (min-width: 576px) {
+  .page-width {
+    padding: 0 var(--page-width-x-paddings-tablet);
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-width {
+    max-width: var(--page-width);
+  }
+}
+
+.page-width-small {
+  margin: 0 auto;
+  padding: 0 var(--page-width-x-paddings-mobile);
+  max-width: calc(940px + var(--page-width-x-paddings-mobile)*2);
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .page-width-small {
+    padding: 0 var(--page-width-x-paddings-tablet);
+    max-width: calc(940px + var(--page-width-x-paddings-tablet)*2);
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .page-width-small {
+    padding: 0;
+    max-width: 940px;
+    width: 100%;
+  }
+}
