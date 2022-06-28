@@ -10,7 +10,6 @@
         display: none;
     }
     @include media-breakpoint-up(lg) {
-        margin-top: 3.1rem;
         &__title {
             margin-right: 4.7rem;
             min-width: max-content;

@@ -1,7 +1,7 @@
 /**
  * imports
  */
-import './css/main.scss';
+import './scss/main.scss';
 // import Cookies from 'js-cookie';
 
 document.addEventListener('DOMContentLoaded', function () {
