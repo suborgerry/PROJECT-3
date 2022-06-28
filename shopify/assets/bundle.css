@@ -5691,6 +5691,7 @@ body {
 
 .btn-red-1 {
   background-color: rgb(var(--color-base-accent-1));
+  color: rgb(var(--color-base-background-1));
 }
 
 @media (max-width: 991.98px) {

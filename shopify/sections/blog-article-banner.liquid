@@ -8,7 +8,7 @@
         <p class="text-16px-all text-uppercase article-banner__date">{%- if ss.article.tags[0] -%}{{ ss.article.tags[0] }},&nbsp;{%- endif -%}{{ ss.article.published_at | date: '%B %d' }}</p>
         <p class="text-32px text-uppercase font-axiforma-bold font-weight-bold article-banner__title">{{ ss.article.title }}</p>
         <p class="article-banner__description">{{ ss.article.excerpt }}</p>
-        <a href="{{ ss.article.url }}" class="btn-unstyled c-red-1-bg c-white font-weight-bold font-axiforma-bold">READ MORE</a>
+        <a href="{{ ss.article.url }}" class="btn-red-1 font-weight-bold font-axiforma-bold">READ MORE</a>
       </div>
     </div>
     <div class="article-banner__scroll flex-column align-items-center position-relative">
