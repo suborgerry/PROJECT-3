@@ -1,0 +1,48 @@
+<div class="page-width">
+  <nav class="breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <a href="/" title="Home">Home</a>
+    {% if template contains 'page' %}
+      <span>{{ page.title }}</span>
+    {% elsif template contains 'product' %}
+    {% if collection.url %}
+      {{ collection.title | link_to: collection.url }}
+    {% elsif routes.collections_url %}
+        <a href="{{ routes.collections_url }}">collections</a>
+    {% endif %}
+    <span>{{ product.title }}</span>
+    {% elsif template contains 'collection' and collection.handle %}
+      {% if current_tags %}
+        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        {{ collection.title | link_to: url }}
+        <span>{{ current_tags | join: " + " }}</span>
+      {% else %}
+        <span>{{ collection.title }}</span>
+      {% endif %}
+    {% elsif template == 'blog' %} 
+      {% if current_tags %}
+        {{ blog.title | link_to: blog.url }}
+        <span>{{ current_tags | join: " + " }}</span>
+      {% else %}
+        <span>{{ blog.title }}</span>
+      {% endif %}
+    {% elsif template == 'article' %}
+      {{ blog.title | link_to: blog.url }}
+      <span>{{ article.title }}</span>
+    {% else %}
+      <span>{{ page_title }}</span>
+    {% endif %}
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "tag": "section",
+  "class": "section",
+  "presets": [
+    {
+        "name": "Breadcrumbs"
+    }
+  ]
+}
+{% endschema %}
