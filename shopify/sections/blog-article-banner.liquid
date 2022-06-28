@@ -1,9 +1,9 @@
 {%- assign s = section -%}
 {%- assign ss = s.settings -%}
 
-<div id="Banner-{{ section.id }}" class="article-banner d-flex position-relative">
-  <div>
-    <div class="c-grey-5-bg article-banner__info d-flex flex-column align-items-start">
+<div id="Banner-{{ section.id }}" class="article-banner d-flex position-relative page-width">
+  <div class="article-banner__wrapper">
+    <div class="article-banner__info d-flex flex-column align-items-start">
       <div class="d-flex flex-column align-items-start article-banner__info_container">
         <p class="text-16px-all text-uppercase article-banner__date">{%- if ss.article.tags[0] -%}{{ ss.article.tags[0] }},&nbsp;{%- endif -%}{{ ss.article.published_at | date: '%B %d' }}</p>
         <p class="text-32px text-uppercase font-axiforma-bold font-weight-bold article-banner__title">{{ ss.article.title }}</p>
@@ -31,7 +31,7 @@
 {
   "name": "Blog article banner",
   "tag": "section",
-  "class": "article-banner-section",
+  "class": "article-banner-section c-grey-5-bg",
   "settings": [
     {
       "type": "article",
