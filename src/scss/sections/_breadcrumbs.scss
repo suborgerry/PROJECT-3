@@ -1,0 +1,23 @@
+.breadcrumbs {
+    margin: 2rem 0 3.1rem;
+    span,
+    a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        @include media-breakpoint-down(sm) {
+            font-size: 9px;
+        }
+    }
+    * + *::before {
+        content: " /";
+        margin: 0 0.9rem 0 0.6rem;
+    }
+    * {
+        color: $c-grey-4;
+    }
+    @include media-breakpoint-down(xs) {
+        line-height: 14px;
+    }
+}

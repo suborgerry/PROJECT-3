@@ -1,38 +1,83 @@
 .article-banner {
+    @include media-breakpoint-down(md) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    &__wrapper {
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            margin-bottom: -3.2rem;
+        }
+        @include media-breakpoint-down(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 0;
+        }
+    }
     &-section {
         margin-top: 3rem;
-        padding-bottom: 11.3rem;
+        margin-bottom: 11.3rem;
+        @include media-breakpoint-down(md) {
+            margin-top: 2rem;
+            background: linear-gradient(to top, $c-grey-5 83%, transparent 0);
+        }
     }
     &__info {
         width: 100vw;
+        @include media-breakpoint-down(md) {
+            align-items: center !important;
+            margin-top: -1rem;
+            width: 100%;
+        }
         &_container {
-            padding: 4.5rem;
-            max-width: 77rem;
+            padding: 4.5rem 0;
+            max-width: 70rem;
             @include media-breakpoint-down(xl) {
-                max-width: 60rem;
+                max-width: 40rem;
             }
-            @include media-breakpoint-down(xl) {
-                max-width: 50rem;
+            @include media-breakpoint-down(md) {
+                align-items: center !important;
+                padding-top: 1.5rem;
+            }
+            @include media-breakpoint-down(sm) {
+                padding: 1.5rem 2rem 4rem 1.5rem;
             }
             a {
                 margin-top: 4.5rem;
                 padding: 1.9rem 5.8rem 2.2rem;
+                @include media-breakpoint-down(md) {
+                    margin-top: 5.2rem;
+                    padding: 2.1rem 7.8rem 2.1rem;
+                    font-size: 1.6rem;
+                }
             }
         }
     }
     &__title {
         margin-top: 1.5rem;
+        @include media-breakpoint-down(md) {
+            text-align: center;
+        }
     }
     &__description {
         margin-top: 4rem;
+        display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
     }
     &__scroll {
         display: none;
         width: max-content;
         height: max-content;
-        margin-left: 21.6rem;
-        @include media-breakpoint-up(md) {
+        margin-left: 16.6rem;
+        margin-bottom: -3.2rem;
+        @include media-breakpoint-up(lg) {
             display: flex;
+        }
+        @include media-breakpoint-between(lg, lg) {
+            margin: auto;
         }
         &_text {
             margin-top: 1rem;
@@ -46,7 +91,6 @@
         &_bowl {
             border-radius: 50%;
             & + & {
-                // margin-top: -1.2rem;
                 margin-top: 1.2rem;
                 @include keyframes(margin) {
                     0% {
@@ -64,7 +108,8 @@
             &:not(:first-of-type) {
                 width: 1rem;
                 height: 1rem;
-                background-color: #{$c-red-1}7f;
+                background-color: $c-red-1;
+                opacity: 0.5;
             }
             &:first-of-type {
                 width: 2rem;
@@ -86,19 +131,25 @@
         }
     }
     &__images {
-        right: 0;
-        padding: 4.5rem;
+        @include media-breakpoint-down(md) {
+            position: relative !important;
+        }
+        @include media-breakpoint-up(lg) {
+            right: 0;
+            padding: 4.5rem;
+        }
     }
     &__desctop {
         display: none;
         @include media-breakpoint-up(lg) {
             display: block;
         };
-        @include media-breakpoint-down(xl) {
+        @include media-breakpoint-down(lg) {
             width: 50rem;
         }
     }
     &__mobile {
+        width: 101%;
         @include media-breakpoint-up(lg) {
             display: none;
         }

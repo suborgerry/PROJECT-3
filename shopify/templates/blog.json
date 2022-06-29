@@ -1,5 +1,10 @@
 {
   "sections": {
+    "16564287873c37a8d4": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-blog",
       "disabled": true,
@@ -107,21 +112,12 @@
       "settings": {
         "article": "news\/love-maryland-apples-weve-got-7-recipes",
         "image_desctop": "shopify:\/\/shop_images\/Bitmap.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Bitmapmob.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "middle-center",
-        "show_text_box": true,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "image_mobile": "shopify:\/\/shop_images\/Bitmapmob.jpg"
       }
     }
   },
   "order": [
+    "16564287873c37a8d4",
     "main",
     "1656321767d64b911b",
     "16563331263e0319f7"

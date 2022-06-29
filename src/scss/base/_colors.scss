@@ -37,6 +37,12 @@
             background-color: $c-red-2;
         }
     }
+    &-red-3 {
+        color: $c-red-3;
+        &-bg {
+            background-color: $c-red-3;
+        }
+    }
     &-grey-1 {
         color: $c-grey-1;
         &-bg {
@@ -65,6 +71,12 @@
         color: $c-grey-5;
         &-bg {
             background-color: $c-grey-5;
+        }
+    }
+    &-grey-6 {
+        color: $c-grey-6;
+        &-bg {
+            background-color: $c-grey-6;
         }
     }
 }

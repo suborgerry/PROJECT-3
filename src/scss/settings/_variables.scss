@@ -7,18 +7,21 @@
 
 // --------------------------------------------------
 // Colors
+$c-text: c_rgb(var(--color-base-text));
 
 $c-black: c_rgb(var(--color-base-outline-button-labels));
 $c-white: c_rgb(var(--color-base-background-1));
+
 $c-red-1: c_rgb(var(--color-base-accent-1));
 $c-red-2: c_rgb(var(--color-base-accent-2));
-$c-text: c_rgb(var(--color-base-text));
+$c-red-3: c_rgb(var(--color-base-accent-3));
 
 $c-grey-1: #414240;
 $c-grey-2: #555555;
 $c-grey-3: #6D6D6D;
 $c-grey-4: #949494;
 $c-grey-5: #EFEFEF;
+$c-grey-6: #C4C4C4;
 
 
 // --------------------------------------------------
@@ -37,7 +40,7 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px,
   xl1: 1360px,
-  xxl: 1440px,
+  xxl: 1440px
 );
 
 

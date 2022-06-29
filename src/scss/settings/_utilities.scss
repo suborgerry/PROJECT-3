@@ -49,6 +49,7 @@
   background-color: unset;
   border: none;
   outline: none;
+  text-decoration: none;
 }
 
 :root {
@@ -73,7 +74,6 @@
 
 @media (min-width: 1440px) {
   .page-width {
-    padding: 0;
     max-width: var(--page-width);
   }
 }

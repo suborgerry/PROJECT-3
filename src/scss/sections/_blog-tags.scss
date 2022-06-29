@@ -1,15 +1,22 @@
 .blog-tags {
-    @include media-breakpoint-up(md) {
-        margin-top: 3.1rem;
+    &__title {
+        @include media-breakpoint-down(md) {
+            margin: auto;
+            font-size: 3.2rem;
+            line-height: 3.4rem;
+        }
+    }
+    &__list {
+        display: none;
+    }
+    @include media-breakpoint-up(lg) {
         &__title {
             margin-right: 4.7rem;
+            min-width: max-content;
         }
         &__list {
             gap: 1rem;
             display: flex;
-            @include media-breakpoint-down(md) {
-                display: none;
-            }
         }
         &__item {
             a {

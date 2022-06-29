@@ -2,9 +2,8 @@
   "current": {
     "colors_solid_button_labels": "#ffffff",
     "colors_accent_1": "#cf322d",
-    "gradient_accent_1": "",
     "colors_accent_2": "#ca3433",
-    "gradient_accent_2": "",
+    "colors_accent_3": "#ff3a34",
     "colors_text": "#000001",
     "colors_outline_button_labels": "#000000",
     "colors_background_1": "#ffffff",
@@ -15,7 +14,7 @@
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
     "body_scale": 100,
-    "page_width": 1340,
+    "page_width": 1430,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -96,6 +95,8 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
+    "gradient_accent_1": "",
+    "gradient_accent_2": "",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
