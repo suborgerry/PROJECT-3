@@ -5320,11 +5320,6 @@ h3 {
   }
 }
 
-.text-32px {
-  font-size: 24px;
-  line-height: 29px;
-}
-
 @media (min-width: 576px) {
   .text-32px {
     font-size: 32px;
@@ -5689,6 +5684,174 @@ body {
 
 .c-grey-5-bg {
   background-color: #EFEFEF;
+}
+
+@media (min-width: 768px) {
+  .blog-tags {
+    margin-top: 3.1rem;
+  }
+  .blog-tags__title {
+    margin-right: 4.7rem;
+  }
+  .blog-tags__list {
+    gap: 1rem;
+    display: flex;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .blog-tags__list {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-tags__item a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border: 1px solid rgb(var(--color-base-accent-1));
+    height: 31px;
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.article-banner-section {
+  margin-top: 3rem;
+  padding-bottom: 11.3rem;
+}
+
+.article-banner__info {
+  width: 100vw;
+}
+
+.article-banner__info_container {
+  padding: 4.5rem;
+  max-width: 77rem;
+}
+
+@media (max-width: 1359.98px) {
+  .article-banner__info_container {
+    max-width: 60rem;
+  }
+}
+
+@media (max-width: 1359.98px) {
+  .article-banner__info_container {
+    max-width: 50rem;
+  }
+}
+
+.article-banner__info_container a {
+  margin-top: 4.5rem;
+  padding: 1.9rem 5.8rem 2.2rem;
+}
+
+.article-banner__title {
+  margin-top: 1.5rem;
+}
+
+.article-banner__description {
+  margin-top: 4rem;
+}
+
+.article-banner__scroll {
+  display: none;
+  width: max-content;
+  height: max-content;
+  margin-left: 21.6rem;
+}
+
+@media (min-width: 768px) {
+  .article-banner__scroll {
+    display: flex;
+  }
+}
+
+.article-banner__scroll_text {
+  margin-top: 1rem;
+}
+
+.article-banner__scroll_bowls {
+  margin-top: 5rem;
+}
+
+.article-banner__scroll_bowls img {
+  margin-top: 1rem;
+}
+
+.article-banner__scroll_bowl {
+  border-radius: 50%;
+}
+
+.article-banner__scroll_bowl + .article-banner__scroll_bowl {
+  margin-top: 1.2rem;
+  animation: margin 3s linear infinite;
+}
+
+@keyframes margin {
+  0% {
+    margin-top: -1.2rem;
+  }
+  50% {
+    margin-top: 1.2rem;
+  }
+  100% {
+    margin-top: -1.2rem;
+  }
+}
+
+.article-banner__scroll_bowl:not(:first-of-type) {
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(var(--color-base-accent-1))7f;
+}
+
+.article-banner__scroll_bowl:first-of-type {
+  width: 2rem;
+  height: 2rem;
+  background-color: rgb(var(--color-base-accent-1));
+  animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.article-banner__images {
+  right: 0;
+  padding: 4.5rem;
+}
+
+.article-banner__desctop {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .article-banner__desctop {
+    display: block;
+  }
+}
+
+@media (max-width: 1359.98px) {
+  .article-banner__desctop {
+    width: 50rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .article-banner__mobile {
+    display: none;
+  }
 }
 
 .cta-banner {
