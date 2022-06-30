@@ -1,0 +1,128 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+<div class="articles-tabs d-flex at-{{ s.id }}">
+    {%- for b in s.blocks -%}
+        {%- assign bs = b.settings -%}
+        <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative" data-id="tab-{{ forloop.index }}">
+            <span class="articles-tabs__tag position-relative c-white">{{ bs.articles_tag | upcase }}</span>
+            <img
+                srcset="{%- if bs.tab_image.src.width >= 165 -%}{{ bs.tab_image.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if bs.tab_image.src.width >= 360 -%}{{ bs.tab_image.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if bs.tab_image.src.width >= 533 -%}{{ bs.tab_image.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if bs.tab_image.src.width >= 720 -%}{{ bs.tab_image.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if bs.tab_image.src.width >= 1000 -%}{{ bs.tab_image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if bs.tab_image.src.width >= 1500 -%}{{ bs.tab_image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ bs.tab_image.src | image_url }} {{ bs.tab_image.src.width }}w"
+                class="position-absolute"
+                src="{{ bs.tab_image.src | image_url }}"
+                alt="{{ bs.tab_image.src.alt | escape }}"
+            >
+        </div>
+    {%- endfor -%}
+</div>
+
+{%- for b in s.blocks -%}
+    {%- assign bs = b.settings -%}
+    <div class="{%- if forloop.index == 1 -%} activ{%- endif -%}e blog-categories section-{{ b.id }}-padding" id="tab-{{ forloop.index }}">
+        <div class="blog-categories__heading d-flex justify-content-between">
+            <h2 class="d-flex flex-column">{{ bs.articles_tag | upcase }}</h2>
+            <div class="blog-categories__slider_buttons sb-{{ b.id }} d-flex">
+                <div class="button-prev prev-{{ b.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639266 5.36033L5.13292 9.85249C5.3301 10.0492 5.64956 10.0492 5.84723 9.85249C6.04441 9.65581 6.04441 9.33635 5.84723 9.13967L1.71001 5.00394L5.84674 0.868216C6.04391 0.671535 6.04391 0.352076 5.84674 0.154897C5.64956 -0.0417833 5.3296 -0.0417833 5.13242 0.154897L0.638769 4.64705C0.444578 4.8417 0.444578 5.16618 0.639266 5.36033Z" fill="black"/></svg></div>
+                <div class="button-next next-{{ b.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></div>
+            </div>
+        </div>
+        <div class="blog-categories__container acb-{{ b.id }}">
+            <div class="swiper-wrapper down">
+                {% assign article_counter = 0 %}
+                {%- paginate blog.articles by blog.articles_count -%}
+                    {%- for article in blog.articles -%}
+                        {% if article.tags contains bs.articles_tag %}
+                            {% assign article_counter = article_counter | plus: 1 %}
+                            {%- render 'article-card-blog',
+                                article: article,
+                                tag: article.tags[0]
+                            -%}
+                            {%- if article_counter == bs.articles_range -%}
+                                {% break %}
+                            {%- endif -%}
+                        {% endif %}
+                    {%- endfor -%}
+                {%- endpaginate -%}
+            </div>
+        </div>
+
+        {%- if bs.use_pagination -%}
+            {% unless article_counter <= 4 %}
+                <div class="pagination-container pc-{{ b.id }} flex-center">
+                    <button type="button" data-class="prev-{{ b.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639511 5.36033L5.13316 9.85249C5.33034 10.0492 5.6498 10.0492 5.84748 9.85249C6.04466 9.65581 6.04466 9.33635 5.84748 9.13967L1.71026 5.00394L5.84698 0.868216C6.04416 0.671535 6.04416 0.352076 5.84698 0.154897C5.6498 -0.0417833 5.32984 -0.0417833 5.13266 0.154897L0.639013 4.64705C0.444822 4.8417 0.444822 5.16618 0.639511 5.36033Z" fill="black"/></svg></button>
+                    <div class="swiper-pagination-{{ b.id }} swiper-pagination"></div>
+                    <button type="button" data-class="next-{{ b.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></button>
+                </div>
+            {% endunless %}
+        {%- endif -%}
+    </div>
+    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+    <script src="{{ 'blog-functions.js' | asset_url }}"></script>
+    <script>
+        getSwiper('{{ b.id | escape }}');
+        {%- if article_counter <=4 -%}hiddenSlideBtn('{{ b.id | escape }}');{%- endif -%}
+        {%- if bs.use_pagination -%}getPagination('{{ b.id | escape }}');{%- endif -%}
+        toggleArticleTabs('.at-{{ s.id }}');
+    </script>
+{%- endfor -%}
+{% schema %}
+{
+    "name": "Articles tabs",
+    "tag": "section",
+    "class": "section page-width blog-categories-section blog-categories-tabs",
+    "blocks": [
+        {
+            "type": "tab",
+            "name": "Tab",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "articles_tag",
+                    "label": "Articles tag",
+                    "info": "Input only lowercase."
+                },
+                {
+                    "type": "image_picker",
+                    "id": "tab_image",
+                    "label": "Tab image"
+                },
+                {
+                    "type": "range",
+                    "id": "articles_range",
+                    "min": 1,
+                    "max": 20,
+                    "step": 1,
+                    "label": "Articles range",
+                    "default": 4
+                },
+                {
+                    "type": "header",
+                    "content": "Pagination"
+                },
+                {
+                    "type" : "checkbox",
+                    "id": "use_pagination",
+                    "default": false,
+                    "label": "Use pagination",
+                    "info": "Check for use pagination. It working if elements more than 4."
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Articles tabs"
+        }
+    ]
+    }
+{% endschema %}

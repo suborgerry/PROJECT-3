@@ -61,10 +61,9 @@ function getSwiper(id) {
 }
 
 function getPagination(id) {
-    console.log('i!');
     const paginationContainer = document.querySelector(`.pc-${id}`);
 
-    paginationContainer.addEventListener('click', evt => {
+    paginationContainer && paginationContainer.addEventListener('click', evt => {
         let button;
 
         if(evt.target.matches('button')) {
@@ -83,4 +82,20 @@ function getPagination(id) {
 
 function hiddenSlideBtn(className) {
     document.querySelector(`.sb-${className}`).style.setProperty('display', 'none', 'important');
+}
+
+function toggleArticleTabs(id) {
+    const tabs = document.querySelector(`${id}`);
+    tabs && tabs.addEventListener('click', evt => {
+        const element = evt.target.parentElement;
+        
+        tabs.querySelector('.active').classList.remove('active');
+        element.classList.add('active');
+
+        const sliders = document.querySelector('.blog-categories-tabs');
+        const slider = document.querySelector(`#${element.dataset.id}`);
+        console.log(sliders);
+        sliders.querySelector('.active.blog-categories').classList.remove('active');
+        slider.classList.add('active');
+    })
 }
