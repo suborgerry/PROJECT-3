@@ -5,19 +5,6 @@
       "settings": {
       }
     },
-    "main": {
-      "type": "main-blog",
-      "disabled": true,
-      "settings": {
-        "layout": "collage",
-        "show_image": true,
-        "image_height": "medium",
-        "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1656321767d64b911b": {
       "type": "blog-tags",
       "blocks": {
@@ -114,12 +101,42 @@
         "image_desctop": "shopify:\/\/shop_images\/Bitmap.jpg",
         "image_mobile": "shopify:\/\/shop_images\/Bitmapmob.jpg"
       }
+    },
+    "main": {
+      "type": "main-blog",
+      "disabled": true,
+      "settings": {
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16564355063866d530": {
+      "type": "articles-by-tag",
+      "settings": {
+        "show_news": true,
+        "articles_tag": "Maryland",
+        "articles_range": 8
+      }
+    },
+    "16565764802cd595dd": {
+      "type": "articles-by-tag",
+      "settings": {
+        "show_news": false,
+        "articles_tag": "Popular",
+        "articles_range": 7
+      }
     }
   },
   "order": [
     "16564287873c37a8d4",
-    "main",
     "1656321767d64b911b",
-    "16563331263e0319f7"
+    "16563331263e0319f7",
+    "main",
+    "16564355063866d530",
+    "16565764802cd595dd"
   ]
 }
