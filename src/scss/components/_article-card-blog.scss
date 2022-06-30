@@ -1,0 +1,46 @@
+.article-card {
+    max-width: 31.6rem;
+    padding-bottom: 4rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &__tag {
+        position: absolute;
+        right: 2px;
+        top: 2.5rem;
+        border: 1px solid $c-red-1;
+        padding: 0.6rem 1rem 0.3rem 1rem;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        backdrop-filter: blur(11px);
+        background: rgba(255, 255, 255, 0.5);
+    }
+    &__image {
+        width: 100%;
+        height: 31.6rem;
+        object-fit: cover;
+    }
+    &__information {
+        justify-content: space-between;
+        text-align: center;
+        height: 100%;
+        height: fill-available;
+    }
+    &__heading {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        text-transform: uppercase;
+        margin: 2rem 0 4.4rem;
+    }
+    &__excerpt {
+        letter-spacing: 0.479348px;
+    }
+    &__btn {
+        padding: 16px 65px;
+        display: block;
+        width: max-content;
+        margin-top: 2.4rem;
+    }
+}
