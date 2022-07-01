@@ -1,0 +1,145 @@
+
+
+<section class="home-hero home-hero-slider-init swiper-container">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div data-block-id="{{ block.id }}" class="home-hero__slide swiper-slide">
+
+        <style>
+          [data-block-id="{{ block.id }}"].home-hero__slide {
+            background-image: url('{{ block.settings.img-desktop | img_url: 'master' }}');
+          }
+          {% if block.settings.img-mobile %}
+          @media (max-width: 767px) {
+            [data-block-id="{{ block.id }}"].home-hero__slide {
+              background-image: url('{{ block.settings.img-mobile | img_url: 'master' }}');
+            }
+          }
+          {% endif %}
+
+          [data-block-id="{{ block.id }}"].home-hero__slide h1,
+          [data-block-id="{{ block.id }}"].home-hero__slide h5 {
+            color: {{ block.settings.color }};
+          }
+          {% if block.settings.overlay %}
+          [data-block-id="{{ block.id }}"].home-hero__slide {
+            position: relative;
+          }
+          [data-block-id="{{ block.id }}"].home-hero__slide:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.37);
+          }
+          {% endif %}
+
+          {% if block.settings.text-right %}
+          [data-block-id="{{ block.id }}"].home-hero__slide .home-hero__wrapper {
+            align-items: flex-end !important;
+          }
+          [data-block-id="{{ block.id }}"].home-hero__slide h1,
+          [data-block-id="{{ block.id }}"].home-hero__slide h5 {
+           text-align: right !important;
+          }
+          [data-block-id="{{ block.id }}"].home-hero__slide h5:after {
+            right: 0 !important;
+            left: auto !important;
+            transform: none !important;
+          }
+          [data-block-id="{{ block.id }}"].home-hero__slide .home-hero__button {
+            justify-content: flex-end !important;
+          }
+          {% endif %}
+        </style>
+
+        <div class="page-width">
+          <div class="home-hero__wrapper d-flex flex-column">
+            <h5 class="m-0">{{ block.settings.subtitle }}</h5>
+            <h1 class="m-0">{{ block.settings.title }}</h1>
+            <div class="home-hero__button d-flex">
+              <a class="button__red" href="{{ block.settings.button-url }}">{{ block.settings.button-text }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-home-hero-pagination d-flex justify-content-center"></div>
+</section>
+
+{% schema %}
+  {
+  "name": "Home Hero",
+  "settings": [
+  ],
+  "blocks": [
+  {
+  "name": "Item",
+  "type": "text",
+  "settings": [
+  {
+  "type": "image_picker",
+  "id": "img-desktop",
+  "label": "BG desktop"
+  },
+  {
+  "type": "image_picker",
+  "id": "img-mobile",
+  "label": "BG mobile"
+  },
+  {
+  "type": "checkbox",
+  "id": "overlay",
+  "label": "Overlay",
+  "default": true
+  },
+  {
+  "type": "header",
+  "content": "Text Style"
+  },
+  {
+  "type": "checkbox",
+  "id": "text-right",
+  "label": "Place text on the right",
+  "default": false
+  },
+  {
+  "type": "text",
+  "id": "subtitle",
+  "label": "Subtitle"
+  },
+  {
+  "type": "text",
+  "id": "title",
+  "label": "Title"
+  },
+  {
+  "type": "color",
+  "id": "color",
+  "label": "Text Color",
+  "default": "#fff"
+  },
+  {
+  "type": "text",
+  "id": "button-text",
+  "label": "Button Label"
+  },
+  {
+  "type": "url",
+  "id": "button-url",
+  "label": "URL button"
+  }
+  ]
+  }
+  ],
+  "presets": [
+  {
+  "name": "Home Hero",
+  "category": "New"
+  }
+  ]
+  }
+{% endschema %}

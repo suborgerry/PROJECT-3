@@ -1,21 +1,45 @@
 {
   "sections": {
-    "1656323823622a6b7b": {
-      "type": "cta-banner",
+    "1656590445f1b0b21e": {
+      "type": "home-hero",
+      "blocks": {
+        "b01f2f58-c0f1-46be-ab2e-d784a70bdff2": {
+          "type": "text",
+          "settings": {
+            "img-desktop": "shopify:\/\/shop_images\/cta-banner.jpg",
+            "img-mobile": "shopify:\/\/shop_images\/cta-banner-mob.jpg",
+            "overlay": true,
+            "text-right": false,
+            "subtitle": "MARYLAND STRONG",
+            "title": "STAY SAFE AND SHOP LOCAL WITH OUR MARYLAND MASKS!",
+            "color": "#ffffff",
+            "button-text": "Shop now",
+            "button-url": ""
+          }
+        },
+        "8d200123-46e4-44df-8edd-884ba67303d9": {
+          "type": "text",
+          "settings": {
+            "img-desktop": "shopify:\/\/shop_images\/Object_1.jpg",
+            "overlay": false,
+            "text-right": true,
+            "subtitle": "MARYLAND STRONG",
+            "title": "ALl MAryland Everything",
+            "color": "#000000",
+            "button-text": "shop now",
+            "button-url": ""
+          }
+        }
+      },
+      "block_order": [
+        "b01f2f58-c0f1-46be-ab2e-d784a70bdff2",
+        "8d200123-46e4-44df-8edd-884ba67303d9"
+      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/cta-banner.jpg",
-        "image_mob": "shopify:\/\/shop_images\/cta-banner-mob.jpg",
-        "image_overlay_opacity": 40,
-        "heading_small": "",
-        "heading": "STAY SAFE AND SHOP LOCAL WITH OUR MARYLAND MASKS!",
-        "button_link": "",
-        "button_name": "",
-        "padding_section": "",
-        "padding_section_sm": ""
       }
     }
   },
   "order": [
-    "1656323823622a6b7b"
+    "1656590445f1b0b21e"
   ]
 }
