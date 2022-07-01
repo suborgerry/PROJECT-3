@@ -1,7 +1,30 @@
 // ==========================================================================
 // ## COMPONENT: BUTTON
 // ==========================================================================
-
+.button {
+    &__red {
+        padding: 15px 10px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-width: 184px;
+        min-height: 54px;
+        background-color: $c-red-1;
+        color: $c-white;
+        font-weight: 700;
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.94px;
+        transition: 0.3s;
+        border: solid 1px $c-red-1;
+        text-decoration: none;
+        &:hover {
+            border: solid 1px $c-red-3;
+            background-color: $c-red-3;
+        }
+    }
+}
 .btn-red-1 {
     transition: all 0.3s ease;
     @extend .btn-unstyled, .c-white, .c-red-1-bg;

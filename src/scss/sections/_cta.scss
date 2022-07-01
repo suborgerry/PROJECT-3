@@ -1,0 +1,56 @@
+.cta {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 625px;
+  padding: 32px 0 32px 128px;
+  @media (max-width: 1199px) {
+    padding: 32px 24px 32px 50px;
+  }
+  @include media-breakpoint-down(md) {
+    padding: 69px 22px 57px;
+  }
+  @include media-breakpoint-down(sm) {
+    justify-content: space-between !important;
+    min-height: 535px;
+  }
+  h2 {
+    max-width: 270px;
+    margin-bottom: 60px;
+    @include media-breakpoint-down(md) {
+      font-size: 4.8rem;
+      line-height: 6.1rem;
+    }
+  }
+  h5 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 17px;
+    letter-spacing: 2px;
+    font-family: 'jersey';
+    padding-bottom: 11px;
+    position: relative;
+    margin-bottom: 10px !important;
+    &:after {
+      content: "";
+      width: 38px;
+      height: 3px;
+      background-color: $c-red-1;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  a {
+    min-height: 62px;
+    min-width: 230px;
+  }
+  &__wrapper {
+    .page-width {
+      @include media-breakpoint-down(md) {
+        padding: 0 !important;
+      }
+    }
+  }
+}

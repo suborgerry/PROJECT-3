@@ -22,7 +22,8 @@
     "fix:shopify": "cd shopify && shopify theme check -a"
   },
   "dependencies": {
-    "bootstrap-scss": "^4.3.1"
+    "bootstrap-scss": "^4.3.1",
+    "swiper": "^5.3.7"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
