@@ -1,19 +1,38 @@
 {
   "sections": {
+    "16566692616b166db5": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
+        "bd10b76a-8b40-42ac-bc60-b8d4cba8ed14": {
+          "type": "tags",
           "settings": {
-            "image_height": "adapt"
           }
         },
         "title": {
           "type": "title",
           "settings": {
-            "blog_show_date": true,
-            "blog_show_author": false
+          }
+        },
+        "eb3beab4-d795-4288-8d5f-9aa299bb61c7": {
+          "type": "author_alternative_image",
+          "settings": {
+            "author_image": "shopify:\/\/shop_images\/images.jpg"
+          }
+        },
+        "31788877-cef9-49c4-aa28-f0d254b320d6": {
+          "type": "author_name",
+          "settings": {
+          }
+        },
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
           }
         },
         "share": {
@@ -23,18 +42,26 @@
           }
         },
         "content": {
-          "type": "content"
+          "type": "content",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "featured_image",
+        "bd10b76a-8b40-42ac-bc60-b8d4cba8ed14",
         "title",
+        "eb3beab4-d795-4288-8d5f-9aa299bb61c7",
+        "31788877-cef9-49c4-aa28-f0d254b320d6",
+        "featured_image",
         "share",
         "content"
-      ]
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
+    "16566692616b166db5",
     "main"
   ]
 }
