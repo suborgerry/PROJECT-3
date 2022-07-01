@@ -1,8 +1,19 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="article-template page-width-article" itemscope itemtype="http://schema.org/BlogPosting">
   {%- for block in section.blocks -%}
     {%- case block.type -%}
+      {%- when 'tags' -%}
+        <p class="article-template__tags m-auto">{{ article.tags }}</p>
+      {%- when 'author_alternative_image' -%}
+        <script>console.log({{  block.settings.author_image | json }})</script>
+        {% if article.user.image %}
+          <img class="m-auto article-template__authorimg" src="{{ article.user.image | image_url }}" alt="{{ article.user.image.alt }}">
+          {%- else -%}
+            <img class="m-auto article-template__authorimg" src="{{ block.settings.author_image | image_url }}" alt="{{ block.settings.author_image.alt }}">
+        {% endif %}
+      {%- when 'author_name' -%}
+        <p>{{ article.user.name }}</p>
       {%- when '@app' -%}
         <div class="page-width page-width--narrow">
           {% render block %}
@@ -31,18 +42,9 @@
             </div>
           </div>
         {%- endif -%}
-
         {%- when 'title'-%}
           <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-            {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
-            {%- if block.settings.blog_show_author -%}
-              <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                <span itemprop="name">{{ article.author }}</span>
-              </span>
-            {%- endif -%}
+            <p class="article-template__title" itemprop="headline">{{ article.title | escape }}</p>
           </header>
 
         {%- when 'content'-%}
@@ -297,6 +299,29 @@
       "type": "@app"
     },
     {
+      "type": "tags",
+      "name": "Tags",
+      "limit": 1
+    },
+    {
+      "type": "author_alternative_image",
+      "name": "Author alternative image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Image",
+          "info": "Using if author doesn`t have photo"
+        }
+      ]
+    },
+    {
+      "type": "author_name",
+      "name": "Author name",
+      "limit": 1
+    },
+    {
       "type": "featured_image",
       "name": "t:sections.main-article.blocks.featured_image.name",
       "limit": 1,
@@ -331,21 +356,7 @@
     {
       "type": "title",
       "name": "t:sections.main-article.blocks.title.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "checkbox",
-          "id": "blog_show_date",
-          "default": true,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_date.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "blog_show_author",
-          "default": false,
-          "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "content",

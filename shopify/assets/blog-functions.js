@@ -91,8 +91,8 @@ function getPagination(id) {
             button = evt.target.parentElement.parentElement;
         }
         
-        const className = button.dataset.class;
-        document.querySelector(`.${className}`).click();
+        const className = button?.dataset.class;
+        className && document.querySelector(`.${className}`).click();
         
     })
 }

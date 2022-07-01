@@ -1,4 +1,4 @@
-.article-template > *:first-child:not(.article-template__hero-container) {
+section-blog-post.article-template > *:first-child:not(.article-template__hero-container) {
   margin-top: 5rem;
 }
 
@@ -63,14 +63,6 @@
   .article-template header {
     margin-top: 5rem;
   }
-}
-
-.article-template__title {
-  margin: 0;
-}
-
-.article-template__title:not(:only-child) {
-  margin-bottom: 1rem;
 }
 
 .article-template__link {
