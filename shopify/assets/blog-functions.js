@@ -85,16 +85,18 @@ function hiddenSlideBtn(className) {
 }
 
 function toggleArticleTabs(id) {
-    const tabs = document.querySelector(`${id}`);
+    const tabs = document.querySelector(`.at-${id}`);
     tabs && tabs.addEventListener('click', evt => {
         const element = evt.target.parentElement;
         
         tabs.querySelector('.active').classList.remove('active');
         element.classList.add('active');
 
-        const sliders = document.querySelector('.blog-categories-tabs');
+        const sliders = document.querySelector(`#shopify-section-${id}`);
         const slider = document.querySelector(`#${element.dataset.id}`);
-        console.log(sliders);
+
+        console.log(`#${id}`);
+
         sliders.querySelector('.active.blog-categories').classList.remove('active');
         slider.classList.add('active');
     })

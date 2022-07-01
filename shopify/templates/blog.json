@@ -119,7 +119,8 @@
       "settings": {
         "show_news": true,
         "articles_tag": "Maryland",
-        "articles_range": 8
+        "articles_range": 8,
+        "use_pagination": false
       }
     },
     "16565764802cd595dd": {
@@ -127,7 +128,146 @@
       "settings": {
         "show_news": false,
         "articles_tag": "Popular",
-        "articles_range": 7
+        "articles_range": 7,
+        "use_pagination": false
+      }
+    },
+    "1656591315e12fd6ba": {
+      "type": "articles-by-tag-tabs",
+      "blocks": {
+        "52eb9387-7e70-40a1-ad4b-284a43f64b85": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "New York",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_1_462e7006-1812-4012-b2a5-a99c2ba1423a.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        },
+        "e258b63f-5a1c-4d97-84ba-af1f7122310b": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Maryland",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_2.jpg",
+            "articles_range": 12,
+            "use_pagination": true
+          }
+        },
+        "270076f6-ac51-4055-9bf4-0b199afc7e67": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "California",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_3.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        },
+        "75a093ed-e2fb-49da-838f-cc4a8c8d3f7d": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Wisconsin",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_4.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        }
+      },
+      "block_order": [
+        "52eb9387-7e70-40a1-ad4b-284a43f64b85",
+        "e258b63f-5a1c-4d97-84ba-af1f7122310b",
+        "270076f6-ac51-4055-9bf4-0b199afc7e67",
+        "75a093ed-e2fb-49da-838f-cc4a8c8d3f7d"
+      ],
+      "settings": {
+      }
+    },
+    "16566134827f34b88c": {
+      "type": "articles-by-category-tabs",
+      "blocks": {
+        "21805159-1038-4615-aaef-f77f91798996": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "home",
+            "tab_image": "shopify:\/\/shop_images\/Rectangle.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "e5886ff5-66db-4dc5-8cff-2bef51866025": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "clothes",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_12.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "recipe",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_6.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Recomendation",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_7.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Footwear",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_8.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "e78d44d5-fa67-48a1-99c5-510891342eaa": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Production",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_9.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Brands",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_10.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "30e7e801-11a7-4f02-b5e3-f6b1ced43f30": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Featured",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_11.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        }
+      },
+      "block_order": [
+        "21805159-1038-4615-aaef-f77f91798996",
+        "e5886ff5-66db-4dc5-8cff-2bef51866025",
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70",
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7",
+        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7",
+        "e78d44d5-fa67-48a1-99c5-510891342eaa",
+        "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4",
+        "30e7e801-11a7-4f02-b5e3-f6b1ced43f30"
+      ],
+      "settings": {
       }
     }
   },
@@ -137,6 +277,8 @@
     "16563331263e0319f7",
     "main",
     "16564355063866d530",
-    "16565764802cd595dd"
+    "16565764802cd595dd",
+    "1656591315e12fd6ba",
+    "16566134827f34b88c"
   ]
 }

@@ -4,7 +4,7 @@
 <div class="articles-tabs d-flex at-{{ s.id }}">
     {%- for b in s.blocks -%}
         {%- assign bs = b.settings -%}
-        <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative" data-id="tab-{{ forloop.index }}">
+        <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative" data-id="tab1-{{ forloop.index }}">
             <span class="articles-tabs__tag position-relative c-white">{{ bs.articles_tag | upcase }}</span>
             <img
                 srcset="{%- if bs.tab_image.src.width >= 165 -%}{{ bs.tab_image.src | image_url: width: 165 }} 165w,{%- endif -%}
@@ -24,7 +24,7 @@
 
 {%- for b in s.blocks -%}
     {%- assign bs = b.settings -%}
-    <div class="{%- if forloop.index == 1 -%} activ{%- endif -%}e blog-categories section-{{ b.id }}-padding" id="tab-{{ forloop.index }}">
+    <div class="{%- if forloop.index == 1 -%} activ{%- endif -%}e blog-categories section-{{ b.id }}-padding" id="tab1-{{ forloop.index }}">
         <div class="blog-categories__heading d-flex justify-content-between">
             <h2 class="d-flex flex-column">{{ bs.articles_tag | upcase }}</h2>
             <div class="blog-categories__slider_buttons sb-{{ b.id }} d-flex">
@@ -73,11 +73,12 @@
 <script>
     toggleArticleTabs('{{ s.id }}');
 </script>
+
 {% schema %}
 {
-    "name": "Articles tabs",
+    "name": "Articles by categories",
     "tag": "section",
-    "class": "section page-width blog-categories-section blog-categories-tabs",
+    "class": "section page-width blog-categories-section blog-categories-tabs blog-categories-tabs-2",
     "blocks": [
         {
             "type": "tab",
@@ -123,7 +124,7 @@
     ],
     "presets": [
         {
-            "name": "Articles tabs"
+            "name": "Articles by categories"
         }
     ]
     }

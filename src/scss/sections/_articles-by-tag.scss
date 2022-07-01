@@ -104,6 +104,17 @@
                 display: none;
             }
         }
+        &-2 {
+            .articles-tabs {
+                flex-wrap: wrap;
+                width: 101%;
+                justify-content: center;
+                height: auto;
+                &__image {
+                    height: 18.5rem;
+                }
+            }
+        }
     }
 }
 
@@ -156,7 +167,7 @@
         }
     }
     &__image {
-        width: 33.5rem;
+        width: 33.4rem;
         height: inherit;
         background-color: $c-black;
         overflow: hidden;
@@ -189,5 +200,8 @@
             left: 0;
             transform: scale(1.01);
         }
+    }
+    .blog-categories__heading h2::after {
+        margin-top: 2.4rem;
     }
 }
