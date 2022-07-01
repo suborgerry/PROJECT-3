@@ -1,0 +1,75 @@
+<style>
+  .cta {
+    background-image: url('{{ section.settings.img-desktop | img_url: 'master' }}');
+  }
+  @media (max-width: 767px) {
+    .cta {
+      background-image: url('{{ section.settings.img-mobile | img_url: 'master' }}');
+    }
+  }
+</style>
+<div class="cta__wrapper">
+  <div class="page-width">
+    <div class="cta d-flex flex-column justify-content-center">
+      <div>
+        {% if section.settings.title %}
+          <h5 class="">{{ section.settings.subtitle }}</h5>
+        {% endif %}
+        {% if section.settings.title %}
+          <h2 class="h1">
+            {{ section.settings.title }}
+          </h2>
+        {% endif %}
+      </div>
+
+      <div class="d-flex">
+        <a class="button__red" href="{{ section.settings.url }}">{{ section.settings.label }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+  "name": "CTA",
+  "settings": [
+  {
+    "type": "image_picker",
+    "id": "img-desktop",
+    "label": "BG desktop"
+  },
+  {
+    "type": "image_picker",
+    "id": "img-mobile",
+    "label": "BG mobile"
+  },
+  {
+    "type": "text",
+    "id": "subtitle",
+    "label": "Subtitle"
+  },
+  {
+    "type": "text",
+    "id": "title",
+    "label": "Title"
+  },
+  {
+    "type": "url",
+    "id": "url",
+    "label": "URL Button"
+  },
+  {
+    "type": "text",
+    "id": "label",
+    "label": "Text Button",
+    "default": "shop now"
+  }
+  ],
+  "presets": [
+  {
+    "name": "CTA",
+    "category": "New"
+  }
+  ]
+  }
+{% endschema %}

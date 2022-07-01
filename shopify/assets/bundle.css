@@ -6608,3 +6608,75 @@ body {
 .home-hero .swiper-home-hero-pagination .swiper-pagination-bullet-active {
   background-color: rgb(var(--color-base-accent-1)) !important;
 }
+
+.cta {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  min-height: 625px;
+  padding: 32px 0 32px 128px;
+}
+
+@media (max-width: 1199px) {
+  .cta {
+    padding: 32px 24px 32px 50px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .cta {
+    padding: 69px 22px 57px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .cta {
+    justify-content: space-between !important;
+    min-height: 535px;
+  }
+}
+
+.cta h2 {
+  max-width: 270px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 991.98px) {
+  .cta h2 {
+    font-size: 4.8rem;
+    line-height: 6.1rem;
+  }
+}
+
+.cta h5 {
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 17px;
+  letter-spacing: 2px;
+  font-family: "jersey";
+  padding-bottom: 11px;
+  position: relative;
+  margin-bottom: 10px !important;
+}
+
+.cta h5:after {
+  content: "";
+  width: 38px;
+  height: 3px;
+  background-color: rgb(var(--color-base-accent-1));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cta a {
+  min-height: 62px;
+  min-width: 230px;
+}
+
+@media (max-width: 991.98px) {
+  .cta__wrapper .page-width {
+    padding: 0 !important;
+  }
+}

@@ -37,9 +37,21 @@
       ],
       "settings": {
       }
+    },
+    "165666881917ae1fc4": {
+      "type": "cta",
+      "settings": {
+        "img-desktop": "shopify:\/\/shop_images\/Bitmap_1_3946968d-2641-4d8f-bee9-cd93f7fb36c3.jpg",
+        "img-mobile": "shopify:\/\/shop_images\/Bitmap_2_69b50941-7e16-47c9-88a6-c447b2f9f906.jpg",
+        "subtitle": "MARYLAND STRONG",
+        "title": "SWEATSHIRTS HOODIES",
+        "url": "",
+        "label": "shop now"
+      }
     }
   },
   "order": [
-    "1656590445f1b0b21e"
+    "1656590445f1b0b21e",
+    "165666881917ae1fc4"
   ]
 }
