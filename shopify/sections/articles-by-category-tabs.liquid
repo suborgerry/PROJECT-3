@@ -5,7 +5,7 @@
     {%- for b in s.blocks -%}
         {%- assign bs = b.settings -%}
         <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative" data-id="tab1-{{ forloop.index }}">
-            <span class="articles-tabs__tag position-relative c-white">{{ bs.articles_tag | upcase }}</span>
+            <span class="articles-tabs__tag position-relative c-white">{{ bs.articles_tag }}</span>
             <img
                 srcset="{%- if bs.tab_image.src.width >= 165 -%}{{ bs.tab_image.src | image_url: width: 165 }} 165w,{%- endif -%}
                     {%- if bs.tab_image.src.width >= 360 -%}{{ bs.tab_image.src | image_url: width: 360 }} 360w,{%- endif -%}

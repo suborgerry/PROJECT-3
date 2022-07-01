@@ -20,6 +20,7 @@
         margin-bottom: 15rem;
         @include media-breakpoint-down(md) {
             margin-top: 2rem;
+            margin-bottom: 1.2rem;
             background: linear-gradient(to top, $c-grey-5 83%, transparent 0);
         }
     }

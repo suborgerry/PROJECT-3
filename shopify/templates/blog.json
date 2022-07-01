@@ -140,6 +140,7 @@
           "settings": {
             "articles_tag": "New York",
             "tab_image": "shopify:\/\/shop_images\/Bitmap_1_462e7006-1812-4012-b2a5-a99c2ba1423a.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_13.jpg",
             "articles_range": 4,
             "use_pagination": true
           }
@@ -149,6 +150,7 @@
           "settings": {
             "articles_tag": "Maryland",
             "tab_image": "shopify:\/\/shop_images\/Bitmap_2.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_16.jpg",
             "articles_range": 12,
             "use_pagination": true
           }
@@ -158,6 +160,7 @@
           "settings": {
             "articles_tag": "California",
             "tab_image": "shopify:\/\/shop_images\/Bitmap_3.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_18.jpg",
             "articles_range": 4,
             "use_pagination": true
           }
@@ -167,6 +170,7 @@
           "settings": {
             "articles_tag": "Wisconsin",
             "tab_image": "shopify:\/\/shop_images\/Bitmap_4.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_17.jpg",
             "articles_range": 4,
             "use_pagination": true
           }
@@ -193,29 +197,11 @@
             "use_pagination": false
           }
         },
-        "e5886ff5-66db-4dc5-8cff-2bef51866025": {
+        "e78d44d5-fa67-48a1-99c5-510891342eaa": {
           "type": "tab",
           "settings": {
-            "articles_tag": "clothes",
-            "tab_image": "shopify:\/\/shop_images\/Bitmap_12.jpg",
-            "articles_range": 4,
-            "use_pagination": false
-          }
-        },
-        "45c42b16-3fe8-49f4-bb79-ab700caa3d70": {
-          "type": "tab",
-          "settings": {
-            "articles_tag": "recipe",
-            "tab_image": "shopify:\/\/shop_images\/Bitmap_6.jpg",
-            "articles_range": 4,
-            "use_pagination": false
-          }
-        },
-        "d5cbf343-6e05-425b-896b-2eac56acf6e7": {
-          "type": "tab",
-          "settings": {
-            "articles_tag": "Recomendation",
-            "tab_image": "shopify:\/\/shop_images\/Bitmap_7.jpg",
+            "articles_tag": "Production",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_9.jpg",
             "articles_range": 4,
             "use_pagination": false
           }
@@ -229,20 +215,38 @@
             "use_pagination": false
           }
         },
-        "e78d44d5-fa67-48a1-99c5-510891342eaa": {
-          "type": "tab",
-          "settings": {
-            "articles_tag": "Production",
-            "tab_image": "shopify:\/\/shop_images\/Bitmap_9.jpg",
-            "articles_range": 4,
-            "use_pagination": false
-          }
-        },
         "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4": {
           "type": "tab",
           "settings": {
             "articles_tag": "Brands",
             "tab_image": "shopify:\/\/shop_images\/Bitmap_10.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "recipes",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_6.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "e5886ff5-66db-4dc5-8cff-2bef51866025": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "clothes",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_12.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Recomendation",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_7.jpg",
             "articles_range": 4,
             "use_pagination": false
           }
@@ -259,12 +263,12 @@
       },
       "block_order": [
         "21805159-1038-4615-aaef-f77f91798996",
-        "e5886ff5-66db-4dc5-8cff-2bef51866025",
-        "45c42b16-3fe8-49f4-bb79-ab700caa3d70",
-        "d5cbf343-6e05-425b-896b-2eac56acf6e7",
-        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7",
         "e78d44d5-fa67-48a1-99c5-510891342eaa",
+        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7",
         "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4",
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70",
+        "e5886ff5-66db-4dc5-8cff-2bef51866025",
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7",
         "30e7e801-11a7-4f02-b5e3-f6b1ced43f30"
       ],
       "settings": {

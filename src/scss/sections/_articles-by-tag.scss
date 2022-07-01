@@ -8,6 +8,9 @@
         margin-bottom: 8.5rem;
         &_container {
             align-items: flex-end;
+            @include media-breakpoint-down(md) {
+                align-items: center;
+            }
             span {
                 font-size: 12px;
                 line-height: 14px;
@@ -18,6 +21,43 @@
         }
         &_buttons {
             flex-direction: column;
+            &.up {
+                @include media-breakpoint-down(md) {
+                    .sort-down {
+                        color: $c-red-1;
+                    }
+                }
+            }
+            &.down {
+                @include media-breakpoint-down(md) {
+                    .sort-up {
+                        color: $c-red-1;
+                    }
+                }
+            }
+            @include media-breakpoint-down(md) {
+                flex-direction: row;
+                button {
+                    font-size: 1.2rem;
+                    line-height: 1.9rem;
+                    font-weight: 400;
+                }
+                svg {
+                    display: none;
+                }
+                .sort-up {
+                    &::after {
+                        content: "NEW";
+                    }
+                }
+                .sort-down {
+                    margin-top: 0 !important;
+                    margin-left: 1rem;
+                    &::after {
+                        content: "OLD";
+                    }
+                }
+            }
             &.down {
                 .sort-up {
                     path {
@@ -64,6 +104,13 @@
         }
     }
     &__slider_buttons {
+        @include media-breakpoint-down(sm) {
+            position: absolute;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 25rem;
+            z-index: 2;
+        }
         div {
             width: 4.8rem;
             height: 4.8rem;
@@ -93,6 +140,14 @@
     &__container {
         overflow-x: hidden;
         margin-top: 2.7rem;
+        @include media-breakpoint-down(md) {
+            max-width: 66rem;
+            margin: auto;
+            margin-top: 3.7rem;
+        }
+        @include media-breakpoint-down(sm) {
+            max-width: 31.6rem;
+        }
         .swiper-wrapper {
             height: auto;
         }
@@ -110,6 +165,38 @@
                 width: 101%;
                 justify-content: center;
                 height: auto;
+                @include media-breakpoint-down(sm) {
+                    justify-content: flex-start;
+                    .articles-tabs__image {
+                        width: max-content;
+                        height: max-content;
+                        background-color: transparent;
+                        margin: 0 0.6rem 0.6rem 0;
+                        &.active {
+                            .articles-tabs__tag {
+                                background-color: $c-red-1;
+                                color: $c-white;
+                            }
+                        }
+                        .articles-tabs__tag {
+                            color: $c-grey-1;
+                            margin: 0;
+                            font-family: "Axiforma";
+                            text-transform: capitalize;
+                            font-size: 2.8rem;
+                            line-height: 4.6rem;
+                            border: 1px solid $c-red-1;
+                            font-weight: 700;
+                            padding: 0.6rem 1rem;
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        img {
+                            display: none;
+                        }
+                    }
+                }
                 &__image {
                     height: 18.5rem;
                 }
@@ -151,6 +238,21 @@
 
 .articles-tabs {
     height: 44.5rem;
+    &.cities {
+        @include media-breakpoint-down(sm) {
+            height: auto;
+            flex-direction: column;
+            align-items: center;
+            width: max-content;
+            margin: auto;
+            .articles-tabs__image {
+                height: 22rem;
+            }
+            .articles-tabs__tag {
+                margin-top: 5rem;
+            }
+        }
+    }
     &__tag {
         z-index: 1;
         font-weight: 400;
@@ -162,6 +264,7 @@
         align-items: flex-start;
         margin-top: 5.6rem;
         transition: all 0.3s ease;
+        text-transform: uppercase;
         &:after {
             transition: all 0.3s ease;
         }
@@ -188,6 +291,21 @@
                     height: 0.6rem;
                     width: 13.1rem;
                     @extend .c-red-1-bg
+                }
+            }
+        }
+        &.cities {
+            img {
+                &:not(.mobile) {
+                    display: none;
+                    @include media-breakpoint-up(md) {
+                        display: block;
+                    }
+                }
+                &.mobile {
+                    @include media-breakpoint-up(md) {
+                        display: none;
+                    }
                 }
             }
         }

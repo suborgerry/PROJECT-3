@@ -6,10 +6,17 @@ function sortingByDate(className) {
 
         const sliderContainer = document.querySelector(className);
         const slider = sliderContainer.querySelector('.swiper-wrapper');
-        
-        if(element.matches('path')) {
-            const upBtn = element.parentElement.parentElement.matches('.sort-up');
-            const downBtn = element.parentElement.parentElement.matches('.sort-down');
+        if(element.matches('path') || element.matches('button')) {
+            let upBtn;
+            let downBtn;
+
+            if(element.matches('path')) {
+                upBtn = element.parentElement.parentElement.matches('.sort-up');
+                downBtn = element.parentElement.parentElement.matches('.sort-down');
+            } else if(element.matches('button')) {
+                upBtn = element.matches('.sort-up');
+                downBtn = element.matches('.sort-down');
+            }
             const newSlider = Array.from(document.querySelector('.swiper-wrapper').children).reverse();
 
             if(upBtn && slider.classList.contains('up')) {
@@ -41,9 +48,9 @@ function sortingByDate(className) {
 
 function getSwiper(id) {
     new Swiper(`.acb-${id}`, {
-        slidesPerView: 4,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
         spaceBetween: 25,
-        slidesPerGroup: 4,
         speed: 400,
         initialSlide : 1,
         navigation: {
@@ -55,6 +62,16 @@ function getSwiper(id) {
             clickable: true,
             renderBullet: function (index) {
                 return `<span class="swiper-pagination__index swiper-pagination-bullet">${index + 1}</span>`;
+            }
+        },
+        breakpoints: {
+            '992': {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+            },
+            '768': {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
             }
         }
     });
@@ -81,7 +98,16 @@ function getPagination(id) {
 }
 
 function hiddenSlideBtn(className) {
-    document.querySelector(`.sb-${className}`).style.setProperty('display', 'none', 'important');
+    const hidden = () => document.querySelector(`.sb-${className}`).style.setProperty('display', 'none', 'important');
+    const containerCount = document.querySelector(`.acb-${className}`).querySelector('.swiper-wrapper').childElementCount;
+    
+    if(window.innerWidth >= 992) {
+        hidden();
+    } else if(window.innerWidth >= 768 && containerCount < 3) {
+        hidden();
+    } else if(window.innerWidth >= 0 && containerCount < 2) {
+        
+    }
 }
 
 function toggleArticleTabs(id) {

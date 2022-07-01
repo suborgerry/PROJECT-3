@@ -5860,6 +5860,7 @@ body {
 @media (max-width: 991.98px) {
   .article-banner-section {
     margin-top: 2rem;
+    margin-bottom: 1.2rem;
     background: linear-gradient(to top, #EFEFEF 83%, transparent 0);
   }
 }
@@ -6160,6 +6161,12 @@ body {
   align-items: flex-end;
 }
 
+@media (max-width: 991.98px) {
+  .blog-categories__sort_container {
+    align-items: center;
+  }
+}
+
 .blog-categories__sort_container span {
   font-size: 12px;
   line-height: 14px;
@@ -6170,6 +6177,42 @@ body {
 
 .blog-categories__sort_buttons {
   flex-direction: column;
+}
+
+@media (max-width: 991.98px) {
+  .blog-categories__sort_buttons.up .sort-down {
+    color: rgb(var(--color-base-accent-1));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .blog-categories__sort_buttons.down .sort-up {
+    color: rgb(var(--color-base-accent-1));
+  }
+}
+
+@media (max-width: 991.98px) {
+  .blog-categories__sort_buttons {
+    flex-direction: row;
+  }
+  .blog-categories__sort_buttons button {
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    font-weight: 400;
+  }
+  .blog-categories__sort_buttons svg {
+    display: none;
+  }
+  .blog-categories__sort_buttons .sort-up::after {
+    content: "NEW";
+  }
+  .blog-categories__sort_buttons .sort-down {
+    margin-top: 0 !important;
+    margin-left: 1rem;
+  }
+  .blog-categories__sort_buttons .sort-down::after {
+    content: "OLD";
+  }
 }
 
 .blog-categories__sort_buttons.down .sort-up path {
@@ -6208,6 +6251,16 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 767.98px) {
+  .blog-categories__slider_buttons {
+    position: absolute;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 25rem;
+    z-index: 2;
+  }
+}
+
 .blog-categories__slider_buttons div {
   width: 4.8rem;
   height: 4.8rem;
@@ -6233,6 +6286,20 @@ body {
   margin-top: 2.7rem;
 }
 
+@media (max-width: 991.98px) {
+  .blog-categories__container {
+    max-width: 66rem;
+    margin: auto;
+    margin-top: 3.7rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .blog-categories__container {
+    max-width: 31.6rem;
+  }
+}
+
 .blog-categories__container .swiper-wrapper {
   height: auto;
 }
@@ -6250,6 +6317,39 @@ body {
   width: 101%;
   justify-content: center;
   height: auto;
+}
+
+@media (max-width: 767.98px) {
+  .blog-categories-tabs-2 .articles-tabs {
+    justify-content: flex-start;
+  }
+  .blog-categories-tabs-2 .articles-tabs .articles-tabs__image {
+    width: max-content;
+    height: max-content;
+    background-color: transparent;
+    margin: 0 0.6rem 0.6rem 0;
+  }
+  .blog-categories-tabs-2 .articles-tabs .articles-tabs__image.active .articles-tabs__tag {
+    background-color: rgb(var(--color-base-accent-1));
+    color: rgb(var(--color-base-background-1));
+  }
+  .blog-categories-tabs-2 .articles-tabs .articles-tabs__image .articles-tabs__tag {
+    color: #414240;
+    margin: 0;
+    font-family: "Axiforma";
+    text-transform: capitalize;
+    font-size: 2.8rem;
+    line-height: 4.6rem;
+    border: 1px solid rgb(var(--color-base-accent-1));
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+  }
+  .blog-categories-tabs-2 .articles-tabs .articles-tabs__image .articles-tabs__tag::after {
+    display: none;
+  }
+  .blog-categories-tabs-2 .articles-tabs .articles-tabs__image img {
+    display: none;
+  }
 }
 
 .blog-categories-tabs-2 .articles-tabs__image {
@@ -6292,6 +6392,22 @@ body {
   height: 44.5rem;
 }
 
+@media (max-width: 767.98px) {
+  .articles-tabs.cities {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    margin: auto;
+  }
+  .articles-tabs.cities .articles-tabs__image {
+    height: 22rem;
+  }
+  .articles-tabs.cities .articles-tabs__tag {
+    margin-top: 5rem;
+  }
+}
+
 .articles-tabs__tag {
   z-index: 1;
   font-weight: 400;
@@ -6303,6 +6419,7 @@ body {
   align-items: flex-start;
   margin-top: 5.6rem;
   transition: all 0.3s ease;
+  text-transform: uppercase;
 }
 
 .articles-tabs__tag:after {
@@ -6331,6 +6448,22 @@ body {
   content: "";
   height: 0.6rem;
   width: 13.1rem;
+}
+
+.articles-tabs__image.cities img:not(.mobile) {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .articles-tabs__image.cities img:not(.mobile) {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .articles-tabs__image.cities img.mobile {
+    display: none;
+  }
 }
 
 .articles-tabs__image img {

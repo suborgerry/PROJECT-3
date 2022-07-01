@@ -1,10 +1,10 @@
 {%- assign s = section -%}
 {%- assign ss = s.settings -%}
 
-<div class="articles-tabs d-flex at-{{ s.id }}">
+<div class="cities articles-tabs d-flex at-{{ s.id }}">
     {%- for b in s.blocks -%}
         {%- assign bs = b.settings -%}
-        <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative" data-id="tab-{{ forloop.index }}">
+        <div class="{%- if forloop.index == 1 -%} activ {%- endif -%}e articles-tabs__image position-relative cities" data-id="tab-{{ forloop.index }}">
             <span class="articles-tabs__tag position-relative c-white">{{ bs.articles_tag | upcase }}</span>
             <img
                 srcset="{%- if bs.tab_image.src.width >= 165 -%}{{ bs.tab_image.src | image_url: width: 165 }} 165w,{%- endif -%}
@@ -17,6 +17,18 @@
                 class="position-absolute"
                 src="{{ bs.tab_image.src | image_url }}"
                 alt="{{ bs.tab_image.src.alt | escape }}"
+            >
+            <img
+                srcset="{%- if bs.tab_image_mobile.src.width >= 165 -%}{{ bs.tab_image_mobile.src | image_url: width: 165 }} 165w,{%- endif -%}
+                    {%- if bs.tab_image_mobile.src.width >= 360 -%}{{ bs.tab_image_mobile.src | image_url: width: 360 }} 360w,{%- endif -%}
+                    {%- if bs.tab_image_mobile.src.width >= 533 -%}{{ bs.tab_image_mobile.src | image_url: width: 533 }} 533w,{%- endif -%}
+                    {%- if bs.tab_image_mobile.src.width >= 720 -%}{{ bs.tab_image_mobile.src | image_url: width: 720 }} 720w,{%- endif -%}
+                    {%- if bs.tab_image_mobile.src.width >= 1000 -%}{{ bs.tab_image_mobile.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+                    {%- if bs.tab_image_mobile.src.width >= 1500 -%}{{ bs.tab_image_mobile.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+                    {{ bs.tab_image_mobile.src | image_url }} {{ bs.tab_image_mobile.src.width }}w"
+                class="position-absolute mobile"
+                src="{{ bs.tab_image_mobile.src | image_url }}"
+                alt="{{ bs.tab_image_mobile.src.alt | escape }}"
             >
         </div>
     {%- endfor -%}
@@ -97,6 +109,11 @@
                     "type": "image_picker",
                     "id": "tab_image",
                     "label": "Tab image"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "tab_image_mobile",
+                    "label": "Tab image mobile"
                 },
                 {
                     "type": "range",
