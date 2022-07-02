@@ -1813,6 +1813,10 @@ details[open] > .share-button__fallback {
   display: none;
 }
 
+limespot-container {
+  display: none !important;
+}
+
 .field__input::placeholder,
 .customer .field input::placeholder {
   opacity: 0;
