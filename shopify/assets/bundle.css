@@ -5684,7 +5684,7 @@ body {
   background-color: #555555;
 }
 
-.c-grey-3, .article-template__tags {
+.c-grey-3, .social-text, .article-template__tags {
   color: #6D6D6D;
 }
 
@@ -7386,4 +7386,32 @@ body {
   .cta__wrapper .page-width {
     padding: 0 !important;
   }
+}
+
+.social {
+  margin-top: 8.2rem;
+  max-height: 2.3rem;
+  margin-bottom: 6.8rem;
+  align-items: center;
+}
+
+.social > div {
+  border-bottom: 1px solid #EAEAEA;
+  width: 100%;
+  padding-bottom: 5.7rem;
+}
+
+@media (max-width: 991.98px) {
+  .social > div {
+    padding-bottom: 3.4rem;
+  }
+}
+
+.social-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.social-item + .social-item {
+  margin-left: 2.5rem;
 }
