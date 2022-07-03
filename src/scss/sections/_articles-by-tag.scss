@@ -1,5 +1,8 @@
 .blog-categories {
     position: relative;
+    h2 {
+        @extend .c-grey-1;
+    }
     &-section {
         margin-bottom: 6.2rem;
     }
@@ -12,11 +15,16 @@
                 align-items: center;
             }
             span {
-                font-size: 12px;
-                line-height: 14px;
+                font-size: 1.2rem;
+                line-height: 1.4rem;
                 font-weight: 400;
                 text-transform: uppercase;
                 margin-right: 0.4rem;
+                @include media-breakpoint-down(md) {
+                    &::after {
+                        content: ":";
+                    }
+                }
             }
         }
         &_buttons {
@@ -93,7 +101,7 @@
                     cursor: default;
                 }
                 &.sort-down {
-                    margin-top: 5px;
+                    margin-top: 0.5rem;
                 }
                 path {
                     &:hover {
@@ -158,8 +166,15 @@
             &:not(.active) {
                 display: none;
             }
+            h2 {
+                font-size: 4rem;
+            }
         }
         &-2 {
+            margin-top: 1.8rem;
+            @include media-breakpoint-down(sm) {
+                margin-top: 4rem;
+            }
             .articles-tabs {
                 flex-wrap: wrap;
                 width: 101%;
@@ -213,6 +228,9 @@
         height: 4.8rem;
         width: 4.8rem;
     }
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
 }
 
 .swiper-pagination {
@@ -256,8 +274,8 @@
     &__tag {
         z-index: 1;
         font-weight: 400;
-        font-size: 40px;
-        line-height: 49px;
+        font-size: 4rem;
+        line-height: 4.9rem;
         font-family: 'jersey';
         display: flex;
         flex-direction: column;
@@ -321,5 +339,14 @@
     }
     .blog-categories__heading h2::after {
         margin-top: 2.4rem;
+    }
+}
+
+.categories-tabs__title {
+    margin-bottom: 5.7rem;
+    font-size: 4rem;
+    @extend .c-grey-1;
+    @include media-breakpoint-down(md) {
+        text-align: center;
     }
 }
