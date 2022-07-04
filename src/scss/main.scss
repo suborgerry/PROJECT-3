@@ -52,6 +52,7 @@
 
 @import './components/buttons';
 @import './components/article-card-blog';
+@import './components/line-list';
 // @import './components/price';
 
 /// - SECTIONS
@@ -65,11 +66,11 @@
 @import './sections/breadcrumbs';
 @import './sections/blog-tags';
 @import './sections/blog-article-banner';
-@import './sections/cta-banner';
 @import './sections/main-blog';
 @import './sections/blog-tags';
 @import './sections/articles-by-tag';
 @import './sections/main-article';
 @import './sections/home-hero';
+@import './sections/social';    
 @import './sections/cta';
-@import './sections/social';
+@import './sections/collections-states';

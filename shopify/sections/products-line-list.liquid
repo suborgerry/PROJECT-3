@@ -1,0 +1,79 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="line-list positioning--{{ s.id }}">
+    <div class="page-width">   
+        {%- if ss.heading != blank -%}
+            <h3 class="text-center text-32px">{{ ss.heading | upcase }}</h3>
+        {%- endif -%}
+        <div class="line-list__wrapper">
+            {%- for b in s.blocks -%}
+                <div class="line-list__item">
+                    <a class="wrap-link" href="{{ b.settings.product.url }}"></a>
+                    <img src="{{ b.settings.product.featured_image | img_url: 'large' }}" alt="{{ b.settings.collection.featured_image.alt }}">
+                    <span class="item-sku text-12px font-axiforma-medium">{{ b.settings.product.first_available_variant.sku }}</span>
+                    <span class="item-title text-center text-16px-all font-axiforma-bold">{{ b.settings.product.title | upcase }}</span>
+                    <span class="item-price text-center text-16px-all font-axiforma-medium">{{ b.settings.product.price | money }} {%- if b.settings.product.compare_at_price -%}<span class="price-crossed">{{ b.settings.product.compare_at_price | money }}</span>{% endif %}</span>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Products line list",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "MOST POPULAR Products"
+        },                  
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "product-list-item",
+            "name": "Product list item",
+            "settings": [
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product"
+                }                 
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Products line list",
+            "category": "product"
+        }
+    ]
+}
+{% endschema %}

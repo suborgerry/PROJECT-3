@@ -5376,7 +5376,7 @@ h3 {
 
 .text-18px {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 20px;
 }
 
 @media (min-width: 576px) {
@@ -5388,7 +5388,7 @@ h3 {
 
 .text-16px-all {
   font-size: 16px;
-  line-height: 28px;
+  line-height: 20px;
 }
 
 .text-16px {
@@ -5399,7 +5399,7 @@ h3 {
 @media (min-width: 576px) {
   .text-16px {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 20px;
   }
 }
 
@@ -5577,6 +5577,7 @@ p {
 
 @media (min-width: 1440px) {
   .page-width {
+    padding: 0;
     max-width: var(--page-width);
   }
 }
@@ -5829,6 +5830,104 @@ body {
   display: block;
   width: max-content;
   margin-top: 2.4rem;
+}
+
+.line-list h3 {
+  margin-bottom: 45px;
+}
+
+@media (min-width: 768px) {
+  .line-list h3 {
+    margin-bottom: 58px;
+  }
+}
+
+.line-list__wrapper {
+  padding-bottom: 14px;
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  margin: 0 var(--page-width-x-paddings-mobile-reverse);
+}
+
+@media (min-width: 576px) {
+  .line-list__wrapper {
+    margin: 0 var(--page-width-x-paddings-tablet-reverse);
+  }
+}
+
+@media (min-width: 1200px) {
+  .line-list__wrapper {
+    margin: unset;
+  }
+}
+
+@media (min-width: 1440px) {
+  .line-list__wrapper {
+    overflow-x: unset;
+  }
+}
+
+.line-list__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line-list__item a.wrap-link {
+  position: absolute;
+  inset: 0;
+}
+
+.line-list__item img {
+  display: block;
+  width: 207px;
+  height: 207px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1440px) {
+  .line-list__item img {
+    width: calc((var(--page-width) - 100px) / 6);
+    height: calc((var(--page-width) - 100px) / 6);
+  }
+}
+
+.line-list__item .price-crossed {
+  position: relative;
+}
+
+.line-list__item .price-crossed:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #6D6D6D;
+  transform: translateY(-50%);
+  content: "";
+}
+
+.line-list__item .item-count, .line-list__item .item-sku, .line-list__item .item-title {
+  margin-bottom: 10px;
+}
+
+.line-list__item .item-price {
+  margin-top: auto;
+}
+
+.line-list__item .item-sku, .line-list__item .item-price {
+  color: #6D6D6D;
+}
+
+.line-list__item .item-count {
+  color: #414141;
+}
+
+.line-list__item:not(:last-child) {
+  margin-right: 20px;
 }
 
 .footer {
@@ -6522,47 +6621,6 @@ body {
   .article-banner__mobile {
     display: none;
   }
-}
-
-.cta-banner {
-  position: relative;
-  width: 100%;
-  height: 550px;
-}
-
-@media (min-width: 576px) {
-  .cta-banner {
-    height: 630px;
-  }
-}
-
-.cta-banner::after {
-  position: absolute;
-  content: "";
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.cta-banner img {
-  position: absolute;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.cta-banner__center {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
 }
 
 .blog-articles {
@@ -7353,6 +7411,34 @@ body {
   background-color: rgb(var(--color-base-accent-1)) !important;
 }
 
+.social {
+  margin-top: 8.2rem;
+  max-height: 2.3rem;
+  margin-bottom: 6.8rem;
+  align-items: center;
+}
+
+.social > div {
+  border-bottom: 1px solid #EAEAEA;
+  width: 100%;
+  padding-bottom: 5.7rem;
+}
+
+@media (max-width: 991.98px) {
+  .social > div {
+    padding-bottom: 3.4rem;
+  }
+}
+
+.social-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.social-item + .social-item {
+  margin-left: 2.5rem;
+}
+
 .cta {
   background-repeat: no-repeat;
   background-size: cover;
@@ -7425,30 +7511,26 @@ body {
   }
 }
 
-.social {
-  margin-top: 8.2rem;
-  max-height: 2.3rem;
-  margin-bottom: 6.8rem;
-  align-items: center;
+.collections-states__blocks {
+  margin-top: 45px;
 }
 
-.social > div {
-  border-bottom: 1px solid #EAEAEA;
-  width: 100%;
-  padding-bottom: 5.7rem;
-}
-
-@media (max-width: 991.98px) {
-  .social > div {
-    padding-bottom: 3.4rem;
+@media (min-width: 768px) {
+  .collections-states__blocks {
+    margin-top: 70px;
   }
 }
 
-.social-text {
-  font-weight: 700;
-  font-size: 18px;
+.collections-states__block-item {
+  padding: 56px 68px 64px;
 }
 
-.social-item + .social-item {
-  margin-left: 2.5rem;
+.collections-states__block-item:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+@media (min-width: 1440px) {
+  .collections-states__block-item {
+    padding: 54px 90px;
+  }
 }

@@ -1,0 +1,87 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="line-list positioning--{{ s.id }}">
+    <div class="page-width">
+        {%- if ss.heading != blank -%}
+            <h3 class="text-center text-32px">{{ ss.heading | upcase }}</h3>
+        {%- endif -%}
+        <div class="line-list__wrapper">
+            {%- for b in s.blocks -%}
+                <div class="line-list__item">
+                    <a class="wrap-link" href="{{ b.settings.collection.url }}"></a>
+                    {%- if b.settings.collection.featured_image != blank and b.settings.custom_image == blank -%}
+                    <img src="{{ b.settings.collection.featured_image | img_url: 'large' }}" alt="{{ b.settings.collection.featured_image.alt }}">
+                    {%- else -%}
+                    <img src="{{ b.settings.custom_image | img_url: 'large' }}" alt="{{ b.settings.custom_image.alt }}">   
+                    {%- endif -%}
+                    <span class="item-count text-16px-all font-axiforma-light">({{ b.settings.collection.products_count }} {{ b.settings.collection.products_count | pluralize: 'item', 'items' }})</span>
+                    <span class="text-center text-16px-all font-axiforma-bold">{{ b.settings.collection.title | upcase }}</span>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Collections line list",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading",
+            "default": "MOST POPULAR Collections"
+        },                  
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection-list-item",
+            "name": "Collection list item",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "custom_image",
+                    "label": "Collection custom image"
+                }                          
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections line list",
+            "category": "collection"
+        }
+    ]
+}
+{% endschema %}

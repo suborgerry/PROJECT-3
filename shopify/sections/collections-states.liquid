@@ -1,0 +1,74 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="collections-states positioning--{{ s.id }}">
+    <div class="page-width">
+        <h1 class="text-center text-32px">
+            {%- if ss.custom_heading != blank -%}
+                {{ ss.custom_heading | upcase }}
+            {%- else -%}
+                {{ page.title | upcase }}
+            {%- endif -%}
+        </h1>
+        <div class="collections-states__blocks">
+            {%- for b in s.blocks -%}
+                <div class="collections-states__block-item">
+                    
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Collections States",
+    "settings": [
+        {
+            "type": "text",
+            "id": "custom_heading",
+            "label": "Custom heading"
+        },                  
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collections-block",
+            "name": "Collections block",
+            "settings": [
+
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections States",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

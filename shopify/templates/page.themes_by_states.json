@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "1656940775a7ea42a6": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "collections-states",
+      "blocks": {
+        "b54331b9-424e-4de7-a75c-6b9f1814c5d7": {
+          "type": "collections-block",
+          "settings": {
+          }
+        },
+        "49527309-8d11-4837-a58f-ec2ddbf93bb6": {
+          "type": "collections-block",
+          "settings": {
+          }
+        },
+        "ee99cd4f-0c2f-47fd-b731-c8d9441bbf63": {
+          "type": "collections-block",
+          "settings": {
+          }
+        },
+        "1ae3cb7d-8a00-42f0-b279-5e5a6b9b852c": {
+          "type": "collections-block",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "b54331b9-424e-4de7-a75c-6b9f1814c5d7",
+        "49527309-8d11-4837-a58f-ec2ddbf93bb6",
+        "ee99cd4f-0c2f-47fd-b731-c8d9441bbf63",
+        "1ae3cb7d-8a00-42f0-b279-5e5a6b9b852c"
+      ],
+      "settings": {
+        "custom_heading": "",
+        "padding_section": "0px 0px 98px 0px",
+        "padding_section_sm": "0px 0px 48px 0px"
+      }
+    }
+  },
+  "order": [
+    "1656940775a7ea42a6",
+    "main"
+  ]
+}

@@ -1,0 +1,17 @@
+.collections-states {
+    &__blocks {
+        margin-top: 45px;
+        @include media-breakpoint-up(md) {
+            margin-top: 70px;
+        }
+    }
+    &__block-item {
+        padding: 56px 68px 64px;
+        &:not(:last-child) {
+            margin-bottom: 22px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 54px 90px;
+        }
+    }
+}

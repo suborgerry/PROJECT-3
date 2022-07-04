@@ -38,6 +38,60 @@
       "settings": {
       }
     },
+    "1656936290b5c4d826": {
+      "type": "products-line-list",
+      "blocks": {
+        "810237db-9a26-4318-a035-abfec438d8f6": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "down-the-ocean-box"
+          }
+        },
+        "3bf2d140-913f-4494-90b7-258c83e920c8": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "maryland-flag-board-shorts"
+          }
+        },
+        "8340bd5e-c31b-4fb4-bb9f-b5093808d281": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "maryland-flag-floral-hawaiian-shirt"
+          }
+        },
+        "c9683aee-4c53-4f14-8665-54375f0d6977": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "natty-boh-baseball-orange-hawaiian-shirt"
+          }
+        },
+        "33db9ab6-8f4b-49c8-a108-1efeb7007d32": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "maryland-full-flag-crab-grey-board-shorts"
+          }
+        },
+        "fdac2e25-42d2-46d1-b1fe-19c0c283584c": {
+          "type": "product-list-item",
+          "settings": {
+            "product": "old-bay-can-phone-case"
+          }
+        }
+      },
+      "block_order": [
+        "810237db-9a26-4318-a035-abfec438d8f6",
+        "3bf2d140-913f-4494-90b7-258c83e920c8",
+        "8340bd5e-c31b-4fb4-bb9f-b5093808d281",
+        "c9683aee-4c53-4f14-8665-54375f0d6977",
+        "33db9ab6-8f4b-49c8-a108-1efeb7007d32",
+        "fdac2e25-42d2-46d1-b1fe-19c0c283584c"
+      ],
+      "settings": {
+        "heading": "MOST POPULAR Items",
+        "padding_section": "80px 0px 50px 0px",
+        "padding_section_sm": "60px 0px 46px 0px"
+      }
+    },
     "165666881917ae1fc4": {
       "type": "cta",
       "settings": {
@@ -48,10 +102,66 @@
         "url": "",
         "label": "shop now"
       }
+    },
+    "1656928885f55b45c2": {
+      "type": "collections-line-list",
+      "blocks": {
+        "a66dff98-e3c2-436b-8814-3d4743ffc3fc": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "new-arrivals"
+          }
+        },
+        "34a25a6b-9fa6-476b-9dd6-24cfccb8d317": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "drinkware-bar-products"
+          }
+        },
+        "2c802a05-241a-497a-84f0-4d7041a7921c": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "old-bay-apparel"
+          }
+        },
+        "dde2cf8e-802b-4631-ac0b-b44af79de547": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "natty-boh-gear"
+          }
+        },
+        "d23e6200-c15f-417d-b076-ef863baffaf9": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "vacation-gear"
+          }
+        },
+        "945fa3f2-058b-44bd-81d1-ec133580664d": {
+          "type": "collection-list-item",
+          "settings": {
+            "collection": "baby-youth"
+          }
+        }
+      },
+      "block_order": [
+        "a66dff98-e3c2-436b-8814-3d4743ffc3fc",
+        "34a25a6b-9fa6-476b-9dd6-24cfccb8d317",
+        "2c802a05-241a-497a-84f0-4d7041a7921c",
+        "dde2cf8e-802b-4631-ac0b-b44af79de547",
+        "d23e6200-c15f-417d-b076-ef863baffaf9",
+        "945fa3f2-058b-44bd-81d1-ec133580664d"
+      ],
+      "settings": {
+        "heading": "MOST POPULAR Collections",
+        "padding_section": "94px 0px 52px 0px",
+        "padding_section_sm": "60px 0px 60px 0px"
+      }
     }
   },
   "order": [
     "1656590445f1b0b21e",
-    "165666881917ae1fc4"
+    "1656936290b5c4d826",
+    "165666881917ae1fc4",
+    "1656928885f55b45c2"
   ]
 }
