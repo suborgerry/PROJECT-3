@@ -1,0 +1,198 @@
+.article-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3.1rem;
+    &__tags {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.9rem;
+        letter-spacing: 0.704347px;
+        @extend .c-grey-3
+    }
+    &__title {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        text-transform: uppercase;
+        margin-top: 3.3rem;
+        @include media-breakpoint-down(sm) {
+            margin-top: 1.7rem;
+            text-align: center;
+        }
+    }
+    &__authorimg {
+        margin-top: 6.5rem;
+        width: 6.5rem;
+        height: 6.5rem;
+        padding: 1px;
+        background-color: #fff;
+        border: 3px solid $c-white;
+        filter: drop-shadow(0px 2px 10px rgba(0, 0, 0, 0.112407));
+        border-radius: 50%;
+        @include media-breakpoint-down(sm) {
+            order: 3;
+            margin-top: 1.2rem;
+            margin-bottom: -6rem;
+        }
+    }
+    &__name {
+        margin-top: 2.9rem;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        text-transform: uppercase;
+        @include media-breakpoint-down(sm) {
+            order: 1;
+            margin-top: 4.8rem;
+        }
+    }
+    &__featuredimg {
+        max-width: 96.4rem;
+        height: auto;
+        img {
+            width: 100%;
+        }
+    }
+    &__date {
+        font-weight: 600;
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+        margin-top: 2.8rem;
+        @extend .c-grey-7;
+        @include media-breakpoint-down(sm) {
+            order: 2;
+            margin-top: 0.8rem;
+        }
+    }
+    &__featuredimg {
+        margin-top: 3.1rem;
+    }
+    &__author {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__content {
+        margin-top: 5.6rem;
+        width: 100%;
+        a {
+            text-decoration: none;
+            color: #D13026;
+        }
+        strong {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 1.2rem;
+            a {
+                font-weight: 600;
+                display: block;
+                margin-bottom: 1.2rem;
+            }
+        }
+        img {
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__comments {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid $c-grey-8;
+        margin-top: 7.2rem;
+        margin-bottom: 9.6rem;
+        padding-top: 5.6rem;
+        @include media-breakpoint-down(sm) {
+            margin-top: 5.1rem;
+            padding-top: 0;
+        }
+        .comment-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 6.9rem;
+            padding-bottom: 7.2rem;
+            @include media-breakpoint-up(md) {
+                background-color: $c-grey-10;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-top: 2.1rem;
+            }
+            h2 {
+                font-weight: 400;
+                font-size: 32px;
+                line-height: 42px;
+                @extend .c-grey-1;
+            }
+            & > div {
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    max-width: 33.5rem;
+                }
+            }
+        }
+    }
+    &__comment {
+        &-fields {
+            margin-top: 1.9rem;
+            @include media-breakpoint-up(md) {
+                margin-top: 5.9rem;
+            }
+        }
+        &-field {
+            input {
+                border: 1px solid $c-grey-9;
+                margin-top: 2rem;
+                @extend .c-white-bg;
+                padding: 2.2rem 2.4rem 1rem;
+                &::placeholder {
+                    @extend .c-grey-4;
+                }
+                @include media-breakpoint-down(sm) {
+                    margin-top: 0.5rem;
+                }
+            }
+            textarea {
+                border: 1px solid $c-grey-9;
+                margin-top: 2rem;
+                @extend .c-white-bg;
+                width: 100%;
+                padding: 0.8rem 2.4rem;
+                @include media-breakpoint-down(sm) {
+                    min-height: 26.8rem;
+                }
+            }
+            .textarea__label {
+                margin-top: 4.2rem;
+                @include media-breakpoint-down(sm) {
+                    margin-top: 3.2rem;
+                }
+            }
+            label {
+                font-weight: 700;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                @extend .c-black;
+                @include media-breakpoint-down(sm) {
+                    margin-top: 3.2rem;
+                }
+            }
+        }
+    }
+    &__form_btn {
+        padding: 1.5rem 14rem 1.8rem;
+        font-weight: 700;
+        letter-spacing: 0.821739px;
+        margin-top: 4rem;
+        @include media-breakpoint-down(sm) {
+            margin-top: 3.2rem;
+        }
+    }
+}

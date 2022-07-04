@@ -14,7 +14,7 @@
     "heading_scale": 100,
     "type_body_font": "assistant_n4",
     "body_scale": 100,
-    "page_width": 1430,
+    "page_width": 1440,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 8,
     "spacing_grid_vertical": 8,
@@ -326,15 +326,11 @@
             "footer-0": {
               "type": "link_list",
               "settings": {
-                "heading": "Quick links",
-                "menu": "footer"
               }
             },
             "footer-1": {
               "type": "link_list",
               "settings": {
-                "heading": "Info",
-                "menu": "footer"
               }
             }
           },
@@ -343,13 +339,6 @@
             "footer-1"
           ],
           "settings": {
-            "newsletter_enable": true,
-            "newsletter_heading": "Subscribe to our emails",
-            "show_social": true,
-            "enable_country_selector": false,
-            "enable_language_selector": false,
-            "payment_enable": true,
-            "margin_top": 48
           }
         },
         "main-password-header": {

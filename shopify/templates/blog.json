@@ -5,19 +5,6 @@
       "settings": {
       }
     },
-    "main": {
-      "type": "main-blog",
-      "disabled": true,
-      "settings": {
-        "layout": "collage",
-        "show_image": true,
-        "image_height": "medium",
-        "show_date": true,
-        "show_author": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "1656321767d64b911b": {
       "type": "blog-tags",
       "blocks": {
@@ -114,12 +101,202 @@
         "image_desctop": "shopify:\/\/shop_images\/Bitmap.jpg",
         "image_mobile": "shopify:\/\/shop_images\/Bitmapmob.jpg"
       }
+    },
+    "main": {
+      "type": "main-blog",
+      "disabled": true,
+      "settings": {
+        "show_image": true,
+        "image_height": "medium",
+        "show_date": true,
+        "show_author": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "16564355063866d530": {
+      "type": "articles-by-tag",
+      "settings": {
+        "show_news": true,
+        "articles_tag": "Maryland",
+        "articles_range": 8,
+        "use_pagination": false
+      }
+    },
+    "16565764802cd595dd": {
+      "type": "articles-by-tag",
+      "settings": {
+        "show_news": false,
+        "articles_tag": "Popular",
+        "articles_range": 7,
+        "use_pagination": false
+      }
+    },
+    "1656591315e12fd6ba": {
+      "type": "articles-by-tag-tabs",
+      "blocks": {
+        "52eb9387-7e70-40a1-ad4b-284a43f64b85": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "New York",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_1_462e7006-1812-4012-b2a5-a99c2ba1423a.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_13.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        },
+        "e258b63f-5a1c-4d97-84ba-af1f7122310b": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Maryland",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_2.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_16.jpg",
+            "articles_range": 12,
+            "use_pagination": true
+          }
+        },
+        "270076f6-ac51-4055-9bf4-0b199afc7e67": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "California",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_3.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_18.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        },
+        "75a093ed-e2fb-49da-838f-cc4a8c8d3f7d": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Wisconsin",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_4.jpg",
+            "tab_image_mobile": "shopify:\/\/shop_images\/Bitmap_17.jpg",
+            "articles_range": 4,
+            "use_pagination": true
+          }
+        }
+      },
+      "block_order": [
+        "52eb9387-7e70-40a1-ad4b-284a43f64b85",
+        "e258b63f-5a1c-4d97-84ba-af1f7122310b",
+        "270076f6-ac51-4055-9bf4-0b199afc7e67",
+        "75a093ed-e2fb-49da-838f-cc4a8c8d3f7d"
+      ],
+      "settings": {
+      }
+    },
+    "16566134827f34b88c": {
+      "type": "articles-by-category-tabs",
+      "blocks": {
+        "21805159-1038-4615-aaef-f77f91798996": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "home",
+            "tab_image": "shopify:\/\/shop_images\/Rectangle.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "e78d44d5-fa67-48a1-99c5-510891342eaa": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Production",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_9.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Footwear",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_8.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Brands",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_10.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "recipes",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_6.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "e5886ff5-66db-4dc5-8cff-2bef51866025": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "clothes",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_12.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Recomendation",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_7.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        },
+        "30e7e801-11a7-4f02-b5e3-f6b1ced43f30": {
+          "type": "tab",
+          "settings": {
+            "articles_tag": "Featured",
+            "tab_image": "shopify:\/\/shop_images\/Bitmap_11.jpg",
+            "articles_range": 4,
+            "use_pagination": false
+          }
+        }
+      },
+      "block_order": [
+        "21805159-1038-4615-aaef-f77f91798996",
+        "e78d44d5-fa67-48a1-99c5-510891342eaa",
+        "9e45b526-09a3-4fd9-83dd-bbd99a8155a7",
+        "3b9f6b12-1831-4b9b-92d0-8f79f0ec29e4",
+        "45c42b16-3fe8-49f4-bb79-ab700caa3d70",
+        "e5886ff5-66db-4dc5-8cff-2bef51866025",
+        "d5cbf343-6e05-425b-896b-2eac56acf6e7",
+        "30e7e801-11a7-4f02-b5e3-f6b1ced43f30"
+      ],
+      "settings": {
+      }
+    },
+    "16568281519939c9d9": {
+      "type": "social",
+      "settings": {
+        "twitter_svg": "<svg width=\"27\" height=\"24\" viewbox=\"0 0 27 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path d=\"M2.5 9.30078C2.55 9.30078 2.55 9.30078 2.5 9.30078C2.05 9.30078 1.6 9.20078 1.2 9.10078C0.55 8.90078 -0.05 9.50078 0.15 10.1008C0.7 12.2508 2.4 13.9508 4.55 14.4008C4.05 14.5508 3.55 14.6008 3.05 14.6008C2.55 14.6008 2.2 15.1508 2.45 15.6008C3.4 17.3508 5.25 18.5508 7.3 18.6008H7.8C8.35 18.6008 8.8 19.0508 8.8 19.6008C8.8 20.1508 8.35 20.6008 7.8 20.6008C7.15 20.6008 6.35 20.5508 5.55 20.3508C5.05 20.2508 4.55 20.2508 4.1 20.4008C3.25 20.7008 2.35 20.9508 1.4 21.0508C1.05 21.1008 0.8 21.3508 0.8 21.7008C0.8 21.9508 0.95 22.2008 1.2 22.3008C3.15 23.1508 5.35 23.6508 7.65 23.6508C18.2 23.6508 24 14.7008 24 6.90078C24 6.45078 24.2 6.00078 24.55 5.70078C25.15 5.20078 25.7 4.65078 26.2 4.00078C26.4 3.75078 26.15 3.40078 25.85 3.50078C25.25 3.70078 24.65 3.85078 24 3.95078C23.9 3.95078 23.85 3.85078 23.95 3.75078C24.7 3.20078 25.35 2.45078 25.75 1.60078C25.9 1.30078 25.6 1.00078 25.3 1.15078C24.75 1.45078 24.15 1.65078 23.55 1.85078C22.95 2.05078 22.25 1.90078 21.75 1.50078C20.8 0.750781 19.55 0.300781 18.25 0.300781C15.6 0.300781 13.35 2.15078 12.7 4.70078C12.6 5.15078 12.95 5.55078 13.4 5.55078C14.2 5.50078 15 5.40078 15.6 5.30078C16.1 5.20078 16.6 5.45078 16.8 5.90078C17.05 6.50078 16.7 7.10078 16.15 7.25078C13.85 7.90078 11.3 7.45078 11.3 7.45078C7.4 6.90078 3.95 5.00078 1.45 2.25078C1.1 1.85078 0.45 2.00078 0.3 2.45078C0.1 3.05078 0 3.70078 0 4.40078C0 6.45078 1 8.25078 2.5 9.30078Z\" fill=\"#555555\"><\/path> <\/svg>",
+        "twitter_url": "",
+        "google_svg": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path d=\"M12.9921 23.5192C19.1361 23.1352 23.8401 17.8552 23.8401 11.7112C23.8401 10.4632 22.8321 9.45523 21.5841 9.45523H13.3281C12.7521 9.45523 12.3201 9.93523 12.3201 10.4632V13.5352C12.3201 14.1112 12.8001 14.5432 13.3281 14.5432H17.2161C17.6481 14.5432 17.9361 15.0232 17.6961 15.3592C16.4001 17.4232 14.0001 18.6712 11.3121 18.3352C8.43212 17.9512 6.12812 15.5992 5.84012 12.7192C5.40812 8.87923 8.43212 5.56723 12.2241 5.56723C13.3281 5.56723 14.3841 5.85523 15.3441 6.38323C15.8241 6.62323 16.4001 6.57523 16.7841 6.19123L18.8481 4.17523C19.3761 3.64723 19.2801 2.78323 18.6561 2.35123C16.6881 1.10323 14.3361 0.383233 11.8401 0.479233C5.74412 0.719233 0.848118 5.80723 0.800118 11.9032C0.752118 18.5752 6.22412 23.9032 12.9921 23.5192Z\" fill=\"#555555\"><\/path> <\/svg>",
+        "google_url": "",
+        "instagram_svg": "<svg width=\"25\" height=\"24\" viewbox=\"0 0 25 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M7.1498 24H18.4998C21.9998 24 24.8498 21.1 24.8498 17.55V6.45C24.7998 2.9 21.9498 0 18.4498 0H7.1498C3.6498 0 0.799805 2.9 0.799805 6.45V17.55C0.799805 21.1 3.6498 24 7.1498 24ZM19.7998 4C20.5998 4 21.2498 4.65 21.2498 5.5C21.2498 6.35 20.5998 7 19.7998 7C18.9998 7 18.3498 6.35 18.3498 5.5C18.3498 4.65 18.9998 4 19.7998 4ZM18.6498 12C18.6498 8.7 16.0498 6 12.7998 6C9.5498 6 6.9498 8.7 6.9498 12C6.9498 15.3 9.5498 18 12.7998 18C16.0498 18 18.6498 15.3 18.6498 12Z\" fill=\"#555555\"><\/path> <\/svg>",
+        "instagram_url": "",
+        "facebook_svg": "<svg width=\"13\" height=\"24\" viewbox=\"0 0 13 24\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"> <path d=\"M1.68402 13.4735H3.11559C3.24191 13.4735 3.36823 13.5998 3.36823 13.7261V22.7366C3.36823 23.1998 3.74717 23.5787 4.21033 23.5787H7.49454C7.9577 23.5787 8.33665 23.1998 8.33665 22.7366V13.7261C8.33665 13.5998 8.46296 13.4735 8.58928 13.4735H10.9472C11.3682 13.4735 11.7472 13.1787 11.7893 12.7577L12.3366 9.47346C12.4209 8.96819 11.9998 8.46293 11.4945 8.46293H8.71559C8.50507 8.46293 8.33665 8.29451 8.33665 8.08398V5.97872C8.33665 5.43135 8.63138 5.13662 9.17875 5.13662H11.663C12.1261 5.13662 12.5051 4.75767 12.5051 4.29451V0.92609C12.5051 0.462932 12.1261 0.0839844 11.663 0.0839844H8.67349C3.1998 0.0839844 3.32612 4.50504 3.32612 5.13662V8.2103C3.32612 8.33662 3.1998 8.46293 3.07349 8.46293H1.64191C1.17875 8.46293 0.799805 8.84188 0.799805 9.30504V12.5892C0.84191 13.0945 1.22086 13.4735 1.68402 13.4735Z\" fill=\"#555555\"><\/path> <\/svg>",
+        "facebook_url": ""
+      }
     }
   },
   "order": [
     "16564287873c37a8d4",
-    "main",
     "1656321767d64b911b",
-    "16563331263e0319f7"
+    "16563331263e0319f7",
+    "main",
+    "16564355063866d530",
+    "16565764802cd595dd",
+    "1656591315e12fd6ba",
+    "16566134827f34b88c",
+    "16568281519939c9d9"
   ]
 }

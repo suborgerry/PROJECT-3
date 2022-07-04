@@ -1,0 +1,91 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+<div class="d-flex justify-content-between">
+    <p class="social-text">Follow Us:</p>
+    <div class="social-items d-flex">
+        <div class="social-item">
+            <a href="{{ ss.twitter_url }}">{{ ss.twitter_svg }}</a>
+        </div>
+        <div class="social-item">
+            <a href="{{ ss.google_url }}">{{ ss.google_svg }}</a>
+        </div>
+        <div class="social-item">
+            <a href="{{ ss.instagram_url }}">{{ ss.instagram_svg }}</a>
+        </div>
+        <div class="social-item">
+            <a href="{{ ss.facebook_url }}">{{ ss.facebook_svg }}</a>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Social links",
+  "tag": "section",
+  "class": "section social d-flex justify-content-between page-width",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Twitter"
+    },
+    {
+        "type": "text",
+        "id": "twitter_svg",
+        "label": "Twitter svg"
+    },
+    {
+        "type": "url",
+        "id": "twitter_url",
+        "label": "Twitter url"
+    },
+    {
+        "type": "header",
+        "content": "Google"
+    },
+    {
+        "type": "text",
+        "id": "google_svg",
+        "label": "Google svg"
+    },
+    {
+        "type": "url",
+        "id": "google_url",
+        "label": "Google url"
+    },
+    {
+        "type": "header",
+        "content": "Instagram"
+    },
+    {
+        "type": "text",
+        "id": "instagram_svg",
+        "label": "Instgram svg"
+    },
+    {
+        "type": "url",
+        "id": "instagram_url",
+        "label": "Instagram url"
+    },
+    {
+        "type": "header",
+        "content": "Facebook"
+    },
+    {
+        "type": "text",
+        "id": "facebook_svg",
+        "label": "Instgram svg"
+    },
+    {
+        "type": "url",
+        "id": "facebook_url",
+        "label": "Facebook url"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social links"
+    }
+  ]
+}
+{% endschema %}

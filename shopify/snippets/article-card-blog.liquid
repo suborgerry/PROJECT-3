@@ -1,0 +1,53 @@
+{% comment %}
+    Renders an article card for a given blog with settings to either show the image or not.
+
+    Accepts:
+    - blog: {Object} Blog object
+    - article: {Object} Article object
+    - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+
+    Usage:
+    {% render 'article-card'-blog blog: blog, article: article %}
+{% endcomment %}
+
+{%- if article and article != empty -%}
+  <div class="article-card card--{{ settings.card_style }} swiper-slide">
+    {%- if tag -%}
+      <span class="article-card__tag">{{ tag | upcase }}</span>
+    {%- endif -%}
+    <div>
+      <img
+      srcset="{%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
+        {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
+        {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
+        {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
+        {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
+        {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {{ article.image.src | image_url }} {{ article.image.src.width }}w"
+      src="{{ article.image.src | image_url }}"
+      alt="{{ article.image.src.alt | escape }}"
+      class="article-card__image"
+      {% unless lazy_load == false %}loading="lazy"{% endunless %}
+    >
+    </div>
+    <div class="article-card__information d-flex flex-column align-items-center">
+      <div class="article-card__infocontainer">
+        <p class="article-card__heading">
+          <a href="{{ article.url }}" class="full-unstyled-link">
+            {{ article.title | truncate: 40 | escape }}
+          </a>
+        </p>
+        {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
+          <p class="article-card__excerpt">
+            {%- if article.excerpt.size > 0 -%}
+              {{ article.excerpt | strip_html | truncatewords: 30 }}
+            {%- else -%}
+              {{ article.content | strip_html | truncatewords: 30 }}
+            {%- endif -%}
+          </p>
+        {%- endif -%}
+      </div>
+      <a href="#" class="btn-red-1 font-weight-bold font-axiforma-bold article-card__btn text-uppercase">read more</a>
+    </div>
+  </div>
+{%- endif -%}

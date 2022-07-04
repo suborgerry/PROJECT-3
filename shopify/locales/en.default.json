@@ -85,7 +85,7 @@
         "other": "{{ count }} comments"
       },
       "moderated": "Please note, comments need to be approved before they are published.",
-      "comment_form_title": "Leave a comment",
+      "comment_form_title": "Leave a reply",
       "name": "Name",
       "email": "Email",
       "message": "Comment",

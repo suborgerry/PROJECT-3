@@ -78,6 +78,18 @@
   }
 }
 
+.page-width-article {
+  max-width: 964px;
+  margin: 0 auto;
+  padding: 0 var(--page-width-x-paddings-mobile);
+}
+
+@media (min-width: 992px) {
+  .page-width-article {
+    padding: 0;
+  }
+}
+
 .page-width-small {
   margin: 0 auto;
   padding: 0 var(--page-width-x-paddings-mobile);

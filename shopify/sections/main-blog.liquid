@@ -12,14 +12,13 @@
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
+{%- paginate blog.articles by -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
 
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div class="blog-articles d-flex flex-wrap">
       {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
-          {%- render 'article-card',
+          {%- render 'article-card-blog',
             article: article,
             media_height: section.settings.image_height,
             media_aspect_ratio: article.image.aspect_ratio,
@@ -28,7 +27,6 @@
             show_author: section.settings.show_author,
             show_excerpt: true 
           -%}
-        </div>
       {%- endfor -%}
     </div>
 
@@ -47,23 +45,6 @@
     {
       "type": "header",
       "content": "t:sections.main-blog.settings.header.content"
-    },
-    {
-      "type": "select",
-      "id": "layout",
-      "options": [
-        {
-          "value": "grid",
-          "label": "t:sections.main-blog.settings.layout.options__1.label"
-        },
-        {
-          "value": "collage",
-          "label": "t:sections.main-blog.settings.layout.options__2.label"
-        }
-      ],
-      "default": "collage",
-      "label": "t:sections.main-blog.settings.layout.label",
-      "info": "t:sections.main-blog.settings.layout.info"
     },
     {
       "type": "checkbox",
