@@ -17,14 +17,17 @@
     @include text-26px;
   }
 }
+.text-40px-all {
+  @include text-40px;
+}
 .text-40px {
   @include text-24px;
   @include media-breakpoint-up(sm) {
-    @include text-40px
+    @include text-40px;
   }
 }
 .text-32px {
-    @include text-32px
+    @include text-32px;
 }
 .text-26px-all {
   @include text-26px;

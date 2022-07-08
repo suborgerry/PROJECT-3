@@ -11,21 +11,89 @@
         "b54331b9-424e-4de7-a75c-6b9f1814c5d7": {
           "type": "collections-block",
           "settings": {
+            "bg_image": "shopify:\/\/shop_images\/maryland_c4815ffb-1741-4a7a-853d-bf2910420beb.jpg",
+            "bg_image_mob": "shopify:\/\/shop_images\/maryland-mobile.jpg",
+            "name": "MAryland",
+            "link": "shopify:\/\/collections\/all",
+            "link_name": "SEE ALL PRODUCTS",
+            "collection_list": [
+              "maryland",
+              "maryland-5-star",
+              "old-bay-apparel",
+              "old-bay-vip-gifts",
+              "university-of-maryland-eastern-shore",
+              "athlete-dante-trader",
+              "utz-gear",
+              "utz-tops",
+              "natty-boh-gear",
+              "natty-boh-hats"
+            ]
           }
         },
         "49527309-8d11-4837-a58f-ec2ddbf93bb6": {
           "type": "collections-block",
           "settings": {
+            "bg_image": "shopify:\/\/shop_images\/new-york.jpg",
+            "bg_image_mob": "shopify:\/\/shop_images\/new-york-mobile.jpg",
+            "name": "NEW YORK",
+            "link": "shopify:\/\/collections\/all",
+            "link_name": "SEE ALL PRODUCTS",
+            "collection_list": [
+              "20-for-22-off",
+              "accessories",
+              "holiday-tops",
+              "american-visionary-art-museum",
+              "athlete-bryce-frederick",
+              "athlete-caleb-dean",
+              "athlete-welcome-collection",
+              "athlete-dante-trader",
+              "athlete-georgia-beachley",
+              "athlete-jason-gibson"
+            ]
           }
         },
         "ee99cd4f-0c2f-47fd-b731-c8d9441bbf63": {
           "type": "collections-block",
           "settings": {
+            "bg_image": "shopify:\/\/shop_images\/california_5c864ab9-842a-470a-97d6-98a1d77c80d8.jpg",
+            "bg_image_mob": "shopify:\/\/shop_images\/california-mobile.jpg",
+            "name": "CALIFORNIA",
+            "link": "shopify:\/\/collections\/all",
+            "link_name": "SEE ALL PRODUCTS",
+            "collection_list": [
+              "baby-youth",
+              "athlete-jason-gibson",
+              "athlete-georgia-beachley",
+              "athlete-dante-trader",
+              "athlete-welcome-collection",
+              "athlete-caleb-dean",
+              "athlete-bryce-frederick",
+              "baltimore-humor",
+              "best-sellers",
+              "beauty-personal-care"
+            ]
           }
         },
         "1ae3cb7d-8a00-42f0-b279-5e5a6b9b852c": {
           "type": "collections-block",
           "settings": {
+            "bg_image": "shopify:\/\/shop_images\/wisconsin_b44e37c6-ba5b-4b43-8e67-44f34b1976fd.jpg",
+            "bg_image_mob": "shopify:\/\/shop_images\/wisconsin-mobile.jpg",
+            "name": "Wisconsin",
+            "link": "shopify:\/\/collections\/all",
+            "link_name": "SEE ALL PRODUCTS",
+            "collection_list": [
+              "8-t-shirts",
+              "accessories",
+              "america",
+              "aquarius",
+              "back-in-stock-1",
+              "bracket-winners-2022",
+              "bracket-winners",
+              "bracelets",
+              "baby-youth",
+              "20-for-21-off"
+            ]
           }
         }
       },
