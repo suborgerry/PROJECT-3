@@ -5838,13 +5838,17 @@ body {
   height: fill-available;
 }
 
+.article-card__infocontainer {
+  width: 100%;
+  overflow: hidden;
+}
+
 .article-card__heading {
   font-weight: 700;
   font-size: 2rem;
   line-height: 2.6rem;
   text-transform: uppercase;
-  margin: 2rem 0 4.4rem;
-  min-height: 5.5rem;
+  margin: 2rem 0 2.6rem;
 }
 
 .article-card__excerpt {
