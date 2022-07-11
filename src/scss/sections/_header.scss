@@ -1,3 +1,141 @@
 // ==========================================================================
 // ## SHOPIFY STATIC SECTION: HEADER
 // ==========================================================================
+
+.header-wrapper {
+    display: block;
+    position: relative;
+    background-color: $c-grey-5;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+        padding-top: unset;
+        padding-bottom: unset;
+    }
+    &__store,
+    &__icons {
+        @include media-breakpoint-up(xl) {
+            min-width: 240px;
+        } 
+    }
+    &__store {
+        img, svg {
+            display: block;
+            height: 45px;
+            width: auto;
+            position: relative;
+        }
+        img {
+            object-fit: contain;
+        }
+    }
+    &__main-menu {
+        .list-menu--inline {
+            display: flex;
+            justify-content: space-between;
+            li:not(:last-child) {
+                a {
+                    margin-right: 8px;
+                    @include media-breakpoint-up(xxl) {
+                        margin-right: 20px;
+                    } 
+                    @include media-breakpoint-up(xxl) {
+                        margin-right: 40px;
+                    } 
+                }
+            }
+        }
+    }
+    &__main-menu-item {
+        display: block;
+        padding: 30px 10px;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        color: $c-grey-2;
+        transition: 0.3s;
+        &:hover {
+            color: $c-red-1;
+        }
+    }
+    &__icons {
+        & > * {
+            height: 4.5rem;
+        }
+        & > .header__search {
+            margin-right: 2rem;
+        }
+        & > .header__icon--account {
+            margin-right: 1rem;
+        }
+        .icon-title {
+            margin-left: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transform: translateY(4px);
+        }
+    }
+    .header__icon {
+        color: $c-grey-7;
+        text-decoration: none;
+        height: 100%;
+    }
+    &__mega-menu-wrapper {
+        pointer-events: none;
+        background-color: $c-white;
+        position: absolute;
+        padding: 30px 0 22px;
+        width: 100%;
+        box-shadow: $shadow-6;
+        // opacity: 0;
+        // visibility: hidden;
+        // z-index: -1;
+        z-index: 2;
+        transition: transition 0.3s;
+        &:hover {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+            pointer-events: auto;
+        }
+        @media (max-width: 1199px) {
+            display: none;
+        }
+        &.mega-menu-small {
+
+        }
+        &:not(.mega-menu-small) {
+            .header__mega-menu {
+                display: flex;
+                ul.list-menu {
+                    &:not(:last-child) {
+                        margin-right: 65px;
+                    }
+                }
+            }
+        }
+    }
+    &__mega-menu-item {
+        padding: 10px 0;
+        color: $c-black;
+        text-decoration: none;
+        display: block;
+        font-size: 14px;
+        font-weight: 300;
+        &:hover {
+            color: $c-red-2;
+        }
+    }
+}
+
+.menu-visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    pointer-events: auto;
+}

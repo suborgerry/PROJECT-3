@@ -899,3 +899,17 @@ class VariantRadios extends VariantSelects {
 }
 
 customElements.define('variant-radios', VariantRadios);
+
+
+//MEGA-MENU FUNCTIONALITY
+const megaMenuLinks = document.querySelectorAll('.has-mega-menu'),
+megaMenus = document.querySelectorAll('.header__mega-menu-wrapper');
+
+for (let i = 0; i < megaMenuLinks.length; i++) {
+  megaMenuLinks[i].addEventListener('mouseenter', ()=> {
+    megaMenus[i].classList.add('menu-visible');
+  });
+  megaMenuLinks[i].addEventListener('mouseleave', ()=> {
+    megaMenus[i].classList.remove('menu-visible');
+  });
+}
