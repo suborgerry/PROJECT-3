@@ -11,11 +11,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     @include media-breakpoint-up(lg) {
         padding-top: unset;
         padding-bottom: unset;
+    }
+    header-drawer, .header__icons {
+        min-width: 60px;
+        @include media-breakpoint-up(lg) {
+            min-width: unset;
+        } 
     }
     &__store,
     &__icons {
@@ -79,6 +85,13 @@
             font-weight: 600;
             transform: translateY(4px);
         }
+        .header__search,
+        .header__icon--account {
+            display: none;
+            @include media-breakpoint-up(lg) {
+                display: flex;
+            } 
+        }
     }
     .header__icon {
         color: $c-grey-7;
@@ -92,22 +105,30 @@
         padding: 30px 0 22px;
         width: 100%;
         box-shadow: $shadow-6;
-        // opacity: 0;
-        // visibility: hidden;
-        // z-index: -1;
-        z-index: 2;
-        transition: transition 0.3s;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        transition: 0.3s;
+        display: none;
         &:hover {
             opacity: 1;
             visibility: visible;
             z-index: 1;
             pointer-events: auto;
         }
-        @media (max-width: 1199px) {
-            display: none;
+        @include media-breakpoint-up(lg) {
+            display: block;
         }
         &.mega-menu-small {
-
+            width: auto;
+            padding: 30px 56px 22px;
+        }
+        .header__mega-menu {
+            ul.list-menu {
+                li:not(:last-child) {
+                    margin-bottom: 4px;
+                }
+            }
         }
         &:not(.mega-menu-small) {
             .header__mega-menu {
@@ -138,4 +159,79 @@
     visibility: visible;
     z-index: 1;
     pointer-events: auto;
+}
+
+.menu-drawer__utility-links {
+    padding: 0 var(--page-width-x-paddings-mobile) !important;
+    @include media-breakpoint-up(sm) {
+        padding: 0 var(--page-width-x-paddings-tablet) !important;
+    }
+    a {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+        text-decoration: none;
+        color: $c-black;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+}
+
+.menu-accordion {
+    &__list {
+        padding: 0 var(--page-width-x-paddings-mobile) !important;
+        @include media-breakpoint-up(sm) {
+            padding: 0 var(--page-width-x-paddings-tablet) !important;
+        }
+        > li:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+    &__item {
+        position: relative;
+        font-weight: 600;
+        &.has-sub-menu {
+            &:after {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                content: '';
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxNyAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuMDc2NTMgOS4wNzcxN0wxNi4yNjQgMS44ODczM0MxNi41Nzg3IDEuNTcxODUgMTYuNTc4NyAxLjA2MDcxIDE2LjI2NCAwLjc0NDQyN0MxNS45NDkzIDAuNDI4OTQxIDE1LjQzODIgMC40Mjg5NDEgMTUuMTIzNSAwLjc0NDQyN0w4LjUwNjMxIDcuMzYzOThMMS44ODkxNCAwLjc0NTIyM0MxLjU3NDQ2IDAuNDI5NzM4IDEuMDYzMzIgMC40Mjk3MzggMC43NDc4MzQgMC43NDUyMjNDMC40MzMxNDYgMS4wNjA3MSAwLjQzMzE0NiAxLjU3MjY0IDAuNzQ3ODM0IDEuODg4MTNMNy45MzUyOSA5LjA3Nzk3QzguMjQ2NzIgOS4zODg2OCA4Ljc2NTg5IDkuMzg4NjggOS4wNzY1MyA5LjA3NzE3WiIgZmlsbD0iYmxhY2siLz4KPC9zdmc+Cg==);
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                width: 16px;
+                height: 16px;
+                transition: 0.2s;
+            }
+            &.opened {
+                &:after {
+                    transform: translateY(-50%) rotate(180deg);
+                }
+            }
+        }
+    }
+    &__item,
+    &__item-sub {
+        display: block;
+        padding: 10px 0;
+        font-size: 16px;
+        text-decoration: none;
+        color: $c-black;
+    }
+    &__item-sub {
+        padding-left: 28px;
+    }
+    &__sub-list {
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        &.active {
+            padding: 8px 0 10px !important;
+            height: auto;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }

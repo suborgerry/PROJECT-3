@@ -1,8 +1,16 @@
 <div class="header__mega-menu-wrapper mega-menu--{{ menu_number }}{% if is_small_menu == true %} mega-menu-small{% endif %}">
+    {%- unless is_small_menu == true -%}
     <div class="page-width">
+    {%- endunless -%}
         <div class="header__mega-menu">
             {%- if is_small_menu == true -%}
-
+                <ul class="list-menu" role="list">
+                    {%- for link in link.links -%}
+                    <li>
+                        <a href="{{ link.url }}" class="header__mega-menu-item{% if link.current %} active-page{% endif %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape | upcase }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul> 
             {%- else -%}
                 {%- assign limit_column_links = 6 -%}
                 {%- comment -%}The 'transform_limit_column_links' format must be '[number].0'{%- endcomment -%}
@@ -12,14 +20,14 @@
                 <ul class="list-menu" role="list">
                     {%- for link in link.links limit: limit_column_links offset: continue -%}
                     <li>
-                        <a href="{{ link.url }}" class="header__mega-menu-item"{% if link.current %} aria-current="page"{% endif %}>
-                            <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape | upcase }}</span>
-                        </a>
+                        <a href="{{ link.url }}" class="header__mega-menu-item{% if link.current %} active-page{% endif %}"{% if link.current %} aria-current="page"{% endif %}>{{ link.title | escape | upcase }}</a>
                     </li>
                     {%- endfor -%}
                 </ul> 
                 {%- endfor -%}
             {%- endif -%}
         </div>
+    {%- unless is_small_menu == true -%}
     </div>
+    {%- endunless -%}
 </div>

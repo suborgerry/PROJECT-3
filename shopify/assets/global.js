@@ -901,6 +901,7 @@ class VariantRadios extends VariantSelects {
 customElements.define('variant-radios', VariantRadios);
 
 
+
 //MEGA-MENU FUNCTIONALITY
 const megaMenuLinks = document.querySelectorAll('.has-mega-menu'),
 megaMenus = document.querySelectorAll('.header__mega-menu-wrapper');
@@ -911,5 +912,42 @@ for (let i = 0; i < megaMenuLinks.length; i++) {
   });
   megaMenuLinks[i].addEventListener('mouseleave', ()=> {
     megaMenus[i].classList.remove('menu-visible');
+  });
+}
+
+const hovLinks = document.querySelectorAll('.header__main-menu-item.has-small-menu'),
+smallMegaMenus = document.querySelectorAll('.mega-menu-small');
+
+for (let i = 0; i < hovLinks.length; i++) {
+  function smallMegaMenusPosition() {
+    if (window.innerWidth > 991) {
+      let leftSize = hovLinks[i].offsetLeft,
+      widthSize = smallMegaMenus[i].offsetWidth,
+      correctPosition = leftSize - (widthSize / 3);
+      smallMegaMenus[i].style.left = `${correctPosition}px`;
+    }
+  }
+  smallMegaMenusPosition();
+  window.addEventListener('resize', smallMegaMenusPosition);
+}
+
+//mobile accordion mega-menu
+const accordItems = document.querySelectorAll('.menu-accordion__item.has-sub-menu');
+
+for (let i = 0; i < accordItems.length; i++) {
+  accordItems[i].addEventListener('click', ()=> {
+    for (let k = 0; k < accordItems.length; k++) {
+      if (i != k && accordItems[k].classList.contains('opened')) {
+        accordItems[k].classList.remove('opened');
+        accordItems[k].nextElementSibling.classList.remove('active');
+      }
+    }
+    if (accordItems[i].classList.contains('opened')) {
+      accordItems[i].classList.remove('opened');
+      accordItems[i].nextElementSibling.classList.remove('active');
+    } else {
+      accordItems[i].classList.add('opened');
+      accordItems[i].nextElementSibling.classList.add('active');
+    }
   });
 }
