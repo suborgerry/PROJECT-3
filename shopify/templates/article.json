@@ -29,6 +29,15 @@
           "settings": {
           }
         },
+        "23a4811f-a570-464c-aad6-d9ea53a845c6": {
+          "type": "share",
+          "settings": {
+            "share_twitter": true,
+            "share_google": true,
+            "share_instagram": true,
+            "share_facebook": true
+          }
+        },
         "content": {
           "type": "content",
           "settings": {
@@ -40,14 +49,30 @@
         "title",
         "d803ca25-5cc5-41dc-8329-31b720cfaf5c",
         "featured_image",
+        "23a4811f-a570-464c-aad6-d9ea53a845c6",
         "content"
       ],
       "settings": {
+      }
+    },
+    "165754405993eae7dd": {
+      "type": "articles-by-tag",
+      "settings": {
+        "show_news_title": "Latest articles",
+        "show_sort_buttons": false,
+        "show_news": true,
+        "title_position": "center",
+        "articles_tag": "",
+        "articles_range": 9,
+        "type_pagination": "center",
+        "use_pagination": false,
+        "mobile_cards": true
       }
     }
   },
   "order": [
     "16566692616b166db5",
-    "main"
+    "main",
+    "165754405993eae7dd"
   ]
 }

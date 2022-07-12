@@ -6894,6 +6894,15 @@ body {
   height: auto;
 }
 
+@media (max-width: 575.98px) {
+  .blog-categories__container .swiper-wrapper.mobile {
+    flex-direction: column;
+  }
+  .blog-categories__container .swiper-wrapper.mobile .article-card:nth-child(1n+3) {
+    display: none;
+  }
+}
+
 .blog-categories-tabs .blog-categories {
   margin-top: 8.4rem;
 }

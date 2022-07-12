@@ -184,6 +184,16 @@
         }
         .swiper-wrapper {
             height: auto;
+            &.mobile {
+                @include media-breakpoint-down(xs) {
+                    flex-direction: column;
+                    .article-card {
+                        &:nth-child(1n+3) {
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
     }
     &-tabs {

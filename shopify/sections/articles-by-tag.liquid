@@ -28,7 +28,7 @@
         {%- endif -%}
     </div>
     <div class="blog-categories__container acb-{{ s.id }}">
-        <div class="swiper-wrapper down">
+        <div class="swiper-wrapper down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
             {% assign article_counter = 0 %}
             {%- if ss.show_news -%}
                 {% assign articles = blog.articles | sort: 'published_at' %}
@@ -76,7 +76,13 @@
 <script src="{{ 'swiper.min.js' | asset_url }}"></script>
 <script src="{{ 'blog-functions.js' | asset_url }}"></script>
 <script>
-    getSwiper('{{ s.id | escape }}');
+    {%- if ss.mobile_cards -%}
+        if(window.innerWidth > 576) {
+            getSwiper('{{ s.id | escape }}');
+        }
+    {% else %}
+        getSwiper('{{ s.id | escape }}');
+    {%- endif -%}
     {%- if ss.show_news -%}sortingByDate('.acb-{{ s.id | escape }}');{%- endif -%}
     {%- if article_counter <=4 -%}hiddenSlideBtn('{{ s.id | escape }}');{%- endif -%}
     {%- if ss.use_pagination -%}getPagination('{{ s.id | escape }}');{%- endif -%}
@@ -171,6 +177,16 @@
             "default": false,
             "label": "Use pagination",
             "info": "Check for use pagination. It working if elements more than 4."
+        },
+        {
+            "type": "header",
+            "content": "Mobile"
+        },
+        {
+            "type": "checkbox",
+            "id": "mobile_cards",
+            "default": false,
+            "label": "Mobile cards"
         }
     ],
     "presets": [
