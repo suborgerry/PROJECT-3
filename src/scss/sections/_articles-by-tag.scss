@@ -2,6 +2,14 @@
     position: relative;
     h2 {
         @extend .c-grey-1;
+        &.center {
+            margin: auto;
+            font-size: 3.2rem;
+            margin-bottom: 2.1rem;
+            &::after {
+                display: none;
+            }
+        }
     }
     &-section {
         margin-bottom: 6.2rem;
@@ -112,6 +120,23 @@
         }
     }
     &__slider_buttons {
+        &.center {
+            width: 106%;
+            position: absolute;
+            justify-content: space-between;
+            top: 34%;
+            left: -3%;
+            & > div {
+                background-color: transparent;
+            }
+            @include media-breakpoint-down(lg) {
+                width: 108%;
+                left: -4%;
+            }
+            @include media-breakpoint-down(sm) {
+                display: none !important;
+            }
+        }
         @include media-breakpoint-down(sm) {
             position: absolute;
             width: 100%;
@@ -122,15 +147,16 @@
         div {
             width: 4.8rem;
             height: 4.8rem;
-            &:hover {
+            @extend .c-grey-5-bg;
+            &:not(.swiper-button-disabled):hover {
                 cursor: pointer;
+                @extend .c-grey-11-bg
             }
-            &.button-prev {
+            &.swiper-button-disabled{
                 @extend .c-grey-6-bg
             }
             &.button-next {
                 margin-left: 1rem;
-                @extend .c-grey-5-bg;
             }
         }
     }

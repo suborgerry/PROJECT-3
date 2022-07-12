@@ -78,6 +78,9 @@
     &__content {
         margin-top: 5.6rem;
         width: 100%;
+        @include media-breakpoint-down(sm) {
+            font-size: 1.6rem;
+        }
         a {
             text-decoration: none;
             color: #D13026;
@@ -96,6 +99,8 @@
             @include media-breakpoint-down(sm) {
                 width: 100%;
                 height: auto;
+                margin-top: 2rem !important;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -152,6 +157,7 @@
                 margin-top: 2rem;
                 @extend .c-white-bg;
                 padding: 2.2rem 2.4rem 1rem;
+                width: 31.6rem;
                 &::placeholder {
                     @extend .c-grey-4;
                 }
@@ -184,6 +190,9 @@
                     margin-top: 3.2rem;
                 }
             }
+            input:focus, textarea:focus {
+                font-size: 1.6rem;
+            }
         }
     }
     &__form_btn {
@@ -195,4 +204,68 @@
             margin-top: 3.2rem;
         }
     }
+    &__social-sharing {
+        height: 0;
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        @include media-breakpoint-down(lg) {
+            height: max-content;
+            margin-top: 4rem;
+        }
+    }
+}
+
+.social-sharing {
+    &__title {
+        display: none;
+        height: max-content;
+        font-size: 18px;
+        line-height: 30px;
+        /* identical to box height */
+        letter-spacing: 1.05652px;
+        font-weight: 700;
+        margin-right: 3.3rem;
+        @include media-breakpoint-down(lg) {
+            display: block;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: -10.1rem;
+        margin-top: 7rem;
+        @include media-breakpoint-down(lg) {
+            flex-direction: row;
+            margin-left: 0;
+            margin-top: 0rem;
+        }
+        a {
+            &:not(:first-child) {
+                margin-top: 2.1rem;
+                @include media-breakpoint-down(lg) {
+                    margin-top: 0;
+                    margin-left: 2.4rem;
+
+                }
+            }
+        }
+    }
+}
+
+.under-image {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+    &-mob {
+        display: none;
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+}
+
+.second-img {
+    margin-top: -2rem;
 }
