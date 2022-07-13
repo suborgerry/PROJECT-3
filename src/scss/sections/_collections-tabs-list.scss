@@ -1,0 +1,174 @@
+.collections-tabs-list {
+    &__main {
+        background-color: $c-grey-5;
+        padding: 56px 20px 40px;
+        @include media-breakpoint-up(md) {
+            padding: 56px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 56px 103px 80px;
+        }
+    }
+    &__tabs {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 0 50px 50px;
+        @include media-breakpoint-up(xl) {
+            justify-content: space-between;
+            width: 50%;
+            padding: 0 0 50px 50px;
+        }
+        @include media-breakpoint-up(xxl) {
+            padding: 0 0 62px 50px;
+        }
+    }
+    &__tab {
+        cursor: pointer;
+        &:last-child {
+            @include media-breakpoint-up(xl) {
+                transform: translateX(50%);
+            }
+        }
+        span {
+            display: block;
+            position: relative;
+            font-weight: 700;
+            padding-bottom: 27px;
+        }
+        &.tab-active {
+            span {
+                &::before {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 5px;
+                    background-color: #CF322D;
+                    content: '';
+                }
+            }
+        }
+    }
+    &__tab-content {
+        width: 100%;
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 40px;
+        @include media-breakpoint-up(xxl) {
+            grid-column-gap: 110px;
+        }
+        &.tab-content-active {
+            display: grid;
+        }
+        .content {
+            &__collections-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 40px;
+                @include media-breakpoint-up(xxl) {
+                    grid-column-gap: 70px;
+                }
+            }
+            &__block-list {
+                li:not(:last-child) {
+                    margin-bottom: 5px;
+                }
+                a {
+                    display: block;
+                    padding: 10px 0;
+                    text-decoration: none;
+                    font-weight: 600;
+                    color: $c-grey-7;
+                    transition: 0.3s;
+                    &:hover {
+                        color: $c-red-1;
+                    }
+                }
+            }
+            &__points-wrapper {
+                position: relative;
+                width: 100%;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+                .point {
+                    position: absolute;
+                    width: 135px;
+                    display: flex;
+                    cursor: pointer;
+                    @include media-breakpoint-up(xl) {
+                        width: 152px;
+                    }
+                    &:before {
+                        position: absolute;
+                        top: 4px;
+                        left: 8px;
+                        bottom: -3px;
+                        width: 0.5px;
+                        background-color: $c-black;
+                        content: '';
+                        opacity: 0;
+                    }
+                    &:after {
+                        position: absolute;
+                        left: 8px;
+                        right: 0;
+                        bottom: -3px;
+                        height: 0.5px;
+                        background-color: $c-black;
+                        content: '';
+                        opacity: 0;
+                    }
+                    &:hover {
+                        .point__num {
+                            transform: scale(1.2);
+                        }
+                        &:before,
+                        &:after,
+                        .point__text {
+                            opacity: 1;
+                        }
+                    }
+                    &__num,
+                    &__text {
+                        font-size: 10px;
+                        font-weight: 700;
+                    }
+                    &__num {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 17px;
+                        min-width: 17px;
+                        height: 17px;
+                        background-color: $c-white;
+                        border-radius: 50%;
+                        transition: 0.3s;
+                        z-index: 1;
+                        span {
+                            display: block;
+                            height: 100%;
+                            transform: translateY(-1px);
+                        }
+                    }
+                    &__text {
+                        opacity: 0;
+                        padding: 6px 10px 0 10px;
+                        transition: 0.3s;
+                        text-decoration: none !important;
+                        line-height: 12px;
+                        color: $c-black;
+                        &:hover {
+                            color: $c-red-1;
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -6232,6 +6232,10 @@ body {
   transition: 0.2s;
 }
 
+.menu-accordion__item.has-sub-menu.opened {
+  color: rgb(var(--color-base-accent-1));
+}
+
 .menu-accordion__item.has-sub-menu.opened:after {
   transform: translateY(-50%) rotate(180deg);
 }
@@ -7746,14 +7750,15 @@ body {
   .under-image-mob {
     display: block;
   }
-  .second-img {
-    margin-top: -2rem;
-  }
-  .home-hero {
-    overflow: hidden;
-  }
 }
 
+.second-img {
+  margin-top: -2rem;
+}
+
+.home-hero {
+  overflow: hidden;
+}
 
 .home-hero__slide {
   min-height: 625px;
@@ -8120,6 +8125,211 @@ body {
   font-size: 16px;
   line-height: normal;
   font-weight: 500;
+}
+
+.collections-tabs-list__main {
+  background-color: #EFEFEF;
+  padding: 56px 20px 40px;
+}
+
+@media (min-width: 768px) {
+  .collections-tabs-list__main {
+    padding: 56px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .collections-tabs-list__main {
+    padding: 56px 103px 80px;
+  }
+}
+
+.collections-tabs-list__tabs {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0 50px 50px;
+}
+
+@media (min-width: 1200px) {
+  .collections-tabs-list__tabs {
+    justify-content: space-between;
+    width: 50%;
+    padding: 0 0 50px 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .collections-tabs-list__tabs {
+    padding: 0 0 62px 50px;
+  }
+}
+
+.collections-tabs-list__tab {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .collections-tabs-list__tab:last-child {
+    transform: translateX(50%);
+  }
+}
+
+.collections-tabs-list__tab span {
+  display: block;
+  position: relative;
+  font-weight: 700;
+  padding-bottom: 27px;
+}
+
+.collections-tabs-list__tab.tab-active span::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #CF322D;
+  content: "";
+}
+
+.collections-tabs-list__tab-content {
+  width: 100%;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}
+
+@media (min-width: 1440px) {
+  .collections-tabs-list__tab-content {
+    grid-column-gap: 110px;
+  }
+}
+
+.collections-tabs-list__tab-content.tab-content-active {
+  display: grid;
+}
+
+.collections-tabs-list__tab-content .content__collections-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}
+
+@media (min-width: 1440px) {
+  .collections-tabs-list__tab-content .content__collections-list {
+    grid-column-gap: 70px;
+  }
+}
+
+.collections-tabs-list__tab-content .content__block-list li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.collections-tabs-list__tab-content .content__block-list a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  font-weight: 600;
+  color: #414141;
+  transition: 0.3s;
+}
+
+.collections-tabs-list__tab-content .content__block-list a:hover {
+  color: rgb(var(--color-base-accent-1));
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point {
+  position: absolute;
+  width: 135px;
+  display: flex;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .collections-tabs-list__tab-content .content__points-wrapper .point {
+    width: 152px;
+  }
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point:before {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  bottom: -3px;
+  width: 0.5px;
+  background-color: rgb(var(--color-base-outline-button-labels));
+  content: "";
+  opacity: 0;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point:after {
+  position: absolute;
+  left: 8px;
+  right: 0;
+  bottom: -3px;
+  height: 0.5px;
+  background-color: rgb(var(--color-base-outline-button-labels));
+  content: "";
+  opacity: 0;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point:hover .point__num {
+  transform: scale(1.2);
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point:hover:before, .collections-tabs-list__tab-content .content__points-wrapper .point:hover:after,
+.collections-tabs-list__tab-content .content__points-wrapper .point:hover .point__text {
+  opacity: 1;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point__num, .collections-tabs-list__tab-content .content__points-wrapper .point__text {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point__num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17px;
+  min-width: 17px;
+  height: 17px;
+  background-color: rgb(var(--color-base-background-1));
+  border-radius: 50%;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point__num span {
+  display: block;
+  height: 100%;
+  transform: translateY(-1px);
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point__text {
+  opacity: 0;
+  padding: 6px 10px 0 10px;
+  transition: 0.3s;
+  text-decoration: none !important;
+  line-height: 12px;
+  color: rgb(var(--color-base-outline-button-labels));
+}
+
+.collections-tabs-list__tab-content .content__points-wrapper .point__text:hover {
+  color: rgb(var(--color-base-accent-1));
+  text-decoration: underline !important;
 }
 
 .page-title {

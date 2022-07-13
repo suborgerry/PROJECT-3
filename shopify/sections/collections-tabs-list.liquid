@@ -1,0 +1,217 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="collections-tabs-list positioning--{{ s.id }}">
+    <div class="page-width">
+        <div class="collections-tabs-list__main">
+            <div class="collections-tabs-list__tabs">
+                {%- for b in s.blocks -%}
+                    <div class="collections-tabs-list__tab{% if forloop.first %} tab-active{% endif %}">
+                        <span class="text-20px">{{ b.settings.name }}</span> 
+                    </div>
+                {%- endfor -%}
+            </div>
+            <div class="collections-tabs-list__tabs-wrapper">
+                {%- for b in s.blocks -%}
+                <div class="collections-tabs-list__tab-content{% if forloop.first %} tab-content-active{% endif %}">
+                    <div class="content__collections-list">
+                        {%- assign double_split_per = b.settings.collection_list.count | divided_by: 2.0 | ceil -%}
+                        <ul class="content__block-list list-unstyled">
+                            {%- for collection in b.settings.collection_list limit: double_split_per -%}
+                               <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
+                            {%- endfor -%}
+                        </ul>
+                        <ul class="content__block-list list-unstyled">
+                            {%- for collection in b.settings.collection_list limit: double_split_per offset: continue -%}
+                                <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+                    <div class="content__product-points">
+                        <div class="content__points-wrapper">
+                            {%- if b.settings.product_1 != blank -%}
+                                <div class="point" style="top: {{ b.settings.point_1_top }}%; left: {{ b.settings.point_1_left }}%;">
+                                    <div class="point__num"><span>1</span></div>
+                                    <a href="{{ b.settings.product_1.url }}" class="point__text">{{ b.settings.product_1.title }}</a>
+                                </div>
+                            {%- endif -%}
+                            {%- if b.settings.product_2 != blank -%}
+                                <div class="point" style="top: {{ b.settings.point_2_top }}%; left: {{ b.settings.point_2_left }}%;">
+                                    <div class="point__num"><span>2</span></div>
+                                    <a href="{{ b.settings.product_2.url }}" class="point__text">{{ b.settings.product_2.title }}</a>
+                                </div>
+                            {%- endif -%}
+                            {%- if b.settings.product_3 != blank -%}
+                                <div class="point" style="top: {{ b.settings.point_3_top }}%; left: {{ b.settings.point_3_left }}%;">
+                                    <div class="point__num"><span>3</span></div>
+                                    <a href="{{ b.settings.product_3.url }}" class="point__text">{{ b.settings.product_3.title }}</a>
+                                </div>
+                            {%- endif -%}
+                            <img 
+                            {% render 'src-set', image: b.settings.block_image %}
+                            src="{{ b.settings.block_image | image_url: width: 1000 }}"
+                            alt="{{ b.settings.block_image.alt }}">
+                        </div>
+                    </div>
+                </div>
+                {%- endfor -%}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ 'collections-tabs-list.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+    "name": "Collections tabs list",
+    "max_blocks": 2,
+    "settings": [                 
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collections-block",
+            "name": "Collections block",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Block name"
+                },
+                {
+                    "type": "collection_list",
+                    "id": "collection_list",
+                    "label": "Collections"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "block_image",
+                    "label": "Block image"
+                },
+                {
+                    "type": "header",
+                    "content": "Product points"
+                },
+                {
+                    "type": "header",
+                    "content": "Product '1' point"
+                },
+                {
+                    "type": "product",
+                    "id": "product_1",
+                    "label": "Product 1"
+                },
+                {
+                    "type": "range",
+                    "id": "point_1_top",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 1 top space",
+                    "default": 0
+                },                  
+                {
+                    "type": "range",
+                    "id": "point_1_left",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 1 left space",
+                    "default": 0
+                },                  
+                {
+                    "type": "header",
+                    "content": "Product '2' point"
+                },       
+                {
+                    "type": "product",
+                    "id": "product_2",
+                    "label": "Product 2"
+                },
+                {
+                    "type": "range",
+                    "id": "point_2_top",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 2 top space",
+                    "default": 0
+                },                  
+                {
+                    "type": "range",
+                    "id": "point_2_left",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 2 left space",
+                    "default": 0
+                },   
+                {
+                    "type": "header",
+                    "content": "Product '3' point"
+                },   
+                {
+                    "type": "product",
+                    "id": "product_3",
+                    "label": "Product 3"
+                },
+                {
+                    "type": "range",
+                    "id": "point_3_top",
+                    "min": 0,
+                    "max": 90,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 3 top space",
+                    "default": 0
+                },                  
+                {
+                    "type": "range",
+                    "id": "point_3_left",
+                    "min": 0,
+                    "max": 96,
+                    "step": 1,
+                    "unit": "%",
+                    "label": "Point 3 left space",
+                    "default": 0
+                }      
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections tabs list",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}
