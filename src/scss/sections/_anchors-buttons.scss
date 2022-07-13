@@ -1,0 +1,32 @@
+.anchors-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 6.5rem 16.2rem 6.9rem 16.1rem;
+    @extend .c-grey-10-bg;
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+        flex-direction: column;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        @extend .c-black;
+        font-weight: 700;
+        font-size: 1.9rem;
+        line-height: 2.6rem;
+        & + & {
+            @include media-breakpoint-down(sm) {
+                margin-top: 2rem;
+            }
+        }
+        &:hover {
+            text-decoration: underline;
+            @extend .c-red-4
+        }
+        span {
+            margin-top: 2.3rem;
+        }
+    }
+}

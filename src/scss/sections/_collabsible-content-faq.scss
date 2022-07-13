@@ -1,0 +1,50 @@
+.collapsible-faq {
+    &__title {
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 42px;
+        padding-top: 6.4rem;
+        margin-top: 6.4rem;
+        margin-bottom: 5.6rem;
+        border-top: 1px solid $c-grey-8;
+    }
+    svg {
+        transition: all 0.3s ease;
+        transform: rotate(180deg);
+    }
+    details[open] {
+        summary {
+            svg {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    &__accordion {
+        padding: 4rem 5rem 4rem 5.6rem;
+        @include media-breakpoint-down(sm) {
+            padding: 3rem 2rem;
+        }
+        & + & {
+            margin-top: 1.8rem;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+        }
+        &-content {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.479348px;
+            margin-top: 1.2rem;
+        }
+        summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}

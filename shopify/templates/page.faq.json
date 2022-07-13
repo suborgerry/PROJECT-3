@@ -1,0 +1,128 @@
+{
+  "sections": {
+    "16576193505e8b22c4": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 28,
+        "show_title": true,
+        "show_content": false
+      }
+    },
+    "16576347777f5a5b9d": {
+      "type": "collapsible-content-faq",
+      "blocks": {
+        "259411d3-87a5-405f-870d-5ec9361ff1b5": {
+          "type": "title",
+          "settings": {
+            "text": "Shipping Policies"
+          }
+        },
+        "6a3fbd5d-4baa-4eed-9ab9-956b5ff194af": {
+          "type": "row",
+          "settings": {
+            "heading": "Is there a way to pick up my order?",
+            "row_content": "<p>We currently are not offering pick up for orders. All orders must be placed through our website and will be shipped from our facility usually within 3-5 business days.<\/p>"
+          }
+        },
+        "8e15fc22-3b4a-493f-9d5d-1534c8c1de34": {
+          "type": "row",
+          "settings": {
+            "heading": "How much does it cost to ship my order?",
+            "row_content": "<p>There is a flat $5.00 shipping fee for domestic orders with standard shipping under $50. Some items ship free of charge and are listed in the product description.  International orders are more expensive and do not include tracking unless you pay an additional amount.  You can choose to pay extra for tracking for international orders.  You can get your order rushed at an additional expense, but this does not apply to pre-order or back-order items.  All orders over $50+ ship for free!<\/p>"
+          }
+        },
+        "cebf12bc-6205-4a95-81da-1ec91664cba8": {
+          "type": "row",
+          "settings": {
+            "heading": "When will my order ship and how can I track it?",
+            "row_content": "<p>If you ordered a rush order, we will ship out your package in no more than 1 business day, and select priority shipping.  If you ordered standard shipping, we will mail your package within 2-6 business days.<\/p><p>All Route One Apparel items are shipped via USPS and include a delivery confirmation number in an email that we send to you directly.  Please let us know if you require a different form of shipping, which may be subject to an additional fee.<\/p><p>If you require a specific delivery date, please contact help@routeoneapparel.com with your order # so we can upgrade your shipping to be guaranteed at your requested time.  Your order will be subject to a rush shipping charge that is based on the weight of the items and location it is being shipped to.<\/p>"
+          }
+        },
+        "86664f7d-6958-4fa9-b22b-16964ddae45c": {
+          "type": "row",
+          "settings": {
+            "heading": "How long will it take to arrive to me after shipping?",
+            "row_content": "<p>Please allow approximately 1-5 business days for domestic (USA) orders.<\/p><p>Please allow approximately 10-21 business days for international orders.<\/p><p>*Please note - Despite these approximates, all shipping providers are experiencing massive delays due to COVID-19 and are no longer guaranteeing any delivery dates.<\/p><p>You will receive an email with your tracking information when it becomes available!  The tracking email is sent from our company as soon as the order is ready to be picked up by a shipping provider. Please note: shipping carriers are NOT showing acceptance scans or transit scans as frequently as they used to due to COVID-19 delays.<\/p>"
+          }
+        },
+        "41f25bf0-6a0a-4a1b-a970-0f8896173c56": {
+          "type": "row",
+          "settings": {
+            "heading": "My tracking says delivered, but I haven't received my shipment - what do I do?",
+            "row_content": "<p>While we trust and value our carriers, sometimes they have delivery issues.  Your package may be showing a \"delivered\" scan prematurely, for example.  We also recommend checking with your neighbors to see if it was accidentally delivered somewhere nearby.  If you live in an apartment, it is very likely it is at your front desk checkin.<\/p><p>If it has been 3 business days or more since false delivery, please email us at help@routeoneapparel.com so we can proceed with our lost package claim process!  If a reshipment is required, you will be <span style=\"text-decoration:underline\">required<\/span> to fill out a lost package affidavit form which will open up an investigation with your shipping provider.  If a package is lost or stolen we CANNOT provide a refund unless you paid a premium for package insurance. Once a package is deemed lost or stolen we only have the ability for a reshipment to the same address.  Upgraded shipping features - like signature tracking or expedited shipping - will cost extra if you did not select that method of shipment for your original shipment.<\/p>"
+          }
+        },
+        "36636b09-c32c-46b9-b7f1-d935aad1729e": {
+          "type": "title",
+          "settings": {
+            "text": "RETURNS and EXCHANGES"
+          }
+        },
+        "80784939-5d9d-4ad6-a509-3d3888be8316": {
+          "type": "row",
+          "settings": {
+            "heading": "What is your return & exchange policy?",
+            "row_content": "<p>Route One Apparel offers <span style=\"text-decoration:underline\">FREE<\/span> returns & exchanges for store credit, or refunds back to your original form of payment for a $6.00 restocking fee. Refunds must be processed through your original payment method, otherwise they will be issued in store credit (gift card). We accept exchanges and returns for <span style=\"text-decoration:underline\"><em>up to 30 days<\/em><\/span> after you receive your order in the mail.  <\/p><p>Returned items must be sent back in their original packaging, unworn and with hang tags attached.  It must not have any signs of wear including but not limited to fragrance, deodorant stains, dirt, etc.  We have a right to deny an exchange or return if the returned product shows any signs of wear. <\/p><p>We <span style=\"text-decoration:underline\">do not<\/span> accept returns or exchanges on final sale or discounted merchandise, women's bathing suits (i.e. bikinis), lingerie items, and jewelry, and other accessory items.  Discount codes and e-gift cards that are sent electronically cannot be refunded or exchanged.  These are <span style=\"text-decoration:underline\">final sale<\/span>. <\/p>"
+          }
+        },
+        "1504682a-b096-4097-9abf-c6934362171b": {
+          "type": "row",
+          "settings": {
+            "heading": "How do you process refunds?",
+            "row_content": "<p>Please allow approximately a week after we receive your order to process your return.  Any returned goods will be inspected for signs of use, and we have the right to deny any return if it shows any signs of wear.  <\/p><p>Return shipping is<span style=\"text-decoration:underline\">non-refundable<\/span>, unless you receive damaged, defective or wrong item(s). Refunds on discounted or sale items will be refunded at the prorated amountOriginal shipping charges are non-refundableAny orders sent with \"Free Shipping\" will be subject to the original shipping fee deducted from the total amount of the refund. International Returns - unfortunately we cannot refund duties, taxes or shipping charges.<\/p>"
+          }
+        },
+        "ec23307d-fc50-4011-9d2e-af38e9fb53af": {
+          "type": "row",
+          "settings": {
+            "heading": "How do pre-orders work?",
+            "row_content": "<p>We allow some items to be pre-ordered during their manufacturing process at a discounted rate, in exchange for a longer wait time.  Individuals who purchase pre-ordered items are guaranteed first delivery of these items.  If you purchase pre-ordered items along with regular items, your shipment is sent out when the pre-ordered items arrive in stock.  You can pay an additional $5 shipping and handling if you would like your available items to be sent separately.<\/p>"
+          }
+        },
+        "725527ae-3645-46a7-b48a-5a140b1889be": {
+          "type": "row",
+          "settings": {
+            "heading": "I received a defective or wrong product. What do I do?",
+            "row_content": "<p>DO NOT MAIL IT BACK.  Contact us at help@routeoneapparel.com<em>within 3 days of receipt of order <\/em>with photos of the defects and\/or wrong item and we will send you out a new product along with a return shipping label.  If you mail it back, we will not compensate you for  your return shipping costs.<\/p>"
+          }
+        },
+        "f78de95b-c4ed-4559-ade5-60c6c322556d": {
+          "type": "row",
+          "settings": {
+            "heading": "What is your return shipping address?",
+            "row_content": "<p>Please address your mail to \"Route One Apparel\", PO Box 42023, Towson, MD 21284. If you are shipping by FedEx or UPS, you can mail it to \"Route One Apparel\", Lockbox # 42023, 808 Gleneagles Ct Ste 1, Towson, MD 21286.  The FedEx or UPS location is just the physical address of our PO Box. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "259411d3-87a5-405f-870d-5ec9361ff1b5",
+        "6a3fbd5d-4baa-4eed-9ab9-956b5ff194af",
+        "8e15fc22-3b4a-493f-9d5d-1534c8c1de34",
+        "cebf12bc-6205-4a95-81da-1ec91664cba8",
+        "86664f7d-6958-4fa9-b22b-16964ddae45c",
+        "41f25bf0-6a0a-4a1b-a970-0f8896173c56",
+        "36636b09-c32c-46b9-b7f1-d935aad1729e",
+        "80784939-5d9d-4ad6-a509-3d3888be8316",
+        "1504682a-b096-4097-9abf-c6934362171b",
+        "ec23307d-fc50-4011-9d2e-af38e9fb53af",
+        "725527ae-3645-46a7-b48a-5a140b1889be",
+        "f78de95b-c4ed-4559-ade5-60c6c322556d"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "16576193505e8b22c4",
+    "main",
+    "16576347777f5a5b9d"
+  ]
+}

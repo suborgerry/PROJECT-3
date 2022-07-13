@@ -1,0 +1,109 @@
+{% comment %} {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }} {% endcomment %}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="gradient">
+  <div class="collapsible-faq">
+    <div class="collapsible-faq__wrapper section-{{ section.id }}-padding">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'title' -%}
+            <h3 class="collapsible-faq__title c-grey-1">{{ block.settings.text | upcase }}</h3>
+          {%- when 'row' -%}                
+            <div class="collapsible-faq__accordion c-grey-10-bg">
+              <details id="Details-{{ block.id }}-{{ section.id }}"{% if section.settings.open_first_collapsible_row and forloop.first %} open{% endif %}>
+                <summary id="Summary-{{ block.id }}-{{ section.id }}">
+                  <p class="collapsible-faq__accordion-title">{{ block.settings.heading | default: block.settings.page.title }}</p>
+                  <svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8566 12.6548L23.6457 2.03721C24.1181 1.57132 24.1181 0.816492 23.6457 0.349421C23.1733 -0.116474 22.4061 -0.116474 21.9337 0.349421L12.0006 10.1249L2.06752 0.350597C1.59514 -0.115297 0.827864 -0.115297 0.354286 0.350597C-0.118095 0.816492 -0.118095 1.57249 0.354286 2.03839L11.1434 12.656C11.6109 13.1149 12.3903 13.1149 12.8566 12.6548Z" fill="#CF342F"/></svg>                      
+                </summary>
+                <div class="collapsible-faq__accordion-content" id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}" role="region" aria-labelledby="Summary-{{ block.id }}-{{ section.id }}">
+                  {{ block.settings.row_content }}
+                </div>
+              </details>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collabsible with anchors",
+  "tag": "section",
+  "class": "section page-width",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Title"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content",
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collabsible with anchors"
+    }
+  ]
+}
+{% endschema %}
