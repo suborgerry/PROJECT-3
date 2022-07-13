@@ -52,6 +52,10 @@
   text-decoration: none;
 }
 
+a.active-page {
+  color: $c-red-1;
+}
+
 :root {
   --page-width-x-paddings-mobile: 2rem;
   --page-width-x-paddings-mobile-reverse: -2rem;

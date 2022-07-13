@@ -35,10 +35,10 @@ menu-drawer > details[open] > summary::before {
   z-index: 3;
   left: 0;
   top: 100%;
-  width: calc(100vw - 4rem);
+  width: 100vw;
   padding: 0;
   border-width: 0 var(--drawer-border-width) 0 0;
-  background-color: rgb(var(--color-background));
+  background-color: #FDFCFC;
   overflow-x: hidden;
   border-style: solid;
   border-color: rgba(var(--color-foreground), var(--drawer-border-opacity));
@@ -71,10 +71,10 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__navigation .submenu-open {
-  visibility: hidden; /* hide menus from screen readers when hidden by submenu */
+  /* visibility: hidden; hide menus from screen readers when hidden by submenu */
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 576px) {
   .menu-drawer {
     width: 40rem;
   }
@@ -90,15 +90,15 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__navigation-container {
-  display: grid;
-  grid-template-rows: 1fr auto;
-  align-content: space-between;
-  overflow-y: auto;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+  height: auto;
+  padding-bottom: 100px;
 }
 
 .menu-drawer__navigation {
-  padding: 5.6rem 0;
+  padding: 1.8rem 0 0.8rem;
 }
 
 .menu-drawer__inner-submenu {
@@ -120,11 +120,11 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__menu li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.8rem;
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3.2rem;
+  padding: 1.1rem 2rem;
   text-decoration: none;
   font-size: 1.8rem;
 }
@@ -175,7 +175,6 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .js .menu-drawer__submenu {
-  position: absolute;
   top: 0;
   width: 100%;
   bottom: 0;
@@ -212,31 +211,6 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__close-button .icon-arrow {
   transform: rotate(180deg);
   margin-right: 1rem;
-}
-
-.menu-drawer__utility-links {
-  padding: 2rem;
-  background-color: rgba(var(--color-foreground), 0.03);
-}
-
-.menu-drawer__account {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 1.2rem;
-  margin-left: -1.2rem;
-  font-size: 1.4rem;
-  color: rgb(var(--color-foreground));
-}
-
-.menu-drawer__account .icon-account {
-  height: 2rem;
-  width: 2rem;
-  margin-right: 1rem;
-}
-
-.menu-drawer__account:hover .icon-account {
-  transform: scale(1.07);
 }
 
 .menu-drawer .list-social {
