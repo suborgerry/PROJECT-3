@@ -18,6 +18,7 @@
         line-height: 38px;
         text-transform: uppercase;
         margin-top: 3.3rem;
+        @extend .c-grey-1;
         @include media-breakpoint-down(sm) {
             margin-top: 1.7rem;
             text-align: center;
@@ -44,6 +45,7 @@
         font-size: 1.6rem;
         line-height: 2rem;
         text-transform: uppercase;
+        @extend .c-grey-1;
         @include media-breakpoint-down(sm) {
             order: 1;
             margin-top: 4.8rem;
@@ -116,6 +118,8 @@
         @include media-breakpoint-down(sm) {
             margin-top: 5.1rem;
             padding-top: 0;
+            margin-bottom: 5rem;
+            border-bottom: 1px solid $c-grey-8;
         }
         .comment-form {
             width: 100%;
@@ -129,6 +133,7 @@
             }
             @include media-breakpoint-down(sm) {
                 padding-top: 2.1rem;
+                padding-bottom: 5.4rem;
             }
             h2 {
                 font-weight: 400;
@@ -158,6 +163,9 @@
                 @extend .c-white-bg;
                 padding: 2.2rem 2.4rem 1rem;
                 width: 31.6rem;
+                @include media-breakpoint-down(xs) {
+                    width: 100%;
+                }
                 &::placeholder {
                     @extend .c-grey-4;
                 }
@@ -222,7 +230,6 @@
         height: max-content;
         font-size: 18px;
         line-height: 30px;
-        /* identical to box height */
         letter-spacing: 1.05652px;
         font-weight: 700;
         margin-right: 3.3rem;
