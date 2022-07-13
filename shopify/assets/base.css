@@ -288,9 +288,42 @@ body,
   margin: 7rem auto;
 }
 
+.rte {
+  max-width: 96.4rem;
+  width: 100%;
+  margin: auto;
+  padding-bottom: 11.6rem;
+}
+
+.rte strong {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 2.8rem;
+  display: inline-block;
+}
+
+.rte strong.top {
+  margin-top: 5.6rem;
+}
+
+.rte strong.top-2 {
+  margin-top: 12.8rem;
+}
+
 .rte-width {
   max-width: 82rem;
   margin: 0 auto 2rem;
+}
+
+@media (max-width: 768px) {
+  .rte .page-title {
+    margin-bottom: 6.9rem;
+  }
+
+  .rte strong {
+    margin-bottom: 2.4rem;
+  }
 }
 
 .list-unstyled {
