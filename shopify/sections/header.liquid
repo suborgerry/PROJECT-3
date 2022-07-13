@@ -18,6 +18,7 @@
   header-drawer {
     padding: 1rem;
     justify-self: start;
+    display: flex;
   }
 
   @media screen and (min-width: 992px) {
@@ -74,8 +75,8 @@
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
-  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
+  <symbol id="icon-search" viewbox="0 0 21 21" fill="none">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.6749 13.4457L20.7354 19.5062C20.9051 19.6759 20.9051 19.9511 20.7354 20.1209L20.1209 20.7354C19.9511 20.9051 19.676 20.9051 19.5062 20.7354L13.4457 14.6749C12.0266 15.8244 10.2225 16.5164 8.25818 16.5164C3.70464 16.5164 0 12.8117 0 8.25818C0 3.70464 3.7046 0 8.25814 0C12.8117 0 16.5163 3.70464 16.5163 8.25818C16.5163 10.2225 15.8244 12.0266 14.6749 13.4457ZM1.73858 8.25818C1.73858 11.8533 4.66307 14.7778 8.25818 14.7778C11.8533 14.7778 14.7778 11.8533 14.7778 8.25818C14.7778 4.66307 11.8533 1.73858 8.25818 1.73858C4.66307 1.73858 1.73858 4.66307 1.73858 8.25818Z" fill="currentColor"/>
   </symbol>
 
   <symbol id="icon-search-mini" viewBox="0 0 13 13" fill="none">
@@ -101,7 +102,54 @@
             {%- if ss.mobile_menu_type == 'drawer' -%}
             <div class="menu-drawer__inner-container">
             {%- endif -%}
-              <div class="menu-drawer__navigation-container">
+                <div class="menu-drawer__navigation-container">
+                {%- if settings.predictive_search_enabled -%}
+                  <predictive-search class="search-modal__form" data-loading-text="{{ 'accessibility.loading' | t }}">
+                {%- endif -%}
+                  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+                    <div class="field">
+                      <input class="search__input field__input"
+                        id="Search-In-Modal-1"
+                        type="search"
+                        name="q"
+                        value=""
+                        placeholder="{{ 'Search for masks, items, and more' }}"
+                        {%- if settings.predictive_search_enabled -%}
+                          role="combobox"
+                          aria-expanded="false"
+                          aria-owns="predictive-search-results-list"
+                          aria-controls="predictive-search-results-list"
+                          aria-haspopup="listbox"
+                          aria-autocomplete="list"
+                          autocorrect="off"
+                          autocomplete="off"
+                          autocapitalize="off"
+                          spellcheck="false"
+                        {%- endif -%}
+                      >
+                      <input type="hidden" name="options[prefix]" value="last">
+                      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                        <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                          <use href="#icon-search">
+                        </svg>
+                      </button>
+                    </div>
+
+                    {%- if settings.predictive_search_enabled -%}
+                      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+                        <div class="predictive-search__loading-state">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                    {%- endif -%}
+                  </form>
+                {%- if settings.predictive_search_enabled -%}
+                  </predictive-search>
+                {%- endif -%}
                 <nav class="menu-drawer__navigation{% if ss.mobile_menu_type == 'accordion' %} menu-accordion{% endif %}">
                   {%- if ss.mobile_menu_type == 'accordion' -%}
                     <ul class="menu-accordion__list list-menu" role="list">

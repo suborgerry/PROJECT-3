@@ -1292,7 +1292,7 @@ button.bg-dark:focus {
   position: relative !important;
 }
 
-.position-absolute, .absolute-fill {
+.position-absolute, .absolute-fill, .collections-states__block-item::after {
   position: absolute !important;
 }
 
@@ -5525,7 +5525,7 @@ p {
   list-style: none;
 }
 
-.absolute-fill {
+.absolute-fill, .collections-states__block-item::after {
   top: 0;
   left: 0;
   right: 0;
@@ -6138,6 +6138,26 @@ body {
   visibility: visible;
   z-index: 1;
   pointer-events: auto;
+}
+
+.menu-drawer__navigation-container .field::after {
+  content: unset;
+}
+
+.menu-drawer__navigation-container .search__input.field__input {
+  padding: 26px 20px 20px 62px;
+  height: 70px;
+}
+
+.menu-drawer__navigation-container .search__input.field__input::placeholder {
+  opacity: 1;
+  font-size: 14px;
+}
+
+.menu-drawer__navigation-container .search__button {
+  right: unset;
+  top: 12px;
+  left: 12px;
 }
 
 .menu-drawer__utility-links {
@@ -7804,6 +7824,10 @@ body {
   }
 }
 
+.collections-states h1 {
+  color: #414240;
+}
+
 .collections-states__blocks {
   margin-top: 45px;
 }
@@ -7821,8 +7845,6 @@ body {
 }
 
 .collections-states__block-item::after {
-  position: absolute;
-  inset: 0;
   background: linear-gradient(180deg, rgba(255, 86, 81, 0) 0%, #FF3830 100%);
   backdrop-filter: blur(1px);
   transform: rotate(180deg);
@@ -7934,4 +7956,7 @@ body {
 .collections-states .block-item__content-list a {
   text-decoration: none;
   color: rgb(var(--color-base-background-1));
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 500;
 }
