@@ -15,14 +15,14 @@
 <section class="collections-tabs-list positioning--{{ s.id }}">
     <div class="page-width">
         <div class="collections-tabs-list__main">
-            <div class="collections-tabs-list__tabs">
+            <div class="collections-tabs-list__tabs d-none d-lg-flex">
                 {%- for b in s.blocks -%}
                     <div class="collections-tabs-list__tab{% if forloop.first %} tab-active{% endif %}">
                         <span class="text-20px">{{ b.settings.name }}</span> 
                     </div>
                 {%- endfor -%}
             </div>
-            <div class="collections-tabs-list__tabs-wrapper">
+            <div class="collections-tabs-list__tabs-wrapper d-none d-lg-block">
                 {%- for b in s.blocks -%}
                 <div class="collections-tabs-list__tab-content{% if forloop.first %} tab-content-active{% endif %}">
                     <div class="content__collections-list">
@@ -67,10 +67,46 @@
                 </div>
                 {%- endfor -%}
             </div>
+
+
+
+            <div class="collections-tabs-list__tabs-mob d-lg-none">
+                {%- for b in s.blocks -%}
+                    <div class="collections-tabs-list__tab-mob{% if forloop.first %} tab-active{% endif %}">
+                        <span>{{ b.settings.name }}</span> 
+                    </div>
+                {%- endfor -%}
+            </div>
+            <div class="collections-tabs-list__tabs-wrapper-mob d-lg-none">
+                {%- for b in s.blocks -%}
+                    <div class="collections-tabs-list__tab-content-mob tab-content-mob-{{ forloop.index }}{% if forloop.first %} tab-content-active{% endif %}">
+                        <div class="swiper-wrapper">
+                            {%- assign all_slides_count = b.settings.collection_list.count | divided_by: 10.0 | ceil -%}
+                            {% for slide in (1..all_slides_count) %}
+                            <ul class="swiper-slide block-list list-unstyled">
+                                {%- if forloop.first -%}
+                                    {%- for collection in b.settings.collection_list limit: 10 -%}
+                                        <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
+                                    {%- endfor -%}
+                                {%- else -%}
+                                    {%- for collection in b.settings.collection_list limit: 10 offset: continue -%}
+                                        <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
+                                    {%- endfor -%}
+                                {%- endif -%}
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        <div class="slider-pagination"></div>
+                        <div class="button-prev">{%- render 'icon-arr-slider' -%}</div>
+                        <div class="button-next">{%- render 'icon-arr-slider' -%}</div>
+                    </div>
+                {%- endfor -%}
+            </div>
         </div>
     </div>
 </section>
 
+{{ 'swiper.min.js' | asset_url | script_tag }}
 {{ 'collections-tabs-list.js' | asset_url | script_tag }}
 
 {% schema %}
