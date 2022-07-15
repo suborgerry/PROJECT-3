@@ -81,7 +81,7 @@
                     {%- assign all_slides_count = b.settings.collection_list.count | divided_by: 10.0 | ceil -%}
                     <div class="collections-tabs-list__tab-content-mob{% if all_slides_count > 1 %} tab-content-mob-{{ forloop.index }}{% endif %}{% if forloop.first %} tab-content-active{% endif %}">
                         <div class="swiper-wrapper">
-                            {% for slide in (1..all_slides_count) %}
+                            {%- for slide in (1..all_slides_count) -%}
                             <ul class="swiper-slide block-list list-unstyled">
                                 {%- if forloop.first -%}
                                     {%- for collection in b.settings.collection_list limit: 10 -%}
@@ -93,7 +93,7 @@
                                     {%- endfor -%}
                                 {%- endif -%}
                             </ul>
-                            {% endfor %}
+                            {%- endfor -%}
                         </div>
                         <div class="slider-pagination"></div>
                         {%- if all_slides_count > 1 -%}

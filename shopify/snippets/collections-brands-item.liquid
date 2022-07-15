@@ -1,0 +1,15 @@
+<div class="collections-brands__item {{ class }}">
+    <a href="{{ collection.url }}"></a>
+    <div class="brand-icon">
+        {%- if icon_svg != blank -%}
+            {{ icon_svg }}
+        {%- else -%}
+            <img src="{{ icon_img | img_url: 'compact' }}" alt="{{ icon_img.alt }}">
+        {%- endif -%}
+    </div>
+    <div class="text">
+        <span class="small-text">{{ small_text }}</span>
+        <span class="title">{{ collection.title }}</span>
+    </div>
+    {% render 'icon-play', class: 'icon-play' %}
+</div>

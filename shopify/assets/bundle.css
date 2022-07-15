@@ -1166,7 +1166,7 @@ button.bg-dark:focus {
 .position-relative {
   position: relative !important;
 }
-.position-absolute, .absolute-fill, .collections-states__block-item::after {
+.position-absolute, .absolute-fill, .collections-brands__item a, .collections-states__block-item::after {
   position: absolute !important;
 }
 .position-fixed {
@@ -5077,7 +5077,7 @@ p {
 .list-unstyled {
   list-style: none;
 }
-.absolute-fill, .collections-states__block-item::after {
+.absolute-fill, .collections-brands__item a, .collections-states__block-item::after {
   top: 0;
   left: 0;
   right: 0;
@@ -7701,6 +7701,161 @@ body {
 }
 .collections-local__list li a:hover {
   color: rgb(var(--color-base-accent-1));
+}
+.collections-brands {
+  overflow: hidden;
+}
+.collections-brands h3 {
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .collections-brands h3 {
+    margin-bottom: 50px;
+  }
+}
+.collections-brands__list {
+  display: none;
+}
+@media (min-width: 992px) {
+  .collections-brands__list {
+    display: block;
+    margin: 0 var(--page-width-x-paddings-tablet-reverse);
+  }
+}
+@media (min-width: 1440px) {
+  .collections-brands__list {
+    display: block;
+    margin: 0 calc((100vw - var(--page-width)) / -2);
+  }
+}
+.collections-brands__list-mob {
+  padding: 0 12px;
+}
+@media (min-width: 576px) {
+  .collections-brands__list-mob {
+    padding: 0;
+  }
+}
+@media (min-width: 992px) {
+  .collections-brands__list-mob {
+    display: none;
+  }
+}
+.collections-brands__list-mob-slide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+.collections-brands__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 7px;
+  border: 1px solid #414240;
+}
+@media (min-width: 992px) {
+  .collections-brands__item {
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0;
+    border: unset;
+  }
+}
+.collections-brands__item .brand-icon img, .collections-brands__item .brand-icon svg {
+  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+@media (min-width: 992px) {
+  .collections-brands__item .brand-icon img, .collections-brands__item .brand-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+.collections-brands__item .text {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .collections-brands__item .text {
+    text-align: left;
+    margin-top: unset;
+    margin-left: 30px;
+    width: 134px;
+  }
+}
+.collections-brands__item .text .small-text {
+  display: none;
+  font-size: 14px;
+  line-height: 34px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+@media (min-width: 992px) {
+  .collections-brands__item .text .small-text {
+    display: block;
+  }
+}
+.collections-brands__item .text .title {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+@media (min-width: 992px) {
+  .collections-brands__item .text .title {
+    font-size: 20px;
+    line-height: 34px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+.collections-brands__item svg.icon-play {
+  width: 16px;
+  height: 16px;
+  margin-top: 10px;
+}
+@media (min-width: 992px) {
+  .collections-brands__item svg.icon-play {
+    width: 25px;
+    height: 25px;
+    margin-top: unset;
+    margin-left: 30px;
+  }
+}
+.collections-brands__item svg.icon-play path {
+  fill: #CF322D;
+}
+.collections-brands .slider-pagination {
+  margin-top: 15px;
+  text-align: center;
+}
+@media (min-width: 992px) {
+  .collections-brands .slider-pagination {
+    margin-top: 50px;
+  }
+}
+.collections-brands .slider-pagination .swiper-pagination-bullet {
+  height: 5px;
+  width: 60px;
+  border-radius: unset;
+  background: #C4C4C4;
+  opacity: 1;
+  margin: 0 15px;
+}
+.collections-brands .slider-pagination .swiper-pagination-bullet-active {
+  background: #CF322D;
+}
+@media (min-width: 1440px) {
+  .collections-brands .slider-pagination .swiper-pagination-bullet {
+    margin: 0 20px;
+    width: 84px;
+  }
 }
 .page-title {
   text-align: center;

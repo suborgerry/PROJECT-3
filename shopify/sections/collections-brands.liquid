@@ -1,0 +1,121 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="collections-brands positioning--{{ s.id }}">
+    <div class="page-width">
+        {%- if ss.heading != blank -%}
+            <h3 class="text-center text-32px">{{ ss.heading }}</h3>
+        {%- endif -%}
+        <div class="collections-brands__list">
+            <div class="swiper-wrapper">
+                {%- for b in s.blocks -%}
+                    {%- render 'collections-brands-item', class: 'swiper-slide', icon_svg: b.settings.icon_svg, icon_img: b.settings.icon_img, small_text: b.settings.small_text, collection: b.settings.collection -%}
+                {%- endfor -%}
+            </div>
+            <div class="slider-pagination"></div>
+        </div>
+        <div class="collections-brands__list-mob">
+            <div class="swiper-wrapper">
+                {%- assign all_blocks = 0 -%}
+                {%- for b in s.blocks -%}
+                    {%- assign all_blocks = all_blocks | plus: 1 -%}
+                {%- endfor -%}
+                {%- assign all_slides_count = all_blocks | divided_by: 6.0 | ceil -%}
+                {%- for slide in (1..all_slides_count) -%}
+                    <div class="collections-brands__list-mob-slide swiper-slide">
+                        {%- if forloop.first -%}
+                            {%- for b in s.blocks limit: 6 -%}
+                                {%- render 'collections-brands-item', icon_svg: b.settings.icon_svg, icon_img: b.settings.icon_img, small_text: b.settings.small_text, collection: b.settings.collection -%}
+                            {%- endfor -%}
+                        {%- else -%}
+                            {%- for b in s.blocks limit: 6 offset: continue -%}
+                                {%- render 'collections-brands-item', icon_svg: b.settings.icon_svg, icon_img: b.settings.icon_img, small_text: b.settings.small_text, collection: b.settings.collection -%}
+                            {%- endfor -%}
+                        {%- endif -%}
+                    </div>
+                {%- endfor -%}
+            </div>
+            <div class="slider-pagination"></div>
+        </div>
+    </div>
+</section>
+
+{{ 'swiper.min.js' | asset_url | script_tag }}
+{{ 'collections-brands.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+    "name": "Collections brands",
+    "settings": [                 
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection-brand",
+            "name": "Collection brand",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "SVG icon is priority"
+                },
+                {
+                    "type": "text",
+                    "id": "icon_svg",
+                    "label": "Icon SVG"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_img",
+                    "label": "Icon Image"
+                },
+                {
+                    "type": "text",
+                    "id": "small_text",
+                    "label": "Small text",
+                    "default": "Officially Licensed"
+                }          
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections brands",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}
