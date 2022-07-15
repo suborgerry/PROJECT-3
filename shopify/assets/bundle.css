@@ -7590,17 +7590,33 @@ body {
   display: block;
   max-width: 96.4rem;
 }
+@media (max-width: 991.98px) {
+  .content-withtext__image {
+    margin: 4.8rem auto;
+  }
+}
 .content-withtext__heading {
   font-weight: 700;
   font-size: 2rem;
   line-height: 2.6rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: 2.8rem;
+}
+@media (max-width: 991.98px) {
+  .content-withtext__heading {
+    margin-bottom: 2.4rem;
+  }
 }
 .content-withtext__text {
   letter-spacing: 0.479348px;
 }
 .content-withtext__collage {
   margin-top: 5.6rem;
+}
+@media (max-width: 991.98px) {
+  .content-withtext__collage {
+    margin-top: 4.8rem;
+    margin-bottom: 1.9rem;
+  }
 }
 .collage_1 {
   justify-content: space-between;
@@ -7617,7 +7633,8 @@ body {
 }
 @media (max-width: 991.98px) {
   .collage_1 > img {
-    margin-top: 3.2rem;
+    width: calc(50% - 0.9rem);
+    margin-top: 1.8rem;
     width: 100%;
   }
 }
@@ -7635,9 +7652,19 @@ body {
   width: calc(39.5% - 1.6rem);
   height: auto;
 }
+@media (max-width: 991.98px) {
+  .collage_1_2 img:first-child {
+    width: calc(39.5% - 0.9rem);
+  }
+}
 .collage_1_2 img:nth-child(2) {
   width: calc(60.5% - 1.6rem);
   height: auto;
+}
+@media (max-width: 991.98px) {
+  .collage_1_2 img:nth-child(2) {
+    width: calc(60.5% - 0.9rem);
+  }
 }
 .collage_2 {
   margin-top: 3.2rem;
@@ -7647,6 +7674,7 @@ body {
   .collage_2 {
     flex-direction: column;
     align-items: center;
+    margin-top: 1.8rem;
   }
 }
 .collage_2_1 {
@@ -7663,14 +7691,30 @@ body {
 .collage_2_2 {
   margin-top: 3.2rem;
   justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 991.98px) {
+  .collage_2_2 {
+    margin-top: 1.8rem;
+  }
 }
 .collage_2_2 img:first-child {
   width: calc(60.4% - 1.6rem);
   height: auto;
 }
+@media (max-width: 991.98px) {
+  .collage_2_2 img:first-child {
+    width: calc(60.4% - 0.9rem);
+  }
+}
 .collage_2_2 img:nth-child(2) {
   width: calc(39.6% - 1.6rem);
   height: auto;
+}
+@media (max-width: 991.98px) {
+  .collage_2_2 img:nth-child(2) {
+    width: calc(39.6% - 0.9rem);
+  }
 }
 .collage_2_3 {
   width: calc(50% - 1.6rem);
@@ -7679,6 +7723,11 @@ body {
   .collage_2_3 {
     margin-top: 3.2rem;
     width: 100%;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 991.98px) {
+  .collage_2_3 {
+    margin-top: 1.8rem;
   }
 }
 .collage_2_3 img {

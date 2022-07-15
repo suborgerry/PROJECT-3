@@ -10,19 +10,29 @@
         margin: 5.6rem auto;
         display: block;
         max-width: 96.4rem;
+        @include media-breakpoint-down(md) {
+            margin: 4.8rem auto;
+        }
     }
     &__heading {
         font-weight: 700;
         font-size: 2rem;
         line-height: 2.6rem;
-        margin-bottom: 2.2rem;
+        margin-bottom: 2.8rem;
         @extend .c-black;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 2.4rem;
+        }
     }
     &__text {
         letter-spacing: 0.479348px;
     }
     &__collage {
         margin-top: 5.6rem;
+        @include media-breakpoint-down(md) {
+            margin-top: 4.8rem;
+            margin-bottom: 1.9rem;
+        }
     }
 }
 
@@ -37,7 +47,8 @@
             width: calc(50% - 1.6rem);
             height: auto;
             @include media-breakpoint-down(md) {
-                margin-top: 3.2rem;
+                width: calc(50% - 0.9rem);
+                margin-top: 1.8rem;
                 width: 100%;
             }
         }
@@ -52,10 +63,16 @@
                 &:first-child {
                     width: calc(39.5% - 1.6rem);
                     height: auto;
+                    @include media-breakpoint-down(md) {
+                        width: calc(39.5% - 0.9rem);
+                    }
                 }
                 &:nth-child(2) {
                     width: calc(60.5% - 1.6rem);
                     height:auto;
+                    @include media-breakpoint-down(md) {
+                        width: calc(60.5% - 0.9rem);
+                    }
                 }
             }
         }
@@ -66,6 +83,7 @@
         @include media-breakpoint-down(md) {
             flex-direction: column;
             align-items: center;
+            margin-top: 1.8rem;
         }
         &_1 {
             width: calc(50% - 1.6rem);
@@ -79,14 +97,24 @@
         &_2 {
             margin-top: 3.2rem;
             justify-content: space-between;
+            align-items: center;
+            @include media-breakpoint-down(md) {
+                margin-top: 1.8rem;
+            }
             img {
                 &:first-child {
                     width: calc(60.4% - 1.6rem);
                     height: auto;
+                    @include media-breakpoint-down(md) {
+                        width: calc(60.4% - 0.9rem);
+                    }
                 }
                 &:nth-child(2) {
                     width: calc(39.6% - 1.6rem);
                     height: auto;
+                    @include media-breakpoint-down(md) {
+                        width: calc(39.6% - 0.9rem);
+                    }
                 }
             }
         }
@@ -95,6 +123,9 @@
             @include media-breakpoint-down(md) {
                 margin-top: 3.2rem;
                 width: 100%;
+                @include media-breakpoint-down(md) {
+                    margin-top: 1.8rem;
+                }
             }
             img {
                 width: 100%;

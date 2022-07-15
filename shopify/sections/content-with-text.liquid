@@ -12,8 +12,8 @@
   }
 {%- endstyle -%}
 
-<div class="image-with-text isolate section-{{ section.id }}-padding">
-  <div id="ImageWithText--{{ section.id }}" class="image-with-text__content gradient content-container">
+<div class="content-width-text isolate section-{{ section.id }}-padding">
+  <div id="ImageWithText--{{ section.id }}" class="content-width-text__content gradient content-container">
     {%- for block in section.blocks -%}
       {% case block.type %}
         {%- when 'heading' -%}
