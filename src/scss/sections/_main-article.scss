@@ -19,9 +19,9 @@
         text-transform: uppercase;
         margin-top: 3.3rem;
         @extend .c-grey-1;
+        text-align: center;
         @include media-breakpoint-down(sm) {
             margin-top: 1.7rem;
-            text-align: center;
         }
     }
     &__authorimg {
@@ -80,8 +80,11 @@
     &__content {
         margin-top: 5.6rem;
         width: 100%;
+        max-width: 96.4rem;
+        padding-bottom: 7.2rem;
         @include media-breakpoint-down(sm) {
             font-size: 1.6rem;
+            padding-bottom: 0;
         }
         a {
             text-decoration: none;
@@ -105,6 +108,17 @@
                 margin-bottom: 2rem;
             }
         }
+        .text-width {
+            @include media-breakpoint-down(md) {
+                @include media-breakpoint-up(md) {
+                    max-width: 29rem;
+                }
+                & + br,
+                & + br + br {
+                    display: none;
+                }
+            }
+        }
     }
     &__comments {
         display: flex;
@@ -112,11 +126,11 @@
         align-items: center;
         width: 100%;
         border-top: 1px solid $c-grey-8;
-        margin-top: 7.2rem;
+        // margin-top: 5.6rem;
         margin-bottom: 9.6rem;
         padding-top: 5.6rem;
         @include media-breakpoint-down(sm) {
-            margin-top: 5.1rem;
+            margin-top: 3.1rem;
             padding-top: 0;
             margin-bottom: 5rem;
             border-bottom: 1px solid $c-grey-8;
@@ -163,7 +177,7 @@
                 @extend .c-white-bg;
                 padding: 2.2rem 2.4rem 1rem;
                 width: 31.6rem;
-                @include media-breakpoint-down(xs) {
+                @include media-breakpoint-down(md) {
                     width: 100%;
                 }
                 &::placeholder {
@@ -262,6 +276,26 @@
 }
 
 .under-image {
+    @media (max-width: 900px) {
+        top: -2rem;
+        position: relative;
+    }
+    @media (max-width: 890px) {
+        top: -5rem;
+        position: relative;
+    }
+    @media (max-width: 805px) {
+        top: -8rem;
+        position: relative;
+    }
+    @media (max-width: 802px) {
+        top: -11rem;
+        position: relative;
+    }
+    @media (max-width: 795px) {
+        top: -13rem;
+        position: relative;
+    }
     @include media-breakpoint-down(sm) {
         display: none;
     }
