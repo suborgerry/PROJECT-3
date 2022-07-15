@@ -26,7 +26,7 @@
         "165782500553c5c0ef-0": {
           "type": "heading",
           "settings": {
-            "heading": "100% SATISFACTION GUARANTEE"
+            "heading": "100<span>%<\/span> SATISFACTION GUARANTEE"
           }
         },
         "165782500553c5c0ef-1": {
@@ -59,13 +59,130 @@
         "image": "shopify:\/\/shop_images\/Group_12_1.jpg",
         "image_mobile": "shopify:\/\/shop_images\/Group_12_2.jpg",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 0
+      }
+    },
+    "1657875517a114587a": {
+      "type": "list",
+      "blocks": {
+        "fcceb395-831d-4b9e-927e-d0efbb054e27": {
+          "type": "item",
+          "settings": {
+            "text": "Returns must be sent back within 30 days of delivery."
+          }
+        },
+        "c148af95-92f3-47bb-b45d-187f4f939c1c": {
+          "type": "item",
+          "settings": {
+            "text": "Product must not have been worn, washed, or altered in any way."
+          }
+        },
+        "0e0b40a6-9e90-472e-942c-57b16a0b65d6": {
+          "type": "item",
+          "settings": {
+            "text": "No visible signs of use present including deodorant\/cosmetic stains, perfume, scents, etc."
+          }
+        },
+        "5cb0610e-d703-4c9a-80ec-7fa793e9fe4c": {
+          "type": "item",
+          "settings": {
+            "text": "All applicable tags must be intact and the product returned in their original clear packaging."
+          }
+        },
+        "96208e8b-f2ae-460a-9d9f-766c62ecd25c": {
+          "type": "item",
+          "settings": {
+            "text": "The items must be mailed back with the original packing slip included."
+          }
+        },
+        "db6e0610-7dcb-4170-94d8-fe6aaf0b0ce2": {
+          "type": "item",
+          "settings": {
+            "text": "We do not accept returns on final sale items, discounted items, jewelry, intimate items, and exclusive run items."
+          }
+        }
+      },
+      "block_order": [
+        "fcceb395-831d-4b9e-927e-d0efbb054e27",
+        "c148af95-92f3-47bb-b45d-187f4f939c1c",
+        "0e0b40a6-9e90-472e-942c-57b16a0b65d6",
+        "5cb0610e-d703-4c9a-80ec-7fa793e9fe4c",
+        "96208e8b-f2ae-460a-9d9f-766c62ecd25c",
+        "db6e0610-7dcb-4170-94d8-fe6aaf0b0ce2"
+      ],
+      "settings": {
+        "heading": "Qualifications"
+      }
+    },
+    "1657878017eb724aa6": {
+      "type": "steps",
+      "settings": {
+        "a_anchor_heading": "Step 1",
+        "a_anchor_info": "<p>Submit a <em>return or exchange request <\/em>within 30 days of receiving your order. Choose from exchange, two return options; store credit or a refund to the original payment method.<\/p>",
+        "b_anchor_heading": "Step 2",
+        "b_anchor_info": "<p>An unpaid shipping label will be sent to you via email with return and exchange instructions. Returns and exchanges are processed within three days of being delivered at Route One Apparel.<\/p>",
+        "c_anchor_heading": "Step 3",
+        "c_anchor_info": "<p>An email will be dispatched when your return or exchange is processed. If you are returning something, you will receive a full refund or store credit, depending on the option you chose in step one.<\/p>"
+      }
+    },
+    "1657879600dd07c0eb": {
+      "type": "rich-text",
+      "blocks": {
+        "1805269d-34d8-4afe-9a8c-047614e7dca9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Damaged \/ Incorrect Merchandise"
+          }
+        },
+        "1657879600756dcc1c-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you have received the wrong\/damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>If you have received a damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>We do not refund for return shipping costs if you do not request a pre-paid return label as stated above.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1805269d-34d8-4afe-9a8c-047614e7dca9",
+        "1657879600756dcc1c-1"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1657881646228f91be": {
+      "type": "rich-text",
+      "blocks": {
+        "1657881646ead30386-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Late Refunds"
+          }
+        },
+        "1657881646ead30386-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Customers have 30 days to send back purchases made at RouteOneApparel.com. Returns postmarked after 30 days will be refused and sent back at the customer's expense.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1657881646ead30386-0",
+        "1657881646ead30386-1"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "16577818970eb54d57",
     "main",
-    "16578250056b70c816"
+    "16578250056b70c816",
+    "1657875517a114587a",
+    "1657878017eb724aa6",
+    "1657879600dd07c0eb",
+    "1657881646228f91be"
   ]
 }
