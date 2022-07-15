@@ -1,0 +1,111 @@
+.content-withtext {
+    margin: auto;
+    &__content {
+        max-width: 96.4rem;
+        margin: auto;
+    }
+    &__image {
+        width: 100%;
+        max-width: 94rem;
+        margin: 5.6rem auto;
+        display: block;
+        max-width: 96.4rem;
+    }
+    &__heading {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        margin-bottom: 2.2rem;
+        @extend .c-black;
+    }
+    &__text {
+        letter-spacing: 0.479348px;
+    }
+    &__collage {
+        margin-top: 5.6rem;
+    }
+}
+
+.collage {
+    &_1 {
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: center;
+        }
+        & > img {
+            width: calc(50% - 1.6rem);
+            height: auto;
+            @include media-breakpoint-down(md) {
+                margin-top: 3.2rem;
+                width: 100%;
+            }
+        }
+        &_2 {
+            align-items: flex-end;
+            justify-content: space-between;
+            width: calc(50% - 1.6rem);
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+            img {
+                &:first-child {
+                    width: calc(39.5% - 1.6rem);
+                    height: auto;
+                }
+                &:nth-child(2) {
+                    width: calc(60.5% - 1.6rem);
+                    height:auto;
+                }
+            }
+        }
+    }
+    &_2 {
+        margin-top: 3.2rem;
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            align-items: center;
+        }
+        &_1 {
+            width: calc(50% - 1.6rem);
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+            & > img {
+                width: 100%;
+            }
+        }
+        &_2 {
+            margin-top: 3.2rem;
+            justify-content: space-between;
+            img {
+                &:first-child {
+                    width: calc(60.4% - 1.6rem);
+                    height: auto;
+                }
+                &:nth-child(2) {
+                    width: calc(39.6% - 1.6rem);
+                    height: auto;
+                }
+            }
+        }
+        &_3 {
+            width: calc(50% - 1.6rem);
+            @include media-breakpoint-down(md) {
+                margin-top: 3.2rem;
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.main-page-title {
+    @include media-breakpoint-down(sm) {
+        margin-top: -1rem;
+    }
+}
