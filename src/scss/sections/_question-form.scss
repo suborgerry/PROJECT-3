@@ -1,18 +1,28 @@
 .question-form {
     margin-top: 6.4rem !important;
     border-top: 1px solid $c-grey-8;
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+        margin: 0 2rem;
+    }
     .gradient {
         width: 100%;
         max-width: 72.1rem;
     }
     &__title {
         font-weight: 700;
-        font-size: 32px;
-        line-height: 38px;
+        font-size: 3.2rem;
+        line-height: 3.8rem;
         text-align: center;
+        @include media-breakpoint-down(xs) {
+            font-size: 2.4rem;
+        }
     }
     form {
         margin-top: 8.6rem;
+        @include media-breakpoint-down(xs) {
+            margin-top: 4rem;
+        }
     }
     .contact__fields {
         justify-content: space-between;
@@ -28,25 +38,48 @@
         }
         label {
             font-weight: 700;
-            font-size: 16px;
-            line-height: 20px;
+            font-size: 1.6rem;
+            line-height: 2rem;
             letter-spacing: 0.93913px;
             text-transform: uppercase;
             margin-bottom: 2rem;
+            display: block;
             @extend .c-black;
         }
         input {
             border: 1px solid $c-grey-9;
             padding: 1.5rem 2.4rem;
             width: 31.6rem;
-            font-size: 16px;
-            line-height: 25px;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
             letter-spacing: 0.547826px;
+            height: 5.6rem;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
             & + & {
                 margin-left: 3.9rem;
             }
             &::placeholder {
-                @extend .c-grey-4
+                @extend .c-grey-4;
+            }
+        }
+        textarea {
+            border: 1px solid $c-grey-9;
+            padding: 1.5rem 2.4rem;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.547826px;
+            height: 18.6rem;
+            width: 100%;
+            @include media-breakpoint-down(sm) {
+                height: 14.5rem;
+            }
+        }
+        &.textarea {
+            margin-top: 6.4rem;
+            @include media-breakpoint-down(sm) {
+                margin-top: 4rem;
             }
         }
     }
@@ -72,13 +105,13 @@
             padding: 1.5rem 2.4rem;
             border: 1px solid $c-grey-9;
             font-weight: 300;
-            font-size: 16px;
-            line-height: 25px;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
             letter-spacing: 0.547826px;
             &:hover {
                 cursor: pointer;
             }
-            svg {
+            & + svg {
                 right: 2.5rem;
                 transition: all 0.3s ease;
             }
@@ -92,8 +125,8 @@
             li {
                 padding: 1.5rem 2.4rem;
                 font-weight: 300;
-                font-size: 16px;
-                line-height: 25px;
+                font-size: 1.6rem;
+                line-height: 2.5rem;
                 letter-spacing: 0.547826px;
                 &:hover {
                     background-color: #F8E0E0;
@@ -106,11 +139,19 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        margin-top: 2rem;
+        margin: 6.4rem 0 23.6rem 0;
+        @include media-breakpoint-down(sm) {
+            margin: 2rem 0 4rem 0;
+        }
         button {
             text-transform: uppercase;
             font-weight: 700;
-            padding: 2.1rem 12rem;
+            padding: 2.2rem 6.5rem 1.1rem 6.5rem;
+            letter-spacing: 0.821739px;
+            font-size: 1.4rem;
+            @include media-breakpoint-down(xs) {
+                width: 100%;
+            }
             &:hover {
                 outline: 0;
                 border: 0;
