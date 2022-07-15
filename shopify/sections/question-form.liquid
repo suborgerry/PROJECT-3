@@ -2,7 +2,7 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: 4rem;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
@@ -15,7 +15,7 @@
 {%- endstyle -%}
 
 <div class="gradient">
-  <div class="contact section-{{ section.id }}-padding">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <p class="question-form__title title-wrapper--no-top-margin">{{ section.settings.heading }}</p>
     {%- else -%}
@@ -67,32 +67,7 @@
           {%- endif -%}
         </div>
       </div>
-      <div class="question-form__select position-relative" id="question-form">
-        <input
-          type="hidden"
-          id="ContactForm-subject"
-          name="subject"
-          spellcheck="false"
-          autocapitalize="off"
-          value="None subject"
-        >
-        <p class="question-form__select-title">THEME SUBJECT</p>
-        <div class="position-relative d-flex align-items-center">
-          <p class="question-form__select-main">
-            {% for question in section.blocks limit: 1 %}
-              {{ question.settings.text }}
-            {% endfor %}
-          </p>
-          <svg class="position-absolute" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.63967 0.146102L0.14751 4.63975C-0.0491701 4.83693 -0.0491701 5.15639 0.14751 5.35407C0.344191 5.55125 0.663651 5.55125 0.860332 5.35407L4.99606 1.21685L9.13178 5.35357C9.32846 5.55075 9.64792 5.55075 9.8451 5.35357C10.0418 5.15639 10.0418 4.83643 9.8451 4.63926L5.35295 0.145605C5.1583 -0.0485863 4.83382 -0.0485864 4.63967 0.146102Z" fill="black"/></svg>
-        </div>
-        <ul class="c-white-bg position-absolute list-style-none question-form__select-list">
-          {% for question in section.blocks %}
-            <li class="question-item">{{ question.settings.text }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <div class="question-form__field textarea">
-        <label for="ContactForm-body">YOUR MESSAGE</label>
+      <div class="field" style="display:none;">
         <textarea
           rows="10"
           id="ContactForm-body"
@@ -102,10 +77,25 @@
         >
           {{- form.body -}}
         </textarea>
+        <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+      </div>
+      <div class="question-form__select position-relative" id="question-form">
+        <p class="question-form__select-title">THEME SUBJECT</p>
+        <p class="question-form__select-main position-relative d-flex align-items-center">
+          {% for question in section.blocks limit: 1 %}
+            {{ question.settings.text }}
+          {% endfor %}
+          <svg class="position-absolute" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.63967 0.146102L0.14751 4.63975C-0.0491701 4.83693 -0.0491701 5.15639 0.14751 5.35407C0.344191 5.55125 0.663651 5.55125 0.860332 5.35407L4.99606 1.21685L9.13178 5.35357C9.32846 5.55075 9.64792 5.55075 9.8451 5.35357C10.0418 5.15639 10.0418 4.83643 9.8451 4.63926L5.35295 0.145605C5.1583 -0.0485863 4.83382 -0.0485864 4.63967 0.146102Z" fill="black"/></svg>
+        </p>
+        <ul class="c-white-bg position-absolute list-style-none question-form__select-list">
+          {% for question in section.blocks %}
+            <li class="question-item">{{ question.settings.text }}</li>
+          {% endfor %}
+        </ul>
       </div>
       <div class="contact__button">
         <button type="submit" class="button btn-red-1">
-          CONTACT US
+          {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
     {%- endform -%}
@@ -123,7 +113,7 @@
     if(element.classList.contains('question-item')) {
       document.querySelector('.question-form__select-main').innerHTML = element.innerHTML;
       questionForm.classList.toggle('active');
-      document.querySelector('#ContactForm-subject').value = element.innerHTML;
+      document.querySelector('#ContactForm-body').value = element.innerHTML;
     }
   })
 {% endjavascript %}

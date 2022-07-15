@@ -38,7 +38,7 @@
       {%- when 'title'-%}
         <p class="article-template__title" itemprop="headline">{{ article.title | escape }}</p>
       {%- when 'content'-%}
-        <div class="article-template__content" itemprop="articleBody" {{ block.shopify_attributes }}>
+        <div class="article-template__content rte" itemprop="articleBody" {{ block.shopify_attributes }}>
             {{ article.content }}
         </div>
       {%- when 'share' -%}

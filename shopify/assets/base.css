@@ -295,12 +295,6 @@ body,
   padding-bottom: 11.6rem;
 }
 
-@media (max-width: 767.8px) {
-  .rte {
-    padding-bottom: 5.6rem;
-  }
-}
-
 .rte strong {
   font-weight: 700;
   font-size: 20px;
@@ -329,10 +323,6 @@ body,
 
   .rte strong {
     margin-bottom: 2.4rem;
-  }
-
-  .rte strong.top-2 {
-    margin-top: 5.6rem;
   }
 }
 
@@ -1618,8 +1608,8 @@ details[open] > .share-button__fallback {
   transition: none;
 }
 
-.share-button__fallback,
-.share-button__fallback {
+.share-button__fallback .field__input:focus,
+.share-button__fallback .field__input:-webkit-autofill {
   outline: 0.2rem solid rgba(var(--color-foreground),.5);
   outline-offset: 0.1rem;
   box-shadow: 0 0 0 0.1rem rgb(var(--color-background)),0 0 0.5rem 0.4rem rgba(var(--color-foreground),.3);
@@ -1732,6 +1722,7 @@ details[open] > .share-button__fallback {
   border-radius: var(--inputs-radius);
 }
 
+.field__input:focus-visible,
 .select__select:focus-visible,
 .customer .field input:focus-visible,
 .customer select:focus-visible,
@@ -1836,6 +1827,9 @@ details[open] > .share-button__fallback {
   letter-spacing: 0.04rem;
 }
 
+.field__input:focus,
+.field__input:not(:placeholder-shown),
+.field__input:-webkit-autofill,
 .customer .field input:focus,
 .customer .field input:not(:placeholder-shown),
 .customer .field input:-webkit-autofill {
@@ -1852,10 +1846,10 @@ limespot-container {
   display: none !important;
 }
 
-/* .field__input::placeholder,
+.field__input::placeholder,
 .customer .field input::placeholder {
   opacity: 0;
-} */
+}
 
 .field__button {
   align-items: center;
