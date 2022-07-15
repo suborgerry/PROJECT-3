@@ -15,6 +15,7 @@
 <section class="collections-tabs-list positioning--{{ s.id }}">
     <div class="page-width">
         <div class="collections-tabs-list__main">
+            {%- comment -%}Desktop tabs{%- endcomment -%}
             <div class="collections-tabs-list__tabs d-none d-lg-flex">
                 {%- for b in s.blocks -%}
                     <div class="collections-tabs-list__tab{% if forloop.first %} tab-active{% endif %}">
@@ -67,9 +68,7 @@
                 </div>
                 {%- endfor -%}
             </div>
-
-
-
+            {%- comment -%}Mobile tabs{%- endcomment -%}
             <div class="collections-tabs-list__tabs-mob d-lg-none">
                 {%- for b in s.blocks -%}
                     <div class="collections-tabs-list__tab-mob{% if forloop.first %} tab-active{% endif %}">
@@ -79,9 +78,9 @@
             </div>
             <div class="collections-tabs-list__tabs-wrapper-mob d-lg-none">
                 {%- for b in s.blocks -%}
-                    <div class="collections-tabs-list__tab-content-mob tab-content-mob-{{ forloop.index }}{% if forloop.first %} tab-content-active{% endif %}">
+                    {%- assign all_slides_count = b.settings.collection_list.count | divided_by: 10.0 | ceil -%}
+                    <div class="collections-tabs-list__tab-content-mob{% if all_slides_count > 1 %} tab-content-mob-{{ forloop.index }}{% endif %}{% if forloop.first %} tab-content-active{% endif %}">
                         <div class="swiper-wrapper">
-                            {%- assign all_slides_count = b.settings.collection_list.count | divided_by: 10.0 | ceil -%}
                             {% for slide in (1..all_slides_count) %}
                             <ul class="swiper-slide block-list list-unstyled">
                                 {%- if forloop.first -%}
@@ -97,8 +96,10 @@
                             {% endfor %}
                         </div>
                         <div class="slider-pagination"></div>
+                        {%- if all_slides_count > 1 -%}
                         <div class="button-prev">{%- render 'icon-arr-slider' -%}</div>
                         <div class="button-next">{%- render 'icon-arr-slider' -%}</div>
+                        {%- endif -%}
                     </div>
                 {%- endfor -%}
             </div>

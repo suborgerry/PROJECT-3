@@ -1,0 +1,91 @@
+.collections-local {
+    overflow: hidden;
+    &__heading {
+        margin-bottom: 17px;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 34px;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+    }
+    &__name {
+        position: relative;
+        padding: 22px 0;
+        &:before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: var(--page-width-x-paddings-mobile-reverse);
+            left: var(--page-width-x-paddings-mobile-reverse);
+            background-color: $c-grey-5;
+            content: '';
+        }
+        @include media-breakpoint-up(sm) {
+            &:before {
+                right: var(--page-width-x-paddings-tablet-reverse);
+                left: var(--page-width-x-paddings-tablet-reverse);
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            width: 38%;
+            padding: 22px 30px 22px 0;
+            &:before {
+                right: 0;
+            }
+        }
+        @include media-breakpoint-up(xxl) {
+            &:before {
+                left: calc((100vw - var(--page-width)) / -2);
+            }
+        }
+        h3 {
+            position: relative;
+        }
+        svg {
+            position: absolute;
+            width: 167px;
+            height: 47px;
+            bottom: 0;
+            right: calc(var(--page-width-x-paddings-mobile-reverse) - 58px);
+            @include media-breakpoint-up(sm) {
+                right: 0;
+            }
+            @include media-breakpoint-up(lg) {
+                right: unset;
+                left: 0;
+            }
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        @include media-breakpoint-up(lg) {
+            width: 62%;
+            padding: 0 0 0 26px;
+        }
+        li {
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+            a {
+                display: block;
+                padding: 10px 0;
+                font-family: 'jersey';
+                font-size: 16px;
+                line-height: 22px;
+                text-decoration: none;
+                color: $c-grey-4;
+                transition: 0.3s;
+                &:hover {
+                    color: $c-red-1;
+                }
+            }
+        }
+    }
+}

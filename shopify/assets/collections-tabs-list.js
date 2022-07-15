@@ -32,30 +32,43 @@ for (let i = 0; i < tabLinkMob.length; i++) {
     }); 
 }
 
-new Swiper('.tab-content-mob-1', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    pagination: {
-      clickable: true,
-      el: '.slider-pagination',
-    },
-    navigation: {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
-    }
-});
-
-new Swiper('.tab-content-mob-2', {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    pagination: {
-      clickable: true,
-      el: '.slider-pagination',
-    },
-    navigation: {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
-    }
-});
+if (document.querySelector('.tab-content-mob-1') != null) {
+    new Swiper('.tab-content-mob-1', {
+        slidesPerView: 1,
+        spaceBetween: 38,
+        loop: true,
+        breakpoints: {
+            768: {
+                spaceBetween: 56,
+            }
+        },
+        pagination: {
+          clickable: true,
+          el: '.slider-pagination',
+        },
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
+        }
+    });
+}
+if (document.querySelector('.tab-content-mob-2') != null) {
+    new Swiper('.tab-content-mob-2', {
+        slidesPerView: 1,
+        spaceBetween: 38,
+        loop: true,
+        breakpoints: {
+            768: {
+                spaceBetween: 56,
+            }
+        },
+        pagination: {
+          clickable: true,
+          el: '.slider-pagination',
+        },
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
+        }
+    });
+}

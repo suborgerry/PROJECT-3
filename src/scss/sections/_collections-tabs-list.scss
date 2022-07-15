@@ -189,6 +189,7 @@
             color: $c-grey-6;
             white-space: nowrap;
             text-transform: capitalize;
+            transition: 0.3s;
         }
         &.tab-active {
             top: 0;

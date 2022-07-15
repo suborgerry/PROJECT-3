@@ -1,0 +1,75 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="collections-local positioning--{{ s.id }}">
+    <div class="page-width">
+        {%- if ss.heading != blank -%}
+            <h3 class="collections-local__heading text-center text-32px">{{ ss.heading | upcase }}</h3>
+        {%- endif -%}
+        <div class="collections-local__wrapper">
+            <div class="collections-local__name">
+                {%- render 'icon-city' -%}
+                <h3 class="text-lg-right text-32px">{{ ss.collections_heading | upcase }}</h3>
+            </div>
+            <ul class="collections-local__list list-unstyled">
+                {%- for collection in ss.collection_list -%}
+                    <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Collections local",
+    "settings": [                 
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }, 
+        {
+            "type": "text",
+            "id": "collections_heading",
+            "label": "Collections heading"
+        }, 
+        {
+            "type": "collection_list",
+            "id": "collection_list",
+            "label": "Collections"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Collections local",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

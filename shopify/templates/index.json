@@ -236,8 +236,62 @@
         "86a83a6c-155f-44e0-a432-2ad97834d0c7"
       ],
       "settings": {
-        "padding_section": "0px 0px 60px 0px",
-        "padding_section_sm": "0px 0px 88px 0px"
+        "padding_section": "0px 0px 88px 0px",
+        "padding_section_sm": "0px 0px 60px 0px"
+      }
+    },
+    "1657883483fcdb5b16": {
+      "type": "collections-local",
+      "settings": {
+        "heading": "Local",
+        "collections_heading": "Maryland State",
+        "collection_list": [
+          "maryland",
+          "event-we-love-baltimore",
+          "america",
+          "washington-dc",
+          "state-parks"
+        ],
+        "padding_section": "0px 0px 66px 0px",
+        "padding_section_sm": "0px 0px 30px 0px"
+      }
+    },
+    "16578881419d573542": {
+      "type": "video-with-info",
+      "blocks": {
+        "3b768c0c-ca98-478c-a475-443975b73584": {
+          "type": "info-block",
+          "settings": {
+            "heading": "12456",
+            "small_text": "Served amount of people in the area so far"
+          }
+        },
+        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705": {
+          "type": "info-block",
+          "settings": {
+            "heading": "over 10 years",
+            "small_text": "Started in a dorm room"
+          }
+        },
+        "55f49055-b28c-4cec-a745-3663ab126ac6": {
+          "type": "info-block",
+          "settings": {
+            "heading": "Over 4,000 product",
+            "small_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "3b768c0c-ca98-478c-a475-443975b73584",
+        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705",
+        "55f49055-b28c-4cec-a745-3663ab126ac6"
+      ],
+      "settings": {
+        "heading": "Origin Story",
+        "video_webm": "",
+        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
+        "padding_section": "0px 0px 88px 0px",
+        "padding_section_sm": "0px 0px 60px 0px"
       }
     }
   },
@@ -246,6 +300,8 @@
     "1656936290b5c4d826",
     "165666881917ae1fc4",
     "1656928885f55b45c2",
-    "1657701661c1c8000d"
+    "1657701661c1c8000d",
+    "1657883483fcdb5b16",
+    "16578881419d573542"
   ]
 }
