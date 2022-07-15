@@ -156,12 +156,152 @@
         "padding_section": "94px 0px 52px 0px",
         "padding_section_sm": "60px 0px 60px 0px"
       }
+    },
+    "1657701661c1c8000d": {
+      "type": "collections-tabs-list",
+      "blocks": {
+        "82411005-c249-45b7-979d-43e407e90cbb": {
+          "type": "collections-block",
+          "settings": {
+            "name": "Shop by Category",
+            "collection_list": [
+              "masks-face-shields",
+              "tops",
+              "jackets",
+              "head-wear",
+              "baby-youth",
+              "quick-order-activewear",
+              "swimwear",
+              "bags",
+              "home-goods",
+              "drinkware-and-food",
+              "decor",
+              "scarves-gloves",
+              "digital-downloads",
+              "hawaiian",
+              "sweatshirts-hoodies",
+              "scarves",
+              "bottoms",
+              "formalwear",
+              "athletics-sports",
+              "foot-wear",
+              "jewelry",
+              "kitchen-set-collection",
+              "pet",
+              "accessories",
+              "holiday-occasion",
+              "beauty-personal-care"
+            ],
+            "block_image": "shopify:\/\/shop_images\/Autumn_R1A.jpg",
+            "product_1": "baltimore-skyline-harbor-blue-knit-beanie-cap",
+            "point_1_top": 14,
+            "point_1_left": 80,
+            "product_2": "burgundy-gold-maryland-full-flag-shades",
+            "point_2_top": 19,
+            "point_2_left": 16,
+            "product_3": "baltimore-purple-gold-maryland-mustache-black-shirt",
+            "point_3_top": 47,
+            "point_3_left": 13
+          }
+        },
+        "86a83a6c-155f-44e0-a432-2ad97834d0c7": {
+          "type": "collections-block",
+          "settings": {
+            "name": "Shop by Theme",
+            "collection_list": [
+              "maryland",
+              "event-we-love-baltimore",
+              "washington-dc",
+              "america",
+              "natty-boh-gear",
+              "old-bay-apparel",
+              "university-of-maryland-eastern-shore",
+              "utz-gear"
+            ],
+            "block_image": "shopify:\/\/shop_images\/Group_12.jpg",
+            "product_1": "301-baltimore-football-purple-gold-maryland-flag-sticker",
+            "point_1_top": 49,
+            "point_1_left": 51,
+            "product_2": "410-baltimore-purple-orange-maryland-flag-sticker",
+            "point_2_top": 23,
+            "point_2_left": 8,
+            "product_3": "443-baltimore-purple-orange-maryland-flag-sticker",
+            "point_3_top": 66,
+            "point_3_left": 56
+          }
+        }
+      },
+      "block_order": [
+        "82411005-c249-45b7-979d-43e407e90cbb",
+        "86a83a6c-155f-44e0-a432-2ad97834d0c7"
+      ],
+      "settings": {
+        "padding_section": "0px 0px 88px 0px",
+        "padding_section_sm": "0px 0px 60px 0px"
+      }
+    },
+    "1657883483fcdb5b16": {
+      "type": "collections-local",
+      "settings": {
+        "heading": "Local",
+        "collections_heading": "Maryland State",
+        "collection_list": [
+          "maryland",
+          "event-we-love-baltimore",
+          "america",
+          "washington-dc",
+          "state-parks"
+        ],
+        "padding_section": "0px 0px 66px 0px",
+        "padding_section_sm": "0px 0px 30px 0px"
+      }
+    },
+    "16578881419d573542": {
+      "type": "video-with-info",
+      "blocks": {
+        "3b768c0c-ca98-478c-a475-443975b73584": {
+          "type": "info-block",
+          "settings": {
+            "heading": "12456",
+            "small_text": "Served amount of people in the area so far"
+          }
+        },
+        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705": {
+          "type": "info-block",
+          "settings": {
+            "heading": "over 10 years",
+            "small_text": "Started in a dorm room"
+          }
+        },
+        "55f49055-b28c-4cec-a745-3663ab126ac6": {
+          "type": "info-block",
+          "settings": {
+            "heading": "Over 4,000 product",
+            "small_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "3b768c0c-ca98-478c-a475-443975b73584",
+        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705",
+        "55f49055-b28c-4cec-a745-3663ab126ac6"
+      ],
+      "settings": {
+        "heading": "Origin Story",
+        "video_webm": "",
+        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
+        "padding_section": "0px 0px 88px 0px",
+        "padding_section_sm": "0px 0px 60px 0px"
+      }
     }
   },
   "order": [
     "1656590445f1b0b21e",
     "1656936290b5c4d826",
     "165666881917ae1fc4",
-    "1656928885f55b45c2"
+    "1656928885f55b45c2",
+    "1657701661c1c8000d",
+    "1657883483fcdb5b16",
+    "16578881419d573542"
   ]
 }

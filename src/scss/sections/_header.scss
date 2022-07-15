@@ -223,6 +223,7 @@
                 transition: 0.2s;
             }
             &.opened {
+                color: $c-red-1;
                 &:after {
                     transform: translateY(-50%) rotate(180deg);
                 }
