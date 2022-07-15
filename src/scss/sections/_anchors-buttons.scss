@@ -4,7 +4,7 @@
     padding: 6.5rem 16.2rem 6.9rem 16.1rem;
     @extend .c-grey-10-bg;
     @include media-breakpoint-down(sm) {
-        padding: 0;
+        padding: 6.4rem 0;
         flex-direction: column;
     }
     &__item {
@@ -14,11 +14,11 @@
         text-decoration: none;
         @extend .c-black;
         font-weight: 700;
-        font-size: 1.9rem;
+        font-size: 2rem;
         line-height: 2.6rem;
         & + & {
             @include media-breakpoint-down(sm) {
-                margin-top: 2rem;
+                margin-top: 6rem;
             }
         }
         &:hover {
