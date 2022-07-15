@@ -22,9 +22,13 @@
         left: 0;
         width: 100%;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         @include media-breakpoint-up(md) {
             position: relative !important;
             padding: 7.2rem 8.8rem 4.2rem;
+            align-items: flex-start;
         }
     }
     &__media-item {
