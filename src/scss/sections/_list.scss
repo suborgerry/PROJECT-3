@@ -8,9 +8,16 @@
         @include media-breakpoint-up(sm) {
             margin-bottom: 4rem;
         }
+        &.list__text {
+            font-weight: 300;
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            letter-spacing: 0.479348px;
+            margin-bottom: 2.8rem;
+        }
     }
     ul {
-        max-width: 96.4rem;
+        max-width: 94rem;
         margin: auto;
         margin-top: 4rem;
         @include media-breakpoint-up(sm) {
