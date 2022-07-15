@@ -1,14 +1,28 @@
 {
   "sections": {
+    "16577818970eb54d57": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 0,
+        "show_title": true,
+        "show_content": true
       }
     }
   },
   "order": [
+    "16577818970eb54d57",
     "main"
   ]
 }

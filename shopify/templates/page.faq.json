@@ -3,13 +3,19 @@
     "16576193505e8b22c4": {
       "type": "breadcrumbs",
       "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 31
       }
     },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 0,
-        "padding_bottom": 28,
+        "padding_bottom": 86,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 46,
         "show_title": true,
         "show_content": false
       }
@@ -49,7 +55,7 @@
           "type": "row",
           "settings": {
             "heading": "When will my order ship and how can I track it?",
-            "row_content": "<p>If you ordered a rush order, we will ship out your package in no more than 1 business day, and select priority shipping.  If you ordered standard shipping, we will mail your package within 2-6 business days.<\/p><p>All Route One Apparel items are shipped via USPS and include a delivery confirmation number in an email that we send to you directly.  Please let us know if you require a different form of shipping, which may be subject to an additional fee.<\/p><p>If you require a specific delivery date, please contact help@routeoneapparel.com with your order # so we can upgrade your shipping to be guaranteed at your requested time.  Your order will be subject to a rush shipping charge that is based on the weight of the items and location it is being shipped to.<\/p>"
+            "row_content": "<p>If you ordered a rush order, we will ship out your package in no more than 1 business day, and select priority shipping.  If you ordered standard shipping, we will mail your package within 2-6 business days.<\/p><p>All Route One Apparel items are shipped via USPS and include a delivery confirmation number in an email that we send to you directly.  Please let us know if you require a different form of shipping, which may be subject to an additional fee.<\/p><p>If you require a specific delivery date, please contact <em>help@routeoneapparel.com<\/em> with your order # so we can upgrade your shipping to be guaranteed at your requested time.  Your order will be subject to a rush shipping charge that is based on the weight of the items and location it is being shipped to.<\/p>"
           }
         },
         "86664f7d-6958-4fa9-b22b-16964ddae45c": {
@@ -63,7 +69,7 @@
           "type": "row",
           "settings": {
             "heading": "My tracking says delivered, but I haven't received my shipment - what do I do?",
-            "row_content": "<p>While we trust and value our carriers, sometimes they have delivery issues.  Your package may be showing a \"delivered\" scan prematurely, for example.  We also recommend checking with your neighbors to see if it was accidentally delivered somewhere nearby.  If you live in an apartment, it is very likely it is at your front desk checkin.<\/p><p>If it has been 3 business days or more since false delivery, please email us at help@routeoneapparel.com so we can proceed with our lost package claim process!  If a reshipment is required, you will be <span style=\"text-decoration:underline\">required<\/span> to fill out a lost package affidavit form which will open up an investigation with your shipping provider.  If a package is lost or stolen we CANNOT provide a refund unless you paid a premium for package insurance. Once a package is deemed lost or stolen we only have the ability for a reshipment to the same address.  Upgraded shipping features - like signature tracking or expedited shipping - will cost extra if you did not select that method of shipment for your original shipment.<\/p>"
+            "row_content": "<p>While we trust and value our carriers, sometimes they have delivery issues.  Your package may be showing a \"delivered\" scan prematurely, for example.  We also recommend checking with your neighbors to see if it was accidentally delivered somewhere nearby.  If you live in an apartment, it is very likely it is at your front desk checkin.<\/p><p>If it has been 3 business days or more since false delivery, please email us at <em>help@routeoneapparel.com<\/em> so we can proceed with our lost package claim process!  If a reshipment is required, you will be <span style=\"text-decoration:underline\">required<\/span> to fill out a lost package affidavit form which will open up an investigation with your shipping provider.  If a package is lost or stolen we CANNOT provide a refund unless you paid a premium for package insurance. Once a package is deemed lost or stolen we only have the ability for a reshipment to the same address.  Upgraded shipping features - like signature tracking or expedited shipping - will cost extra if you did not select that method of shipment for your original shipment.<\/p>"
           }
         },
         "36636b09-c32c-46b9-b7f1-d935aad1729e": {
@@ -76,7 +82,7 @@
           "type": "row",
           "settings": {
             "heading": "What is your return & exchange policy?",
-            "row_content": "<p>Route One Apparel offers <span style=\"text-decoration:underline\">FREE<\/span> returns & exchanges for store credit, or refunds back to your original form of payment for a $6.00 restocking fee. Refunds must be processed through your original payment method, otherwise they will be issued in store credit (gift card). We accept exchanges and returns for <span style=\"text-decoration:underline\"><em>up to 30 days<\/em><\/span> after you receive your order in the mail.  <\/p><p>Returned items must be sent back in their original packaging, unworn and with hang tags attached.  It must not have any signs of wear including but not limited to fragrance, deodorant stains, dirt, etc.  We have a right to deny an exchange or return if the returned product shows any signs of wear. <\/p><p>We <span style=\"text-decoration:underline\">do not<\/span> accept returns or exchanges on final sale or discounted merchandise, women's bathing suits (i.e. bikinis), lingerie items, and jewelry, and other accessory items.  Discount codes and e-gift cards that are sent electronically cannot be refunded or exchanged.  These are <span style=\"text-decoration:underline\">final sale<\/span>. <\/p>"
+            "row_content": "<p>Route One Apparel offers <span style=\"text-decoration:underline\">FREE<\/span> returns & exchanges for store credit, or refunds back to your original form of payment for a $6.00 restocking fee. Refunds must be processed through your original payment method, otherwise they will be issued in store credit (gift card). We accept exchanges and returns for <span style=\"text-decoration:underline\">up to 30 days<\/span> after you receive your order in the mail.  <\/p><p>Returned items must be sent back in their original packaging, unworn and with hang tags attached.  It must not have any signs of wear including but not limited to fragrance, deodorant stains, dirt, etc.  We have a right to deny an exchange or return if the returned product shows any signs of wear. <\/p><p>We <span style=\"text-decoration:underline\">do not<\/span> accept returns or exchanges on final sale or discounted merchandise, women's bathing suits (i.e. bikinis), lingerie items, and jewelry, and other accessory items.  Discount codes and e-gift cards that are sent electronically cannot be refunded or exchanged.  These are <span style=\"text-decoration:underline\">final sale<\/span>. <\/p>"
           }
         },
         "1504682a-b096-4097-9abf-c6934362171b": {
@@ -97,7 +103,7 @@
           "type": "row",
           "settings": {
             "heading": "I received a defective or wrong product. What do I do?",
-            "row_content": "<p>DO NOT MAIL IT BACK.  Contact us at help@routeoneapparel.com<em>within 3 days of receipt of order <\/em>with photos of the defects and\/or wrong item and we will send you out a new product along with a return shipping label.  If you mail it back, we will not compensate you for  your return shipping costs.<\/p>"
+            "row_content": "<p>DO NOT MAIL IT BACK.  Contact us at <em>help@routeoneapparel.com <\/em>within 3 days of receipt of order with photos of the defects and\/or wrong item and we will send you out a new product along with a return shipping label.  If you mail it back, we will not compensate you for  your return shipping costs.<\/p>"
           }
         },
         "f78de95b-c4ed-4559-ade5-60c6c322556d": {
@@ -206,7 +212,7 @@
       "settings": {
         "heading": "Didn’t find the answer to your question? Contact us here!",
         "padding_top": 64,
-        "padding_bottom": 36
+        "padding_bottom": 0
       }
     }
   },
