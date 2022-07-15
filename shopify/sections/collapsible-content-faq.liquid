@@ -26,8 +26,10 @@
             <div class="collapsible-faq__accordion c-grey-10-bg">
               <details id="Details-{{ block.id }}-{{ section.id }}"{% if section.settings.open_first_collapsible_row and forloop.first %} open{% endif %}>
                 <summary id="Summary-{{ block.id }}-{{ section.id }}">
-                  <p class="collapsible-faq__accordion-title">{{ block.settings.heading | default: block.settings.page.title }}</p>
-                  <svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8566 12.6548L23.6457 2.03721C24.1181 1.57132 24.1181 0.816492 23.6457 0.349421C23.1733 -0.116474 22.4061 -0.116474 21.9337 0.349421L12.0006 10.1249L2.06752 0.350597C1.59514 -0.115297 0.827864 -0.115297 0.354286 0.350597C-0.118095 0.816492 -0.118095 1.57249 0.354286 2.03839L11.1434 12.656C11.6109 13.1149 12.3903 13.1149 12.8566 12.6548Z" fill="#CF342F"/></svg>                      
+                  <div class="d-flex justify-content-between w-100">
+                    <p class="collapsible-faq__accordion-title">{{ block.settings.heading | default: block.settings.page.title }}</p>
+                    <svg width="24" height="13" viewBox="0 0 24 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8566 12.6548L23.6457 2.03721C24.1181 1.57132 24.1181 0.816492 23.6457 0.349421C23.1733 -0.116474 22.4061 -0.116474 21.9337 0.349421L12.0006 10.1249L2.06752 0.350597C1.59514 -0.115297 0.827864 -0.115297 0.354286 0.350597C-0.118095 0.816492 -0.118095 1.57249 0.354286 2.03839L11.1434 12.656C11.6109 13.1149 12.3903 13.1149 12.8566 12.6548Z" fill="#CF342F"/></svg>                      
+                  </div>
                 </summary>
                 <div class="collapsible-faq__accordion-content" id="CollapsibleAccordion-{{ block.id }}-{{ section.id }}" role="region" aria-labelledby="Summary-{{ block.id }}-{{ section.id }}">
                   {{ block.settings.row_content }}
@@ -44,7 +46,7 @@
 {
   "name": "Collabsible with anchors",
   "tag": "section",
-  "class": "section page-width",
+  "class": "section",
   "settings": [
     {
       "type": "header",
