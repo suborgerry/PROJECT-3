@@ -1,0 +1,41 @@
+.list {
+    padding-bottom: 4.8rem;
+    p {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 2.6rem;
+        margin-bottom: 2rem;
+        @include media-breakpoint-up(sm) {
+            margin-bottom: 4rem;
+        }
+    }
+    ul {
+        max-width: 96.4rem;
+        margin: auto;
+        margin-top: 4rem;
+        @include media-breakpoint-up(sm) {
+            margin-top: 5.6rem;
+        }
+        li {
+            letter-spacing: 0.479348px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            @include media-breakpoint-up(sm) {
+                align-items: flex-start;
+            }
+            &::before {
+                content: "•";
+                @extend .c-red-1;
+                margin-right: 1.6rem;
+                font-size: 3rem;
+            }
+        }
+        li + li {
+            margin-top: 2rem;
+            @include media-breakpoint-up(sm) {
+                margin-top: 1.4rem;
+            }
+        }
+    }
+}

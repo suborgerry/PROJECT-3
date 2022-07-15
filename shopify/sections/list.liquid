@@ -1,0 +1,37 @@
+<ul>
+    <p>{{ section.settings.heading }}</p>
+    {%- for item in section.blocks -%}
+        <li>{{ item.settings.text }}</li>
+    {%- endfor -%}
+</ul>
+{% schema %}
+{
+    "name": "List",
+    "class": "section page-width list",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "item",
+            "name": "Item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Item text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "List"
+        }
+    ]
+}
+{% endschema %}
