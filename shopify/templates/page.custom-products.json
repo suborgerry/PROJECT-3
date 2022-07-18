@@ -37,6 +37,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Object_03a51325-cab6-4340-b266-6e0fe46a88ff.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Object_1_64a5b0c3-33d1-4c1b-8e2d-b51b0d2c158c.jpg",
         "full_page": true,
         "always_center": true,
         "padding": "16.1rem 32.8rem",
@@ -172,56 +173,64 @@
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_2_19392cff-ed63-4260-b4e2-83c536bda74b.jpg",
-            "width": "32"
+            "width": "28.3",
+            "width_mob": "57.3"
           }
         },
         "d75793d8-5a06-4f4c-bd28-d376fa7704ec": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/4_copy.jpg",
-            "width": "23"
+            "width": "18.8",
+            "width_mob": "39.1"
           }
         },
         "672531b6-1526-42ef-9523-305164b7b90e": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_3_Copy.jpg",
-            "width": "15"
+            "width": "27.61",
+            "width_mob": "57.3"
           }
         },
         "65264c59-ea89-4cf8-a977-69bc9471bee0": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/5_e81bd606-b399-4b62-8077-45a15c53328e.jpg",
-            "width": "25"
+            "width": "18.2",
+            "width_mob": "39.1"
           }
         },
         "bd86868d-6954-4083-a5e7-19c5b4929cea": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/4_copy.jpg",
-            "width": "0"
+            "width": "18.8",
+            "width_mob": "0"
           }
         },
         "4ffed508-e93b-4f43-8c25-c469d378486a": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_2_19392cff-ed63-4260-b4e2-83c536bda74b.jpg",
-            "width": "0"
+            "width": "28.3",
+            "width_mob": "0"
           }
         },
         "0d1dfc41-70f7-4e31-8988-45353550541f": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/5_e81bd606-b399-4b62-8077-45a15c53328e.jpg",
-            "width": "0"
+            "width": "18.2",
+            "width_mob": "0"
           }
         },
         "b405469f-79a9-4ec4-942f-55e92cd61554": {
           "type": "photo",
           "settings": {
             "image": "shopify:\/\/shop_images\/Group_3_Copy.jpg",
-            "width": "0"
+            "width": "27.61",
+            "width_mob": "0"
           }
         }
       },
@@ -236,8 +245,8 @@
         "b405469f-79a9-4ec4-942f-55e92cd61554"
       ],
       "settings": {
-        "heading": "",
-        "text": "",
+        "heading": "Our Story",
+        "text": "<p>Route One Apparel is an e-commerce platform that specializes in making trendy and affordable state pride apparel and accessories for those who want to make wearing clothing \"fun\", while making a statement. <br\/>The company has experienced a lot of growth since its beginning, and we can happily offer custom products—Maryland themed or not! We’re dedicated to ensure that our customers have the best possible experience with us and we look forward to working for you!<\/p>",
         "main_image": "shopify:\/\/shop_images\/Photo_3aa27e3d-133f-4a90-b884-54c8915bc905.jpg"
       }
     },
