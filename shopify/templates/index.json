@@ -419,14 +419,14 @@
     "1657922640d5481bf7": {
       "type": "apps",
       "blocks": {
-        "9f004b20-826a-46c0-b810-af2fffaac1df": {
+        "73981faa-b168-4148-abec-a2ef7e02a672": {
           "type": "shopify:\/\/apps\/simple-recently-viewed-product\/blocks\/app-block\/80a91fd8-2907-4af6-b142-fe30fd256c36",
           "settings": {
           }
         }
       },
       "block_order": [
-        "9f004b20-826a-46c0-b810-af2fffaac1df"
+        "73981faa-b168-4148-abec-a2ef7e02a672"
       ],
       "settings": {
         "include_margins": true

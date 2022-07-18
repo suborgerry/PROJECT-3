@@ -1,0 +1,81 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="interns positioning--{{ s.id }}">
+    <div class="page-width-small">
+        {{ page.title }}
+        {{ page.content }}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Interns",
+    "settings": [                 
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "collection-brand",
+            "name": "Collection brand",
+            "settings": [
+                {
+                    "type": "collection",
+                    "id": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "SVG icon is priority"
+                },
+                {
+                    "type": "text",
+                    "id": "icon_svg",
+                    "label": "Icon SVG"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "icon_img",
+                    "label": "Icon Image"
+                },
+                {
+                    "type": "text",
+                    "id": "small_text",
+                    "label": "Small text",
+                    "default": "Officially Licensed"
+                }          
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Interns",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

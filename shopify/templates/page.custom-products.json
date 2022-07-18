@@ -6,8 +6,6 @@
       "settings": {
         "padding_top": 0,
         "padding_bottom": 0,
-        "padding_top_mob": 0,
-        "padding_bottom_mob": 0,
         "show_title": true,
         "show_content": true
       }
@@ -44,9 +42,8 @@
         "1657896381788092c4-2"
       ],
       "settings": {
-        "full_page": true,
         "image": "shopify:\/\/shop_images\/Object_fe771c36-6338-4bf0-b355-6d8415a5acd0.jpg",
-        "image_mobile": "shopify:\/\/shop_images\/Object_1_7ed7e02a-1204-4771-9764-83142a44acf4.jpg",
+        "full_page": true,
         "padding": "10.1rem 13.6rem 10.6rem",
         "padding_mobile": "8.2rem 2.8rem 8.6rem"
       }
