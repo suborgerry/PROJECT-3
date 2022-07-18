@@ -111,7 +111,9 @@
         "db6e0610-7dcb-4170-94d8-fe6aaf0b0ce2"
       ],
       "settings": {
-        "heading": "Qualifications"
+        "heading": "Qualifications",
+        "margin_heading_bottom": 40,
+        "text": ""
       }
     },
     "1657878017eb724aa6": {
@@ -125,54 +127,198 @@
         "c_anchor_info": "<p>An email will be dispatched when your return or exchange is processed. If you are returning something, you will receive a full refund or store credit, depending on the option you chose in step one.<\/p>"
       }
     },
-    "1657879600dd07c0eb": {
-      "type": "rich-text",
+    "1657882807e0a00c62": {
+      "type": "list",
       "blocks": {
-        "1805269d-34d8-4afe-9a8c-047614e7dca9": {
-          "type": "heading",
+        "84bb1419-c422-442d-bda2-1fb5937648b2": {
+          "type": "item",
           "settings": {
-            "heading": "Damaged \/ Incorrect Merchandise"
+            "text": "Return shipping is non-refundable, unless you receive damaged, defective or wrong item(s)."
           }
         },
-        "1657879600756dcc1c-1": {
-          "type": "text",
+        "85094531-200d-47dc-87ab-a40ab3917a36": {
+          "type": "item",
           "settings": {
-            "text": "<p>If you have received the wrong\/damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>If you have received a damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>We do not refund for return shipping costs if you do not request a pre-paid return label as stated above.<\/p>"
+            "text": "Refunds on discounted or sale items will be refunded at the prorated amount"
+          }
+        },
+        "3ec9ae0e-d91d-4931-890f-830190ae226f": {
+          "type": "item",
+          "settings": {
+            "text": "Refunds must be processed through your original payment method, otherwise they will be issued in store credit (gift card)."
+          }
+        },
+        "e2b527a0-384b-4082-8b9c-026c80dbc0c0": {
+          "type": "item",
+          "settings": {
+            "text": "Original shipping charges are non-refundable"
+          }
+        },
+        "93f1f848-a5e2-43ec-9b7a-1dd37866c23c": {
+          "type": "item",
+          "settings": {
+            "text": "Any orders sent with \"Free Shipping\" will be subject to the original shipping fee deducted from the total amount of the refund."
+          }
+        },
+        "a90d32a9-efdb-4779-b2a1-4029acceb28f": {
+          "type": "item",
+          "settings": {
+            "text": "International Returns - unfortunately we cannot refund duties, taxes or shipping charges"
           }
         }
       },
       "block_order": [
-        "1805269d-34d8-4afe-9a8c-047614e7dca9",
-        "1657879600756dcc1c-1"
+        "84bb1419-c422-442d-bda2-1fb5937648b2",
+        "85094531-200d-47dc-87ab-a40ab3917a36",
+        "3ec9ae0e-d91d-4931-890f-830190ae226f",
+        "e2b527a0-384b-4082-8b9c-026c80dbc0c0",
+        "93f1f848-a5e2-43ec-9b7a-1dd37866c23c",
+        "a90d32a9-efdb-4779-b2a1-4029acceb28f"
       ],
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 52
+        "heading": "Refunds",
+        "margin_heading_bottom": 28,
+        "text": "After your return has been processed it will typically take 2-5 days for the funds to shown on your bank statement."
       }
     },
-    "1657881646228f91be": {
-      "type": "rich-text",
+    "1657882449a28d4ae7": {
+      "type": "text-page",
       "blocks": {
-        "1657881646ead30386-0": {
+        "1657882449a3630998-0": {
           "type": "heading",
           "settings": {
-            "heading": "Late Refunds"
+            "heading": "Talk about your brand",
+            "margin_top": 0
           }
         },
-        "1657881646ead30386-1": {
+        "1657882449a3630998-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Customers have 30 days to send back purchases made at RouteOneApparel.com. Returns postmarked after 30 days will be refused and sent back at the customer's expense.<\/p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "d0b6e1da-efa8-4dd4-a80a-0ea23fcac943": {
+          "type": "heading",
+          "settings": {
+            "heading": "Unpaid Return Labels",
+            "margin_top": 56
+          }
+        },
+        "eb83c7d4-bc83-4fef-9d58-a8bef4e163b6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Return labels may only be used once. The label is ONLY to be used to return the order it was created for. Returns MUST be sent back in the bag they were received in. Any fees incurred from shipping the package back to us will be deducted from your refund amount.<\/p>"
+          }
+        },
+        "ce5d96d8-fd17-44c4-bdad-210a39750aca": {
+          "type": "heading",
+          "settings": {
+            "heading": "Non-qualifying Returns",
+            "margin_top": 56
+          }
+        },
+        "bbad93ca-2fbb-4aa6-b68e-8474b789a29e": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Returns that show ANY type of signs of wear, damage, scents, or alterations will NOT be accepted and will be sent back to the customer at their expense. A $2.50 restocking fee will be withheld from any return received without it’s original packaging or tags (separate from the $6.00 restocking fee for returns on original form of payment).<br\/><br\/>You may return any discount gift card purchased for a full refund minus any applicable shipping costs within 1 year of your purchase. This policy ONLY applies to physical gift cards that are shipped to you. Discount gift codes or egift cards that are sent electronically cannot be refunded or exchanged.<\/p>"
+          }
+        },
+        "8d0f7d8d-1d65-4e73-8b79-5e6606ce1360": {
+          "type": "heading",
+          "settings": {
+            "heading": "Holiday Policy",
+            "margin_top": 56
+          }
+        },
+        "91c9c452-6abf-4d83-b53b-beb565d4c998": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Orders placed during November 1 - December 24 will have an extended cash refund date of January 31. Store Credit of up to 30 days will still apply to the original purchase date for the period after January 31.<\/p>"
+          }
+        },
+        "ac30bf93-88bc-49c6-993c-8e8b6f7172c3": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shipping Charges",
+            "margin_top": 56
+          }
+        },
+        "7cb01c81-b6a1-4250-97ab-529e1f723e0c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>All shipping charges, gift cards, and store credits are nonrefundable and nontransferable. Limit 1 prepaid return shipping label per order.<\/p>"
+          }
+        },
+        "6eb1d2ef-332d-4f98-94ba-dcb9d1ef3e4a": {
+          "type": "heading",
+          "settings": {
+            "heading": "Lost and Damaged Returns",
+            "margin_top": 56
+          }
+        },
+        "29b0c0ff-1890-4e2e-844c-6a3854066d04": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We are not responsible for lost\/ damaged returns or packages. It is the customers responsibility to follow all directions - if the package is sent back to you with postage due it is the customers responsibility. Route One Apparel will not reimburse additional charges.<\/p>"
+          }
+        },
+        "f61c91dd-46ad-40fe-bd9a-8a5e3f40e521": {
+          "type": "heading",
+          "settings": {
+            "heading": "Other",
+            "margin_top": 46
+          }
+        },
+        "386a6141-cb15-4025-8c94-f9050313aef8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you return over $250 in a 3 month period you may be subject to a modified return policy. We will contact you directly via email if you are no longer eligible for our general return policy.<\/p>"
+          }
+        },
+        "92867db2-c32c-4af6-b211-db59ca522c0d": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mailing Address",
+            "margin_top": 56
+          }
+        },
+        "b5dd4552-84f6-43f0-b7a4-08599ea87beb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please address your package to \"ROUTE ONE APPAREL\" and indicate on the mailing label whether it is a \"RETURN\" or an \"EXCHANGE\". The mailing address are below.<\/p>"
           }
         }
       },
       "block_order": [
-        "1657881646ead30386-0",
-        "1657881646ead30386-1"
+        "1657882449a3630998-0",
+        "1657882449a3630998-1",
+        "d0b6e1da-efa8-4dd4-a80a-0ea23fcac943",
+        "eb83c7d4-bc83-4fef-9d58-a8bef4e163b6",
+        "ce5d96d8-fd17-44c4-bdad-210a39750aca",
+        "bbad93ca-2fbb-4aa6-b68e-8474b789a29e",
+        "8d0f7d8d-1d65-4e73-8b79-5e6606ce1360",
+        "91c9c452-6abf-4d83-b53b-beb565d4c998",
+        "ac30bf93-88bc-49c6-993c-8e8b6f7172c3",
+        "7cb01c81-b6a1-4250-97ab-529e1f723e0c",
+        "6eb1d2ef-332d-4f98-94ba-dcb9d1ef3e4a",
+        "29b0c0ff-1890-4e2e-844c-6a3854066d04",
+        "f61c91dd-46ad-40fe-bd9a-8a5e3f40e521",
+        "386a6141-cb15-4025-8c94-f9050313aef8",
+        "92867db2-c32c-4af6-b211-db59ca522c0d",
+        "b5dd4552-84f6-43f0-b7a4-08599ea87beb"
       ],
       "settings": {
         "padding_top": 40,
-        "padding_bottom": 52
+        "padding_bottom": 0
+      }
+    },
+    "165788341637c24082": {
+      "type": "adresses",
+      "settings": {
+        "padding_top": 24,
+        "padding_bottom": 104,
+        "first_adress": "<p>Standart:<br\/>PO BOX 4202<br\/>Towson MD 21284<\/p>",
+        "second_adress": "<p>FedEx or UPS:<br\/>808 Gleneagles Ct Ste 1 #42023 Towson, MD 21284<\/p>"
       }
     }
   },
@@ -182,7 +328,8 @@
     "16578250056b70c816",
     "1657875517a114587a",
     "1657878017eb724aa6",
-    "1657879600dd07c0eb",
-    "1657881646228f91be"
+    "1657882807e0a00c62",
+    "1657882449a28d4ae7",
+    "165788341637c24082"
   ]
 }
