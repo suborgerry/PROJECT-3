@@ -10,6 +10,22 @@
         @include media-breakpoint-down(sm) {
             padding: 0;
         }
+        &__heading {
+            font-weight: 400;
+            @extend .c-grey-1;
+            text-align: center;
+            font-size: 3.2rem;
+            line-height: 4.2rem;
+            margin-bottom: 4rem;
+            &:empty {
+                display: none;
+            }
+            @include media-breakpoint-up(sm) {
+                font-size: 3.2rem;
+                line-height: 4.2rem;
+                margin-bottom: 4.8rem;
+            }
+        }
     }
     &__item {
         display: flex;

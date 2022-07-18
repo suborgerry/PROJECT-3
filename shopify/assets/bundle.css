@@ -5204,7 +5204,7 @@ body {
 .c-red-4-bg {
   background-color: #D13026;
 }
-.c-grey-1, .article-template__comments .comment-form h2, .article-template__name, .article-template__title, .categories-tabs__title, .articles-tabs__image.active .articles-tabs__tag, .blog-categories h2 {
+.c-grey-1, .steps-container__heading, .article-template__comments .comment-form h2, .article-template__name, .article-template__title, .categories-tabs__title, .articles-tabs__image.active .articles-tabs__tag, .blog-categories h2 {
   color: #414240;
 }
 .c-grey-1-bg {
@@ -8510,6 +8510,23 @@ body {
     padding: 0;
   }
 }
+.steps-container__heading {
+  font-weight: 400;
+  text-align: center;
+  font-size: 3.2rem;
+  line-height: 4.2rem;
+  margin-bottom: 4rem;
+}
+.steps-container__heading:empty {
+  display: none;
+}
+@media (min-width: 576px) {
+  .steps-container__heading {
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+    margin-bottom: 4.8rem;
+  }
+}
 .steps__item {
   display: flex;
   flex-direction: column;
@@ -8694,11 +8711,13 @@ body {
 }
 .text-with-collage {
   margin-top: 5.4rem;
+  margin-bottom: 6.6rem;
   align-items: center;
 }
 @media (min-width: 768px) {
   .text-with-collage {
-    margin-bottom: 9.8rem;
+    margin-top: 9.8rem;
+    margin-bottom: 8.8rem;
   }
 }
 .text-with-collage__info {
