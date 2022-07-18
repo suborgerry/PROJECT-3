@@ -2,7 +2,39 @@
 {%- assign ss = s.settings -%}
 
 <div class="text-with-collage__container">
+  <div class="text-with-collage__info d-flex">
+    <div class="text-with-collage__info-description d-flex flex-column">
+      <p class="text-with-collage__info-heading">{{ ss.heading }}</p>
+      <div class="text-with-collage__info-text">{{ ss.text }}</div>
+    </div>
+    <img
+      src="{{ ss.main_image | image_url }}"
+      alt="{{ ss.main_image.alt | escape }}"
+      loading="lazy"
+      class="text-with-collage__main-image"
+    >
+  </div>
+  <div class="text-with-collage__collage">
+    {%- for photo in s.blocks offset: 0 -%}
+    <img
+      src="{{ photo.settings.image | image_url }}"
+      alt="{{ photo.settings.image.alt | escape }}"
+      loading="lazy"
+      class="text-with-collage__img text-with-collage__img-{{ forloop.index }}"
+    >
+    <style>
+      .text-with-collage__img-{{ forloop.index }} {
+        width:{{ photo.settings.width }}%
+      }
 
+      @media (max-width:991.7px) {
+        .text-with-collage__img-{{ forloop.index }} {
+          width: {{ photo.settings.width_mob }}%
+        }
+      }
+    </style>
+    {%- endfor -%}
+  </div>
 </div>
 
 {% schema %}
@@ -17,7 +49,7 @@
       "label": "Heading"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "id": "text",
       "label": "Text"
     },
@@ -25,50 +57,32 @@
       "type": "image_picker",
       "id": "main_image",
       "label": "Main image"
-    },
+    }
+  ],
+  "blocks": [
     {
-      "type": "header",
-      "content": "Collae images"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_a",
-      "label": "1 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_b",
-      "label": "2 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_c",
-      "label": "3 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_d",
-      "label": "4 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_e",
-      "label": "5 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_f",
-      "label": "6 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_g",
-      "label": "7 Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "collage_image_h",
-      "label": "8 Image"
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "width",
+          "label": "Width in %",
+          "default": "0"
+        },
+        {
+          "type": "text",
+          "id": "width_mob",
+          "label": "Width in % on mobile devices",
+          "info": "Using only fist 4 elements.",
+          "default": "0"
+        }
+      ]
     }
   ],
   "presets": [
