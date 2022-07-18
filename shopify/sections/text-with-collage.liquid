@@ -1,0 +1,80 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+<div class="text-with-collage__container">
+
+</div>
+
+{% schema %}
+{
+  "name": "Text with collage",
+  "tag": "section",
+  "class": "section page-width text-with-collage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main image"
+    },
+    {
+      "type": "header",
+      "content": "Collae images"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_a",
+      "label": "1 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_b",
+      "label": "2 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_c",
+      "label": "3 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_d",
+      "label": "4 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_e",
+      "label": "5 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_f",
+      "label": "6 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_g",
+      "label": "7 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "collage_image_h",
+      "label": "8 Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text with collage"
+    }
+  ]
+}
+{% endschema %}
