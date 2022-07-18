@@ -8293,23 +8293,38 @@ body {
     margin-top: -1rem;
   }
 }
+.image-with-text.always_center .image-with-text__content {
+  text-align: center;
+  align-items: center;
+}
 .image-with-text__heading {
+  text-align: center;
+  max-width: 31.9rem;
   font-style: normal;
   font-weight: 400;
+}
+.image-with-text__heading.normal {
   font-size: 3.6rem;
   line-height: 3.9rem;
-  text-align: center;
-  max-width: 28rem;
 }
 @media (min-width: 576px) {
-  .image-with-text__heading {
+  .image-with-text__heading.normal {
     text-align: inherit;
     font-size: 3.2rem;
     max-width: 100%;
   }
 }
-.image-with-text__heading span {
-  font-family: "Axiforma";
+.image-with-text__heading.large {
+  font-size: 3.5rem;
+  line-height: 4.4rem;
+}
+@media (min-width: 576px) {
+  .image-with-text__heading.large {
+    text-align: inherit;
+    font-size: 4.8rem;
+    line-height: 5.9rem;
+    max-width: 100%;
+  }
 }
 .image-with-text__content {
   padding: 5.6rem 2rem 3.9rem;
@@ -8363,6 +8378,23 @@ body {
   margin-top: 2.1rem;
   max-width: 110.8rem;
 }
+.image-with-text__text.normal p {
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.761905px;
+}
+.image-with-text__text.large p {
+  font-size: 1.6rem;
+  line-height: 3rem;
+  letter-spacing: 0.461905px;
+}
+@media (min-width: 768px) {
+  .image-with-text__text.large p {
+    font-size: 1.8rem;
+    line-height: 3.1rem;
+    letter-spacing: 0.857143px;
+  }
+}
 @media (min-width: 768px) {
   .image-with-text__text {
     margin-top: 2.5rem;
@@ -8370,9 +8402,6 @@ body {
 }
 .image-with-text__text p {
   font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.8rem;
-  letter-spacing: 0.761905px;
   text-align: center;
 }
 @media (min-width: 768px) {
@@ -8381,18 +8410,12 @@ body {
   }
 }
 .image-with-text__button {
-  margin-top: 4.8rem;
   font-weight: 700;
   font-size: 1.4rem;
   line-height: 2.3rem;
   letter-spacing: 0.821739px;
   width: 23.1rem;
   height: 5.6rem;
-}
-@media (min-width: 768px) {
-  .image-with-text__button {
-    margin-top: 5.6rem;
-  }
 }
 .image-with-text__undertext {
   margin-top: 2.4rem;

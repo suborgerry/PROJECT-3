@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 0,
+        "show_title": true,
+        "show_content": true
+      }
+    },
+    "16578963813d52b1bf": {
+      "type": "image-with-text",
+      "blocks": {
+        "1657896381788092c4-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Have any questions<span>?<\/span>",
+            "size": "large",
+            "font_family": "Long Shot"
+          }
+        },
+        "1657896381788092c4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We’re here for you at any time, so feel free to contact us if you have<\/p><p>any questions or concerns about getting your custom<\/p><p>products created!<\/p>",
+            "size": "large"
+          }
+        },
+        "1657896381788092c4-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "GET STARTED",
+            "button_link": "shopify:\/\/pages\/faq"
+          }
+        }
+      },
+      "block_order": [
+        "1657896381788092c4-0",
+        "1657896381788092c4-1",
+        "1657896381788092c4-2"
+      ],
+      "settings": {
+        "full_page": true,
+        "image": "shopify:\/\/shop_images\/Object_fe771c36-6338-4bf0-b355-6d8415a5acd0.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Object_1_7ed7e02a-1204-4771-9764-83142a44acf4.jpg",
+        "padding": "10.1rem 13.6rem 10.6rem",
+        "padding_mobile": "8.2rem 2.8rem 8.6rem"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16578963813d52b1bf"
+  ]
+}

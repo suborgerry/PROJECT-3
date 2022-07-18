@@ -1,0 +1,92 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+<div class="steps c-grey-10-bg">
+  <div class="steps__item">
+    {{ ss.a_anchor_svg }}
+    <span>{{ ss.a_anchor_heading }}</span>
+    <div class="steps__info">{{ ss.a_anchor_info }}</div>
+  </div>
+  <div class="steps__item">
+    {{ ss.b_anchor_svg }}
+    <span>{{ ss.b_anchor_heading }}</span>
+    <div class="steps__info">{{ ss.b_anchor_info }}</div>
+  </div>
+  <div class="steps__item">
+    {{ ss.c_anchor_svg }}
+    <span>{{ ss.c_anchor_heading }}</span>
+    <div class="steps__info">{{ ss.c_anchor_info }}</div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Steps",
+  "tag": "section",
+  "class": "section page-width steps-container",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Anchor 1"
+    },
+    {
+      "type": "text",
+      "id": "a_anchor_svg",
+      "label": "SVG"
+    },
+    {
+      "type": "text",
+      "id": "a_anchor_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "a_anchor_info",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Anchor 2"
+    },
+    {
+      "type": "text",
+      "id": "b_anchor_svg",
+      "label": "SVG"
+    },
+    {
+      "type": "text",
+      "id": "b_anchor_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "b_anchor_info",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Anchor 3"
+    },
+    {
+      "type": "text",
+      "id": "c_anchor_svg",
+      "label": "SVG"
+    },
+    {
+      "type": "text",
+      "id": "c_anchor_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "c_anchor_info",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Steps"
+    }
+  ]
+}
+{% endschema %}

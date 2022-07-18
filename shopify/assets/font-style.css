@@ -1,4 +1,22 @@
 @font-face {
+    font-family: 'Long Shot';
+    src: url('Long_Shot.woff2') format('woff2'),
+        url('Long_Shot.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Long Shot';
+    src: url('Long_Shot.woff2') format('woff2'),
+        url('Long_Shot.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Axiforma';
     src: url('Axiforma-Bold.woff2') format('woff2'),
         url('Axiforma-Bold.woff') format('woff');
