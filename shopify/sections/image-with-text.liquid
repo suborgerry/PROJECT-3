@@ -1,20 +1,18 @@
 {% comment %} {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  .image-with-text__content.{{ section.id }} {
+    padding: {{ section.settings.padding_mobile }}
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+  @media (min-width: 991.7px) {
+    .image-with-text__content.{{ section.id }} {
+      padding: {{ section.settings.padding }}
     }
   }
 {%- endstyle -%}
 
-<div class="image-with-text isolate section-{{ section.id }}-padding">
+<div class="{%- if section.settings.always_center -%}always_cente{%- endif -%}r image-with-text isolate section-{{ section.id }}-padding section-{{ section.id }} {%- unless section.settings.full_page -%}page-width{% endunless %}">
   <div class="image-with-text__grid position-relative">
     <div class="image-with-text__media-item">
       {%- if section.settings.image != blank -%}
@@ -46,16 +44,32 @@
         >
       {%- endif -%}
     </div>
-    <div id="ImageWithText--{{ section.id }}" class="image-with-text__content content-container">
+    <div id="ImageWithText--{{ section.id }}" class="image-with-text__content {{ section.id }} content-container">
       {%- for block in section.blocks -%}
         {% case block.type %}
           {%- when 'heading' -%}
-            <h2 class="image-with-text__heading c-white">{{ block.settings.heading }}</h2>
+            <style>
+              .section-{{ section.id }} .image-with-text__heading span {
+                font-family: {{ block.settings.font_family }}
+              }
+            </style>
+            <h2 class="image-with-text__heading c-white {{ block.settings.size }}">{{ block.settings.heading }}</h2>
           {%- when 'text' -%}
-            <div class="image-with-text__text">{{ block.settings.text }}</div>
+            <div class="image-with-text__text {{ block.settings.size }}">{{ block.settings.text }}</div>
           {%- when 'button' -%}
             {%- if block.settings.button_label != blank -%}
-              <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button btn-red-1 image-with-text__button" {{ block.shopify_attributes }}>
+              <style>
+                .image-with-text__button.{{ section.id }} {
+                  margin-top: {{ block.settings.margin_top_mob }}px
+                }
+
+                @media (min-width: 991.7px) {
+                  .image-with-text__button.{{ section.id }} {
+                    margin-top: {{ block.settings.margin_top }}px
+                  }
+                }
+              </style>
+              <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button btn-red-1 image-with-text__button {{ section.id }}" {{ block.shopify_attributes }}>
                 {{ block.settings.button_label | escape }}
               </a>
             {%- endif -%}
@@ -70,7 +84,7 @@
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
-  "class": "section page-width iwt",
+  "class": "section iwt",
   "settings": [
     {
       "type": "image_picker",
@@ -83,24 +97,28 @@
       "label": "Image mobile"
     },
     {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 0
+      "type": "checkbox",
+      "id": "full_page",
+      "label": "Full width",
+      "default": false
     },
     {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 0
+      "type": "checkbox",
+      "id": "always_center",
+      "label": "Alwats center",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "padding",
+      "label": "Padding",
+      "default": "7.2rem 8.8rem 4.2rem"
+    },
+    {
+      "type": "text",
+      "id": "padding_mobile",
+      "label": "Padding mobile",
+      "default": "5.6rem 2rem 3.9rem"
     }
   ],
   "blocks": [
@@ -114,6 +132,39 @@
           "id": "heading",
           "default": "Image with text",
           "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size heading",
+          "default": "normal",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "font_family",
+          "label": "Font family symbols",
+          "info": "Use <span> tag for styling.",
+          "default": "Axiforma",
+          "options": [
+            {
+              "value": "Axiforma",
+              "label": "Axiforma"
+            },
+            {
+              "value": "Long Shot",
+              "label": "Long Shot"
+            }
+          ]
         }
       ]
     },
@@ -127,6 +178,22 @@
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "Size heading",
+          "default": "normal",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "large",
+              "label": "Large"
+            }
+          ]
         }
       ]
     },
@@ -146,6 +213,30 @@
           "type": "url",
           "id": "button_link",
           "label": "t:sections.image-with-text.blocks.button.settings.button_link.label"
+        },
+        {
+          "type": "header",
+          "content": "Margin"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top",
+          "default": 56
+        },
+        {
+          "type": "range",
+          "id": "margin_top_mob",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top mobile",
+          "default": 48
         }
       ]
     },

@@ -1,6 +1,6 @@
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-top: 0px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
@@ -17,7 +17,17 @@
     {%- for block in section.blocks -%}
       {% case block.type %}
         {%- when 'heading' -%}
-          <div class="content-withtext__content" style="margin-top: {{ block.settings.margin_top }}px">
+          <style>
+            .content-withtext__content.{{ section.id }} {
+              margin-top: {{ block.settings.margin_top_mob }}px;
+            }
+            @media screen and (min-width: 991px) {
+              .content-withtext__content.{{ section.id }} {
+                margin-top: {{ block.settings.margin_top }}px;
+              }
+            }
+          </style>
+          <div class="content-withtext__content {{ section.id }}" style="">
             <div class="content-withtext__heading">{{ block.settings.heading }}</div>
             <div class="content-withtext__text">{{ block.settings.text }}</div>
           </div>
@@ -194,6 +204,16 @@
           "step": 1,
           "unit": "px",
           "label": "Margin top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_top_mob",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin top mobile",
           "default": 0
         }
       ]
