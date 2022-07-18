@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\r\n\r\nconsole.log('hello');\r\nnew swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.home-hero-slider-init', {\r\n  slidesPerView: 1,\r\n  spaceBetween: 0,\r\n  loop: true,\r\n  pagination: {\r\n    clickable: true,\r\n    el: '.swiper-home-hero-pagination',\r\n  },\r\n});\r\n\r\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/js/common.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\n\nconsole.log('hello');\nnew swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.home-hero-slider-init', {\n  slidesPerView: 1,\n  spaceBetween: 0,\n  loop: true,\n  pagination: {\n    clickable: true,\n    el: '.swiper-home-hero-pagination',\n  },\n});\n\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/js/common.js?");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _js_common_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/common.js */ \"./src/js/common.js\");\n/**\r\n * imports\r\n */\r\n\r\n// import Cookies from 'js-cookie';\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', function () {\r\n  window.console.log('Hello from main.js 👋.');\r\n});\r\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main.scss */ \"./src/scss/main.scss\");\n/* harmony import */ var _js_common_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/common.js */ \"./src/js/common.js\");\n/**\n * imports\n */\n\n// import Cookies from 'js-cookie';\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  window.console.log('Hello from main.js 👋.');\n});\n\n\n//# sourceURL=webpack://shopify-theme-lab/./src/main.js?");
 
 /***/ }),
 
