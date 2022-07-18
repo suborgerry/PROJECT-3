@@ -1,3 +1,90 @@
 .interns {
-    
+    &__heading {
+        margin-bottom: 46px;
+        padding: 0 20px;
+        @include media-breakpoint-up(sm) {
+           padding: unset;
+        }
+        @include media-breakpoint-up(lg) {
+           margin-bottom: 64px;
+        }
+    }
+    &__img  {
+        display: block;
+        margin: 0 var(--page-width-x-paddings-mobile-reverse) 48px;
+        width: calc(100% + var(--page-width-x-paddings-mobile) * 2);
+        @include media-breakpoint-up(sm) {
+            margin: 0 var(--page-width-x-paddings-tablet-reverse) 48px;
+            width: calc(100% + var(--page-width-x-paddings-tablet) * 2);
+        }
+        @include media-breakpoint-up(lg) {
+            margin: unset;
+            width: 100%;
+            margin-bottom: 56px;
+        }
+    }
+    &__rte {
+        padding-bottom: 50px;
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 40px;
+        }
+    }
+    &__accordion {
+        padding-bottom: 40px;
+        @include media-breakpoint-up(lg) {
+            padding-bottom: 46px;
+        }
+        &-item {
+            padding: 30px 24px;
+            border-bottom: 1px solid $c-grey-6;
+            &:first-child {
+                border-top: 1px solid $c-grey-6;
+            }
+            &.has-description {
+                cursor: pointer;
+            }
+            .item-heading {
+                position: relative;
+                font-size: 16px;
+                line-height: 26px;
+                font-weight: 600;
+                display: block;
+                svg {
+                    position: absolute;
+                    left: -24px;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(180deg);
+                    width: 16px;
+                    height: 16px;
+                    transition: 0.3s;
+                    path { 
+                        fill: $c-red-1;
+                    }
+                }
+            }
+            .item-description {
+                font-size: 14px;
+                line-height: 24px;
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+                transition: 0.3s;
+                strong {
+                    font-weight: 500;
+                }
+            }
+            &.opened {
+                .item-heading {
+                    svg {
+                        transform: translateY(-50%) rotate(270deg);
+                    }
+                }
+                .item-description {
+                    visibility: visible;
+                    opacity: 1;
+                    height: auto;
+                }
+            }
+        }
+    }
 }
