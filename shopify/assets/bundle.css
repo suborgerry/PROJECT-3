@@ -8380,7 +8380,6 @@ body {
   }
 }
 .image-with-text__content {
-  padding: 5.6rem 2rem 3.9rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -8389,17 +8388,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .image-with-text__content {
     position: relative !important;
-    padding: 7.2rem 8.8rem 4.2rem;
     align-items: flex-start;
+    justify-content: inherit;
   }
 }
 .image-with-text__media-item {
+  display: flex;
   width: 100%;
   height: 100%;
+  max-height: 70.5rem;
   top: 0;
   left: 0;
   position: relative;
@@ -8467,8 +8469,6 @@ body {
   font-size: 1.4rem;
   line-height: 2.3rem;
   letter-spacing: 0.821739px;
-  width: 23.1rem;
-  height: 5.6rem;
 }
 .image-with-text__undertext {
   margin-top: 2.4rem;
@@ -8528,10 +8528,12 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
+  font-size: 1.6rem;
 }
 @media (min-width: 576px) {
   .list ul li {
     align-items: flex-start;
+    font-size: 1.4rem;
   }
 }
 .list ul li::before {
@@ -8552,8 +8554,14 @@ body {
   justify-content: space-between;
   padding: 7.2rem 9.9rem 7.2rem 9.1rem;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1199.98px) {
   .steps {
+    padding: 7.2rem 5.9rem 7.2rem 5.1rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .steps {
+    align-items: center;
     padding: 6.4rem 2rem;
     flex-direction: column;
   }
@@ -8591,10 +8599,15 @@ body {
 }
 @media (min-width: 576px) {
   .steps__item {
+    width: 25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .steps__item {
     width: 30rem;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .steps__item + .steps__item {
     margin-top: 6rem;
   }
@@ -8630,10 +8643,16 @@ body {
 }
 .text-page__text {
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 2.4rem;
   letter-spacing: 0.479348px;
-  margin-top: 2.8rem;
+  margin-top: 2.4rem;
+}
+@media (min-width: 576px) {
+  .text-page__text {
+    margin-top: 2.8rem;
+    font-size: 1.4rem;
+  }
 }
 .adresses {
   max-width: 94rem;
@@ -8776,6 +8795,7 @@ body {
 .text-with-collage__info {
   margin-bottom: 1.3rem;
   flex-direction: column;
+  align-items: center;
 }
 @media (min-width: 992px) {
   .text-with-collage__info {

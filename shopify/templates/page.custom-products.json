@@ -27,7 +27,9 @@
             "button_label": "SUBMIT A REQUEST",
             "button_link": "#",
             "margin_top": 47,
-            "margin_top_mob": 40
+            "margin_top_mob": 40,
+            "width": "229",
+            "height": "53"
           }
         }
       },

@@ -28,8 +28,10 @@
             list-style: none;
             display: flex;
             align-items: center;
+            font-size: 1.6rem;
             @include media-breakpoint-up(sm) {
                 align-items: flex-start;
+                font-size: 1.4rem;
             }
             &::before {
                 content: "•";

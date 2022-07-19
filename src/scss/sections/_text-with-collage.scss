@@ -9,6 +9,7 @@
     &__info {
         margin-bottom: 1.3rem;
         flex-direction: column;
+        align-items: center;
         @include media-breakpoint-up(lg) {
             flex-direction: row;
         }

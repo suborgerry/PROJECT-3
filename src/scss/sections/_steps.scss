@@ -2,7 +2,11 @@
     display: flex;
     justify-content: space-between;
     padding: 7.2rem 9.9rem 7.2rem 9.1rem;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
+        padding: 7.2rem 5.9rem 7.2rem 5.1rem;   
+    }
+    @include media-breakpoint-down(md) {
+        align-items: center;
         padding: 6.4rem 2rem;
         flex-direction: column;
     }
@@ -37,10 +41,13 @@
         line-height: 2.6rem;
         width: 100%;
         @include media-breakpoint-up(sm) {
+            width: 25rem;
+        }
+        @include media-breakpoint-up(xl) {
             width: 30rem;
         }
         & + & {
-            @include media-breakpoint-down(sm) {
+            @include media-breakpoint-down(md) {
                 margin-top: 6rem;
             }
         }
