@@ -2196,20 +2196,54 @@ input[type='checkbox'] {
   padding: 0;
 }
 
+.announcement-bar__close {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--page-width-x-paddings-mobile) - 1rem);
+  transform: translateY(-50%);
+  padding: 10px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+.announcement-bar__close path {
+  fill: #fff;
+}
+
 .announcement-bar__message {
+  position: relative;
   font-size: 10px;
   text-align: center;
-  padding: 1rem 2rem 0.7rem;
+  padding: 1rem calc(3rem + var(--page-width-x-paddings-mobile)) 0.7rem 2rem;
   margin: 0;
   letter-spacing: 0.1rem;
   font-family: 'Axiforma';
   font-weight: 500;
+}
+@media (min-width: 576px) {
+  .announcement-bar__message {
+    padding: 1rem calc(3rem + var(--page-width-x-paddings-tablet)) 0.7rem 2rem;
+  }
+  .announcement-bar__close {
+    right: calc(var(--page-width-x-paddings-tablet) - 1rem);
+  }
 }
 @media (min-width: 768px) {
   .announcement-bar__message {
     font-size: 12px;
     font-family: 'Axiforma';
     font-weight: 'bold';
+  }
+}
+@media (min-width: 1440px) {
+  .announcement-bar__message {
+    padding: 1rem 3rem 0.7rem 0;
+    max-width: var(--page-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .announcement-bar__close {
+    right: -1rem;
   }
 }
 
