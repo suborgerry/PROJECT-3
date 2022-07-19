@@ -1,0 +1,110 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+
+  .section-{{ s.id }}-padding {
+    padding-top: {{ ss.padding_top_mob }}px;
+    padding-bottom: {{ ss.padding_bottom_mob }}px;
+  }
+
+  @media screen and (min-width: 767.8px) {
+    .section-{{ s.id }}-padding {
+      padding-top: {{ ss.padding_top }}px;
+      padding-bottom: {{ ss.padding_bottom }}px;
+    }
+  }
+
+{%- endstyle -%}
+<section class="section section-{{ s.id }}-padding page-width previous-images">
+  <h3 class="previous-images__heading">{{ ss.heading | escape }}</h3>
+  <div class="previous-images__container">
+    {%- for photo in s.blocks -%}
+      <img
+        src="{{ photo.settings.photo | image_url }}"
+        alt="{{ photo.settings.photo.alt | escape }}"
+        loading="lazy"
+        class="text-with-collage__main-image"
+      >
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Previous images",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Padding desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Padding mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Photo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Previous images"
+    }
+  ]
+}
+{% endschema %}
