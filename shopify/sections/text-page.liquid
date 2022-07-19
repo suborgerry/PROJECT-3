@@ -30,7 +30,7 @@
               }
             </style>
             {%- when 'text' -%}
-            <div class="text-page__text">{{ block.settings.text }}</div>
+            <div class="text-page__text t{%- if block.settings.text_center -%}ext-center{%- endif -%}">{{ block.settings.text }}</div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -106,6 +106,12 @@
           "id": "text",
           "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
           "label": "Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "text_center",
+          "label": "Text center",
+          "default": false
         }
       ]
     }
