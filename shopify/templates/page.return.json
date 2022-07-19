@@ -13,9 +13,9 @@
       "type": "main-page",
       "settings": {
         "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mob": 10,
-        "padding_bottom_mob": 0,
+        "padding_bottom": 64,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 54,
         "show_title": true,
         "show_content": false
       }
@@ -43,6 +43,8 @@
           "settings": {
             "button_label": "SUBMIT REQUEST",
             "button_link": "#",
+            "width": "229",
+            "height": "54",
             "margin_top": 56,
             "margin_top_mob": 48
           }
@@ -64,45 +66,46 @@
         "image": "shopify:\/\/shop_images\/Group_12_1.jpg",
         "image_mobile": "shopify:\/\/shop_images\/Group_12_2.jpg",
         "full_page": false,
+        "full_page_mob": true,
         "always_center": false,
         "padding": "7.2rem 8.8rem 4.2rem",
         "padding_mobile": "5.6rem 2rem 3.9rem"
       }
     },
-    "1657875517a114587a": {
+    "1658222037388bac0a": {
       "type": "list",
       "blocks": {
-        "fcceb395-831d-4b9e-927e-d0efbb054e27": {
+        "fc0f0878-d7a2-4700-9918-367a808ed375": {
           "type": "item",
           "settings": {
             "text": "Returns must be sent back within 30 days of delivery."
           }
         },
-        "c148af95-92f3-47bb-b45d-187f4f939c1c": {
+        "cddb61f5-ef0b-4fb6-9db7-1ab29bcd530d": {
           "type": "item",
           "settings": {
             "text": "Product must not have been worn, washed, or altered in any way."
           }
         },
-        "0e0b40a6-9e90-472e-942c-57b16a0b65d6": {
+        "9a25932c-c5b4-4003-804a-57994b2524af": {
           "type": "item",
           "settings": {
             "text": "No visible signs of use present including deodorant\/cosmetic stains, perfume, scents, etc."
           }
         },
-        "5cb0610e-d703-4c9a-80ec-7fa793e9fe4c": {
+        "33694090-dbec-4640-92de-023392a36052": {
           "type": "item",
           "settings": {
             "text": "All applicable tags must be intact and the product returned in their original clear packaging."
           }
         },
-        "96208e8b-f2ae-460a-9d9f-766c62ecd25c": {
+        "fb98cb33-0b9b-491e-8304-3f8510de0170": {
           "type": "item",
           "settings": {
             "text": "The items must be mailed back with the original packing slip included."
           }
         },
-        "db6e0610-7dcb-4170-94d8-fe6aaf0b0ce2": {
+        "6e957227-8d05-4dd2-b5ac-a7b06825d8d3": {
           "type": "item",
           "settings": {
             "text": "We do not accept returns on final sale items, discounted items, jewelry, intimate items, and exclusive run items."
@@ -110,22 +113,79 @@
         }
       },
       "block_order": [
-        "fcceb395-831d-4b9e-927e-d0efbb054e27",
-        "c148af95-92f3-47bb-b45d-187f4f939c1c",
-        "0e0b40a6-9e90-472e-942c-57b16a0b65d6",
-        "5cb0610e-d703-4c9a-80ec-7fa793e9fe4c",
-        "96208e8b-f2ae-460a-9d9f-766c62ecd25c",
-        "db6e0610-7dcb-4170-94d8-fe6aaf0b0ce2"
+        "fc0f0878-d7a2-4700-9918-367a808ed375",
+        "cddb61f5-ef0b-4fb6-9db7-1ab29bcd530d",
+        "9a25932c-c5b4-4003-804a-57994b2524af",
+        "33694090-dbec-4640-92de-023392a36052",
+        "fb98cb33-0b9b-491e-8304-3f8510de0170",
+        "6e957227-8d05-4dd2-b5ac-a7b06825d8d3"
+      ],
+      "settings": {
+        "heading": "Qualifications",
+        "margin_heading_bottom": 48,
+        "margin_heading_bottom_mob": 23,
+        "text": ""
+      }
+    },
+    "1658222807c14b33e6": {
+      "type": "list",
+      "blocks": {
+        "8a796b24-f2d3-4778-87c2-bf61a9e91815": {
+          "type": "item",
+          "settings": {
+            "text": "Returns must be sent back within 30 days of delivery."
+          }
+        },
+        "5ff39e43-8592-4295-849e-31c20f32c570": {
+          "type": "item",
+          "settings": {
+            "text": "Product must not have been worn, washed, or altered in any way."
+          }
+        },
+        "8da6cf8a-185f-45c3-b46b-3a9181bf4716": {
+          "type": "item",
+          "settings": {
+            "text": "No visible signs of use present including deodorant\/cosmetic stains, perfume, scents, etc."
+          }
+        },
+        "f2234301-3394-4081-bdb2-37fe2de2bc3a": {
+          "type": "item",
+          "settings": {
+            "text": "All applicable tags must be intact and the product returned in their original clear packaging."
+          }
+        },
+        "93f0f19f-782c-4815-bcd0-f5c388d30032": {
+          "type": "item",
+          "settings": {
+            "text": "The items must be mailed back with the original packing slip included."
+          }
+        },
+        "b4b36b04-1764-4b86-b37e-f0fa05467782": {
+          "type": "item",
+          "settings": {
+            "text": "We do not accept returns on final sale items, discounted items, jewelry, intimate items, and exclusive run items."
+          }
+        }
+      },
+      "block_order": [
+        "8a796b24-f2d3-4778-87c2-bf61a9e91815",
+        "5ff39e43-8592-4295-849e-31c20f32c570",
+        "8da6cf8a-185f-45c3-b46b-3a9181bf4716",
+        "f2234301-3394-4081-bdb2-37fe2de2bc3a",
+        "93f0f19f-782c-4815-bcd0-f5c388d30032",
+        "b4b36b04-1764-4b86-b37e-f0fa05467782"
       ],
       "settings": {
         "heading": "Qualifications",
         "margin_heading_bottom": 40,
+        "margin_heading_bottom_mob": 23,
         "text": ""
       }
     },
     "1657878017eb724aa6": {
       "type": "steps",
       "settings": {
+        "heading": "",
         "a_anchor_svg": "<svg width=\"100\" height=\"100\" viewbox=\"0 0 100 100\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M84.3192 26.291H22.4331V85.2301H84.3192V26.291ZM48.9557 32.1849H57.7966V43.9727H48.9557V32.1849ZM28.327 79.3362H78.4252V32.1849H63.6905V49.8667H43.0618V32.1849H28.327V79.3362Z\" fill=\"#CF322D\"><\/path><path d=\"M34.2212 55.7607H51.9029V61.6547H34.2212V55.7607Z\" fill=\"#CF322D\"><\/path><path d=\"M34.2212 67.5488H43.9589V73.4427H34.2212V67.5488Z\" fill=\"#CF322D\"><\/path><path d=\"M83.435 12.5389H9.55624L16.1541 3.4668L11.3877 0L0.125 15.4859L11.3875 30.9717L16.1541 27.5049L9.55624 18.4328H83.435C88.7973 18.4328 93.16 22.7955 93.16 28.1578V84.3464C93.16 89.7086 88.7973 94.0713 83.435 94.0713H23.3171C17.9549 94.0713 13.5922 89.7086 13.5922 84.3464V58.7079H7.69828V84.3464C7.69828 92.9585 14.705 99.9652 23.3171 99.9652H83.435C92.0472 99.9652 99.0539 92.9585 99.0539 84.3464V28.1578C99.0539 19.5454 92.0472 12.5389 83.435 12.5389Z\" fill=\"#CF322D\"><\/path><\/svg>",
         "a_anchor_heading": "Step 1",
         "a_anchor_info": "<p>Submit a <em>return or exchange request <\/em>within 30 days of receiving your order. Choose from exchange, two return options; store credit or a refund to the original payment method.<\/p>",
@@ -137,40 +197,67 @@
         "c_anchor_info": "<p>An email will be dispatched when your return or exchange is processed. If you are returning something, you will receive a full refund or store credit, depending on the option you chose in step one.<\/p>"
       }
     },
-    "1657882807e0a00c62": {
+    "16582225749be2db65": {
+      "type": "text-page",
+      "blocks": {
+        "1658222574b757c5b4-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Damaged \/ Incorrect Merchandise",
+            "margin_top": 56,
+            "margin_top_mob": 48
+          }
+        },
+        "1658222574b757c5b4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you have received the wrong\/damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>If you have received a damaged item, or if your order was incomplete, please notify us within 3 business days upon receiving the package. We will send you a pre-paid return label for the return.<br\/><br\/>We do not refund for return shipping costs if you do not request a pre-paid return label as stated above.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "1658222574b757c5b4-0",
+        "1658222574b757c5b4-1"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "1658222605618c1f10": {
       "type": "list",
       "blocks": {
-        "84bb1419-c422-442d-bda2-1fb5937648b2": {
+        "f8457f0d-ed8c-417d-8aef-11ba6c5df9dd": {
           "type": "item",
           "settings": {
             "text": "Return shipping is non-refundable, unless you receive damaged, defective or wrong item(s)."
           }
         },
-        "85094531-200d-47dc-87ab-a40ab3917a36": {
+        "ff70b90c-e794-4f91-95de-17efeb3c0a24": {
           "type": "item",
           "settings": {
             "text": "Refunds on discounted or sale items will be refunded at the prorated amount"
           }
         },
-        "3ec9ae0e-d91d-4931-890f-830190ae226f": {
+        "05679c5f-176f-455d-a131-7f88cc7b3e5a": {
           "type": "item",
           "settings": {
             "text": "Refunds must be processed through your original payment method, otherwise they will be issued in store credit (gift card)."
           }
         },
-        "e2b527a0-384b-4082-8b9c-026c80dbc0c0": {
+        "45fd5816-1563-4f35-8d52-0aef4c64589b": {
           "type": "item",
           "settings": {
             "text": "Original shipping charges are non-refundable"
           }
         },
-        "93f1f848-a5e2-43ec-9b7a-1dd37866c23c": {
+        "ed240e1e-cb3a-4655-b5a8-d53bdb566c55": {
           "type": "item",
           "settings": {
             "text": "Any orders sent with \"Free Shipping\" will be subject to the original shipping fee deducted from the total amount of the refund."
           }
         },
-        "a90d32a9-efdb-4779-b2a1-4029acceb28f": {
+        "69c1f45a-e383-4956-8ff4-1d8039458e7e": {
           "type": "item",
           "settings": {
             "text": "International Returns - unfortunately we cannot refund duties, taxes or shipping charges"
@@ -178,121 +265,122 @@
         }
       },
       "block_order": [
-        "84bb1419-c422-442d-bda2-1fb5937648b2",
-        "85094531-200d-47dc-87ab-a40ab3917a36",
-        "3ec9ae0e-d91d-4931-890f-830190ae226f",
-        "e2b527a0-384b-4082-8b9c-026c80dbc0c0",
-        "93f1f848-a5e2-43ec-9b7a-1dd37866c23c",
-        "a90d32a9-efdb-4779-b2a1-4029acceb28f"
+        "f8457f0d-ed8c-417d-8aef-11ba6c5df9dd",
+        "ff70b90c-e794-4f91-95de-17efeb3c0a24",
+        "05679c5f-176f-455d-a131-7f88cc7b3e5a",
+        "45fd5816-1563-4f35-8d52-0aef4c64589b",
+        "ed240e1e-cb3a-4655-b5a8-d53bdb566c55",
+        "69c1f45a-e383-4956-8ff4-1d8039458e7e"
       ],
       "settings": {
         "heading": "Refunds",
         "margin_heading_bottom": 28,
+        "margin_heading_bottom_mob": 23,
         "text": "After your return has been processed it will typically take 2-5 days for the funds to shown on your bank statement."
       }
     },
-    "1657882449a28d4ae7": {
+    "1658222701996a9457": {
       "type": "text-page",
       "blocks": {
-        "1657882449a3630998-0": {
+        "1658222700077ebd96-0": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
-            "margin_top": 0
+            "heading": "Late Refunds",
+            "margin_top": 0,
+            "margin_top_mob": 48
           }
         },
-        "1657882449a3630998-1": {
+        "1658222700077ebd96-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Customers have 30 days to send back purchases made at RouteOneApparel.com. Returns postmarked after 30 days will be refused and sent back at the customer's expense.<\/p>"
           }
         },
-        "d0b6e1da-efa8-4dd4-a80a-0ea23fcac943": {
+        "b75deba1-edf0-42ba-8771-6a07bd83707d": {
           "type": "heading",
           "settings": {
             "heading": "Unpaid Return Labels",
-            "margin_top": 56
+            "margin_top": 56,
+            "margin_top_mob": 48
           }
         },
-        "eb83c7d4-bc83-4fef-9d58-a8bef4e163b6": {
+        "c4cb8308-d3c8-4d0b-ab74-6018816dd01f": {
           "type": "text",
           "settings": {
             "text": "<p>Return labels may only be used once. The label is ONLY to be used to return the order it was created for. Returns MUST be sent back in the bag they were received in. Any fees incurred from shipping the package back to us will be deducted from your refund amount.<\/p>"
           }
         },
-        "ce5d96d8-fd17-44c4-bdad-210a39750aca": {
+        "5d394cc5-c018-45a5-8546-7d824b60e773": {
           "type": "heading",
           "settings": {
             "heading": "Non-qualifying Returns",
-            "margin_top": 56
+            "margin_top": 56,
+            "margin_top_mob": 48
           }
         },
-        "bbad93ca-2fbb-4aa6-b68e-8474b789a29e": {
+        "f61cf131-989e-4ae3-9ea5-b0ec99b59f11": {
           "type": "text",
           "settings": {
             "text": "<p>Returns that show ANY type of signs of wear, damage, scents, or alterations will NOT be accepted and will be sent back to the customer at their expense. A $2.50 restocking fee will be withheld from any return received without it’s original packaging or tags (separate from the $6.00 restocking fee for returns on original form of payment).<br\/><br\/>You may return any discount gift card purchased for a full refund minus any applicable shipping costs within 1 year of your purchase. This policy ONLY applies to physical gift cards that are shipped to you. Discount gift codes or egift cards that are sent electronically cannot be refunded or exchanged.<\/p>"
           }
         },
-        "8d0f7d8d-1d65-4e73-8b79-5e6606ce1360": {
+        "ad55fa7d-808e-4d77-8c63-a3f236c64cca": {
           "type": "heading",
           "settings": {
             "heading": "Holiday Policy",
-            "margin_top": 56
+            "margin_top": 56,
+            "margin_top_mob": 48
           }
         },
-        "91c9c452-6abf-4d83-b53b-beb565d4c998": {
+        "9677fa0e-135a-4b5d-aa81-6bc99dfb0fc6": {
           "type": "text",
           "settings": {
             "text": "<p>Orders placed during November 1 - December 24 will have an extended cash refund date of January 31. Store Credit of up to 30 days will still apply to the original purchase date for the period after January 31.<\/p>"
           }
         },
-        "ac30bf93-88bc-49c6-993c-8e8b6f7172c3": {
+        "f598986a-0255-4949-adeb-c5691448b432": {
           "type": "heading",
           "settings": {
             "heading": "Shipping Charges",
-            "margin_top": 56
+            "margin_top": 56,
+            "margin_top_mob": 48
           }
         },
-        "7cb01c81-b6a1-4250-97ab-529e1f723e0c": {
+        "09e8b97c-7a61-4124-830c-945481ccf2f7": {
           "type": "text",
           "settings": {
             "text": "<p>All shipping charges, gift cards, and store credits are nonrefundable and nontransferable. Limit 1 prepaid return shipping label per order.<\/p>"
           }
         },
-        "6eb1d2ef-332d-4f98-94ba-dcb9d1ef3e4a": {
+        "6490218c-8e72-4622-a1e9-7629e8e3a56f": {
           "type": "heading",
           "settings": {
             "heading": "Lost and Damaged Returns",
-            "margin_top": 56
+            "margin_top": 56,
+            "margin_top_mob": 48
           }
         },
-        "29b0c0ff-1890-4e2e-844c-6a3854066d04": {
+        "f4de80a6-6ac1-4267-aa58-96ddd0e0d851": {
           "type": "text",
           "settings": {
             "text": "<p>We are not responsible for lost\/ damaged returns or packages. It is the customers responsibility to follow all directions - if the package is sent back to you with postage due it is the customers responsibility. Route One Apparel will not reimburse additional charges.<\/p>"
           }
         },
-        "f61c91dd-46ad-40fe-bd9a-8a5e3f40e521": {
+        "63725500-64b0-407e-a80f-dd779dcc7962": {
           "type": "heading",
           "settings": {
             "heading": "Other",
-            "margin_top": 46
+            "margin_top": 48,
+            "margin_top_mob": 48
           }
         },
-        "386a6141-cb15-4025-8c94-f9050313aef8": {
+        "89c0d3a1-1587-45aa-a69d-dec948fce792": {
           "type": "text",
           "settings": {
             "text": "<p>If you return over $250 in a 3 month period you may be subject to a modified return policy. We will contact you directly via email if you are no longer eligible for our general return policy.<\/p>"
           }
         },
-        "92867db2-c32c-4af6-b211-db59ca522c0d": {
-          "type": "heading",
-          "settings": {
-            "heading": "Mailing Address",
-            "margin_top": 56
-          }
-        },
-        "b5dd4552-84f6-43f0-b7a4-08599ea87beb": {
+        "6a27aecb-15f2-47c3-9d34-cb8a337e9f46": {
           "type": "text",
           "settings": {
             "text": "<p>Please address your package to \"ROUTE ONE APPAREL\" and indicate on the mailing label whether it is a \"RETURN\" or an \"EXCHANGE\". The mailing address are below.<\/p>"
@@ -300,35 +388,34 @@
         }
       },
       "block_order": [
-        "1657882449a3630998-0",
-        "1657882449a3630998-1",
-        "d0b6e1da-efa8-4dd4-a80a-0ea23fcac943",
-        "eb83c7d4-bc83-4fef-9d58-a8bef4e163b6",
-        "ce5d96d8-fd17-44c4-bdad-210a39750aca",
-        "bbad93ca-2fbb-4aa6-b68e-8474b789a29e",
-        "8d0f7d8d-1d65-4e73-8b79-5e6606ce1360",
-        "91c9c452-6abf-4d83-b53b-beb565d4c998",
-        "ac30bf93-88bc-49c6-993c-8e8b6f7172c3",
-        "7cb01c81-b6a1-4250-97ab-529e1f723e0c",
-        "6eb1d2ef-332d-4f98-94ba-dcb9d1ef3e4a",
-        "29b0c0ff-1890-4e2e-844c-6a3854066d04",
-        "f61c91dd-46ad-40fe-bd9a-8a5e3f40e521",
-        "386a6141-cb15-4025-8c94-f9050313aef8",
-        "92867db2-c32c-4af6-b211-db59ca522c0d",
-        "b5dd4552-84f6-43f0-b7a4-08599ea87beb"
+        "1658222700077ebd96-0",
+        "1658222700077ebd96-1",
+        "b75deba1-edf0-42ba-8771-6a07bd83707d",
+        "c4cb8308-d3c8-4d0b-ab74-6018816dd01f",
+        "5d394cc5-c018-45a5-8546-7d824b60e773",
+        "f61cf131-989e-4ae3-9ea5-b0ec99b59f11",
+        "ad55fa7d-808e-4d77-8c63-a3f236c64cca",
+        "9677fa0e-135a-4b5d-aa81-6bc99dfb0fc6",
+        "f598986a-0255-4949-adeb-c5691448b432",
+        "09e8b97c-7a61-4124-830c-945481ccf2f7",
+        "6490218c-8e72-4622-a1e9-7629e8e3a56f",
+        "f4de80a6-6ac1-4267-aa58-96ddd0e0d851",
+        "63725500-64b0-407e-a80f-dd779dcc7962",
+        "89c0d3a1-1587-45aa-a69d-dec948fce792",
+        "6a27aecb-15f2-47c3-9d34-cb8a337e9f46"
       ],
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 0
+        "padding_top": 0,
+        "padding_bottom": 24
       }
     },
-    "165788341637c24082": {
+    "1658223930ae60b377": {
       "type": "adresses",
       "settings": {
-        "padding_top": 24,
-        "padding_bottom": 104,
-        "first_adress": "<p>Standart:<br\/>PO BOX 4202<br\/>Towson MD 21284<\/p>",
-        "second_adress": "<p>FedEx or UPS:<br\/>808 Gleneagles Ct Ste 1 #42023 Towson, MD 21284<\/p>"
+        "padding_top": 0,
+        "padding_bottom": 102,
+        "first_adress": "<p>Standart:<br\/>PO BOX 42023<br\/>Towson MD 21284<\/p>",
+        "second_adress": "<p>FedEx or UPS:<br\/>808 Gleneagles Ct Ste 1 #42023<br\/>Towson, MD 21284<\/p>"
       }
     }
   },
@@ -336,10 +423,12 @@
     "16577818970eb54d57",
     "main",
     "16578250056b70c816",
-    "1657875517a114587a",
+    "1658222037388bac0a",
+    "1658222807c14b33e6",
     "1657878017eb724aa6",
-    "1657882807e0a00c62",
-    "1657882449a28d4ae7",
-    "165788341637c24082"
+    "16582225749be2db65",
+    "1658222605618c1f10",
+    "1658222701996a9457",
+    "1658223930ae60b377"
   ]
 }
