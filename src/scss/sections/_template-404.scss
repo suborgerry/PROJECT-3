@@ -4,6 +4,11 @@
     @include media-breakpoint-up(xxl) {
         min-height: 660px;
     }
+    @include media-breakpoint-down(sm) {
+        & > .page-width {
+          padding: 0 40px;
+        }
+    }
     &__bg {
         object-fit: cover;
     }
@@ -43,6 +48,7 @@
             font-size: 1.4rem;
             min-width: 230px;
             margin-top: 56px;
+            height: 56px;
             @include media-breakpoint-up(xxl) {
                 margin-top: 67px;
             }

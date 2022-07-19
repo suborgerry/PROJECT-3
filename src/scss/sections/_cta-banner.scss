@@ -40,6 +40,7 @@
             font-size: 1.4rem;
             min-width: 276px;
             margin-top: 48px;
+            height: 56px;
             @include media-breakpoint-up(xxl) {
                 margin-top: 70px;
             }

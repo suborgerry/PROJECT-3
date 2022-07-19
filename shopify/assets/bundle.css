@@ -5918,7 +5918,6 @@ body {
   background-color: #EFEFEF;
   padding: 48px 0 0 0;
   position: relative;
-  z-index: -1;
 }
 @media (max-width: 991.98px) {
   .footer__subscribe {
@@ -7238,6 +7237,7 @@ body {
   font-size: 1.4rem;
   min-width: 276px;
   margin-top: 48px;
+  height: 56px;
 }
 @media (min-width: 1440px) {
   .cta-banner__main .button {
@@ -8911,6 +8911,11 @@ body {
     min-height: 660px;
   }
 }
+@media (max-width: 767.98px) {
+  .template-404 > .page-width {
+    padding: 0 40px;
+  }
+}
 .template-404__bg {
   object-fit: cover;
 }
@@ -8954,6 +8959,7 @@ body {
   font-size: 1.4rem;
   min-width: 230px;
   margin-top: 56px;
+  height: 56px;
 }
 @media (min-width: 1440px) {
   .template-404__main .button {
@@ -8963,6 +8969,7 @@ body {
 .interns__heading {
   margin-bottom: 46px;
   padding: 0 20px;
+  color: #414240;
 }
 @media (min-width: 576px) {
   .interns__heading {
@@ -8998,6 +9005,14 @@ body {
 @media (min-width: 992px) {
   .interns__rte {
     padding-bottom: 40px;
+  }
+}
+.interns__rte p {
+  font-size: 16px;
+}
+@media (min-width: 576px) {
+  .interns__rte p {
+    font-size: 14px;
   }
 }
 .interns__accordion {
