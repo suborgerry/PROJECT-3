@@ -10,10 +10,13 @@
         }
         &.list__text {
             font-weight: 300;
-            font-size: 1.4rem;
             line-height: 2.4rem;
+            font-size: 1.6rem;
             letter-spacing: 0.479348px;
             margin-bottom: 2.8rem;
+            @include media-breakpoint-up(sm) {
+                font-size: 1.4rem;
+            }
         }
     }
     ul {
