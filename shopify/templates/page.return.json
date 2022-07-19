@@ -43,6 +43,7 @@
           "settings": {
             "button_label": "SUBMIT REQUEST",
             "button_link": "#",
+            "button_font_size": 14,
             "width": "229",
             "height": "54",
             "margin_top": 56,
@@ -127,61 +128,6 @@
         "text": ""
       }
     },
-    "1658222807c14b33e6": {
-      "type": "list",
-      "blocks": {
-        "8a796b24-f2d3-4778-87c2-bf61a9e91815": {
-          "type": "item",
-          "settings": {
-            "text": "Returns must be sent back within 30 days of delivery."
-          }
-        },
-        "5ff39e43-8592-4295-849e-31c20f32c570": {
-          "type": "item",
-          "settings": {
-            "text": "Product must not have been worn, washed, or altered in any way."
-          }
-        },
-        "8da6cf8a-185f-45c3-b46b-3a9181bf4716": {
-          "type": "item",
-          "settings": {
-            "text": "No visible signs of use present including deodorant\/cosmetic stains, perfume, scents, etc."
-          }
-        },
-        "f2234301-3394-4081-bdb2-37fe2de2bc3a": {
-          "type": "item",
-          "settings": {
-            "text": "All applicable tags must be intact and the product returned in their original clear packaging."
-          }
-        },
-        "93f0f19f-782c-4815-bcd0-f5c388d30032": {
-          "type": "item",
-          "settings": {
-            "text": "The items must be mailed back with the original packing slip included."
-          }
-        },
-        "b4b36b04-1764-4b86-b37e-f0fa05467782": {
-          "type": "item",
-          "settings": {
-            "text": "We do not accept returns on final sale items, discounted items, jewelry, intimate items, and exclusive run items."
-          }
-        }
-      },
-      "block_order": [
-        "8a796b24-f2d3-4778-87c2-bf61a9e91815",
-        "5ff39e43-8592-4295-849e-31c20f32c570",
-        "8da6cf8a-185f-45c3-b46b-3a9181bf4716",
-        "f2234301-3394-4081-bdb2-37fe2de2bc3a",
-        "93f0f19f-782c-4815-bcd0-f5c388d30032",
-        "b4b36b04-1764-4b86-b37e-f0fa05467782"
-      ],
-      "settings": {
-        "heading": "Qualifications",
-        "margin_heading_bottom": 40,
-        "margin_heading_bottom_mob": 23,
-        "text": ""
-      }
-    },
     "1657878017eb724aa6": {
       "type": "steps",
       "settings": {
@@ -220,7 +166,7 @@
         "1658222574b757c5b4-1"
       ],
       "settings": {
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 52
       }
     },
@@ -380,6 +326,14 @@
             "text": "<p>If you return over $250 in a 3 month period you may be subject to a modified return policy. We will contact you directly via email if you are no longer eligible for our general return policy.<\/p>"
           }
         },
+        "39664bce-b577-4109-b291-e840ce244c5c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Mailing Address",
+            "margin_top": 56,
+            "margin_top_mob": 48
+          }
+        },
         "6a27aecb-15f2-47c3-9d34-cb8a337e9f46": {
           "type": "text",
           "settings": {
@@ -402,6 +356,7 @@
         "f4de80a6-6ac1-4267-aa58-96ddd0e0d851",
         "63725500-64b0-407e-a80f-dd779dcc7962",
         "89c0d3a1-1587-45aa-a69d-dec948fce792",
+        "39664bce-b577-4109-b291-e840ce244c5c",
         "6a27aecb-15f2-47c3-9d34-cb8a337e9f46"
       ],
       "settings": {
@@ -424,7 +379,6 @@
     "main",
     "16578250056b70c816",
     "1658222037388bac0a",
-    "1658222807c14b33e6",
     "1657878017eb724aa6",
     "16582225749be2db65",
     "1658222605618c1f10",
