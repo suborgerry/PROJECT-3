@@ -11,6 +11,7 @@
                 {%- if block.settings.link != blank -%}
                   {% render 'icon-arrow' %}
                 {%- endif -%}
+                {%- render 'icon-close-bold', class: 'announcement-bar__close' -%}
               </p>
           {%- if block.settings.link != blank -%}
             </a>
@@ -19,6 +20,14 @@
       </div>
   {%- endcase -%}
 {%- endfor -%}
+
+<script>
+  const closeAnnouncement = document.querySelector('.announcement-bar__close');
+  closeAnnouncement.addEventListener('click', () => {
+    console.log(closeAnnouncement);
+    closeAnnouncement.closest('#shopify-section-announcement-bar').remove();
+  });
+</script>
 
 {% schema %}
 {
