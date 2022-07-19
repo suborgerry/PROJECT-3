@@ -1,0 +1,51 @@
+.template-404 {
+    position: relative;
+    min-height: 605px;
+    @include media-breakpoint-up(xxl) {
+        min-height: 660px;
+    }
+    &__bg {
+        object-fit: cover;
+    }
+    &__bg,
+    &__shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        h1 {
+            font-size: 102px;
+            line-height: normal;
+            @include media-breakpoint-up(xxl) {
+                font-size: 162px;
+            }
+        }
+        h4 {
+            font-size: 16px;
+            line-height: 28px;
+            margin-top: 38px;
+            font-family: 'Axiforma';
+            font-weight: 500;
+            @include media-breakpoint-up(xxl) {
+                margin-top: 30px;
+                font-size: 28px;
+            }
+        }
+        .button {
+            font-size: 1.4rem;
+            min-width: 230px;
+            margin-top: 56px;
+            @include media-breakpoint-up(xxl) {
+                margin-top: 67px;
+            }
+        }
+    }
+}

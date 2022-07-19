@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 31
+      }
+    },
+    "1658140469e3b8a2f8": {
+      "type": "interns",
+      "blocks": {
+        "b02a167e-54e6-48fe-8b8d-ea987f544837": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Operations Intern",
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+          }
+        },
+        "5a6212d0-7a26-4e02-8e3d-e540963f62c1": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Graphic Designer \/ Product Development",
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+          }
+        },
+        "f10d7e02-7cb3-4511-ac3f-7a4883759869": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Marketing Intern",
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+          }
+        },
+        "75797f06-3088-4725-8e1d-f9ed330bd324": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Blogging\/PR Intern",
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+          }
+        },
+        "b56b25fe-6f1d-4b21-8032-f78b2070cae0": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Photographer\/Videographer Intern",
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+          }
+        },
+        "5c972447-d5d4-40e2-b87d-4a18206a119c": {
+          "type": "accordion-item",
+          "settings": {
+            "item_heading": "Or, create your own internship position!",
+            "item_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "b02a167e-54e6-48fe-8b8d-ea987f544837",
+        "5a6212d0-7a26-4e02-8e3d-e540963f62c1",
+        "f10d7e02-7cb3-4511-ac3f-7a4883759869",
+        "75797f06-3088-4725-8e1d-f9ed330bd324",
+        "b56b25fe-6f1d-4b21-8032-f78b2070cae0",
+        "5c972447-d5d4-40e2-b87d-4a18206a119c"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/interns.jpg",
+        "image_mob": "shopify:\/\/shop_images\/interns-mob.jpg",
+        "padding_section": "",
+        "padding_section_sm": ""
+      }
+    },
+    "1658151060ac76e8c0": {
+      "type": "cta-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/interns-cta-bg.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/interns-cta-bg-mob.jpg",
+        "shadow_opacity": 40,
+        "heading": "<p>Do you want to join us<strong>?<\/strong><\/p>",
+        "description": "<p>You will be working alongside talented, passionate and innovative people who work together to bring state pride to everyone, everywhere<\/p>",
+        "btn_name": "START THE INTERNSHIP",
+        "btn_link": "#",
+        "padding_section": "100px 0px 105px 0px",
+        "padding_section_sm": "80px 0px 90px 0px"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "1658140469e3b8a2f8",
+    "1658151060ac76e8c0"
+  ]
+}

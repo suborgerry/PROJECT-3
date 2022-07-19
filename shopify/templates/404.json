@@ -1,7 +1,14 @@
 {
   "sections": {
     "main": {
-      "type": "main-404"
+      "type": "main-404",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/404-bg-image.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/404-bg-image-mob.jpg",
+        "shadow_opacity": 40,
+        "padding_section": "100px 0px",
+        "padding_section_sm": "100px 0px"
+      }
     }
   },
   "order": [

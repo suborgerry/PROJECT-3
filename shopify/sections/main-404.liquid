@@ -1,23 +1,83 @@
-<style type="text/css">
-  .template-404 .title + * {
-    margin-top: 1rem;
-  }
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
 
-  @media screen and (min-width: 750px) {
-    .template-404 .title + * {
-      margin-top: 2rem;
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
     }
+}
+.template-404__shadow {
+  background: rgba(3, 3, 3, 0.{{ ss.shadow_opacity | divided_by: 10 }});
+}
+@media (max-width: 576px) {
+  .page-width {
+    padding: 0 40px;
   }
-</style>
+}
+{%- endstyle -%}
 
-<div class="template-404 page-width page-margin center">
-  <p>
-    {{ 'templates.404.subtext' | t }}
-  </p>
-  <h1 class="title">
-    {{ 'templates.404.title' | t }}
-  </h1>
-  <a href="{{ routes.all_products_collection_url }}" class="button">
-    {{ 'general.continue_shopping' | t }}
-  </a>
+<div class="template-404 positioning--{{ s.id }}">
+  <div class="page-width">
+    <img 
+    {% render 'src-set', image: ss.bg_image %}
+    sizes="100vw"
+    src="{{ ss.bg_image | image_url: width: 3000 }}"
+    alt="{{ ss.bg_image.alt }}" class="template-404__bg d-none d-md-block">
+    <img 
+    {% render 'src-set', image: ss.bg_image_mob %}
+    src="{{ ss.bg_image_mob | image_url: width: 1500 }}"
+    alt="{{ ss.bg_image_mob.alt }}" class="template-404__bg d-md-none">
+    <div class="template-404__shadow"></div>
+    <div class="template-404__main">
+      <h1 class="c-white">{{ 'templates.404.subtext' | t }}</h1>
+      <h4 class="c-white">{{ 'templates.404.title' | t }}</h4>
+      <a href="{{ routes.root_url }}" class="button button__red">{{ 'Back to main' }}</a>
+    </div>
+  </div>
 </div>
+
+{% schema %}
+{
+    "name": "404",
+    "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background image"
+        },              
+        {
+          "type": "image_picker",
+          "id": "bg_image_mob",
+          "label": "Background image (mobile)"
+        },
+        {
+          "type": "range",
+          "id": "shadow_opacity",
+          "min": 10,
+          "max": 90,
+          "step": 10,
+          "unit": "%",
+          "label": "Shadow opacity",
+          "default": 40
+        },            
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ]
+}
+{% endschema %}

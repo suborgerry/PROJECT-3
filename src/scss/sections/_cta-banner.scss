@@ -1,0 +1,48 @@
+.cta-banner {
+    position: relative;
+    min-height: 528px;
+    @include media-breakpoint-up(xxl) {
+        min-height: 492px;
+    }
+    &__bg {
+        object-fit: cover;
+    }
+    &__bg,
+    &__shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    &__main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        h2.h1 {
+            padding: 0 37px;
+            @include media-breakpoint-up(sm) {
+                padding: unset;
+            }
+            strong {
+                font-family: 'Long Shot';
+                font-weight: 400;
+            }
+        }
+        .description {
+            margin-top: 38px;
+            max-width: 762px;
+            line-height: 31px;
+        }
+        .button {
+            font-size: 1.4rem;
+            min-width: 276px;
+            margin-top: 48px;
+            @include media-breakpoint-up(xxl) {
+                margin-top: 70px;
+            }
+        }
+    }
+}

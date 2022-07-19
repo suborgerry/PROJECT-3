@@ -216,7 +216,7 @@
       }
     },
     "404": {
-      "title": "Page not found",
+      "title": "We can’t seem to find the page you are looking for",
       "subtext": "404"
     }
   },

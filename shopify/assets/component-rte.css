@@ -4,7 +4,24 @@
   display: block;
 }
 
-.rte > p:first-child {
+.rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
+  font-family: 'Axiforma';
+  font-weight: 700;
+  margin-top: 44px;
+  margin-bottom: 24px;
+}
+
+.rte p {
+  margin: 20px 0;
+}
+
+.rte > p:first-child,
+.rte > h1:first-child,
+.rte > h2:first-child, 
+.rte > h3:first-child,
+.rte > h4:first-child,
+.rte > h5:first-child,
+.rte > h6:first-child {
   margin-top: 0;
 }
 
@@ -20,6 +37,10 @@
   .rte table td {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
+  }
+  .rte h1, .rte h2, .rte h3, .rte h4, .rte h5, .rte h6 {
+    margin-top: 56px;
+    margin-bottom: 28px;
   }
 }
 
@@ -45,15 +66,12 @@
 }
 
 .rte a {
-  color: rgba(var(--color-link), var(--alpha-link));
-  text-underline-offset: 0.3rem;
-  text-decoration-thickness: 0.1rem;
-  transition: text-decoration-thickness var(--duration-short) ease;
+  color: #CF322D;
+  text-decoration: none;
 }
 
 .rte a:hover {
-  color: rgb(var(--color-link));
-  text-decoration-thickness: 0.2rem;
+  text-decoration: underline;
 }
 
 .rte blockquote {

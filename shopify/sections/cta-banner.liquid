@@ -1,0 +1,108 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+.shadow--{{ s.id }} {
+    background: rgba(0, 0, 0, 0.{{ ss.shadow_opacity | divided_by: 10 }});
+}
+{%- endstyle -%}
+
+<section class="cta-banner positioning--{{ s.id }}">
+    <div class="page-width">
+        <img 
+        {% render 'src-set', image: ss.bg_image %}
+        sizes="100vw"
+        src="{{ ss.bg_image | image_url: width: 3000 }}"
+        alt="{{ ss.bg_image.alt }}" class="cta-banner__bg d-none d-sm-block">
+        <img 
+        {% render 'src-set', image: ss.bg_image_mob %}
+        src="{{ ss.bg_image_mob | image_url: width: 1500 }}"
+        alt="{{ ss.bg_image_mob.alt }}" class="cta-banner__bg d-sm-none">
+        <div class="cta-banner__shadow shadow--{{ s.id }}"></div>
+        <div class="cta-banner__main">
+            <h2 class="h1 c-white">{{ ss.heading | remove: '<p>' | remove: '</p>' }}</h2>
+            {%- if ss.description != blank -%}
+                <span class="description text-18px c-white">{{ ss.description | remove: '<p>' | remove: '</p>' }}</span>
+            {%- endif -%}
+            {%- if ss.btn_name != blank -%}
+                <a href="{{ ss.btn_link }}" class="button button__red">{{ ss.btn_name }}</a>
+            {%- endif -%}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "CTA banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background image"
+        },              
+        {
+            "type": "image_picker",
+            "id": "bg_image_mob",
+            "label": "Background image (mobile)"
+        },
+        {
+            "type": "range",
+            "id": "shadow_opacity",
+            "min": 10,
+            "max": 90,
+            "step": 10,
+            "unit": "%",
+            "label": "Shadow opacity",
+            "default": 40
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        },              
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "btn_name",
+            "label": "Button name"
+        },            
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button link"
+        },            
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "CTA banner",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,113 @@
+{{ 'component-rte.css' | asset_url | stylesheet_tag }}
+
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="interns positioning--{{ s.id }}">
+    <div class="page-width-small">
+        <h3 class="interns__heading text-center text-32px">{{ page.title }}</h3>
+        <img 
+        {% render 'src-set', image: ss.image %}
+        src="{{ ss.image | image_url: width: 1500 }}"
+        alt="{{ ss.image.alt }}" class="interns__img d-none d-sm-block">
+        <img 
+        {% render 'src-set', image: ss.image_mob %}
+        src="{{ ss.image_mob | image_url: width: 1500 }}"
+        alt="{{ ss.image_mob.alt }}" class="interns__img d-sm-none">
+        <div class="interns__rte rte">
+            {{ page.content }}
+        </div>
+        <div class="interns__accordion">
+            {%- for b in s.blocks -%}
+                <div class="interns__accordion-item{% if b.settings.item_description != blank %} has-description{% endif %}{% if forloop.first %} opened{% endif %}">
+                    <span class="item-heading">{%- if b.settings.item_description != blank -%}{%- render 'icon-arr' -%}{%- endif -%}{{ b.settings.item_heading }}</span>
+                    {%- if b.settings.item_description != blank -%}
+                        <div class="item-description">
+                            {{ b.settings.item_description }}
+                        </div>
+                    {%- endif -%}
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+
+<script>
+    const intAccordItems = document.querySelectorAll('.interns__accordion-item.has-description');
+    intAccordItems.forEach((item) => {
+        item.addEventListener('click', ()=> {
+            if (item.classList.contains('opened')) {
+                item.classList.remove('opened');
+            } else {
+                item.classList.add('opened');
+            }
+        });
+    });
+</script>
+
+{% schema %}
+{
+    "name": "Interns",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },              
+        {
+            "type": "image_picker",
+            "id": "image_mob",
+            "label": "Image (mobile)"
+        },               
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "accordion-item",
+            "name": "Accordion item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "item_heading",
+                    "label": "Heading"
+                },    
+                {
+                    "type": "richtext",
+                    "id": "item_description",
+                    "label": "Description"
+                }       
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Interns",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}
