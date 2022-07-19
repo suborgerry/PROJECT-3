@@ -2,7 +2,12 @@
   <div class="page-width">
     <div class="footer__subscribe-wrapper d-flex flex-column align-items-center">
       <div class="footer__logo">
-        {{ section.settings.footer-logo }}
+        <img
+          src="{{ section.settings.footer_logo | image_url }}"
+          alt="{{ section.settings.footer_logo.alt | escape }}"
+          loading="lazy"
+        >
+        {% comment %} {{ section.settings.footer-logo }} {% endcomment %}
       </div>
       <p>{{ section.settings.footer-logo-text }}</p>
       {% form 'customer', class: 'newsletter-form' %}
@@ -193,9 +198,9 @@
   "content": "Footer Subscribe"
   },
   {
-  "type": "html",
-  "id": "footer-logo",
-  "label": "Logo SVG Code"
+    "type": "image_picker",
+    "id": "footer_logo",
+    "label": "Logo image"
   },
   {
   "type": "text",
