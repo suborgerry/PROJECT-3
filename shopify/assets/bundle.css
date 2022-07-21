@@ -5955,6 +5955,11 @@ body {
   border: none !important;
   background-color: rgb(var(--color-base-background-1));
 }
+@media (min-width: 768px) {
+  .footer__subscribe-wrapper form #NewsletterForm--footer {
+    width: 373px;
+  }
+}
 .footer__subscribe-wrapper form #NewsletterForm--footer:focus {
   box-shadow: none !important;
 }
@@ -5987,6 +5992,7 @@ body {
 @media (max-width: 767.98px) {
   .footer__form-box {
     max-width: 100%;
+    width: 100%;
   }
 }
 @media (max-width: 575.98px) {
