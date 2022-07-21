@@ -12,47 +12,114 @@
   }
 {%- endstyle -%}
 
-<div class="work-to-roa_step-1">
-  <div class="work-to-roa__form-container m-auto">
-    <p class="work-to-roa__form-container-title">Step 1. Personal Info</p>
-    {% form 'customer', class: 'newsletter-form' %}
-      <input type="hidden" name="contact[tags]" value="newsletter">
-      <div class="footer__field-wrapper">
-        <div class="field footer__form-box">
-          <input
-                  id="NewsletterForm--{{ section.id }}"
-                  type="email"
-                  name="contact[email]"
-                  class="field__input"
-                  value="{{ form.email }}"
-                  aria-required="true"
-                  autocorrect="off"
-                  autocapitalize="off"
+<div class="work-to-roa__form-container m-auto">
+{%- for block in section.blocks -%}
+  {%- assign b = block -%}
+  {%- assign bs = b.settings -%}
+  <div class="work-to-roa__info text-center">{{ bs.text }}</div>
+  <div class="work-to-roa_step-1">
+      <p class="work-to-roa__form-container-title">Step 1. Personal Info</p>
+      <div>
+        <div class="contact page-width page-width--narrow">
+          {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+            <p class="work-to-roa__form-heading">Date You Are Available For Employment</p>
+            <div class="work-to-roa__form-fields">
+              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
+              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[day]" placeholder="Day">
+              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[year]" placeholder="Year">
+              <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" onfocus="this.showPicker()"></span>
+              <div>
+                <input type="text" class="text-date">
+                <script src="{{ 'work-to-roa.js' | asset_url }}" defer="defer"></script>
+                <script>
+                  const datePicker = document.querySelector('.NativeDatepicker');
+                  const value = '2020-11-09 12:13:00';
+                  const textInput = document.querySelector('.text-date');
+                  
+                  document.addEventListener('click', evt => {
+                    const input = document.querySelector('.NativeDatepicker__input');
+                    if(evt.target.classList.contains('.NativeDatepicker')) {
+                      input.focus();
+                      input.click();
+                    } else {
+                      input.blur();
+                    }
+                  })
+                  
+                  textInput.value = value;
+                  
+                  const datepicker = new NativeDatepicker({
+                    initialValue: value,
+                    onChange: newValue => {
+                      textInput.value = newValue;
+                    }
+                  });
+                  
+                  textInput.onchange = event => {
+                    datepicker.setValue(event.target.value);
+                  };
+                  
+                  textInput.parentNode.appendChild(datepicker.element);
+                </script>
+              </div>
+            </div>
+            <div class="contact__fields">
+              <div class="field">
+                <label class="work-to-roa__form-label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+                <input class="work-to-roa__form-input" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
+              </div>
+              <div class="field field--with-error">
+                <label class="work-to-roa__form-label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+                <input
                   autocomplete="email"
-                  {% if form.errors %}
-                    autofocus
+                  type="email"
+                  id="ContactForm-email"
+                  class="work-to-roa__form-input"
+                  name="contact[email]"
+                  spellcheck="false"
+                  autocapitalize="off"
+                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                  aria-required="true"
+                  {% if form.errors contains 'email' %}
                     aria-invalid="true"
-                    aria-describedby="Newsletter-error--{{ section.id }}"
-                    {% elsif form.posted_successfully? %}
-                    aria-describedby="Newsletter-success--{{ section.id }}"
+                    aria-describedby="ContactForm-email-error"
                   {% endif %}
-                  placeholder="{{ 'newsletter.label' | t }}"
-                  required
-          >
-          <label class="field__label" for="NewsletterForm--{{ section.id }}">
-            {{ 'newsletter.label' | t }}
-          </label>
-          <button type="submit" class="button__red" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">{{ section.settings.button-label }}</button>
+                  placeholder="{{ 'templates.contact.form.email' | t }}"
+                >
+                {%- if form.errors contains 'email' -%}
+                  <small class="contact__field-error" id="ContactForm-email-error">
+                    <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                    <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
+                  </small>
+                {%- endif -%}
+              </div>
+            </div>
+            <div class="field">
+              <label class="work-to-roa__form-label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+              <input type="tel" id="ContactForm-phone" class="work-to-roa__form-input" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'templates.contact.form.phone' | t }}">
+            </div>
+            <div class="field">
+              <textarea
+                rows="10"
+                id="ContactForm-body"
+                class="text-area field__input"
+                name="contact[{{ 'templates.contact.form.comment' | t }}]"
+                placeholder="{{ 'templates.contact.form.comment' | t }}"
+              >
+                {{- form.body -}}
+              </textarea>
+              <label class="work-to-roa__form-label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
+            </div>
+            <div class="contact__button">
+              <button type="submit" class="work-to-roa__form-button">
+                send
+              </button>
+            </div>
+          {%- endform -%}
         </div>
-        {%- if form.errors -%}
-          <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
-        {%- endif -%}
       </div>
-      {%- if form.posted_successfully? -%}
-        <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
-      {%- endif -%}
-    {% endform %}
-  </div>
+    </div>
+  {%- endfor -%}
 </div>
 
 {% schema %}

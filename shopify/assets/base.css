@@ -535,7 +535,6 @@ blockquote {
 .caption-large,
 .customer .field input,
 .customer select,
-.field__input,
 .form__label,
 .select__select {
   font-size: 1.3rem;
@@ -1608,14 +1607,14 @@ details[open] > .share-button__fallback {
   transition: none;
 }
 
-.share-button__fallback .field__input:focus,
+/* .share-button__fallback .field__input:focus,
 .share-button__fallback .field__input:-webkit-autofill {
   outline: 0.2rem solid rgba(var(--color-foreground),.5);
   outline-offset: 0.1rem;
   box-shadow: 0 0 0 0.1rem rgb(var(--color-background)),0 0 0.5rem 0.4rem rgba(var(--color-foreground),.3);
-}
+} */
 
-.share-button__fallback .field__input {
+/* .share-button__fallback .field__input {
   box-shadow: none;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -1623,11 +1622,11 @@ details[open] > .share-button__fallback {
   filter: none;
   min-width: auto;
   min-height: auto;
-}
+} */
 
-.share-button__fallback .field__input:hover {
+/* .share-button__fallback .field__input:hover {
   box-shadow: none;
-}
+} */
 
 .share-button__fallback .icon {
   width: 1.5rem;
@@ -1649,7 +1648,6 @@ details[open] > .share-button__fallback {
 }
 
 /* component-form */
-.field__input,
 .select__select,
 .customer .field input,
 .customer select {
@@ -1722,7 +1720,7 @@ details[open] > .share-button__fallback {
   border-radius: var(--inputs-radius);
 }
 
-.field__input:focus-visible,
+/* .field__input:focus-visible,
 .select__select:focus-visible,
 .customer .field input:focus-visible,
 .customer select:focus-visible,
@@ -1730,9 +1728,9 @@ details[open] > .share-button__fallback {
   box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
-}
+} */
 
-.field__input:focus,
+/* .field__input:focus,
 .select__select:focus,
 .customer .field input:focus,
 .customer select:focus,
@@ -1740,7 +1738,7 @@ details[open] > .share-button__fallback {
   box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
   outline: 0;
   border-radius: var(--inputs-radius);
-}
+} */
 
 .localization-form__select:focus {
   outline: 0;
@@ -1791,14 +1789,14 @@ details[open] > .share-button__fallback {
   flex-wrap: wrap;
 }
 
-.field__input,
+/* .field__input,
 .customer .field input {
   flex-grow: 1;
   text-align: left;
   padding: 1.5rem;
   margin: var(--inputs-border-width);
   transition: box-shadow var(--duration-short) ease;
-}
+} */
 
 .field__label,
 .customer .field label {
@@ -1815,7 +1813,7 @@ details[open] > .share-button__fallback {
   line-height: 1.5;
 }
 
-.field__input:focus ~ .field__label,
+/* .field__input:focus ~ .field__label,
 .field__input:not(:placeholder-shown) ~ .field__label,
 .field__input:-webkit-autofill ~ .field__label,
 .customer .field input:focus ~ label,
@@ -1825,9 +1823,9 @@ details[open] > .share-button__fallback {
   top: calc(var(--inputs-border-width) + 0.5rem);
   left: calc(var(--inputs-border-width) + 2rem);
   letter-spacing: 0.04rem;
-}
+} */
 
-.field__input:focus,
+/* .field__input:focus,
 .field__input:not(:placeholder-shown),
 .field__input:-webkit-autofill,
 .customer .field input:focus,
@@ -1835,7 +1833,7 @@ details[open] > .share-button__fallback {
 .customer .field input:-webkit-autofill {
   padding: 2.2rem 1.5rem 0.8rem 2rem;
   margin: var(--inputs-border-width);
-}
+} */
 
 .field__input::-webkit-search-cancel-button,
 .customer .field input::-webkit-search-cancel-button {
@@ -1846,10 +1844,10 @@ limespot-container {
   display: none !important;
 }
 
-.field__input::placeholder,
+/* .field__input::placeholder,
 .customer .field input::placeholder {
   opacity: 0;
-}
+} */
 
 .field__button {
   align-items: center;
