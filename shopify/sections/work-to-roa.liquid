@@ -1,3 +1,6 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top_mob }}px;
@@ -13,114 +16,391 @@
 {%- endstyle -%}
 
 <div class="work-to-roa__form-container m-auto">
-{%- for block in section.blocks -%}
-  {%- assign b = block -%}
-  {%- assign bs = b.settings -%}
-  <div class="work-to-roa__info text-center">{{ bs.text }}</div>
-  <div class="work-to-roa_step-1">
+  {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
+    <div class="work-to-roa__step active" data-step="1" id="step_1">
+      <div class="work-to-roa__info text-center">{{ ss.step_1 }}</div>
       <p class="work-to-roa__form-container-title">Step 1. Personal Info</p>
       <div>
-        <div class="contact page-width page-width--narrow">
-          {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
-            <p class="work-to-roa__form-heading">Date You Are Available For Employment</p>
-            <div class="work-to-roa__form-fields">
-              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
-              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[day]" placeholder="Day">
-              <input class="work-to-roa__form-input small" type="text" id="ContactForm-month" name="contact[year]" placeholder="Year">
-              <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" onfocus="this.showPicker()"></span>
-              <div>
-                <input type="text" class="text-date">
-                <script src="{{ 'work-to-roa.js' | asset_url }}" defer="defer"></script>
-                <script>
-                  const datePicker = document.querySelector('.NativeDatepicker');
-                  const value = '2020-11-09 12:13:00';
-                  const textInput = document.querySelector('.text-date');
-                  
-                  document.addEventListener('click', evt => {
-                    const input = document.querySelector('.NativeDatepicker__input');
-                    if(evt.target.classList.contains('.NativeDatepicker')) {
-                      input.focus();
-                      input.click();
-                    } else {
-                      input.blur();
-                    }
-                  })
-                  
-                  textInput.value = value;
-                  
-                  const datepicker = new NativeDatepicker({
-                    initialValue: value,
-                    onChange: newValue => {
-                      textInput.value = newValue;
-                    }
-                  });
-                  
-                  textInput.onchange = event => {
-                    datepicker.setValue(event.target.value);
-                  };
-                  
-                  textInput.parentNode.appendChild(datepicker.element);
-                </script>
-              </div>
+        <p class="work-to-roa__form-heading">Date You Are Available For Employment</p>
+        <div class="work-to-roa__form-fields date d-flex">
+          <input class="work-to-roa__form-input sm" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
+          <input class="work-to-roa__form-input sm" type="text" id="ContactForm-day" name="contact[day]" placeholder="Day">
+          <input class="work-to-roa__form-input sm" type="text" id="ContactForm-year" name="contact[year]" placeholder="Year">
+          <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" name="contact[date-employment]"></span>
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">FIRST NAME</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-firstName" name="contact[firstName]" placeholder="First name">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">LAST NAME</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-lastName" name="contact[lastName]" placeholder="Last name">
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">ADDRESS</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-adress1" name="contact[adress1]" placeholder="Street Address Line 1">
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-adress2" name="contact[adress2]" placeholder="Street Address Line 1">
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">CITY</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-city" name="contact[city]" placeholder="City">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">STATE/PROVINCE</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-state" name="contact[state]" placeholder="State/province">
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">POSTAL / ZIP CODE</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-zip" name="contact[zip]" placeholder="Postal / zip code">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">COUNTRY</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-country" name="contact[country]" placeholder="Country">
+            {% comment %} <input class="work-to-roa__form-input md" type="text" disabled id="ContactForm-zip" name="contact[zip]" placeholder="Postal / zip code"> {% endcomment %}
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">FACEBOOK URL</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-facebook-url" name="contact[facebook-url]" placeholder="Facebook url">
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">School Currently Attending / Recently Graduated</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-graduated" name="contact[graduated]">
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">Graduation Year</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-graduation-year" name="contact[graduation-year]" placeholder="Your Year">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">Current GPA</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-gpa" name="contact[gpa]" placeholder="Your GPA">
+          </div>
+        </div>
+        <div class="work-to-roa__form-dragndrop">
+          <label class="work-to-roa__form-heading">Please Upload a Copy of Your Most Recent Transcript</label>
+          <div class="work-to-roa__form-dragndrop-container d-flex">
+            <div class="work-to-roa__form-dropzone d-flex flex-column justify-content-center align-items-center" id="dropzone">
+              <svg width="51" height="56" viewBox="0 0 51 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.92242 36.5847H18.8856C18.5322 37.9724 18.3301 39.4109 18.343 40.8994C18.343 43.2711 18.8223 45.5419 19.6926 47.5602H4.49121C1.9931 47.5602 0 45.5671 0 43.0566V4.55402C0 2.04352 1.9931 0 4.49121 0H23.8433V8.18732C23.8433 11.1016 26.215 13.4984 29.1416 13.4984H36.7111V23.8685C36.5965 23.8599 36.4902 23.8513 36.3897 23.8431C36.0477 23.8154 35.771 23.7929 35.4495 23.7929C31.0719 23.7929 27.0601 25.4831 24.0326 28.1324H7.92242C7.36743 28.1324 6.91327 28.5866 6.91327 29.1416C6.91327 29.697 7.36743 30.1508 7.92242 30.1508H22.1151C21.0551 31.5385 20.1972 32.9266 19.5542 34.5663H7.92242C7.36743 34.5663 6.91327 35.0205 6.91327 35.5755C6.91327 36.1309 7.36743 36.5847 7.92242 36.5847ZM20.7022 21.8246H7.92242C7.36743 21.8246 6.91327 22.2787 6.91327 22.8342C6.91327 23.3892 7.36743 23.8433 7.92242 23.8433H20.7022C21.2572 23.8433 21.7114 23.3892 21.7114 22.8342C21.7114 22.2787 21.2572 21.8246 20.7022 21.8246Z" fill="#CF3231"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.3613 40.9245C20.3613 32.6107 27.1234 25.8491 35.4367 25.8491C43.7505 25.8491 50.5125 32.6107 50.5125 40.9245C50.5125 49.2379 43.7505 55.9999 35.4367 55.9999C27.1234 55.9999 20.3613 49.2379 20.3613 40.9245ZM36.4587 42.0093H40.5714C41.1263 42.0093 41.5805 41.5551 41.5805 41.0001C41.5805 40.4451 41.1268 39.991 40.5714 39.991H36.4587V35.8151C36.4587 35.2601 36.0049 34.8059 35.4495 34.8059C34.8945 34.8059 34.4404 35.2601 34.4404 35.8151V39.991H30.2649C29.7095 39.991 29.2553 40.4451 29.2553 41.0001C29.2553 41.5551 29.7095 42.0093 30.2649 42.0093H34.4404V46.1219C34.4404 46.6769 34.8945 47.1311 35.4495 47.1311C36.0049 47.1311 36.4587 46.6769 36.4587 46.1219V42.0093Z" fill="#CF3231"/><path d="M29.1418 11.4799H35.3236L25.8618 1.52637V8.18713C25.8618 9.99139 27.3251 11.4799 29.1418 11.4799Z" fill="#CF3231"/></svg>
+              <p class="work-to-roa__form-dropzone-text">Drag & Drop you files here</p>
+              <p class="work-to-roa__form-dropzone-undertext">Need file manager? Click <span>here</span></p>
+              <input type="file" class="work-to-roa__form-dropzone-input" id="ContactForm-files-transcript" accept="image/*" name="contact[files-transcript]" multiple>
             </div>
-            <div class="contact__fields">
-              <div class="field">
-                <label class="work-to-roa__form-label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-                <input class="work-to-roa__form-input" autocomplete="name" type="text" id="ContactForm-name" name="contact[{{ 'templates.contact.form.name' | t }}]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="{{ 'templates.contact.form.name' | t }}">
-              </div>
-              <div class="field field--with-error">
-                <label class="work-to-roa__form-label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span></label>
-                <input
-                  autocomplete="email"
-                  type="email"
-                  id="ContactForm-email"
-                  class="work-to-roa__form-input"
-                  name="contact[email]"
-                  spellcheck="false"
-                  autocapitalize="off"
-                  value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-                  aria-required="true"
-                  {% if form.errors contains 'email' %}
-                    aria-invalid="true"
-                    aria-describedby="ContactForm-email-error"
-                  {% endif %}
-                  placeholder="{{ 'templates.contact.form.email' | t }}"
-                >
-                {%- if form.errors contains 'email' -%}
-                  <small class="contact__field-error" id="ContactForm-email-error">
-                    <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-                    <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
-                  </small>
-                {%- endif -%}
-              </div>
+            <div class="d-flex flex-column work-to-roa__form-dropzone-list"></div>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">Are You Legally Entitled To Work In The United States?</label>
+          <div class="work-to-roa__form-fields-checkboxes mt-wtr d-flex">
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-legally-true" checked name="contact[legally]" value="Yes, legally">
+              <label for="ContactForm-legally-true"><span class="round"></span>Yes, legally</label>
             </div>
-            <div class="field">
-              <label class="work-to-roa__form-label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
-              <input type="tel" id="ContactForm-phone" class="work-to-roa__form-input" autocomplete="tel" name="contact[{{ 'templates.contact.form.phone' | t }}]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" placeholder="{{ 'templates.contact.form.phone' | t }}">
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-legally-false" name="contact[legally]" value="No, it’s not">
+              <label for="ContactForm-legally-false"><span class="round"></span>No, it’s not</label>
             </div>
-            <div class="field">
-              <textarea
-                rows="10"
-                id="ContactForm-body"
-                class="text-area field__input"
-                name="contact[{{ 'templates.contact.form.comment' | t }}]"
-                placeholder="{{ 'templates.contact.form.comment' | t }}"
-              >
-                {{- form.body -}}
-              </textarea>
-              <label class="work-to-roa__form-label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
-            </div>
-            <div class="contact__button">
-              <button type="submit" class="work-to-roa__form-button">
-                send
-              </button>
-            </div>
-          {%- endform -%}
+          </div>
         </div>
       </div>
     </div>
-  {%- endfor -%}
+    <div class="work-to-roa__step" data-step="2" id="step_2">
+      <div class="work-to-roa__info text-center">{{ ss.step_2 }}</div>
+      <p class="work-to-roa__form-container-title">Step 2. Jobs Avialable</p>
+      <div>
+        <div class="work-to-roa__form-fields d-flex flex-column">
+          <div class="work-to-roa__form-fields-checkboxes d-flex flex-column">
+            <label class="work-to-roa__form-heading mb-18">Current positions</label>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-1" name="contact[positions]" value="Fulfillment / Customer Service Rep (Towson, MD)">
+              <label for="ContactForm-positions-1"><span class="round"></span>Fulfillment / Customer Service Rep (Towson, MD)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-2" name="contact[positions]" value="Office Administrator (Towson, MD)">
+              <label for="ContactForm-positions-2"><span class="round"></span>Office Administrator (Towson, MD)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-3" name="contact[positions]" value="Social Media & Marketing Specialist (Towson, MD)">
+              <label for="ContactForm-positions-3"><span class="round"></span>Social Media & Marketing Specialist (Towson, MD)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-4" name="contact[positions]" value="Graphic Designer / Product Development (Towson, MD or Remote)">
+              <label for="ContactForm-positions-4"><span class="round"></span>Graphic Designer / Product Development (Towson, MD or Remote)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-5" name="contact[positions]" value="Photographer / Videographer (Freelance)">
+              <label for="ContactForm-positions-5"><span class="round"></span>Photographer / Videographer (Freelance)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-6" name="contact[positions]" value="Model (Freelance)">
+              <label for="ContactForm-positions-6"><span class="round"></span>Model (Freelance)</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="checkbox" id="ContactForm-positions-7" name="contact[positions]" value="Intern (Towson, MD)">
+              <label for="ContactForm-positions-7"><span class="round"></span>Intern (Towson, MD)</label>
+            </div>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-positions-8" name="contact[positions]" placeholder="Enter Other">
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">Why would you be a qualified fit for the position(s) you selected?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-qualified" name="contact[qualified]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-availability" class="work-to-roa__form-heading spacing-text-sm mb-18">Please describe your availability during our normal business hours per day</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-availability" name="contact[availability]"></textarea>
+          <p class="work-to-roa__form-fields-undertext">Our normal business hours are between 9-5 PM, Monday thru Friday.</p>
+        </div>
+        <div class="work-to-roa__form-fields-checkboxes mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading mb-18">Location Preferences</label>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-location-preferences-1" name="contact[preferences]" value="I can't travel often to headquarters, but I can work remotely.">
+            <label for="ContactForm-positions-location-preferences-1"><span class="round"></span>I can't travel often to headquarters, but I can work remotely.</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-location-preferences-2" name="contact[preferences]" value="I intend to remain on campus.">
+            <label for="ContactForm-positions-location-preferences-2"><span class="round"></span>I intend to remain on campus.</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-location-preferences-3" name="contact[preferences]" value="I can travel wherever (across Maryland).">
+            <label for="ContactForm-positions-location-preferences-3"><span class="round"></span>I can travel wherever (across Maryland).</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-location-preferences-4" name="contact[preferences]" value="I hope to work at the main headquarters in Towson, MD.">
+            <label for="ContactForm-positions-location-preferences-4"><span class="round"></span>I hope to work at the main headquarters in Towson, MD.</label>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields-checkboxes mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading mb-18">Payment Preferences</label>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-payment-preferences-1" name="contact[preferences]" value="I am willing to accept an unpaid position if no paid positions are available">
+            <label for="ContactForm-positions-payment-preferences-1"><span class="round"></span>I am willing to accept an unpaid position if no paid positions are available</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-payment-preferences-2" name="contact[preferences]" value="I am looking for a short-term internship (120 hours or 3 months) for school credit">
+            <label for="ContactForm-positions-payment-preferences-2"><span class="round"></span>I am looking for a short-term internship (120 hours or 3 months) for school credit</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-payment-preferences-3" name="contact[preferences]" value="I am looking for an internship that may lead to a full time position">
+            <label for="ContactForm-positions-payment-preferences-3"><span class="round"></span>I am looking for an internship that may lead to a full time position</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-payment-preferences-4" name="contact[preferences]" value="I am looking for an hourly pay part-time position">
+            <label for="ContactForm-positions-payment-preferences-4"><span class="round"></span>I am looking for an hourly pay part-time position</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-payment-preferences-5" name="contact[preferences]" value="I am looking for an hourly pay full-time position">
+            <label for="ContactForm-positions-payment-preferences-5"><span class="round"></span>I am looking for an hourly pay full-time position</label>
+          </div>
+          <input class="work-to-roa__form-input md" type="text" id="ContactForm-payment-preferences-6" name="contact[preferences]" placeholder="Enter Other">
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-hourly-pay" class="work-to-roa__form-heading">What is your requested hourly pay?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-hourly-pay" name="contact[hourly-pay]"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="work-to-roa__step" data-step="3" id="step_3">
+      <div class="work-to-roa__info text-center">{{ ss.step_3 }}</div>
+      <p class="work-to-roa__form-container-title">Step 3. Social Involvement</p>
+      <div>
+        <div class="work-to-roa__form-fields-checkboxes d-flex flex-column">
+          <label class="work-to-roa__form-heading mb-18">What Social Media Platforms do you have a Presence?</label>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-1" name="contact[social]" value="Facebook">
+            <label for="ContactForm-social-1"><span class="round"></span>Facebook</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-2" name="contact[social]" value="Twitter">
+            <label for="ContactForm-social-2"><span class="round"></span>Twitter</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-3" name="contact[social]" value="Instagram">
+            <label for="ContactForm-social-3"><span class="round"></span>Instagram</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-4" name="contact[social]" value="Pinterest">
+            <label for="ContactForm-social-4"><span class="round"></span>Pinterest</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-5" name="contact[social]" value="Tumblr">
+            <label for="ContactForm-social-5"><span class="round"></span>Tumblr</label>
+          </div>
+          <div class="work-to-roa__form-fields-checkbox">
+            <input type="checkbox" id="ContactForm-social-6" name="contact[social]" value="Smartphone (such as iPhone or Android)">
+            <label for="ContactForm-social-6"><span class="round"></span>Smartphone (such as iPhone or Android)</label>
+          </div>
+          <input class="work-to-roa__form-input md" type="text" id="ContactForm-social-7" name="contact[social]" placeholder="Enter Other">
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-social-8" class="work-to-roa__form-heading spacing-text-sm">Describe your presence on these social media site</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-social-8" name="contact[social]" placeholder="Provide important data. &#10 &#10Please, also provide links to all of your social media profiles for verification purposes."></textarea>
+        </div>
+        <div class="work-to-roa__form-fields-checkboxes d-flex flex-column">
+          <label class="work-to-roa__form-heading mb-30">Are you a member of any extracurricular<br> organizations or activities?</label>
+          <div class="d-flex mw-500">
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-activities-yes" name="contact[activities]" value="Yes">
+              <label for="ContactForm-activities-yes"><span class="round"></span>Yes</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-activities-no" name="contact[activities]" value="No">
+              <label for="ContactForm-activities-no"><span class="round"></span>No</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-activities-na" name="contact[activities]" value="N/A">
+              <label for="ContactForm-activities-na"><span class="round"></span>N/A</label>
+            </div>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-social-8" class="work-to-roa__form-heading spacing-text-sm">If so, please describe your involvement</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-involvement" name="contact[involvement]" placeholder="Provide important data."></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-workload-range" class="work-to-roa__form-heading spacing-text-sm mb-40">Please scale your academic/extracurricular workload for the upcoming semester</label>
+          <input type="hidden" id="ContactForm-workload-range" name="contact[workload-range]">
+          <div class="work-to-roa__form-range d-flex align-items-center position-relative">
+            <div class="work-to-roa__form-range-pull position-absolute d-flex align-items-center">
+              <span></span>
+              <span class="main position-absolute" data-value="0"></span>
+            </div>
+            <div class="work-to-roa__form-range-separators d-flex justify-content-between position-absolute">
+              <span class="first"></span>
+              <span></span>
+              <span class="last"></span>
+            </div>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column" style="margin-bottom:8px">
+          <label for="ContactForm-important-data" class="work-to-roa__form-heading spacing-text-sm">How active can you be with Route One Apparel throughout the school year?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-important-data" name="contact[important-data]" placeholder="Provide important data."></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="work-to-roa__step" data-step="4" id="step_4">
+      <div class="work-to-roa__info text-center">{{ ss.step_4 }}</div>
+      <p class="work-to-roa__form-container-title">Step 4. Work History / Experience</p>
+      <div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">FIRST EMPLOYERS NAME</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-employers-name" name="contact[employers-name]" placeholder="First employers name">
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">POSITION HELD</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-position-held" name="contact[position-held]">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">PAY</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-pay" name="contact[pay]">
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields sm-flex-column mt-wtr d-flex">
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">Supervisor's Name</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-supervisors-name" name="contact[supervisors-name]" placeholder="johnsmith@example.com">
+          </div>
+          <div class="input-with-label">
+            <label class="work-to-roa__form-heading">PHONE NUMBER</label>
+            <input class="work-to-roa__form-input md" type="text" id="ContactForm-phone-number" name="contact[phone-number]" placeholder="+31312313123123">
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading text-transform-none">Reason for Departure</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-Departure" name="contact[departure]" >
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading text-transform-none">Duties</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-Duties" name="contact[duties]">
+        </div>
+        <p class="work-to-roa__form-heading mt-wtr">Start Date of Employment</p>
+        <div class="work-to-roa__form-fields date-2 d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-day" name="contact[day]" placeholder="Day">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-year" name="contact[year]" placeholder="Year">
+            <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" name="contact[start-date-employment]"></span>
+          </div>
+        </div>
+        <p class="work-to-roa__form-heading mt-wtr">END Date of Employment</p>
+        <div class="work-to-roa__form-fields date-2 d-flex flex-column">
+          <div class="d-flex justify-content-between">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-day" name="contact[day]" placeholder="Day">
+            <input class="work-to-roa__form-input sm" type="text" id="ContactForm-year" name="contact[year]" placeholder="Year">
+            <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" name="contact[end-date-employment]"></span>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">May we contact this employer?</label>
+          <div class="work-to-roa__form-fields-checkboxes d-flex">
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-contact-employer-true" checked name="contact[legally]" value="Yes, you can">
+              <label for="ContactForm-contact-employer-true"><span class="round"></span>Yes, you can</label>
+            </div>
+            <div class="work-to-roa__form-fields-checkbox">
+              <input type="radio" id="ContactForm-contact-employer-false" name="contact[legally]" value="No, don’t do this">
+              <label for="ContactForm-contact-employer-false"><span class="round"></span>No, don’t do this</label>
+            </div>
+          </div>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label class="work-to-roa__form-heading">If «No» reason, why not?</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-why-not" name="contact[why-not]">
+        </div>
+        <p class="work-to-roa__form-container-title in-form">Brief Answer / Essay Questions</p>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">Why are you applying to work for Route One Apparel?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-why-applying" name="contact[why-applying]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">If your best friend were to describe you, what would he/she say would be your three (3) best and three (3) worst characteristics?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-characteristic" name="contact[characteristic]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">Describe any leadership experience that you may have?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-describe-experience" name="contact[describe-experience]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">What is your favorite and least favorite thing about Maryland?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-thing-a-maryland" name="contact[thing-a-maryland]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">If you were an animal, which would you be and why?</label>
+          <textarea class="work-to-roa__form-textarea lg" id="ContactForm-animal" name="contact[animal]"></textarea>
+        </div>
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+          <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">I verify that all information on this application is valid</label>
+          <input class="work-to-roa__form-input lg" type="text" id="ContactForm-verify" name="contact[verify]">
+        </div>
+        <div class="work-to-roa__form-dragndrop">
+          <label class="work-to-roa__form-heading">Please, upload Your Resume</label>
+          <div class="work-to-roa__form-dragndrop-container d-flex">
+            <div class="work-to-roa__form-dropzone d-flex flex-column justify-content-center align-items-center" id="dropzone">
+              <svg width="51" height="56" viewBox="0 0 51 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.92242 36.5847H18.8856C18.5322 37.9724 18.3301 39.4109 18.343 40.8994C18.343 43.2711 18.8223 45.5419 19.6926 47.5602H4.49121C1.9931 47.5602 0 45.5671 0 43.0566V4.55402C0 2.04352 1.9931 0 4.49121 0H23.8433V8.18732C23.8433 11.1016 26.215 13.4984 29.1416 13.4984H36.7111V23.8685C36.5965 23.8599 36.4902 23.8513 36.3897 23.8431C36.0477 23.8154 35.771 23.7929 35.4495 23.7929C31.0719 23.7929 27.0601 25.4831 24.0326 28.1324H7.92242C7.36743 28.1324 6.91327 28.5866 6.91327 29.1416C6.91327 29.697 7.36743 30.1508 7.92242 30.1508H22.1151C21.0551 31.5385 20.1972 32.9266 19.5542 34.5663H7.92242C7.36743 34.5663 6.91327 35.0205 6.91327 35.5755C6.91327 36.1309 7.36743 36.5847 7.92242 36.5847ZM20.7022 21.8246H7.92242C7.36743 21.8246 6.91327 22.2787 6.91327 22.8342C6.91327 23.3892 7.36743 23.8433 7.92242 23.8433H20.7022C21.2572 23.8433 21.7114 23.3892 21.7114 22.8342C21.7114 22.2787 21.2572 21.8246 20.7022 21.8246Z" fill="#CF3231"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.3613 40.9245C20.3613 32.6107 27.1234 25.8491 35.4367 25.8491C43.7505 25.8491 50.5125 32.6107 50.5125 40.9245C50.5125 49.2379 43.7505 55.9999 35.4367 55.9999C27.1234 55.9999 20.3613 49.2379 20.3613 40.9245ZM36.4587 42.0093H40.5714C41.1263 42.0093 41.5805 41.5551 41.5805 41.0001C41.5805 40.4451 41.1268 39.991 40.5714 39.991H36.4587V35.8151C36.4587 35.2601 36.0049 34.8059 35.4495 34.8059C34.8945 34.8059 34.4404 35.2601 34.4404 35.8151V39.991H30.2649C29.7095 39.991 29.2553 40.4451 29.2553 41.0001C29.2553 41.5551 29.7095 42.0093 30.2649 42.0093H34.4404V46.1219C34.4404 46.6769 34.8945 47.1311 35.4495 47.1311C36.0049 47.1311 36.4587 46.6769 36.4587 46.1219V42.0093Z" fill="#CF3231"/><path d="M29.1418 11.4799H35.3236L25.8618 1.52637V8.18713C25.8618 9.99139 27.3251 11.4799 29.1418 11.4799Z" fill="#CF3231"/></svg>
+              <p class="work-to-roa__form-dropzone-text">Drag & Drop you files here</p>
+              <p class="work-to-roa__form-dropzone-undertext">Need file manager? Click <span>here</span></p>
+              <input type="file" id="ContactForm-files-transcript" accept="image/*" name="contact[files-transcript]" multiple>
+            </div>
+            <div class="d-flex flex-column work-to-roa__form-dropzone-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="work-to-roa__form-btncontainer d-flex justify-content-between">
+      <button type="button" class="btn-red-2 work-to-roa__form-btn" id="prev_step">PREVIOUS STEP</button>
+      <button type="button" class="btn-red-1 work-to-roa__form-btn" id="next_step">NEXT STEP</button>
+      <button type="submit" class="btn-red-1 work-to-roa__form-btn" id="submit_step">SUBMIT</button>
+    </div>
+  {%- endform -%}
 </div>
+<script src="{{ 'work-to-roa.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
@@ -147,20 +427,30 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 52
-    }
-  ],
-  "blocks": [
+    },
     {
-      "type": "step_1",
-      "name": "Step 1",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "About steps"
-        }
-      ]
+      "type": "header",
+      "content": "Info about steps"
+    },
+    {
+      "type": "richtext",
+      "id": "step_1",
+      "label": "Step 1"
+    },
+    {
+      "type": "richtext",
+      "id": "step_2",
+      "label": "Step 2"
+    },
+    {
+      "type": "richtext",
+      "id": "step_3",
+      "label": "Step 3"
+    },
+    {
+      "type": "richtext",
+      "id": "step_4",
+      "label": "Step 4"
     }
   ],
   "presets": [

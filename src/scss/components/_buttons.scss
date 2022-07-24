@@ -51,3 +51,12 @@
         @extend .c-red-3-bg;
     };
 }
+
+.btn-red-2 {
+    transition: all 0.3s ease;
+    @extend .btn-unstyled, .c-white-bg, .c-red-1;
+    border: 1px solid $c-red-1;
+    &:hover {
+        @extend .c-red-1-bg, .c-white;
+    };
+}

@@ -1,5 +1,14 @@
 {
   "sections": {
+    "165846646550d06f6a": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 31
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -8,41 +17,24 @@
         "padding_top_mob": 0,
         "padding_bottom_mob": 0,
         "show_title": true,
-        "show_content": true
+        "show_content": false
       }
     },
     "16583020218257d8d4": {
       "type": "work-to-roa",
-      "blocks": {
-        "0f3a4884-a5c1-4be2-bf6c-839483099aa4": {
-          "type": "step_1",
-          "settings": {
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "0f3a4884-a5c1-4be2-bf6c-839483099aa4"
-      ],
       "settings": {
         "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "165830513609ea03dd": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "Contact form",
-        "heading_size": "h1",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 52,
+        "step_1": "<p>We are currently seeking highly motivated, outgoing, friendly and creative employees and\/or interns to join our successful team. All applications who pass the first round of selections will be sent an email with more detailed information about the position. The email will be sent out within 1-2 weeks. Due to a high volume of submissions we may not be able to email those of you who were not chosen. If you are interested, please fill out the information below.<\/p>",
+        "step_2": "<p>The current open positions with Route One Apparel are below. Please select only the positions you are most interested in. You can select more than one option below, as long as you qualify.<\/p>",
+        "step_3": "<p>We are seeking employees that are engaged through social media and their communities, as this is an important characteristic of our company. Please, be descriptive as possible with this section.<\/p>",
+        "step_4": "<p>Please list your 2 most current work history\/experience as well as 1 friend\/acquaintance reference<\/p>"
       }
     }
   },
   "order": [
+    "165846646550d06f6a",
     "main",
-    "16583020218257d8d4",
-    "165830513609ea03dd"
+    "16583020218257d8d4"
   ]
 }

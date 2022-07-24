@@ -211,7 +211,7 @@
     </script>
     {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script>
+    {% comment %} <script src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script> {% endcomment %}
   </head>
 
   <body class="gradient {{ template.suffix}} template-{{ request.page_type | handle }}">

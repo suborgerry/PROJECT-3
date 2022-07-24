@@ -159,3 +159,28 @@ p {
   margin: 0;
   color: $c-black;
 }
+
+.mw-500 {
+  max-width: 50rem;
+}
+
+.text-transform-none {
+  text-transform: none !important;
+}
+
+.mt-wtr {
+  margin-top: 4rem;
+
+  @include media-breakpoint-up(sm) {
+      margin-top: 5.4rem;
+  }
+}
+
+.sm-flex-column {
+  @include media-breakpoint-down(sm) {
+    flex-direction: column;
+    .input-with-label + .input-with-label {
+        margin-top: 4rem;
+    }
+  }
+}

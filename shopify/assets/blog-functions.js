@@ -78,6 +78,7 @@ function getSwiper(id) {
 }
 
 function getPagination(id) {
+    console.log(id);
     const paginationContainer = document.querySelector(`.pc-${id}`);
 
     paginationContainer && paginationContainer.addEventListener('click', evt => {
