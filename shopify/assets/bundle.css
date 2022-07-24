@@ -8580,6 +8580,9 @@ body {
     margin-top: 1.4rem;
   }
 }
+.section:not(.iwt) + .list {
+  padding-top: 0.8rem;
+}
 .steps {
   display: flex;
   justify-content: space-between;
@@ -8695,6 +8698,8 @@ body {
   .adresses {
     flex-direction: column;
     align-items: flex-start;
+    margin-top: 2.8rem;
+    font-size: 1.4rem;
   }
 }
 .adresses > div {

@@ -5,11 +5,12 @@
     padding: {{ section.settings.padding_mobile }}
   }
 
-  @media (min-width: 991.7px) {
+  @media (min-width: 1021px) {
     .image-with-text__content.{{ section.id }} {
       padding: {{ section.settings.padding }}
     }
   }
+
   {%- if section.settings.full_page_mob -%}
     @media (max-width: 765px) {
       .section-{{ section.id }} {
