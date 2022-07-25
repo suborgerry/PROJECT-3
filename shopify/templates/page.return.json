@@ -235,7 +235,7 @@
           "type": "heading",
           "settings": {
             "heading": "Late Refunds",
-            "margin_top": 0,
+            "margin_top": 8,
             "margin_top_mob": 0
           }
         },
@@ -337,7 +337,7 @@
           "type": "heading",
           "settings": {
             "heading": "Other",
-            "margin_top": 48,
+            "margin_top": 56,
             "margin_top_mob": 48
           }
         },
