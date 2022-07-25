@@ -1,12 +1,14 @@
 .previous-images {
     &__container {
         display: grid;
+
         @include media-breakpoint-up(sm) {
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             gap: 3.4rem
         }
     }
+    
     &__heading {
         @extend .c-grey-1;
         text-align: center;
@@ -14,9 +16,20 @@
         font-size: 2.9rem;
         line-height: 4.2rem;
         margin-bottom: 4.9rem;
+        
         @include media-breakpoint-up(md) {
             margin-bottom: 6.4rem;
             font-size: 3.2rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        
+        @include media-breakpoint-down(xs) {
+            & + & {
+                margin-top: 0.9rem;
+            }
         }
     }
 }

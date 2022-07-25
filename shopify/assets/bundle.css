@@ -8939,6 +8939,14 @@ body {
     font-size: 3.2rem;
   }
 }
+.previous-images__image {
+  width: 100%;
+}
+@media (max-width: 575.98px) {
+  .previous-images__image + .previous-images__image {
+    margin-top: 0.9rem;
+  }
+}
 .template-404 {
   position: relative;
   min-height: 605px;
