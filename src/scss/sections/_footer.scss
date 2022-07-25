@@ -288,6 +288,7 @@
   }
   &__form-box {
     max-width: 560px;
+    width: 100%;
     border: none !important;
     // z-index: -1;
     @include media-breakpoint-down(sm) {

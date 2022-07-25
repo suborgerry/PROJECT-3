@@ -1,11 +1,11 @@
 {% style%}
     .list__heading{{ section.id }} {
-        margin-bottom:{{ section.settings.margin_heading_bottom_mob }}px
+        margin-bottom:{{ section.settings.margin_heading_bottom_mob }}px !important
     }
 
     @media screen and (min-width: 750px) {
         .list__heading{{ section.id }} {
-            margin-bottom:{{ section.settings.margin_heading_bottom }}px
+            margin-bottom:{{ section.settings.margin_heading_bottom }}px !important
         } 
     }
 {% endstyle %}

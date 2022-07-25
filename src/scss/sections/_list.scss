@@ -52,6 +52,6 @@
     }
 }
 
-.section:not(.iwt) + .list {
+.section:not(.iwt) + .list:first-child {
     padding-top: 0.8rem;
 }

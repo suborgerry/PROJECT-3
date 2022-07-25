@@ -6008,6 +6008,7 @@ body {
 }
 .footer__form-box {
   max-width: 560px;
+  width: 100%;
   border: none !important;
 }
 @media (max-width: 767.98px) {
@@ -8580,7 +8581,7 @@ body {
     margin-top: 1.4rem;
   }
 }
-.section:not(.iwt) + .list {
+.section:not(.iwt) + .list:first-child {
   padding-top: 0.8rem;
 }
 .steps {
