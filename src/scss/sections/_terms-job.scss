@@ -1,0 +1,12 @@
+.terms-job {
+    max-width: 69.6rem;
+    justify-content: space-between;
+    margin: auto;
+    &-item {
+        span {
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+        }
+    }
+}

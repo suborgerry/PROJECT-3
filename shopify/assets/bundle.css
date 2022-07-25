@@ -9108,6 +9108,10 @@ body {
   opacity: 1;
   height: auto;
 }
+.work-to-roa {
+  padding-left: 0;
+  padding-right: 0;
+}
 .work-to-roa__info {
   margin: auto;
   margin-bottom: 4.8rem;
@@ -9305,7 +9309,7 @@ body {
     max-width: 33.5rem;
   }
 }
-@media (min-width: 576px) {
+@media (min-width: 992px) {
   .work-to-roa__form-container form {
     max-width: 75rem;
     padding: 0;
@@ -9316,7 +9320,6 @@ body {
   font-size: 2rem;
   line-height: 2.6rem;
   padding-bottom: 3.2rem;
-  margin-bottom: 3.2rem;
   border-bottom: 1px solid #EAEAEA;
 }
 .work-to-roa__form-container-title.in-form {
@@ -9326,6 +9329,9 @@ body {
   .work-to-roa__form-container-title.in-form {
     margin-top: 10rem;
   }
+}
+.work-to-roa__form-container-title + div {
+  padding-top: 3.2rem;
 }
 .work-to-roa__form-input {
   padding: 2.2rem 2.4rem 0.9rem 2.4rem;
@@ -9614,4 +9620,14 @@ body {
 }
 #ContactForm #step_4.active ~ .work-to-roa__form-btncontainer #submit_step {
   display: block;
+}
+.terms-job {
+  max-width: 69.6rem;
+  justify-content: space-between;
+  margin: auto;
+}
+.terms-job-item span {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }

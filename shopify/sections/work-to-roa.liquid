@@ -13,6 +13,67 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- if section.settings.bg_color != 'transparent' -%}
+    .work-to-roa__step {
+      width: 94rem;
+    }
+
+    .work-to-roa__form-container-title {
+      background: {{ section.settings.bg_color }};
+      padding-top: 5.6rem;
+      padding-left: 9.5rem;
+      padding-right: 9.5rem;
+    }
+
+    .work-to-roa__form-container-title + div {
+      background: {{ section.settings.bg_color }};
+    }
+
+    .work-to-roa__form-btncontainer {
+      margin: 0;
+      padding-bottom: 5.6rem;
+      padding-top: 6.2rem;
+      height: auto;
+      width: 100%;
+      max-width: 100%;
+      background: {{ section.settings.bg_color }};
+    }
+
+    #ContactForm {
+      margin-bottom: 17rem
+    }
+
+    @media (max-width: 992px) {
+      .work-to-roa__step {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      #ContactForm {
+        margin-bottom: 0rem
+      }
+
+      .work-to-roa__form-btncontainer {
+        margin-bottom: 4rem;
+      }
+    }
+
+    @media (min-width: 576px) {
+      .work-to-roa__form-container form {
+        max-width: 94rem;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .work-to-roa__form-container-title + div {
+        padding-left: 9.5rem;
+        padding-right: 9.5rem;
+        padding-bottom: 5.6rem;
+      }
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 <div class="work-to-roa__form-container m-auto">
@@ -427,6 +488,22 @@
       "unit": "px",
       "label": "Padding bottom",
       "default": 52
+    },
+    {
+      "type": "select",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "transparent",
+      "options": [
+        {
+          "value": "transparent",
+          "label": "Transparent"
+        },
+        {
+          "value": "#FCFCFC",
+          "label": "Green"
+        }
+      ]
     },
     {
       "type": "header",
