@@ -260,6 +260,9 @@
         height: 56px !important;
         border: none !important;
         background-color: $c-white;
+        @include media-breakpoint-up(md) {
+          width: 373px;
+        }
         &:focus {
           box-shadow: none !important;
         }
@@ -293,6 +296,7 @@
     // z-index: -1;
     @include media-breakpoint-down(sm) {
       max-width: 100%;
+      width: 100%;
     }
     @include media-breakpoint-down(xs) {
       display: flex;
