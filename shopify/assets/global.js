@@ -915,21 +915,24 @@ for (let i = 0; i < megaMenuLinks.length; i++) {
   });
 }
 
-const hovLinks = document.querySelectorAll('.header__main-menu-item.has-small-menu'),
-smallMegaMenus = document.querySelectorAll('.mega-menu-small');
-
-for (let i = 0; i < hovLinks.length; i++) {
-  function smallMegaMenusPosition() {
-    if (window.innerWidth > 991) {
-      let leftSize = hovLinks[i].offsetLeft,
-      widthSize = smallMegaMenus[i].offsetWidth,
-      correctPosition = leftSize - (widthSize / 3);
-      smallMegaMenus[i].style.left = `${correctPosition}px`;
+document.addEventListener('DOMContentLoaded', () => {
+  const hovLinks = document.querySelectorAll('.header__main-menu-item.has-small-menu'),
+  smallMegaMenus = document.querySelectorAll('.mega-menu-small');
+  
+  for (let i = 0; i < hovLinks.length; i++) {
+    function smallMegaMenusPosition() {
+      if (window.innerWidth > 991) {
+        let leftSize = hovLinks[i].offsetLeft,
+        widthSize = smallMegaMenus[i].offsetWidth,
+        correctPosition = leftSize - (widthSize / 3);
+        smallMegaMenus[i].style.left = `${correctPosition}px`;
+        console.log(correctPosition);
+      }
     }
+    smallMegaMenusPosition();
+    window.addEventListener('resize', smallMegaMenusPosition);
   }
-  smallMegaMenusPosition();
-  window.addEventListener('resize', smallMegaMenusPosition);
-}
+});
 
 //mobile accordion mega-menu
 const accordItems = document.querySelectorAll('.menu-accordion__item.has-sub-menu');
