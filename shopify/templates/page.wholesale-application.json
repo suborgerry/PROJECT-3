@@ -1,0 +1,130 @@
+{
+  "sections": {
+    "16577818970eb54d57": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 30,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 64,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 62,
+        "show_title": true,
+        "show_content": false
+      }
+    },
+    "1658749357a46215d3": {
+      "type": "text-page",
+      "blocks": {
+        "165874935789ea98ae-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome!",
+            "margin_top": 0,
+            "margin_top_mob": 0
+          }
+        },
+        "165874935789ea98ae-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hello, and thank you for your interest in wanting to sell Route One Apparel merchandise.  We are currently expanding our business to include brick-and-mortar stores.  If you are a brick-and-mortar store located in Maryland, we welcome you to fill out the following application.  We will contact you in 1-2 weeks after submitting your application if you have been approved.<br\/>  <br\/><em>NOTE<\/em>: We are ONLY expanding to brick-and-mortar stores, NO internet sales are permitted. NO exceptions.<\/p>",
+            "text_center": false,
+            "text_size": 14,
+            "text_size_mobile": 16
+          }
+        },
+        "662d6a93-b365-409b-8da4-9d7b2598ba5b": {
+          "type": "heading",
+          "settings": {
+            "heading": "Please note",
+            "margin_top": 64,
+            "margin_top_mob": 48
+          }
+        },
+        "9e8e26be-9a75-4978-b666-a2188147f36c": {
+          "type": "text",
+          "settings": {
+            "text": "<p>This form is meant to help us determine if you would be a good fit to carry our line.  We anticipate you spending no more than 10 minutes filling out this form. We appreciate if you can fill the form out in its entirety as it helps us avoid further questions or clarifications down the road. We appreciate your time spent filling out this application.<\/p>",
+            "text_center": false,
+            "text_size": 14,
+            "text_size_mobile": 16
+          }
+        }
+      },
+      "block_order": [
+        "165874935789ea98ae-0",
+        "165874935789ea98ae-1",
+        "662d6a93-b365-409b-8da4-9d7b2598ba5b",
+        "9e8e26be-9a75-4978-b666-a2188147f36c"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
+    "165883121052169099": {
+      "type": "list",
+      "blocks": {
+        "8baefdc5-2caa-413c-a38b-22a18b005dde": {
+          "type": "item",
+          "settings": {
+            "text": "Initial order of over $500"
+          }
+        },
+        "d56919dd-ed56-4dd5-8e8b-de331948ab81": {
+          "type": "item",
+          "settings": {
+            "text": "Re-order minimum of $200"
+          }
+        },
+        "cb4d40ba-059d-4b17-a01a-6d3498275394": {
+          "type": "item",
+          "settings": {
+            "text": "Must carry a minimum of 5 products at a time"
+          }
+        },
+        "5819ad53-3e4e-4cba-bb93-82e802cb8dcc": {
+          "type": "item",
+          "settings": {
+            "text": "Must order at least every 2 months to remain active"
+          }
+        }
+      },
+      "block_order": [
+        "8baefdc5-2caa-413c-a38b-22a18b005dde",
+        "d56919dd-ed56-4dd5-8e8b-de331948ab81",
+        "cb4d40ba-059d-4b17-a01a-6d3498275394",
+        "5819ad53-3e4e-4cba-bb93-82e802cb8dcc"
+      ],
+      "settings": {
+        "heading": "Minimum wholesale criteria",
+        "margin_heading_bottom": 28,
+        "margin_heading_bottom_mob": 23,
+        "text": ""
+      }
+    },
+    "16588326262e54dec0": {
+      "type": "wholesale-application-form",
+      "settings": {
+        "margin_top": 56,
+        "margin_bottom": 110,
+        "margin_top_mob": 48,
+        "margin_bottom_mob": 72
+      }
+    }
+  },
+  "order": [
+    "16577818970eb54d57",
+    "main",
+    "1658749357a46215d3",
+    "165883121052169099",
+    "16588326262e54dec0"
+  ]
+}
