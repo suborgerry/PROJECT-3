@@ -35,9 +35,7 @@
           "type": "text",
           "settings": {
             "text": "<p>Hello, and thank you for your interest in wanting to sell Route One Apparel merchandise.  We are currently expanding our business to include brick-and-mortar stores.  If you are a brick-and-mortar store located in Maryland, we welcome you to fill out the following application.  We will contact you in 1-2 weeks after submitting your application if you have been approved.<br\/>  <br\/><em>NOTE<\/em>: We are ONLY expanding to brick-and-mortar stores, NO internet sales are permitted. NO exceptions.<\/p>",
-            "text_center": false,
-            "text_size": 14,
-            "text_size_mobile": 16
+            "text_center": false
           }
         },
         "662d6a93-b365-409b-8da4-9d7b2598ba5b": {
@@ -52,9 +50,7 @@
           "type": "text",
           "settings": {
             "text": "<p>This form is meant to help us determine if you would be a good fit to carry our line.  We anticipate you spending no more than 10 minutes filling out this form. We appreciate if you can fill the form out in its entirety as it helps us avoid further questions or clarifications down the road. We appreciate your time spent filling out this application.<\/p>",
-            "text_center": false,
-            "text_size": 14,
-            "text_size_mobile": 16
+            "text_center": false
           }
         }
       },

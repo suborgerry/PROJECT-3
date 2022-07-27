@@ -926,7 +926,6 @@ document.addEventListener('DOMContentLoaded', () => {
         widthSize = smallMegaMenus[i].offsetWidth,
         correctPosition = leftSize - (widthSize / 3);
         smallMegaMenus[i].style.left = `${correctPosition}px`;
-        console.log(correctPosition);
       }
     }
     smallMegaMenusPosition();

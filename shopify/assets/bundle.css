@@ -7294,7 +7294,12 @@ body {
 .collections-states__block-item {
   min-height: 302px;
   position: relative;
-  padding: 56px 68px 64px;
+  padding: 40px 56px;
+}
+@media (min-width: 375px) {
+  .collections-states__block-item {
+    padding: 56px 68px 64px;
+  }
 }
 .collections-states__block-item::after {
   background: linear-gradient(180deg, rgba(255, 86, 81, 0) 0%, #FF3830 100%);
