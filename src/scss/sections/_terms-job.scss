@@ -2,7 +2,15 @@
     max-width: 69.6rem;
     justify-content: space-between;
     margin: auto;
+
+    @include media-breakpoint-down(sm) {
+        align-items: center;
+    }
+
     &-item {
+        & + & {
+            margin-top: 2.4rem;
+        }
         span {
             font-weight: 500;
             font-size: 1.6rem;

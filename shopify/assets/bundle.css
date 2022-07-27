@@ -9660,6 +9660,14 @@ main {
   justify-content: space-between;
   margin: auto;
 }
+@media (max-width: 767.98px) {
+  .terms-job {
+    align-items: center;
+  }
+}
+.terms-job-item + .terms-job-item {
+  margin-top: 2.4rem;
+}
 .terms-job-item span {
   font-weight: 500;
   font-size: 1.6rem;
