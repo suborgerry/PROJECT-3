@@ -5193,6 +5193,9 @@ body {
   font-family: "Axiforma";
   overflow-x: hidden;
 }
+main {
+  overflow-x: hidden;
+}
 .c-black, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
   color: rgb(var(--color-base-outline-button-labels));
 }
@@ -9242,6 +9245,7 @@ body {
 @media (max-width: 575.98px) {
   .work-to-roa__form-fields-checkboxes {
     justify-content: space-between;
+    margin-top: 3.3rem;
   }
 }
 .work-to-roa__form-fields-checkboxes.mt-wtr {
@@ -9279,6 +9283,13 @@ body {
 .work-to-roa__form-fields-checkbox input:checked + label .round {
   border: 5px solid #F3F3F3;
   background: #CF322D;
+}
+@media (max-width: 991.98px) {
+  .work-to-roa__form-fields-checkbox input:checked + label .round:after {
+    content: "";
+    display: block;
+    margin-right: 23px;
+  }
 }
 .work-to-roa__form-fields-checkbox label {
   font-size: 1.6rem;
@@ -9328,7 +9339,6 @@ body {
 @media (min-width: 576px) {
   .work-to-roa__form-container form {
     margin: auto;
-    max-width: 33.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -9564,6 +9574,7 @@ body {
   margin-bottom: 11.6rem;
   max-width: 100%;
   flex-direction: column;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .work-to-roa__form-btncontainer {
@@ -9584,6 +9595,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.821739px;
   padding: 2.1rem 12.7rem 1.2rem 12.7rem;
+  width: 40rem;
 }
 @media (max-width: 575.98px) {
   .work-to-roa__form-btn {
@@ -9742,6 +9754,13 @@ body {
   border: 5px solid #F3F3F3;
   background: #CF322D;
 }
+@media (max-width: 991.98px) {
+  .wholesale-form__checkbox input:checked + label .round:after {
+    content: "";
+    display: block;
+    margin-right: 23px;
+  }
+}
 .wholesale-form__checkbox label {
   font-size: 1.6rem;
   line-height: 2.5rem;
@@ -9755,10 +9774,15 @@ body {
 }
 .wholesale-form__checkbox .round {
   border: 1px solid #F3F3F3;
-  width: 2rem;
+  width: 3rem;
   height: 2rem;
   display: inline-block;
   margin-right: 1.6rem;
+}
+.wholesale-form__checkbox .round:after {
+  content: "";
+  display: block;
+  margin-right: 23px;
 }
 .wholesale-form__checkbox .round:hover {
   cursor: pointer;

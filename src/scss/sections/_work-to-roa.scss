@@ -115,6 +115,7 @@
 
                 @include media-breakpoint-down(xs) {
                     justify-content: space-between;
+                    margin-top: 3.3rem;
                 }
 
                 &.mt-wtr {
@@ -159,6 +160,14 @@
                             .round {
                                 border: 5px solid #F3F3F3;
                                 background: #CF322D;
+
+                                @include media-breakpoint-down(md) {
+                                    &:after {
+                                        content: "";
+                                        display: block;
+                                        margin-right: 23px;
+                                    }
+                                }
                             }
                         }
                     }
@@ -220,7 +229,7 @@
             
                 @include media-breakpoint-up(sm) {
                     margin: auto;
-                    max-width: 33.5rem;
+                    // max-width: 33.5rem;
                 }
 
                 @include media-breakpoint-up(lg) {
@@ -494,6 +503,7 @@
             margin-bottom: 11.6rem;
             max-width: 100%;
             flex-direction: column;
+            align-items: center;
             @include media-breakpoint-up(md) {
                 max-width: 75rem;
             }
@@ -512,7 +522,8 @@
             font-weight: 700;
             letter-spacing: 0.821739px;
             padding: 2.1rem 12.7rem 1.2rem 12.7rem;
-            
+            width: 40rem;
+
             @include media-breakpoint-down(xs) {
                 padding: 2.1rem 0rem 1.2rem 0rem;
                 width: 100%;

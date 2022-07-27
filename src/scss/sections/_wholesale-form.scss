@@ -104,6 +104,14 @@
                     .round {
                         border: 5px solid #F3F3F3;
                         background: #CF322D;
+
+                        @include media-breakpoint-down(md) {
+                            &:after {
+                                content: "";
+                                display: block;
+                                margin-right: 23px;
+                            }
+                        }
                     }
                 }
             }
@@ -124,10 +132,16 @@
 
         .round {
             border: 1px solid #F3F3F3;
-            width: 2rem;
+            width: 3rem;
             height: 2rem;
             display: inline-block;
             margin-right: 1.6rem;
+
+            &:after {
+                content: "";
+                display: block;
+                margin-right: 23px;
+            }
 
             &:hover {
                 cursor: pointer;
