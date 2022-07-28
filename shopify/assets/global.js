@@ -955,12 +955,24 @@ for (let i = 0; i < accordItems.length; i++) {
 }
 
 //Home hero slider
-new Swiper('.home-hero-slider-init', {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  pagination: {
-    clickable: true,
-    el: '.swiper-home-hero-pagination',
-  }
-});
+if (document.querySelector('.home-hero-slider-init') != null) {
+  new Swiper('.home-hero-slider-init', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      clickable: true,
+      el: '.swiper-home-hero-pagination',
+    }
+  });
+}
+
+//Check visited input
+if (document.querySelector('.check-visited-input') != null) {
+  const checkInputs = document.querySelectorAll('.check-visited-input');
+    checkInputs.forEach((inp) => {
+      inp.addEventListener('change', () => {
+        inp.classList.add('visited');
+      });
+  });
+}

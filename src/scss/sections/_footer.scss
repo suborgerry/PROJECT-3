@@ -264,7 +264,8 @@
         @include media-breakpoint-up(md) {
           width: 373px;
         }
-        &:focus {
+        &:focus,
+        &.visited {
           box-shadow: none !important;
           & + label {
             opacity: 0;

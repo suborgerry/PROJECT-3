@@ -5993,10 +5993,10 @@ main {
     width: 373px;
   }
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer:focus {
+.footer__subscribe-wrapper form #NewsletterForm--footer:focus, .footer__subscribe-wrapper form #NewsletterForm--footer.visited {
   box-shadow: none !important;
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer:focus + label {
+.footer__subscribe-wrapper form #NewsletterForm--footer:focus + label, .footer__subscribe-wrapper form #NewsletterForm--footer.visited + label {
   opacity: 0;
 }
 .footer__subscribe-wrapper form #NewsletterForm--footer::placeholder {
