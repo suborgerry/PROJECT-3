@@ -156,6 +156,7 @@
       ],
       "settings": {
         "heading": "SHop By Brand",
+        "heading_color": "c-grey-1",
         "padding_section": "80px 0px 0px 0px",
         "padding_section_sm": "30px 0px 0px 0px"
       }
@@ -412,6 +413,7 @@
         "heading": "Origin Story",
         "video_webm": "",
         "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
+        "video_poster": "shopify:\/\/shop_images\/home-page-video-poster.jpg",
         "padding_section": "0px 0px 88px 0px",
         "padding_section_sm": "0px 0px 60px 0px"
       }
