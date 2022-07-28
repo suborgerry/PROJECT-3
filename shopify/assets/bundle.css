@@ -5986,6 +5986,7 @@ main {
   height: 56px !important;
   border: none !important;
   background-color: rgb(var(--color-base-background-1));
+  padding: 20px 24px 15px;
 }
 @media (min-width: 768px) {
   .footer__subscribe-wrapper form #NewsletterForm--footer {
@@ -5995,6 +5996,9 @@ main {
 .footer__subscribe-wrapper form #NewsletterForm--footer:focus {
   box-shadow: none !important;
 }
+.footer__subscribe-wrapper form #NewsletterForm--footer:focus + label {
+  opacity: 0;
+}
 .footer__subscribe-wrapper form #NewsletterForm--footer::placeholder {
   opacity: 0;
 }
@@ -6002,6 +6006,7 @@ main {
   font-size: 1.4rem !important;
   font-weight: 300;
   top: 20px;
+  transition: 0.3s;
 }
 .footer__subscribe-wrapper form button {
   height: 56px !important;
@@ -7461,7 +7466,10 @@ main {
 }
 .collections-tabs-list__tab-content {
   width: 100%;
-  display: none;
+  display: grid;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 40px;
 }
@@ -7471,7 +7479,9 @@ main {
   }
 }
 .collections-tabs-list__tab-content.tab-content-active {
-  display: grid;
+  opacity: 1;
+  visibility: visible;
+  height: auto;
 }
 .collections-tabs-list__tab-content .content__collections-list {
   display: grid;
@@ -8795,6 +8805,7 @@ main {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   transition: 0.3s;
+  color: rgb(var(--color-base-accent-1));
 }
 @media (min-width: 992px) {
   .video-with-info__video .btn-video-play svg {
@@ -8820,7 +8831,7 @@ main {
 @media (min-width: 992px) {
   .video-with-info__info {
     width: 40%;
-    padding: unset;
+    padding: 0 0 0 28px;
     background-color: unset;
   }
 }
@@ -8839,6 +8850,7 @@ main {
 .video-with-info__info .info-column p {
   margin-top: 10px;
   font-size: 18px;
+  color: #414240;
 }
 .text-with-collage {
   margin-top: 5.4rem;

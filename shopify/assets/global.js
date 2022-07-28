@@ -953,3 +953,14 @@ for (let i = 0; i < accordItems.length; i++) {
     }
   });
 }
+
+//Home hero slider
+new Swiper('.home-hero-slider-init', {
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  pagination: {
+    clickable: true,
+    el: '.swiper-home-hero-pagination',
+  }
+});

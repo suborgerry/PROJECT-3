@@ -10,7 +10,7 @@
             background-image: url('{{ block.settings.img-desktop | img_url: 'master' }}');
           }
           {% if block.settings.img-mobile %}
-          @media (max-width: 767px) {
+          @media (max-width: 575px) {
             [data-block-id="{{ block.id }}"].home-hero__slide {
               background-image: url('{{ block.settings.img-mobile | img_url: 'master' }}');
             }

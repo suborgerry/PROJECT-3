@@ -5,6 +5,12 @@ new Swiper('.collections-brands__list', {
     spaceBetween: 30,
     loop: true,
     breakpoints: {
+        1024: {
+            slidesPerView: 3.2,
+        },
+        1200: {
+            slidesPerView: 3.8,
+        },
         1440: {
             slidesPerView: 4.5,
         }

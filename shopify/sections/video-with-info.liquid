@@ -15,12 +15,12 @@
 <section class="video-with-info positioning--{{ s.id }}">
     <div class="page-width">
         {%- if ss.heading != blank -%}
-            <h3 class="video-with-info__heading">{{ ss.heading }}</h3>
+            <h3 class="video-with-info__heading c-grey-1">{{ ss.heading }}</h3>
         {%- endif -%}
         <div class="video-with-info__wrapper">
             <div class="video-with-info__video">
                 <button class="btn-video-play">{%- render 'icon-video-play' -%}</button>
-                <video class="video-click-listener" playsinline>
+                <video class="video-click-listener" playsinline poster="{{ ss.video_poster | img_url: '1024x' }}">
                     <source src="{{ ss.video_webm }}" type="video/webm">
                     <source src="{{ ss.video_mp4 }}" type="video/mp4">
                 </video>
@@ -28,7 +28,7 @@
             <div class="video-with-info__info">
                 {%- for b in s.blocks -%}
                     <div class="info-column">
-                        <h3 class="text-32px">{{ b.settings.heading }}</h3>
+                        <h3 class="text-32px c-grey-1">{{ b.settings.heading }}</h3>
                         {%- if b.settings.small_text != blank -%}
                         <p>{{ b.settings.small_text }}</p>
                         {%- endif -%}
@@ -75,7 +75,12 @@
             "type": "url",
             "id": "video_mp4",
             "label": "Video MP4 URL"
-        }, 
+        },
+        {
+            "type": "image_picker",
+            "id": "video_poster",
+            "label": "Video poster"
+        },          
         {
             "type": "header",
             "content": "t:sections.all.padding.section_padding_heading"
