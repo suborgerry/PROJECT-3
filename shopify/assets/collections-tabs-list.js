@@ -31,9 +31,12 @@ function checkLinksHeight() {
                 if (firstHeight > secondHeight) {
                     let correctHeight = firstHeight;
                     comparableLinks[k].childNodes[0].style.height = `${correctHeight}px`;
-                } else {
+                } else if (firstHeight < secondHeight) {
                     let correctHeight = secondHeight;
                     mainLinksHeight[k].childNodes[0].style.height = `${correctHeight}px`;
+                } else if (firstHeight == secondHeight) {
+                    comparableLinks[k].childNodes[0].style.height = 'auto';
+                    mainLinksHeight[k].childNodes[0].style.height = 'auto';
                 }
             }
         }

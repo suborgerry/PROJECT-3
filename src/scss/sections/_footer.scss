@@ -252,7 +252,8 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      #NewsletterForm--footer {
+      #NewsletterForm--footer,
+      .subscribeForm {
         width: 100%;
         font-size: 1.6rem;
         font-weight: 300;

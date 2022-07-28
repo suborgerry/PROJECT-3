@@ -24,6 +24,16 @@
       "settings": {
       }
     },
+    "16590074631c451ae5": {
+      "type": "subscribe",
+      "settings": {
+        "heading": "THE OFFICIAL BRAND OF STATENAME",
+        "small_heading": "JOIN OUR COMMUNITY TO GET EXCLUSIVE DISOUNTS!",
+        "bg_color": "#efefef",
+        "padding_section": "52px 0 66px",
+        "padding_section_sm": "48px 0 40px"
+      }
+    },
     "165892748137eb18b8": {
       "type": "collections-brands",
       "blocks": {
@@ -334,13 +344,14 @@
         "86a83a6c-155f-44e0-a432-2ad97834d0c7"
       ],
       "settings": {
-        "padding_section": "88px 0 0",
-        "padding_section_sm": "60px 0 0"
+        "padding_section": "88px 0",
+        "padding_section_sm": "60px 0"
       }
     }
   },
   "order": [
     "main",
+    "16590074631c451ae5",
     "165892748137eb18b8",
     "16589288791477a174",
     "16589291978eaaa187",

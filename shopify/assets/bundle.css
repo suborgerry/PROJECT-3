@@ -5978,7 +5978,8 @@ main {
   display: flex;
   justify-content: center;
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer {
+.footer__subscribe-wrapper form #NewsletterForm--footer,
+.footer__subscribe-wrapper form .subscribeForm {
   width: 100%;
   font-size: 1.6rem;
   font-weight: 300;
@@ -5989,17 +5990,23 @@ main {
   padding: 20px 24px 15px;
 }
 @media (min-width: 768px) {
-  .footer__subscribe-wrapper form #NewsletterForm--footer {
+  .footer__subscribe-wrapper form #NewsletterForm--footer,
+.footer__subscribe-wrapper form .subscribeForm {
     width: 373px;
   }
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer:focus, .footer__subscribe-wrapper form #NewsletterForm--footer.visited {
+.footer__subscribe-wrapper form #NewsletterForm--footer:focus, .footer__subscribe-wrapper form #NewsletterForm--footer.visited,
+.footer__subscribe-wrapper form .subscribeForm:focus,
+.footer__subscribe-wrapper form .subscribeForm.visited {
   box-shadow: none !important;
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer:focus + label, .footer__subscribe-wrapper form #NewsletterForm--footer.visited + label {
+.footer__subscribe-wrapper form #NewsletterForm--footer:focus + label, .footer__subscribe-wrapper form #NewsletterForm--footer.visited + label,
+.footer__subscribe-wrapper form .subscribeForm:focus + label,
+.footer__subscribe-wrapper form .subscribeForm.visited + label {
   opacity: 0;
 }
-.footer__subscribe-wrapper form #NewsletterForm--footer::placeholder {
+.footer__subscribe-wrapper form #NewsletterForm--footer::placeholder,
+.footer__subscribe-wrapper form .subscribeForm::placeholder {
   opacity: 0;
 }
 .footer__subscribe-wrapper form label {
@@ -7893,7 +7900,6 @@ main {
     text-align: left;
     margin-top: unset;
     margin-left: 30px;
-    width: 134px;
   }
 }
 .collections-brands__item .text .small-text {
@@ -9960,4 +9966,128 @@ main {
   line-height: 2.3rem;
   letter-spacing: 0.821739px;
   margin-top: 6.4rem;
+}
+.subscribe__heading {
+  margin-bottom: 36px;
+}
+@media (min-width: 768px) {
+  .subscribe__heading {
+    margin-bottom: 28px;
+  }
+}
+.subscribe__small-heading {
+  display: block;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .subscribe__small-heading {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.get-involved__main {
+  max-width: 964px;
+}
+.get-involved__img {
+  display: block;
+  max-width: 750px;
+  margin-bottom: 53px;
+}
+@media (min-width: 768px) {
+  .get-involved__img {
+    margin-bottom: 64px;
+  }
+}
+.get-involved__heading {
+  margin-bottom: 47px;
+}
+@media (min-width: 768px) {
+  .get-involved__heading {
+    margin-bottom: 64px;
+  }
+}
+.get-involved__description {
+  margin-bottom: 68px;
+  font-size: 16px;
+  line-height: 28px;
+}
+@media (min-width: 768px) {
+  .get-involved__description {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+.get-involved__description a {
+  color: rgb(var(--color-base-accent-1));
+  text-decoration: unset;
+}
+@media (min-width: 768px) {
+  .get-involved__list-wrapper {
+    padding: 56px;
+    background-color: #FCFCFC;
+  }
+}
+@media (min-width: 992px) {
+  .get-involved__list-wrapper {
+    padding: 56px 107px 76px;
+  }
+}
+.get-involved__list-wrapper h4 {
+  margin-bottom: 32px;
+}
+.get-involved__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 64px;
+  border-top: 1px solid #EAEAEA;
+  padding-top: 40px;
+}
+@media (min-width: 576px) {
+  .get-involved__list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .get-involved__list {
+    padding-top: 48px;
+    grid-gap: 64px;
+  }
+}
+@media (min-width: 992px) {
+  .get-involved__list {
+    grid-column-gap: 110px;
+  }
+}
+.get-involved__list:not(:last-of-type) {
+  margin-bottom: 80px;
+}
+@media (min-width: 768px) {
+  .get-involved__list:not(:last-of-type) {
+    margin-bottom: 88px;
+  }
+}
+.get-involved__list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.get-involved__list-item .heading {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 30px;
+  font-family: "Axiforma";
+  font-weight: 600;
+}
+.get-involved__list-item .sub-heading {
+  margin-bottom: 7px;
+  font-size: 14px;
+  line-height: 23px;
+  font-family: "Axiforma";
+  font-weight: 500;
+  color: #949494;
+}
+.get-involved__list-item .button {
+  width: 100%;
 }
