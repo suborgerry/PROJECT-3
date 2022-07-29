@@ -4,6 +4,7 @@
     }
     &__img {
         display: block;
+        width: 100%;
         max-width: 750px;
         margin-bottom: 53px;
         @include media-breakpoint-up(md) {
@@ -56,6 +57,7 @@
         }
         @include media-breakpoint-up(lg) {
             grid-column-gap: 110px;
+            grid-row-gap: 80px;
         }
         &:not(:last-of-type) {
             margin-bottom: 80px;

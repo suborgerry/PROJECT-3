@@ -1,0 +1,38 @@
+.video-custom {
+    &__heading {
+        margin-bottom: 40px;
+        font-size: 29px;
+        line-height: 39px;
+        @include media-breakpoint-up(lg) {
+            font-size: 32px;
+            line-height: 42px;
+            margin-bottom: 56px;
+        }
+        strong {
+            font-family: 'Long Shot';
+            font-weight: 400;
+        }
+    }
+    &__video {
+        position: relative;
+        width: 100%;
+        @include media-breakpoint-up(lg) {
+            max-width: 1070px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .btn-video-play {
+            svg {
+                width: 40px;
+                height: 40px;
+                @include media-breakpoint-up(lg) {
+                    width: 64px;
+                    height: 64px;
+                }
+            }
+        }
+    }
+}
