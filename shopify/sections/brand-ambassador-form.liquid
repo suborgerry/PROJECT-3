@@ -18,7 +18,10 @@
 {%- endstyle -%}
 
 <div class="brand-ambassador-form__container mx-auto c-grey-10-bg">
-  <div class="wholesale-form__container  gradient c-grey-10-bg section-{{ section.id }}-margin">
+  <div class="wholesale-form__container gradient c-grey-10-bg section-{{ section.id }}-margin">
+    {%- if section.settings.heading != blank -%}
+      <h3 class="video-custom__heading text-center c-grey-1">{{ section.settings.heading | remove: '<p>' | remove: '</p>' | upcase }}</h3>
+    {%- endif -%}
     {%- form 'contact', id: 'BrandAmbassadorForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
       <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
         <div class="wholesale-form__field-container d-flex flex-column">
@@ -86,6 +89,11 @@
   "tag": "section",
   "class": "section wholesale-form",
   "settings": [
+    {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+    },
     {
       "type": "range",
       "id": "margin_top",
