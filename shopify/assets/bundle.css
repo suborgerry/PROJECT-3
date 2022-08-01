@@ -10219,3 +10219,23 @@ main {
     margin-top: 16px;
   }
 }
+@media (min-width: 1440px) {
+  .brand-ambassador-form__container {
+    width: 1340px;
+  }
+}
+.brand-ambassador-form__heading {
+  padding-bottom: 47px;
+}
+@media (min-width: 768px) {
+  .brand-ambassador-form__heading {
+    margin-bottom: 40px;
+  }
+}
+.brand-ambassador-form__heading strong {
+  font-family: "Long Shot";
+  font-weight: 400;
+}
+.brand-ambassador-form__description {
+  padding-bottom: 56px;
+}

@@ -65,15 +65,18 @@
     "16590980242a1a6d8d": {
       "type": "brand-ambassador-form",
       "settings": {
-        "margin_top": 40,
-        "margin_bottom": 52,
-        "margin_top_mob": 40,
-        "margin_bottom_mob": 52
+        "heading": "<p>Want to become a Brand Ambassador<strong>?<\/strong><\/p>",
+        "description": "Let us know the following information and we will follow up with you.",
+        "margin_top": 48,
+        "margin_bottom": 0,
+        "margin_top_mob": 52,
+        "margin_bottom_mob": 0
       }
     },
     "1659090053ee1f49bf": {
       "type": "video-custom",
       "settings": {
+        "heading": "<p>What our brand ambassadors are saying<strong>!<\/strong><\/p>",
         "video_webm": "",
         "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
         "video_poster": "shopify:\/\/shop_images\/brand-ambassador-video-poster.jpg",
