@@ -12,10 +12,10 @@
     "main": {
       "type": "main-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28,
-        "padding_top_mob": 0,
-        "padding_bottom_mob": 0,
+        "padding_top": 40,
+        "padding_bottom": 64,
+        "padding_top_mob": 12,
+        "padding_bottom_mob": 40,
         "show_title": true,
         "show_content": false
       }
@@ -25,6 +25,7 @@
       "settings": {
         "padding_top": 40,
         "padding_bottom": 52,
+        "bg_color": "transparent",
         "step_1": "<p>We are currently seeking highly motivated, outgoing, friendly and creative employees and\/or interns to join our successful team. All applications who pass the first round of selections will be sent an email with more detailed information about the position. The email will be sent out within 1-2 weeks. Due to a high volume of submissions we may not be able to email those of you who were not chosen. If you are interested, please fill out the information below.<\/p>",
         "step_2": "<p>The current open positions with Route One Apparel are below. Please select only the positions you are most interested in. You can select more than one option below, as long as you qualify.<\/p>",
         "step_3": "<p>We are seeking employees that are engaged through social media and their communities, as this is an important characteristic of our company. Please, be descriptive as possible with this section.<\/p>",
