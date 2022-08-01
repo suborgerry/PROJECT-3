@@ -1,0 +1,22 @@
+.subscribe {
+    &__heading {
+        margin-bottom: 36px;
+        @include media-breakpoint-down(md) {
+            font-size: 38px;
+            line-height: 46px;
+        }
+        @include media-breakpoint-up(md) {
+            margin-bottom: 28px;
+        }
+    }
+    &__small-heading {
+        display: block;
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+}

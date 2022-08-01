@@ -1,0 +1,92 @@
+.get-involved {
+    &__main {
+        max-width: 964px;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        max-width: 750px;
+        margin-bottom: 53px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 64px;
+        }
+    }
+    &__heading {
+        margin-bottom: 47px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 64px;
+        }
+    }
+    &__description {
+        margin-bottom: 68px;
+        font-size: 16px;
+        line-height: 28px;
+        @include media-breakpoint-up(md) {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        a {
+            color: $c-red-1;
+            text-decoration: unset;
+        }
+    }
+    &__list-wrapper {
+        @include media-breakpoint-up(md) {
+            padding: 56px;
+            background-color: $c-grey-10;
+        }
+        @include media-breakpoint-up(lg) {
+            padding: 56px 107px 76px;
+        }
+        h4 {
+            margin-bottom: 32px;
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 64px;
+        border-top: 1px solid $c-grey-8;
+        padding-top: 40px;
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @include media-breakpoint-up(md) {
+            padding-top: 48px;
+            grid-gap: 64px;
+        }
+        @include media-breakpoint-up(lg) {
+            grid-column-gap: 110px;
+            grid-row-gap: 80px;
+        }
+        &:not(:last-of-type) {
+            margin-bottom: 80px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 88px;
+            }
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .heading {
+                margin-bottom: 30px;
+                font-size: 18px;
+                line-height: 30px;
+                font-family: 'Axiforma';
+                font-weight: 600;
+            }
+            .sub-heading {
+                margin-bottom: 7px;
+                font-size: 14px;
+                line-height: 23px;
+                font-family: 'Axiforma';
+                font-weight: 500;
+                color: $c-grey-4;
+            }
+            .button {
+                width: 100%;
+            }
+        }
+    }
+}

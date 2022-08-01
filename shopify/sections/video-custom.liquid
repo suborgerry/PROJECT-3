@@ -1,0 +1,73 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="video-custom positioning--{{ s.id }}">
+    <div class="page-width">
+        {%- if ss.heading != blank -%}
+            <h3 class="video-custom__heading text-center c-grey-1">{{ ss.heading | remove: '<p>' | remove: '</p>' | upcase }}</h3>
+        {%- endif -%}
+        <div class="video-custom__video mx-auto">
+            <button class="btn-video-play">{%- render 'icon-video-play-custom' -%}</button>
+            <video class="video-click-listener" playsinline poster="{{ ss.video_poster | img_url: '1024x' }}">
+                <source src="{{ ss.video_webm }}" type="video/webm">
+                <source src="{{ ss.video_mp4 }}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+{{ 'video-button-play.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+    "name": "Video custom",
+    "settings": [ 
+        {
+            "type": "url",
+            "id": "video_webm",
+            "label": "Video WebM URL"
+        },
+        {
+            "type": "url",
+            "id": "video_mp4",
+            "label": "Video MP4 URL"
+        },
+        {
+            "type": "image_picker",
+            "id": "video_poster",
+            "label": "Video poster"
+        },          
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Video custom",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

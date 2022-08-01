@@ -5,9 +5,16 @@
 .positioning--{{ s.id }} {
     padding: {{ ss.padding_section_sm }};
 }
+.positioning--{{ s.id }} .cta-banner__main .description {
+    max-width: {{ ss.description_max_width }}px;
+    margin-top: {{ ss.description_margin_top_mob }}px;
+}
 @media (min-width: 768px) {
     .positioning--{{ s.id }} {
         padding: {{ ss.padding_section }};
+    }
+    .positioning--{{ s.id }} .cta-banner__main .description {
+        margin-top: {{ ss.description_margin_top }}px;
     }
 }
 .shadow--{{ s.id }} {
@@ -73,6 +80,36 @@
             "id": "description",
             "label": "Description"
         },
+        {
+            "type": "range",
+            "id": "description_max_width",
+            "min": 700,
+            "max": 1340,
+            "step": 10,
+            "unit": "px",
+            "label": "Description max width",
+            "default": 760
+        },         
+        {
+            "type": "range",
+            "id": "description_margin_top",
+            "min": 0,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "label": "Description margin top",
+            "default": 38
+        },         
+        {
+            "type": "range",
+            "id": "description_margin_top_mob",
+            "min": 0,
+            "max": 60,
+            "step": 1,
+            "unit": "px",
+            "label": "Description margin top (mobile)",
+            "default": 38
+        },         
         {
             "type": "text",
             "id": "btn_name",

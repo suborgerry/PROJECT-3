@@ -15,6 +15,37 @@ for (let i = 0; i < tabLink.length; i++) {
     }); 
 }
 
+
+//Collection-lists fix links' height
+const linksList1 = document.querySelectorAll('.links-list-1'),
+linksList2 = document.querySelectorAll('.links-list-2');
+
+function checkLinksHeight() {
+    if (window.innerWidth > 991) {
+        for (let i = 0; i < linksList2.length; i++) {
+            let mainLinksHeight = linksList1[i].childNodes,
+            comparableLinks = linksList2[i].childNodes;
+            for (let k = 0; k < comparableLinks.length; k++) {
+                let firstHeight = mainLinksHeight[k].childNodes[0].offsetHeight,
+                secondHeight = comparableLinks[k].childNodes[0].offsetHeight;
+                if (firstHeight > secondHeight) {
+                    let correctHeight = firstHeight;
+                    comparableLinks[k].childNodes[0].style.height = `${correctHeight}px`;
+                } else if (firstHeight < secondHeight) {
+                    let correctHeight = secondHeight;
+                    mainLinksHeight[k].childNodes[0].style.height = `${correctHeight}px`;
+                } else if (firstHeight == secondHeight) {
+                    comparableLinks[k].childNodes[0].style.height = 'auto';
+                    mainLinksHeight[k].childNodes[0].style.height = 'auto';
+                }
+            }
+        }
+    }
+}
+checkLinksHeight();
+window.addEventListener('resize', checkLinksHeight);
+
+
 //Mobile tabs
 const tabLinkMob = document.querySelectorAll('.collections-tabs-list__tab-mob'),
 tabContentMob = document.querySelectorAll('.collections-tabs-list__tab-content-mob');

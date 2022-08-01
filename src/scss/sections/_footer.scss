@@ -252,7 +252,8 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      #NewsletterForm--footer {
+      #NewsletterForm--footer,
+      .subscribeForm {
         width: 100%;
         font-size: 1.6rem;
         font-weight: 300;
@@ -260,11 +261,16 @@
         height: 56px !important;
         border: none !important;
         background-color: $c-white;
+        padding: 20px 24px 15px;
         @include media-breakpoint-up(md) {
           width: 373px;
         }
-        &:focus {
+        &:focus,
+        &.visited {
           box-shadow: none !important;
+          & + label {
+            opacity: 0;
+          }
         }
         &::placeholder {
           opacity: 0;
@@ -274,6 +280,7 @@
         font-size: 1.4rem !important;
         font-weight: 300;
         top: 20px;
+        transition: 0.3s;
       }
       button {
         height: 56px !important;

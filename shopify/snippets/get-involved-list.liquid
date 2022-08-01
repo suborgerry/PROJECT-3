@@ -1,0 +1,17 @@
+<h4 class="font-axiforma-bold c-red-1">{{ list_name }}</h4>
+<div class="get-involved__list">
+    {%- for b in blocks -%}
+        {%- case b.type -%}
+            {%- when block_type -%}
+            <div class="get-involved__list-item">
+                <div class="d-flex flex-column justify-content-between h-100">
+                    <span class="heading{% if b.settings.sub_heading != blank %} mb-0{% endif %}">{{ b.settings.heading }}</span>
+                    {%- if b.settings.sub_heading != blank -%}
+                        <span class="sub-heading">{{ b.settings.sub_heading }}</span>
+                    {%- endif -%}
+                </div>
+                <a href="{{ b.settings.button_link }}" target="_blank" class="button button__red">{{ 'See offer' | upcase }}</a>
+            </div>
+        {%- endcase -%}
+    {%- endfor -%}
+</div>

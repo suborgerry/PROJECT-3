@@ -1,6 +1,19 @@
 {%- assign s = section -%}
 {%- assign ss = s.settings -%}
 
+{%- style -%}
+.text-with-collage {
+  margin-top: {{ ss.margin_top_mob }}rem !important;
+  margin-bottom: {{ ss.margin_bottom_mob }}rem !important;
+}
+@media (min-width: 768px) {
+  .text-with-collage {
+    margin-top: {{ ss.margin_top }}rem !important;
+    margin-bottom: {{ ss.margin_bottom }}rem !important;
+  }
+} 
+{%- endstyle -%}
+
 <div class="text-with-collage__container">
   <div class="text-with-collage__info d-flex">
     <div class="text-with-collage__info-description d-flex flex-column">
@@ -57,7 +70,51 @@
       "type": "image_picker",
       "id": "main_image",
       "label": "Main image"
-    }
+    },
+    {
+      "type": "header",
+      "content": "Margins"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Margin top",
+      "default": 9.8
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Margin bottom",
+      "default": 8.8
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mob",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Margin top (mobile)",
+      "default": 5.4
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mob",
+      "min": 0,
+      "max": 10,
+      "step": 0.1,
+      "unit": "rem",
+      "label": "Margin bottom (mobile)",
+      "default": 6.6
+    }   
   ],
   "blocks": [
     {

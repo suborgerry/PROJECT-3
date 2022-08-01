@@ -1,44 +1,40 @@
 {
   "sections": {
-    "1656590445f1b0b21e": {
+    "main": {
       "type": "home-hero",
       "blocks": {
-        "b01f2f58-c0f1-46be-ab2e-d784a70bdff2": {
+        "b8b88aa4-b97c-4163-922e-16e7273313be": {
           "type": "text",
           "settings": {
-            "img-desktop": "shopify:\/\/shop_images\/cta-banner.jpg",
-            "img-mobile": "shopify:\/\/shop_images\/cta-banner-mob.jpg",
+            "img-desktop": "shopify:\/\/shop_images\/state-inner-bg.jpg",
+            "img-mobile": "shopify:\/\/shop_images\/state-inner-bg-mob.jpg",
             "overlay": true,
             "text-right": false,
-            "subtitle": "MARYLAND STRONG",
-            "title": "STAY SAFE AND SHOP LOCAL WITH OUR MARYLAND MASKS!",
+            "subtitle": "LOREM IPSUM",
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "color": "#ffffff",
-            "button-text": "Shop now",
-            "button-url": ""
-          }
-        },
-        "8d200123-46e4-44df-8edd-884ba67303d9": {
-          "type": "text",
-          "settings": {
-            "img-desktop": "shopify:\/\/shop_images\/Object_1.jpg",
-            "overlay": false,
-            "text-right": true,
-            "subtitle": "MARYLAND STRONG",
-            "title": "ALl MAryland Everything",
-            "color": "#000000",
-            "button-text": "shop now",
-            "button-url": ""
+            "button-text": "SHOP NOW",
+            "button-url": "shopify:\/\/collections\/all"
           }
         }
       },
       "block_order": [
-        "b01f2f58-c0f1-46be-ab2e-d784a70bdff2",
-        "8d200123-46e4-44df-8edd-884ba67303d9"
+        "b8b88aa4-b97c-4163-922e-16e7273313be"
       ],
       "settings": {
       }
     },
-    "165791494001a1bb1b": {
+    "16590074631c451ae5": {
+      "type": "subscribe",
+      "settings": {
+        "heading": "THE OFFICIAL BRAND OF STATENAME",
+        "small_heading": "JOIN OUR COMMUNITY TO GET EXCLUSIVE DISOUNTS!",
+        "bg_color": "#efefef",
+        "padding_section": "52px 0 66px",
+        "padding_section_sm": "48px 0 40px"
+      }
+    },
+    "165892748137eb18b8": {
       "type": "collections-brands",
       "blocks": {
         "425335a3-7367-48ec-9021-3e07f96cf674": {
@@ -156,12 +152,12 @@
       ],
       "settings": {
         "heading": "SHop By Brand",
-        "heading_color": "c-grey-1",
-        "padding_section": "80px 0px 0px 0px",
-        "padding_section_sm": "30px 0px 0px 0px"
+        "heading_color": "c-black",
+        "padding_section": "98px 0 0",
+        "padding_section_sm": "54px 0 0"
       }
     },
-    "1656936290b5c4d826": {
+    "16589288791477a174": {
       "type": "products-line-list",
       "blocks": {
         "810237db-9a26-4318-a035-abfec438d8f6": {
@@ -211,22 +207,11 @@
       ],
       "settings": {
         "heading": "MOST POPULAR Items",
-        "padding_section": "80px 0px 50px 0px",
-        "padding_section_sm": "60px 0px 46px 0px"
+        "padding_section": "98px 0 0",
+        "padding_section_sm": "54px 0 0"
       }
     },
-    "165666881917ae1fc4": {
-      "type": "cta",
-      "settings": {
-        "img-desktop": "shopify:\/\/shop_images\/Bitmap_1_3946968d-2641-4d8f-bee9-cd93f7fb36c3.jpg",
-        "img-mobile": "shopify:\/\/shop_images\/Bitmap_2_69b50941-7e16-47c9-88a6-c447b2f9f906.jpg",
-        "subtitle": "MARYLAND STRONG",
-        "title": "SWEATSHIRTS HOODIES",
-        "url": "",
-        "label": "shop now"
-      }
-    },
-    "1656928885f55b45c2": {
+    "16589291978eaaa187": {
       "type": "collections-line-list",
       "blocks": {
         "a66dff98-e3c2-436b-8814-3d4743ffc3fc": {
@@ -276,11 +261,11 @@
       ],
       "settings": {
         "heading": "MOST POPULAR Collections",
-        "padding_section": "94px 0px 52px 0px",
-        "padding_section_sm": "60px 0px 60px 0px"
+        "padding_section": "98px 0 0",
+        "padding_section_sm": "54px 0 0"
       }
     },
-    "1657701661c1c8000d": {
+    "1658930441e4771cea": {
       "type": "collections-tabs-list",
       "blocks": {
         "82411005-c249-45b7-979d-43e407e90cbb": {
@@ -359,81 +344,17 @@
         "86a83a6c-155f-44e0-a432-2ad97834d0c7"
       ],
       "settings": {
-        "padding_section": "0px 0px 88px 0px",
-        "padding_section_sm": "0px 0px 60px 0px"
-      }
-    },
-    "1657883483fcdb5b16": {
-      "type": "collections-local",
-      "settings": {
-        "heading": "Local",
-        "collections_heading": "Maryland State",
-        "collection_list": [
-          "maryland",
-          "event-we-love-baltimore",
-          "america",
-          "washington-dc",
-          "state-parks"
-        ],
-        "padding_section": "0px 0px 66px 0px",
-        "padding_section_sm": "0px 0px 30px 0px"
-      }
-    },
-    "16578881419d573542": {
-      "type": "video-with-info",
-      "blocks": {
-        "3b768c0c-ca98-478c-a475-443975b73584": {
-          "type": "info-block",
-          "settings": {
-            "heading": "12456",
-            "small_text": "Served amount of people in the area so far"
-          }
-        },
-        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705": {
-          "type": "info-block",
-          "settings": {
-            "heading": "over 10 years",
-            "small_text": "Started in a dorm room"
-          }
-        },
-        "55f49055-b28c-4cec-a745-3663ab126ac6": {
-          "type": "info-block",
-          "settings": {
-            "heading": "Over 4,000 product",
-            "small_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "3b768c0c-ca98-478c-a475-443975b73584",
-        "3dfb3603-82d3-4f40-a0b3-9f86dd6ba705",
-        "55f49055-b28c-4cec-a745-3663ab126ac6"
-      ],
-      "settings": {
-        "heading": "Origin Story",
-        "video_webm": "",
-        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
-        "video_poster": "shopify:\/\/shop_images\/home-page-video-poster.jpg",
-        "padding_section": "0px 0px 88px 0px",
-        "padding_section_sm": "0px 0px 60px 0px"
-      }
-    },
-    "1657922640d5481bf7": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
+        "padding_section": "88px 0",
+        "padding_section_sm": "60px 0"
       }
     }
   },
   "order": [
-    "1656590445f1b0b21e",
-    "165791494001a1bb1b",
-    "1656936290b5c4d826",
-    "165666881917ae1fc4",
-    "1656928885f55b45c2",
-    "1657701661c1c8000d",
-    "1657883483fcdb5b16",
-    "16578881419d573542",
-    "1657922640d5481bf7"
+    "main",
+    "16590074631c451ae5",
+    "165892748137eb18b8",
+    "16589288791477a174",
+    "16589291978eaaa187",
+    "1658930441e4771cea"
   ]
 }

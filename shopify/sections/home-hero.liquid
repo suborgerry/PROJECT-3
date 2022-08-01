@@ -1,6 +1,6 @@
 
 
-<section class="home-hero home-hero-slider-init swiper-container">
+<section class="home-hero{% if section.blocks.size > 1 %} home-hero-slider-init{% endif %} swiper-container">
   <div class="swiper-wrapper">
     {% for block in section.blocks %}
       <div data-block-id="{{ block.id }}" class="home-hero__slide swiper-slide">
@@ -9,16 +9,29 @@
           [data-block-id="{{ block.id }}"].home-hero__slide {
             background-image: url('{{ block.settings.img-desktop | img_url: 'master' }}');
           }
+          {% if section.settings.min_height_bigger == true %}
+          @media (max-width: 991px) {
+            [data-block-id="{{ block.id }}"].home-hero__slide {
+              min-height: 595px;
+            }
+          {% endif %}
+          }
           {% if block.settings.img-mobile %}
-          @media (max-width: 767px) {
+          @media (max-width: 575px) {
             [data-block-id="{{ block.id }}"].home-hero__slide {
               background-image: url('{{ block.settings.img-mobile | img_url: 'master' }}');
             }
+            {% if block.settings.title_mob_smaller_size == true %}
+            [data-block-id="{{ block.id }}"].home-hero__slide h1 {
+              font-size: 3.4rem;
+            }
+            {% endif %}
           }
           {% endif %}
 
           [data-block-id="{{ block.id }}"].home-hero__slide h1,
-          [data-block-id="{{ block.id }}"].home-hero__slide h5 {
+          [data-block-id="{{ block.id }}"].home-hero__slide h5,
+          [data-block-id="{{ block.id }}"].home-hero__slide .sub-heading {
             color: {{ block.settings.color }};
           }
           {% if block.settings.overlay %}
@@ -59,6 +72,9 @@
           <div class="home-hero__wrapper d-flex flex-column">
             <h5 class="m-0">{{ block.settings.subtitle }}</h5>
             <h1 class="m-0">{{ block.settings.title }}</h1>
+            {%- if block.settings.sub_heading != blank -%}
+              <span class="sub-heading text-18px-all text-center">{{ block.settings.sub_heading }}</span>
+            {%- endif -%}
             <div class="home-hero__button d-flex">
               <a class="button__red" href="{{ block.settings.button-url }}">{{ block.settings.button-text }}</a>
             </div>
@@ -74,6 +90,12 @@
   {
   "name": "Home Hero",
   "settings": [
+  {
+    "type": "checkbox",
+    "id": "min_height_bigger",
+    "label": "Bigger min height",
+    "default": false
+  }
   ],
   "blocks": [
   {
@@ -115,6 +137,17 @@
   "type": "text",
   "id": "title",
   "label": "Title"
+  },
+  {
+    "type": "checkbox",
+    "id": "title_mob_smaller_size",
+    "label": "Title mobile smaller",
+    "default": false
+  },
+  {
+  "type": "text",
+  "id": "sub_heading",
+  "label": "Subheading"
   },
   {
   "type": "color",

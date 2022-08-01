@@ -1,0 +1,155 @@
+{
+  "sections": {
+    "main": {
+      "type": "home-hero",
+      "blocks": {
+        "406a9f71-e9dc-4300-af61-5a6d3c1e124e": {
+          "type": "text",
+          "settings": {
+            "img-desktop": "shopify:\/\/shop_images\/brand-ambassador-bg.jpg",
+            "img-mobile": "shopify:\/\/shop_images\/brand-ambassador-bg-mob.jpg",
+            "overlay": true,
+            "text-right": false,
+            "subtitle": "",
+            "title": "Want to become a Brand Ambassador?",
+            "title_mob_smaller_size": true,
+            "sub_heading": "Route One Apparel is looking for enthusiastic brand ambassadors to be the face of our company and promote our products through their personal social media.",
+            "color": "#ffffff",
+            "button-text": "JOIN OUR TEAM",
+            "button-url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "406a9f71-e9dc-4300-af61-5a6d3c1e124e"
+      ],
+      "settings": {
+        "min_height_bigger": true
+      }
+    },
+    "16590875900f927900": {
+      "type": "rich-text",
+      "blocks": {
+        "165908759081ec20a5-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To be a successful brand ambassador, you will need to be active on Instagram and other social media sites. Ultimately, you should be able to increase our company’s brand awareness and generate new sales opportunities.<\/p>",
+            "text_center": true,
+            "text_color": "#cf322d"
+          }
+        }
+      },
+      "block_order": [
+        "165908759081ec20a5-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false,
+        "max_width": 1070,
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "1659085188f6716a02": {
+      "type": "text-with-collage",
+      "settings": {
+        "heading": "About Route One Apparel",
+        "text": "<p>Route One Apparel (Towson, MD) is a rapidly growing community lifestyle brand specializing in trendy, affordable Maryland pride clothing and accessories. Founded by a college student at University of Maryland in 2010, Route One Apparel has not only capitalized on the state’s appetite for all things Maryland-related, but also fueled the flames. <br\/><br\/>Driven by its wide selection of creative and stylish designs and the passion of its staff, the company has been profitable and has grown exponentially for nearly a decade. The brand has built a large and loyal customer base – including more than 200,000 social media followers – that purchase Route One Apparel online, in stores at area retailers, and at sales events.  Route One is the official license holder of University of Maryland, National Bohemian (\"Natty Boh\"), and Old Bay to name a few. <\/p>",
+        "main_image": "shopify:\/\/shop_images\/Photo_3aa27e3d-133f-4a90-b884-54c8915bc905.jpg",
+        "margin_top": 6.6,
+        "margin_bottom": 8,
+        "margin_top_mob": 4.8,
+        "margin_bottom_mob": 6.6
+      }
+    },
+    "16590980242a1a6d8d": {
+      "type": "brand-ambassador-form",
+      "settings": {
+        "margin_top": 40,
+        "margin_bottom": 52,
+        "margin_top_mob": 40,
+        "margin_bottom_mob": 52
+      }
+    },
+    "1659090053ee1f49bf": {
+      "type": "video-custom",
+      "settings": {
+        "video_webm": "",
+        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
+        "video_poster": "shopify:\/\/shop_images\/brand-ambassador-video-poster.jpg",
+        "padding_section": "88px 0 0",
+        "padding_section_sm": "66px 0 0"
+      }
+    },
+    "165909441285ed81e1": {
+      "type": "columns-with-links",
+      "blocks": {
+        "7b577bc1-c566-412f-bff1-8b9033d3e459": {
+          "type": "column-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-ambassador-sydney.jpg",
+            "heading": "Sydney Lint",
+            "link_name": "@sydneylint",
+            "link": "",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo."
+          }
+        },
+        "5b3a380f-b35a-4d72-84e4-d1484a436aab": {
+          "type": "column-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-ambassador-helena.jpg",
+            "heading": "Shannon Helena",
+            "link_name": "@shannonhelena",
+            "link": "",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo."
+          }
+        },
+        "1757e372-3f6e-4fc0-9542-25a28cf1fffa": {
+          "type": "column-item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand-ambassador-james.jpg",
+            "heading": "James Games",
+            "link_name": "@jamesgames15",
+            "link": "",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius tortor nibh, sit amet tempor nibh finibus et. Aenean eu enim justo."
+          }
+        }
+      },
+      "block_order": [
+        "7b577bc1-c566-412f-bff1-8b9033d3e459",
+        "5b3a380f-b35a-4d72-84e4-d1484a436aab",
+        "1757e372-3f6e-4fc0-9542-25a28cf1fffa"
+      ],
+      "settings": {
+        "padding_section": "72px 0",
+        "padding_section_sm": "40px 0 64px"
+      }
+    },
+    "1659095589ef968cbc": {
+      "type": "cta-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/brand-ambassador-banner-bg.jpg",
+        "bg_image_mob": "shopify:\/\/shop_images\/brand-ambassador-banner-bg-mob.jpg",
+        "shadow_opacity": 40,
+        "heading": "<p>Apply To Our Ambassador Program<strong>!<\/strong><\/p>",
+        "description": "<p>Selected ambassadors will receive exclusive sneak peeks and first dibs on new arrivals, the opportunity to earn merchandise credit, be entered in all our giveaways, receive discounted products, and have a chance to earn a percentage commission on all sales generated through a personal promo code.<br\/><br\/>Using third-party tracking we are able to see which sales came from your code, allowing you to get paid! If selected, you’ll be able to gain experience in the PR\/Marketing field (basic social and sales skills) and you will receive exclusive discounts and benefits for being part of our team!<\/p>",
+        "description_max_width": 1300,
+        "description_margin_top": 47,
+        "description_margin_top_mob": 20,
+        "btn_name": "",
+        "btn_link": "",
+        "padding_section": "98px 0",
+        "padding_section_sm": "60px 0 60px"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16590875900f927900",
+    "1659085188f6716a02",
+    "16590980242a1a6d8d",
+    "1659090053ee1f49bf",
+    "165909441285ed81e1",
+    "1659095589ef968cbc"
+  ]
+}

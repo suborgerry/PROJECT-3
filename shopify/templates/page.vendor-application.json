@@ -1,45 +1,56 @@
 {
   "sections": {
-    "main": {
+    "1659004006f1e98004": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 30,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
+      }
+    },
+    "16590032928bf68ace": {
       "type": "main-page",
       "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28,
+        "padding_top": 0,
+        "padding_bottom": 64,
         "padding_top_mob": 0,
-        "padding_bottom_mob": 0,
+        "padding_bottom_mob": 62,
         "show_title": true,
         "show_content": false
       }
     },
-    "16589243568020004a": {
+    "165900326238a673ea": {
       "type": "text-page",
       "blocks": {
-        "1658924356910f7ed3-0": {
+        "16590032620c5e4ed2-0": {
           "type": "heading",
           "settings": {
             "heading": "Welcome!",
-            "margin_top": 56,
-            "margin_top_mob": 48
+            "margin_top": 0,
+            "margin_top_mob": 0
           }
         },
-        "1658924356910f7ed3-1": {
+        "16590032620c5e4ed2-1": {
           "type": "text",
           "settings": {
             "text": "<p>Thank you for your interest in wanting us to showcase your product and\/or line in our store. Please take a moment to provide more information about you and your company. New product partnerships are decided on a case by case basis. <br\/>Please allow us up to 2 weeks to review your application and reach out to you about next steps. Thank you!<\/p>",
-            "text_center": false
+            "text_center": false,
+            "text_size": 14,
+            "text_size_mobile": 16
           }
         }
       },
       "block_order": [
-        "1658924356910f7ed3-0",
-        "1658924356910f7ed3-1"
+        "16590032620c5e4ed2-0",
+        "16590032620c5e4ed2-1"
       ],
       "settings": {
-        "padding_top": 40,
+        "padding_top": 0,
         "padding_bottom": 52
       }
     },
-    "16589243277227c6bc": {
+    "main": {
       "type": "vendor-application-form",
       "settings": {
         "margin_top": 40,
@@ -50,8 +61,9 @@
     }
   },
   "order": [
-    "main",
-    "16589243568020004a",
-    "16589243277227c6bc"
+    "1659004006f1e98004",
+    "16590032928bf68ace",
+    "165900326238a673ea",
+    "main"
   ]
 }

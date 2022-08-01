@@ -28,12 +28,12 @@
                 <div class="collections-tabs-list__tab-content{% if forloop.first %} tab-content-active{% endif %}">
                     <div class="content__collections-list">
                         {%- assign double_split_per = b.settings.collection_list.count | divided_by: 2.0 | ceil -%}
-                        <ul class="content__block-list list-unstyled">
+                        <ul class="content__block-list list-unstyled links-list-1">
                             {%- for collection in b.settings.collection_list limit: double_split_per -%}
                                <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
                             {%- endfor -%}
                         </ul>
-                        <ul class="content__block-list list-unstyled">
+                        <ul class="content__block-list list-unstyled links-list-2">
                             {%- for collection in b.settings.collection_list limit: double_split_per offset: continue -%}
                                 <li><a href="{{ collection.url }}">{{ collection.title | upcase }}</a></li>
                             {%- endfor -%}

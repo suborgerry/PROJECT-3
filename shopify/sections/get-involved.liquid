@@ -1,0 +1,131 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="get-involved positioning--{{ s.id }}">
+    <div class="page-width">
+        <div class="get-involved__main mx-auto">
+            {%- if ss.image != blank -%}
+                <img 
+                {% render 'src-set', image: ss.image %}
+                src="{{ ss.image | image_url: width: 1500 }}"
+                alt="{{ ss.image.alt }}" class="get-involved__img mx-auto">
+            {%- endif -%}
+            <h3 class="get-involved__heading text-center text-32px c-grey-1">{%- if ss.heading != blank -%}{{ ss.heading | upcase }}{%- else -%}{{ page.title }}{%- endif -%}</h3>
+            {%- if ss.description != blank -%}
+                <div class="get-involved__description">{{ ss.description }}</div>
+            {%- endif -%}
+            <div class="get-involved__list-wrapper">
+                {%- render 'get-involved-list', list_name: ss.list_1_name, blocks: s.blocks, block_type: 'list-1' -%}
+                {%- render 'get-involved-list', list_name: ss.list_2_name, blocks: s.blocks, block_type: 'list-2' -%}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Get involved",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        }, 
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Custom heading"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "text",
+            "id": "list_1_name",
+            "label": "List 1 name"
+        },
+        {
+            "type": "text",
+            "id": "list_2_name",
+            "label": "List 2 name"
+        },
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "list-1",
+            "name": "List 1 item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_heading",
+                    "label": "Sub heading"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button link"
+                }                  
+            ]
+        },
+        {
+            "type": "list-2",
+            "name": "List 2 item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "sub_heading",
+                    "label": "Sub heading"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link",
+                    "label": "Button link"
+                }                  
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Get involved",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}
