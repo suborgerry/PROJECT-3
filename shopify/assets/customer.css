@@ -1,18 +1,21 @@
 .customer:not(.account):not(.order) {
-  margin: 6rem auto 9rem;
+  margin: 0 auto 9rem;
   max-width: 33.4rem;
   padding: 0 1.5rem;
   text-align: center;
+}
+
+.customer form {
+  margin-top: 8.7rem;
 }
 
 @media screen and (min-width: 750px) {
   .customer:not(.account):not(.order) {
     max-width: 47.8rem;
   }
-}
-
-.customer form {
-  margin-top: 4rem;
+  .customer form {
+    margin-top: 10rem;
+  }
 }
 
 .customer button {
@@ -46,11 +49,7 @@
 }
 
 .customer .field {
-  margin: 2rem 0 0 0;
-}
-
-.customer .field:first-of-type {
-  margin-top: 0;
+  margin-top: 5px;
 }
 
 /* Customer Table */
@@ -335,7 +334,7 @@
 }
 
 .login .field + a {
-  margin-top: 1rem;
+  margin-top: 2.4rem;
 }
 
 .login p {

@@ -1,9 +1,11 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
+{% section 'breadcrumbs' %}
+
 <div class="customer login">
-  <h1 id="recover" tabindex="-1">
+  <h3 class="text-32px c-grey-1" id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
-  </h1>
+  </h3>
   <div>
     <p>
       {{ 'customer.recover_password.subtext' | t }}
@@ -52,8 +54,8 @@
     {%- endform -%}
   </div>
 
-  <h1 id="login" tabindex="-1">
-    {{ 'customer.login_page.title' | t }}
+  <h1 class="text-32px c-grey-1" id="login" tabindex="-1">
+    {{ 'customer.login_page.title' | t | prepend: 'Account ' }}
   </h1>
   <div>
     {%- if recover_success == true -%}
@@ -81,8 +83,10 @@
         {{ form.errors | default_errors }}
       {%- endif -%}
 
+      <h4 class="text-left text-18px-all font-axiforma-semibold">{{ 'customer.login_page.email' | t | prepend: 'Your ' | upcase }}</h4>
       <div class="field">        
         <input
+          class="field__input check-visited-input"
           type="email"
           name="customer[email]"
           id="CustomerEmail"
@@ -94,12 +98,13 @@
           {% endif %}
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
-        <label for="CustomerEmail">
+        <label class="field__label" for="CustomerEmail">
           {{ 'customer.login_page.email' | t }}
         </label>
       </div>
 
       {%- if form.password_needed -%}
+        <h4 class="text-left text-18px-all font-axiforma-semibold">{{ 'customer.login_page.password' | t | prepend: 'Your ' | upcase }}</h4>
         <div class="field">          
           <input
             type="password"
@@ -112,7 +117,7 @@
             {% endif %}
             placeholder="{{ 'customer.login_page.password' | t }}"
           >
-          <label for="CustomerPassword">
+          <label class="field__label" for="CustomerPassword">
             {{ 'customer.login_page.password' | t }}
           </label>
         </div>
@@ -122,9 +127,7 @@
         </a>
       {%- endif -%}
 
-      <button>
-        {{ 'customer.login_page.sign_in' | t }}
-      </button>
+      <button class="button__red">{{ 'Login' | upcase }}</button>
 
       <a href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}

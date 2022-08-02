@@ -1,0 +1,58 @@
+.customer {
+    form {
+        .field:not(:last-of-type) {
+            margin-bottom: 40px;
+            @include media-breakpoint-up(md) {
+                margin-bottom: 54px;
+            }
+        }
+        input {
+            width: 100%;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #545454;
+            height: 56px !important;
+            border: none !important;
+            background-color: $c-white;
+            padding: 20px 24px 15px;
+            &:focus,
+            &.visited {
+                box-shadow: none !important;
+                & + label {
+                    opacity: 0;
+                }
+            }
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+        label {
+            font-size: 1.4rem !important;
+            font-weight: 300;
+            top: 20px !important;
+            transition: 0.3s !important;
+        }
+        button {
+            width: 100%;
+            height: 56px !important;
+            @include media-breakpoint-down(xs) {
+                margin-top: 16px;
+            }
+        }
+    }
+    &.login {
+        button {
+            margin: 24px 0 32px;
+            @include media-breakpoint-up(md) {
+                margin: 32px 0 40px;
+            }
+        }
+    }
+    a {
+        color: $c-red-1;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

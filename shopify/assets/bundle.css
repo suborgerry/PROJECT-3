@@ -5024,6 +5024,10 @@ h3 {
   font-family: "Axiforma";
   font-weight: 400;
 }
+.font-axiforma-semibold {
+  font-family: "Axiforma";
+  font-weight: 600;
+}
 .font-axiforma-bold {
   font-family: "Axiforma";
   font-weight: bold;
@@ -5475,6 +5479,63 @@ main {
 }
 .line-list__item:not(:last-child) {
   margin-right: 20px;
+}
+.customer form .field:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  .customer form .field:not(:last-of-type) {
+    margin-bottom: 54px;
+  }
+}
+.customer form input {
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: #545454;
+  height: 56px !important;
+  border: none !important;
+  background-color: rgb(var(--color-base-background-1));
+  padding: 20px 24px 15px;
+}
+.customer form input:focus, .customer form input.visited {
+  box-shadow: none !important;
+}
+.customer form input:focus + label, .customer form input.visited + label {
+  opacity: 0;
+}
+.customer form input::placeholder {
+  opacity: 0;
+}
+.customer form label {
+  font-size: 1.4rem !important;
+  font-weight: 300;
+  top: 20px !important;
+  transition: 0.3s !important;
+}
+.customer form button {
+  width: 100%;
+  height: 56px !important;
+}
+@media (max-width: 575.98px) {
+  .customer form button {
+    margin-top: 16px;
+  }
+}
+.customer.login button {
+  margin: 24px 0 32px;
+}
+@media (min-width: 768px) {
+  .customer.login button {
+    margin: 32px 0 40px;
+  }
+}
+.customer a {
+  color: rgb(var(--color-base-accent-1));
+  text-decoration: none;
+}
+.customer a:hover {
+  text-decoration: underline;
 }
 .header-wrapper {
   display: block;
@@ -10238,4 +10299,34 @@ main {
 }
 .brand-ambassador-form__description {
   padding-bottom: 56px;
+}
+.main-collection__heading {
+  margin-bottom: 52px;
+}
+@media (min-width: 768px) {
+  .main-collection__heading {
+    margin-bottom: 60px;
+  }
+}
+.main-collection__links {
+  margin-bottom: 10px;
+}
+.main-collection__links ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: wrap;
+}
+.main-collection__links ul li a {
+  display: block;
+  margin: 0 11px 20px;
+  text-decoration: none;
+  color: #C4C4C4;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+.main-collection__links ul li a.active-page, .main-collection__links ul li a:hover {
+  color: rgb(var(--color-base-outline-button-labels));
 }

@@ -183,6 +183,15 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "breadcrumbs": {
+        "type": "breadcrumbs",
+        "settings": {
+          "margin_top": 20,
+          "margin_bottom": 62,
+          "margin_top_mob": 20,
+          "margin_bottom_mob": 43
+        }
       }
     },
     "content_for_index": [
