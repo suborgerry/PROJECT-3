@@ -24,6 +24,17 @@
             background-color: $c-red-3;
         }
     }
+    &__cancel {
+        @extend .button__red;
+        color: $c-black;
+        border: solid 1px $c-black;
+        background-color: unset;
+        &:hover {
+            background-color: $c-black;
+            color: $c-white;
+            border: solid 1px $c-black;
+        }
+    }
     &__white {
         min-width: 184px;
         padding: 14px 12px;
@@ -59,4 +70,8 @@
     &:hover {
         @extend .c-red-1-bg, .c-white;
     };
+}
+.shopify-challenge__button {
+    @extend .button__red;
+    margin-top: 24px !important;
 }

@@ -1,17 +1,20 @@
-.customer {
+.customer,
+.contact {
     form {
         .field:not(:last-of-type) {
             margin-bottom: 40px;
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(lg) {
                 margin-bottom: 54px;
             }
         }
         input {
+            height: 56px !important;
+        }
+        input, textarea {
             width: 100%;
             font-size: 1.6rem;
             font-weight: 300;
             color: #545454;
-            height: 56px !important;
             border: none !important;
             background-color: $c-white;
             padding: 20px 24px 15px;
@@ -35,20 +38,20 @@
         button {
             width: 100%;
             height: 56px !important;
-            @include media-breakpoint-down(xs) {
-                margin-top: 16px;
+            margin: 40px 0 47px;
+            @include media-breakpoint-up(lg) {
+                margin: 47px 0 55px;
+            }
+        }
+        .button__cancel {
+            width: 100%;
+            margin: 0 0 47px;
+            @include media-breakpoint-up(lg) {
+                margin: 0 0 55px;
             }
         }
     }
-    &.login {
-        button {
-            margin: 24px 0 32px;
-            @include media-breakpoint-up(md) {
-                margin: 32px 0 40px;
-            }
-        }
-    }
-    a {
+    a:not(.button__cancel) {
         color: $c-red-1;
         text-decoration: none;
         &:hover {

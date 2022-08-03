@@ -5302,7 +5302,7 @@ main {
 .c-grey-11-bg, .blog-categories__slider_buttons div:not(.swiper-button-disabled):hover {
   background-color: #F8F8F8;
 }
-.button__red {
+.button__red, .shopify-challenge__button, .button__cancel {
   padding: 15px 10px;
   display: flex !important;
   align-items: center;
@@ -5320,9 +5320,19 @@ main {
   border: solid 1px rgb(var(--color-base-accent-1));
   text-decoration: none;
 }
-.button__red:hover {
+.button__red:hover, .shopify-challenge__button:hover, .button__cancel:hover {
   border: solid 1px rgb(var(--color-base-accent-3));
   background-color: rgb(var(--color-base-accent-3));
+}
+.button__cancel {
+  color: rgb(var(--color-base-outline-button-labels));
+  border: solid 1px rgb(var(--color-base-outline-button-labels));
+  background-color: unset;
+}
+.button__cancel:hover {
+  background-color: rgb(var(--color-base-outline-button-labels));
+  color: rgb(var(--color-base-background-1));
+  border: solid 1px rgb(var(--color-base-outline-button-labels));
 }
 .button__white {
   min-width: 184px;
@@ -5349,6 +5359,9 @@ main {
 .btn-red-2 {
   transition: all 0.3s ease;
   border: 1px solid rgb(var(--color-base-accent-1));
+}
+.shopify-challenge__button {
+  margin-top: 24px !important;
 }
 .article-card {
   max-width: 31.6rem;
@@ -5480,61 +5493,87 @@ main {
 .line-list__item:not(:last-child) {
   margin-right: 20px;
 }
-.customer form .field:not(:last-of-type) {
+.customer form .field:not(:last-of-type),
+.contact form .field:not(:last-of-type) {
   margin-bottom: 40px;
 }
-@media (min-width: 768px) {
-  .customer form .field:not(:last-of-type) {
+@media (min-width: 992px) {
+  .customer form .field:not(:last-of-type),
+.contact form .field:not(:last-of-type) {
     margin-bottom: 54px;
   }
 }
-.customer form input {
+.customer form input,
+.contact form input {
+  height: 56px !important;
+}
+.customer form input, .customer form textarea,
+.contact form input,
+.contact form textarea {
   width: 100%;
   font-size: 1.6rem;
   font-weight: 300;
   color: #545454;
-  height: 56px !important;
   border: none !important;
   background-color: rgb(var(--color-base-background-1));
   padding: 20px 24px 15px;
 }
-.customer form input:focus, .customer form input.visited {
+.customer form input:focus, .customer form input.visited, .customer form textarea:focus, .customer form textarea.visited,
+.contact form input:focus,
+.contact form input.visited,
+.contact form textarea:focus,
+.contact form textarea.visited {
   box-shadow: none !important;
 }
-.customer form input:focus + label, .customer form input.visited + label {
+.customer form input:focus + label, .customer form input.visited + label, .customer form textarea:focus + label, .customer form textarea.visited + label,
+.contact form input:focus + label,
+.contact form input.visited + label,
+.contact form textarea:focus + label,
+.contact form textarea.visited + label {
   opacity: 0;
 }
-.customer form input::placeholder {
+.customer form input::placeholder, .customer form textarea::placeholder,
+.contact form input::placeholder,
+.contact form textarea::placeholder {
   opacity: 0;
 }
-.customer form label {
+.customer form label,
+.contact form label {
   font-size: 1.4rem !important;
   font-weight: 300;
   top: 20px !important;
   transition: 0.3s !important;
 }
-.customer form button {
+.customer form button,
+.contact form button {
   width: 100%;
   height: 56px !important;
+  margin: 40px 0 47px;
 }
-@media (max-width: 575.98px) {
-  .customer form button {
-    margin-top: 16px;
+@media (min-width: 992px) {
+  .customer form button,
+.contact form button {
+    margin: 47px 0 55px;
   }
 }
-.customer.login button {
-  margin: 24px 0 32px;
+.customer form .button__cancel,
+.contact form .button__cancel {
+  width: 100%;
+  margin: 0 0 47px;
 }
-@media (min-width: 768px) {
-  .customer.login button {
-    margin: 32px 0 40px;
+@media (min-width: 992px) {
+  .customer form .button__cancel,
+.contact form .button__cancel {
+    margin: 0 0 55px;
   }
 }
-.customer a {
+.customer a:not(.button__cancel),
+.contact a:not(.button__cancel) {
   color: rgb(var(--color-base-accent-1));
   text-decoration: none;
 }
-.customer a:hover {
+.customer a:not(.button__cancel):hover,
+.contact a:not(.button__cancel):hover {
   text-decoration: underline;
 }
 .header-wrapper {
@@ -7351,6 +7390,12 @@ main {
 }
 .cta-banner__main .description {
   line-height: 30px;
+  font-weight: 400;
+}
+@media (min-width: 768px) {
+  .cta-banner__main .description {
+    font-weight: 500;
+  }
 }
 .cta-banner__main .button {
   font-size: 1.4rem;
@@ -10262,6 +10307,7 @@ main {
   }
 }
 .columns-with-links__item a {
+  font-weight: 500;
   display: block;
   text-decoration: unset;
   color: #949494;
@@ -10285,12 +10331,22 @@ main {
     width: 1340px;
   }
 }
+.brand-ambassador-form__container .wholesale-form__container {
+  padding: 3.2rem 2rem 4.8rem;
+}
+@media (min-width: 992px) {
+  .brand-ambassador-form__container .wholesale-form__container {
+    padding: 5.6rem 9.5rem 11rem;
+  }
+}
 .brand-ambassador-form__heading {
   padding-bottom: 47px;
 }
 @media (min-width: 768px) {
   .brand-ambassador-form__heading {
     margin-bottom: 40px;
+    font-size: 32px;
+    line-height: 42px;
   }
 }
 .brand-ambassador-form__heading strong {

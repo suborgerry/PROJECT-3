@@ -972,7 +972,7 @@ if (document.querySelector('.check-visited-input') != null) {
   const checkInputs = document.querySelectorAll('.check-visited-input');
     checkInputs.forEach((inp) => {
       inp.addEventListener('change', () => {
-        inp.classList.add('visited');
+        inp.value != '' ? inp.classList.add('visited') : inp.classList.remove('visited');
       });
   });
 }

@@ -1,11 +1,11 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
 
-{% section 'breadcrumbs' %}
+{%- section 'breadcrumbs' -%}
 
 <div class="customer login">
-  <h3 class="text-32px c-grey-1" id="recover" tabindex="-1">
-    {{ 'customer.recover_password.title' | t }}
-  </h3>
+  <h1 class="text-32px c-grey-1" id="recover" tabindex="-1">
+    {{ 'customer.recover_password.title' | t | remove: ' your' }}
+  </h1>
   <div>
     <p>
       {{ 'customer.recover_password.subtext' | t }}
@@ -13,8 +13,10 @@
 
     {%- form 'recover_customer_password' -%}
       {% assign recover_success = form.posted_successfully? %}
+      <h4 class="text-left text-18px-all font-axiforma-semibold">{{ 'customer.login_page.email' | t | prepend: 'Your ' | upcase }}</h4>
       <div class="field">
         <input type="email"
+          class="field__input check-visited-input"
           value=""
           name="email"
           id="RecoverEmail"
@@ -44,13 +46,13 @@
         </small>
       {%- endif -%}
 
-      <button>
+      <button class="button__red">
         {{ 'customer.login_page.submit' | t }}
       </button>
 
-      <a href="#login">
-        {{ 'customer.login_page.cancel' | t }}
-      </a>
+      <a class="button__cancel" href="#login">{{ 'customer.login_page.cancel' | t | upcase }}</a>
+
+      <span class="d-inline-flex">Don’t remember your Email?<a class="ml-2" href="/pages/contact">{{ ' Contact Us' }}</a></span>
     {%- endform -%}
   </div>
 
@@ -107,6 +109,7 @@
         <h4 class="text-left text-18px-all font-axiforma-semibold">{{ 'customer.login_page.password' | t | prepend: 'Your ' | upcase }}</h4>
         <div class="field">          
           <input
+            class="field__input check-visited-input"
             type="password"
             value=""
             name="customer[password]"
@@ -129,9 +132,10 @@
 
       <button class="button__red">{{ 'Login' | upcase }}</button>
 
-      <a href="{{ routes.account_register_url }}">
-        {{ 'customer.login_page.create_account' | t }}
-      </a>
+      {%- comment -%}
+      {{ 'customer.login_page.create_account' | t }}
+      {%- endcomment -%}
+      <span class="d-inline-flex">Don’t have an account?<a class="ml-2" href="{{ routes.account_register_url }}">{{ ' Register' }}</a></span>
       
     {%- endform -%}
   </div>

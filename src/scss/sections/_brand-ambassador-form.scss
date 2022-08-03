@@ -3,11 +3,19 @@
         @include media-breakpoint-up(xxl) {
             width: 1340px;
         }
+        .wholesale-form__container {
+            padding: 3.2rem 2rem 4.8rem;
+            @include media-breakpoint-up(lg) {
+                padding: 5.6rem 9.5rem 11rem;
+            }
+        }
     }
     &__heading {
         padding-bottom: 47px;
         @include media-breakpoint-up(md) {
             margin-bottom: 40px;
+            font-size: 32px;
+            line-height: 42px;
         }
         strong {
             font-family: 'Long Shot';
