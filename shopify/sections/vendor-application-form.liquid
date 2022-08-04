@@ -4,27 +4,46 @@
     margin-bottom: {{ section.settings.margin_bottom_mob }}px;
   }
 
+  .wholesale-form__btn.{{ section.id }} {
+    margin-top: {{ section.settings.button_margin_top_mob }}px !important;
+    margin-bottom: {{ section.settings.button_margin_bottom_mob }}px !important;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-margin {
       margin-top: {{ section.settings.margin_top }}px;
       margin-bottom: {{ section.settings.margin_bottom }}px;
     }
+
+    .wholesale-form__btn.{{ section.id }} {
+      margin-top: {{ section.settings.button_margin_top }}px !important;
+      margin-bottom: {{ section.settings.button_margin_bottom }}px !important;
+    }
   }
+
 {%- endstyle -%}
 
 <div class="wholesale-form__container gradient c-grey-10-bg section-{{ section.id }}-margin">
   <p class="wholesale-form__heading">Contact Information</p>
   {%- form 'contact', id: 'WholesaleForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
-    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column">
       <label class="wholesale-form__label">BUSINESS NAME</label>
       <input class="wholesale-form__field lg" type="text" id="ContactForm-bussines-name" placeholder="Name" name="contact[bussines-name]">
+    </div>
+    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+      <label class="wholesale-form__label">NAME OF REPRESENTATIVE</label>
+      <div class="d-flex sm-flex-column justify-content-center">
+        <input class="wholesale-form__field prefix" type="text" id="ContactForm-bussines-name" placeholder="Prefix" name="contact[represantive-prefix]">
+        <input class="wholesale-form__field first-name" type="text" id="ContactForm-bussines-name" placeholder="First Name" name="contact[represantive-first-name]">
+        <input class="wholesale-form__field last-name" type="text" id="ContactForm-bussines-name" placeholder="Last Name" name="contact[represantive-last-name]">      
+      </div>
     </div>
     <div class="wholesale-form__fields d-flex flex-column mt-wtr">
       <label class="wholesale-form__label">ADDRESS</label>
       <input class="wholesale-form__field lg" type="text" id="ContactForm-address-1" placeholder="Street Address Line 1" name="contact[address-1]">
       <input class="wholesale-form__field lg" type="text" id="ContactForm-address-2" placeholder="Street Address Line 2" name="contact[address-2]">
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">CITY</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
@@ -34,7 +53,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-state" name="contact[state]">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">POSTAL / ZIP CODE</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
@@ -61,7 +80,7 @@
         </div>
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">CONTACT EMAIL</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-email" name="contact[email]">
@@ -78,7 +97,7 @@
       </div>
     </div>
     <p class="wholesale-form__heading mt-64">Business Information</p>
-    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column">
       <label class="wholesale-form__label">How long in Business?</label>
       <input class="wholesale-form__field lg" type="text" id="ContactForm-how-long" name="contact[how-long]">
     </div>
@@ -192,7 +211,7 @@
       <label class="wholesale-form__label">Additional Comments</label>
       <textarea class="wholesale-form__field lg" name="contact[additional-comments]" id="ContactForm-additional-comments"></textarea>
     </div>
-    <button type="submit" class="btn-red-1 wholesale-form__btn" id="submit_wholesale">SUBMIT</button>
+    <button type="submit" class="btn-red-1 wholesale-form__btn {{ section.id }}" id="submit_wholesale">SUBMIT</button>
   {%- endform -%}
 </div>
 
@@ -219,7 +238,7 @@
       "type": "range",
       "id": "margin_bottom",
       "min": 0,
-      "max": 120,
+      "max": 160,
       "step": 2,
       "unit": "px",
       "label": "Margin bottom",
@@ -244,6 +263,50 @@
       "unit": "px",
       "label": "Margin bottom mobile",
       "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Button submit margins"
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom mobile",
+      "default": 56
     }
   ],
   "presets": [

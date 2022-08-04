@@ -15,7 +15,7 @@
 <div class="wholesale-form__container gradient c-grey-10-bg section-{{ section.id }}-margin">
   <p class="wholesale-form__heading">Company Information</p>
   {%- form 'contact', id: 'WholesaleForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">COMPANY NAME</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-name" name="contact[name]" placeholder="Name">
@@ -25,7 +25,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-phone" name="contact[phone]" placeholder="Your phone">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">SALES TAX ID</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-sales" name="contact[sales]">
@@ -43,7 +43,12 @@
       <label class="wholesale-form__label">FACEBOOK PAGE</label>
       <input class="wholesale-form__field lg" type="text" id="ContactForm-facebook" name="contact[facebook]">
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+      <label class="wholesale-form__label">SHIPPING ADDRESS</label>
+      <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[shipping-address-1]" placeholder="Street Address Line 1">
+      <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[shipping-address-2]" placeholder="Street Address Line 2">
+    </div>
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">CITY</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
@@ -53,7 +58,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-state" name="contact[state]">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">POSTAL / ZIP CODE</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
@@ -76,27 +81,27 @@
       <label class="wholesale-form__label">PREFERRED PAYMENT</label>
       <div class="wholesale-form__checkboxes d-flex flex-wrap justify-content-between">
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-PayPal" name="contact[payment]" value="PayPal">
+          <input type="radio" id="ContactForm-PayPal" name="contact[payment]" value="PayPal">
           <label for="ContactForm-PayPal"><span class="round"></span>PayPal</label>
         </div>
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-Money-Order" name="contact[payment]" value="Money Order">
+          <input type="radio" id="ContactForm-Money-Order" name="contact[payment]" value="Money Order">
           <label for="ContactForm-Money-Order"><span class="round"></span>Money Order</label>
         </div>
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-Check" name="contact[payment]" value="Check">
+          <input type="radio" id="ContactForm-Check" name="contact[payment]" value="Check">
           <label for="ContactForm-Check"><span class="round"></span>Check</label>
         </div>
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-Bank-Transfer" name="contact[payment]" value="Bank Transfer">
+          <input type="radio" id="ContactForm-Bank-Transfer" name="contact[payment]" value="Bank Transfer">
           <label for="ContactForm-Bank-Transfer"><span class="round"></span>Bank Transfer</label>
         </div>
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-Other" name="contact[payment]" value="Other">
+          <input type="radio" id="ContactForm-Other" name="contact[payment]" value="Other">
           <label for="ContactForm-Other"><span class="round"></span>Other</label>
         </div>
         <div class="wholesale-form__checkbox">
-          <input type="checkbox" id="ContactForm-VISA-Mastercard" name="contact[payment]" value="VISA / Mastercard">
+          <input type="radio" id="ContactForm-VISA-Mastercard" name="contact[payment]" value="VISA / Mastercard">
           <label for="ContactForm-VISA-Mastercard"><span class="round"></span>VISA / Mastercard</label>
         </div>
       </div>
@@ -106,7 +111,7 @@
       <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[hear-about]">
     </div>
     <p class="wholesale-form__heading mt-64">Personal Contact Information</p>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">FIRST NAME</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-first-name" name="contact[first-name]">
@@ -116,7 +121,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-last-name" name="contact[last-name]">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">RELATIONSHIP TO COMPANY</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-relation-company" name="contact[relation-company]">
@@ -131,7 +136,7 @@
       <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[address-1]" placeholder="Street Address Line 1">
       <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[address-2]" placeholder="Street Address Line 2">
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">CITY</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-personal-city" name="contact[personal-city]">
@@ -141,7 +146,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-personal-state" name="contact[personal-state]">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">POSTAL / ZIP CODE</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-personal-zip" name="contact[personal-zip]">
@@ -152,11 +157,11 @@
       </div>
     </div>
     <p class="wholesale-form__heading mt-64">Detailed Company Information</p>
-    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column">
       <label class="wholesale-form__label">Why do you want to do business with us?</label>
       <textarea class="wholesale-form__field lg" name="contact[wanted]" id="ContactForm-wanted"></textarea>
     </div>
-    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column">
       <label class="wholesale-form__label">What products are you interested in wholesaling?</label>
       <textarea class="wholesale-form__field lg" name="contact[what-products]" id="ContactForm-what-products"></textarea>
     </div>
@@ -168,7 +173,7 @@
       <label class="wholesale-form__label">Unique qualities about your company</label>
       <textarea class="wholesale-form__field lg" name="contact[qualities-company]" id="ContactForm-qualities-company"></textarea>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">Your Clientele description</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-Clientele-description" name="contact[clientele-description]">
@@ -191,11 +196,11 @@
       </div>
     </div>
     <p class="wholesale-form__heading mt-64 d-flex justify-content-between sm-flex-column">Business / Credit Reference<span class="additional-text">must have done business for 1+ years</span></p>
-    <div class="wholesale-form__fields d-flex flex-column mt-wtr">
+    <div class="wholesale-form__fields d-flex flex-column">
       <label class="wholesale-form__label">COMPANY NAME</label>
       <input class="wholesale-form__field lg" type="text" id="ContactForm-Company-Name" placeholder="Company Name" name="contact[company-name]">
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">FIRST NAME</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-cr-firstname" name="contact[cr-firstname]">
@@ -205,7 +210,7 @@
         <input class="wholesale-form__field md" type="text" id="ContactForm-cr-lastname" name="contact[cr-lastname]">
       </div>
     </div>
-    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+    <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr mw-750">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">Business relationship</label>
         <input class="wholesale-form__field md" type="text" id="ContactForm-cr-business" name="contact[cr-business]">

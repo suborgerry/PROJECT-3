@@ -15,27 +15,40 @@
   }
 
   {%- if section.settings.bg_color != 'transparent' -%}
+    section.work-to-roa {
+      padding-left: 0rem;
+      padding-right: 0rem;
+    }
+
     .work-to-roa__step {
       width: 94rem;
     }
 
-    .work-to-roa__form-container-title {
+    .work-to-roa__form-container-title-block {
       background: {{ section.settings.bg_color }};
-      padding-top: 5.6rem;
-      padding-left: 9.5rem;
-      padding-right: 9.5rem;
     }
 
-    .work-to-roa__form-container-title + div {
+    .work-to-roa__form-container-title {
+      max-width: 75rem;
+      margin: auto;
+      margin-top: 1.6rem;
+      padding-top: 2.4rem;
+    }
+
+    .work-to-roa__form-container-title-block + div {
       background: {{ section.settings.bg_color }};
     }
 
     .work-to-roa__form-btncontainer {
-      margin: 0;
+      margin: auto;
       padding-bottom: 5.6rem;
       padding-top: 6.2rem;
+      margin-left: 0;
+      margin-right: 0;
       height: auto;
       width: 100%;
+      padding-left: calc((100% - 75rem) / 2);
+      padding-right: calc((100% - 75rem) / 2);
       max-width: 100%;
       background: {{ section.settings.bg_color }};
     }
@@ -57,6 +70,7 @@
 
       .work-to-roa__form-btncontainer {
         margin-bottom: 4rem;
+        padding-top: 5.6rem;
       }
     }
 
@@ -64,23 +78,30 @@
       .work-to-roa__form-container form {
         max-width: 94rem;
       }
+
+      .work-to-roa__form-container-title {
+        padding-top: 5.6rem;
+      }
     }
 
     @media (min-width: 992px) {
-      .work-to-roa__form-container-title + div {
+      .work-to-roa__form-container-title-block + div {
         padding-left: 9.5rem;
         padding-right: 9.5rem;
-        padding-bottom: 5.6rem;
+        margin-top: 0;
+        {% comment %} padding-bottom: 5.6rem; {% endcomment %}
       }
     }
   {%- endif -%}
 {%- endstyle -%}
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <div class="work-to-roa__form-container m-auto">
   {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
     <div class="work-to-roa__step active" data-step="1" id="step_1">
       <div class="work-to-roa__info text-center">{{ ss.step_1 }}</div>
-      <p class="work-to-roa__form-container-title">Step 1. Personal Info</p>
+      <div class="work-to-roa__form-container-title-block">
+        <p class="work-to-roa__form-container-title">Step 1. Personal Info</p>
+      </div>
       <div>
         <p class="work-to-roa__form-heading">Date You Are Available For Employment</p>
         <div class="work-to-roa__form-fields date d-flex">
@@ -171,7 +192,9 @@
     </div>
     <div class="work-to-roa__step" data-step="2" id="step_2">
       <div class="work-to-roa__info text-center">{{ ss.step_2 }}</div>
-      <p class="work-to-roa__form-container-title">Step 2. Jobs Avialable</p>
+      <div class="work-to-roa__form-container-title-block">
+        <p class="work-to-roa__form-container-title">Step 2. Jobs Avialable</p>
+      </div>
       <div>
         <div class="work-to-roa__form-fields d-flex flex-column">
           <div class="work-to-roa__form-fields-checkboxes mt-0 d-flex flex-column">
@@ -267,7 +290,9 @@
     </div>
     <div class="work-to-roa__step" data-step="3" id="step_3">
       <div class="work-to-roa__info text-center">{{ ss.step_3 }}</div>
-      <p class="work-to-roa__form-container-title">Step 3. Social Involvement</p>
+      <div class="work-to-roa__form-container-title-block">
+        <p class="work-to-roa__form-container-title">Step 3. Social Involvement</p>
+      </div>
       <div>
         <div class="work-to-roa__form-fields-checkboxes d-flex flex-column">
           <label class="work-to-roa__form-heading mb-18">What Social Media Platforms do you have a Presence?</label>
@@ -337,7 +362,7 @@
             </div>
           </div>
         </div>
-        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column" style="margin-bottom:8px">
+        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
           <label for="ContactForm-important-data" class="work-to-roa__form-heading spacing-text-sm">How active can you be with Route One Apparel throughout the school year?</label>
           <textarea class="work-to-roa__form-textarea lg" id="ContactForm-important-data" name="contact[important-data]" placeholder="Provide important data."></textarea>
         </div>
@@ -345,9 +370,11 @@
     </div>
     <div class="work-to-roa__step" data-step="4" id="step_4">
       <div class="work-to-roa__info text-center">{{ ss.step_4 }}</div>
-      <p class="work-to-roa__form-container-title">Step 4. Work History / Experience</p>
+      <div class="work-to-roa__form-container-title-block">
+        <p class="work-to-roa__form-container-title">Step 4. Work History / Experience</p>
+      </div>
       <div>
-        <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
+        <div class="work-to-roa__form-fields d-flex flex-column">
           <label class="work-to-roa__form-heading">FIRST EMPLOYERS NAME</label>
           <input class="work-to-roa__form-input lg" type="text" id="ContactForm-employers-name" name="contact[employers-name]" placeholder="First employers name">
         </div>
@@ -414,7 +441,9 @@
           <label class="work-to-roa__form-heading">If «No» reason, why not?</label>
           <input class="work-to-roa__form-input lg" type="text" id="ContactForm-why-not" name="contact[why-not]">
         </div>
-        <p class="work-to-roa__form-container-title in-form">Brief Answer / Essay Questions</p>
+        <div class="work-to-roa__form-container-title-block">
+          <p class="work-to-roa__form-container-title in-form">Brief Answer / Essay Questions</p>
+        </div>
         <div class="work-to-roa__form-fields mt-wtr d-flex flex-column">
           <label for="ContactForm-qualified" class="work-to-roa__form-heading spacing-text-sm">Why are you applying to work for Route One Apparel?</label>
           <textarea class="work-to-roa__form-textarea lg" id="ContactForm-why-applying" name="contact[why-applying]"></textarea>
