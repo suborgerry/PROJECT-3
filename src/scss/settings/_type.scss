@@ -168,6 +168,14 @@ p {
   text-transform: none !important;
 }
 
+.mw-750 {
+  width: 100%;
+  margin: auto;
+  @include media-breakpoint-up(md) {
+    max-width: 75rem !important;
+  }
+}
+
 .mt-wtr {
   margin-top: 4rem;
 
