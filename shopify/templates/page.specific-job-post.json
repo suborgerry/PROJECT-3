@@ -6,7 +6,7 @@
         "margin_top": 20,
         "margin_bottom": 30,
         "margin_top_mob": 20,
-        "margin_bottom_mob": 43
+        "margin_bottom_mob": 77
       }
     },
     "main": {
@@ -27,7 +27,9 @@
         "name_text": "For Immediate Hire",
         "hours_text": "$11.10-$12\/ hour",
         "padding_top": 36,
-        "padding_bottom": 10
+        "padding_bottom": 10,
+        "padding_top_mob": 45,
+        "padding_bottom_mob": 39
       }
     },
     "16587041370aecdb22": {
@@ -45,7 +47,9 @@
           "type": "text",
           "settings": {
             "text": "<p>Route One Apparel is seeking a part- or full-time fulfillment and warehouse associate responsible for completing all customer orders efficiently and accurately according to online orders. Other responsibilities consist of inventory management, customer service and closing duties such as preparing the center for the next business day. On-the-job training is provided.<\/p>",
-            "text_center": false
+            "text_center": false,
+            "text_size": 14,
+            "text_size_mobile": 16
           }
         }
       },
@@ -54,8 +58,11 @@
         "1658704137689a8c41-1"
       ],
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 8
+        "full_width": true,
+        "padding_top": 44,
+        "padding_bottom": 0,
+        "padding_top_mob": 10,
+        "padding_bottom_mob": 8
       }
     },
     "165870450685b5ebf1": {
@@ -122,9 +129,11 @@
       ],
       "settings": {
         "heading": "Responsibilities and Duties",
-        "margin_heading_bottom": 0,
-        "margin_heading_bottom_mob": 0,
-        "text": ""
+        "text": "",
+        "items_range": 20,
+        "items_range_mob": 16,
+        "margin_heading_bottom": 28,
+        "margin_heading_bottom_mob": 23
       }
     },
     "1658704666ebe68c10": {
@@ -142,7 +151,9 @@
           "type": "text",
           "settings": {
             "text": "<p>High school diploma or equivalent or current high school student<\/p>",
-            "text_center": false
+            "text_center": false,
+            "text_size": 14,
+            "text_size_mobile": 16
           }
         }
       },
@@ -151,8 +162,11 @@
         "1658704666a86f0b1d-1"
       ],
       "settings": {
+        "full_width": true,
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 8
       }
     },
     "165870486219ffe53e": {
@@ -205,9 +219,11 @@
       ],
       "settings": {
         "heading": "Required Skills and Abilities",
+        "text": "",
+        "items_range": 20,
+        "items_range_mob": 14,
         "margin_heading_bottom": 28,
-        "margin_heading_bottom_mob": 23,
-        "text": ""
+        "margin_heading_bottom_mob": 23
       }
     },
     "165870327606d426d3": {
@@ -217,7 +233,10 @@
           "type": "heading",
           "settings": {
             "heading": "Route One Apparel Fulfillment Position",
-            "heading_size": "h2"
+            "heading_size": "h2",
+            "heading_posotion": "center",
+            "heading_color": "#414240",
+            "font_size": 32
           }
         }
       },
@@ -227,6 +246,7 @@
       "settings": {
         "color_scheme": "background-1",
         "full_width": false,
+        "max_width": 1340,
         "padding_top": 32,
         "padding_bottom": 48
       }
@@ -235,7 +255,7 @@
       "type": "work-to-roa",
       "settings": {
         "padding_top": 40,
-        "padding_bottom": 52,
+        "padding_bottom": 0,
         "bg_color": "#FCFCFC",
         "step_1": "<p>We are currently seeking highly motivated, outgoing, friendly and creative employees and\/or interns to join our successful team. All applications who pass the first round of selections will be sent an email with more detailed information about the position. The email will be sent out within 1-2 weeks. Due to a high volume of submissions we may not be able to email those of you who were not chosen. If you are interested, please fill out the information below.<\/p>",
         "step_2": "<p>The current open positions with Route One Apparel are below. Please select only the positions you are most interested in. You can select more than one option below, as long as you qualify.<\/p>",

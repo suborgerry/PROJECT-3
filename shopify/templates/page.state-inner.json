@@ -27,9 +27,9 @@
     "16590074631c451ae5": {
       "type": "subscribe",
       "settings": {
+        "bg_color": "#efefef",
         "heading": "THE OFFICIAL BRAND OF STATENAME",
         "small_heading": "JOIN OUR COMMUNITY TO GET EXCLUSIVE DISOUNTS!",
-        "bg_color": "#efefef",
         "padding_section": "52px 0 66px",
         "padding_section_sm": "48px 0 40px"
       }
