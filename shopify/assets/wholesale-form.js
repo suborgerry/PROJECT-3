@@ -1,4 +1,5 @@
 const formMain = document.querySelector('#WholesaleForm');
+let files = [];
 
 formMain.addEventListener('input', evt => {
   const element = evt.target;
@@ -67,32 +68,36 @@ function unhighlight(element) {
   element.classList.remove('highlight')
 };
 
-function hanfleFiles(files, element) {
+function handleFiles(data, evtElement) {
   const list = new DataTransfer();
-  const filesInput = element.querySelector('.wholesale-form-dropzone-input');
-
-  files.forEach(element => {
-    let file = new File([""], element.name, element);
-    list.items.add(file);
+  const filesInput = evtElement.querySelector('.wholesale-form-dropzone-input');
+  
+  Array.from(data).forEach(element => {
+    list.items.add(element);
   });
-
+  
   filesInput.files = list.files;
 }
 
 function handleDrop(evt) {
   let dt = evt.dataTransfer;
+  Array.from(dt.files).forEach(file => {
+    listFiles(file.name, evt);
+  });
   
-  listFiles(dt.files[0].name, evt);
-  files.push(...dt.files);
-  hanfleFiles(files, evt.target);
+  files = [...files, ...dt.files];
+  handleFiles(files, evt.target);
 }
 
 function handleChange(evt) {
   let dt = evt.target;
-  
-  listFiles(dt.files[0].name, evt);
-  files.push(...dt.files);
-  hanfleFiles(files, evt.target.parentElement);
+
+  Array.from(dt.files).forEach(file => {
+    listFiles(file.name, evt);
+  });
+
+  // files = [...files, ...dt.files];
+  handleFiles(dt.files, evt.target.parentElement);
 }
 
 function listFiles(fileName, evt) {
@@ -107,6 +112,7 @@ function listFiles(fileName, evt) {
   </span>`;
   listFilesPreviev.append(p);
 }
+
 
 function removeFile(e) {
   const element = e.target;
@@ -136,9 +142,9 @@ const clickFiles = (evt) => {
   }
   // files imitation click event
   zone && (() => {
-    const files = zone.querySelector('.wholesale-form-dropzone-input');
-    files.click();
-    files.addEventListener('change', handleChange);
+    const filesInput = zone.querySelector('.wholesale-form-dropzone-input');
+    filesInput.click();
+    filesInput.addEventListener('change', handleChange);
   })();
 }
 

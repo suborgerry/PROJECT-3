@@ -3,7 +3,7 @@ const steps = formMain.querySelectorAll('.work-to-roa__step');
 const date = new Date();
 
 // Drag n drop variables
-const files = [];
+let files = [];
 
 // Step variables
 const nextStepBtn = document.querySelector('#next_step'); 
@@ -76,32 +76,37 @@ function unhighlight(element) {
   element.classList.remove('highlight')
 };
 
-function hanfleFiles(files, element) {
+function handleFiles(data, evtElement) {
   const list = new DataTransfer();
-  const filesInput = element.querySelector('.work-to-roa__form-dropzone-input');
-
-  files.forEach(element => {
-    let file = new File([""], element.name, element);
-    list.items.add(file);
+  const filesInput = evtElement.querySelector('.work-to-roa__form-dropzone-input');
+  
+  Array.from(data).forEach(element => {
+    list.items.add(element);
   });
-
+  
   filesInput.files = list.files;
 }
 
 function handleDrop(evt) {
   let dt = evt.dataTransfer;
   
-  listFiles(dt.files[0].name, evt);
+  Array.from(dt.files).forEach(file => {
+    listFiles(file.name, evt);
+  });
+  
   files.push(...dt.files);
-  hanfleFiles(files, evt.target);
+  handleFiles(files, evt.target);
 }
 
 function handleChange(evt) {
   let dt = evt.target;
-  
-  listFiles(dt.files[0].name, evt);
-  files.push(...dt.files);
-  hanfleFiles(files, evt.target.parentElement);
+
+  Array.from(dt.files).forEach(file => {
+    listFiles(file.name, evt);
+  });
+
+  // files = [...files, ...dt.files];
+  handleFiles(dt.files, evt.target.parentElement);
 }
 
 function listFiles(fileName, evt) {
@@ -145,9 +150,9 @@ const clickFiles = (evt) => {
   }
   // files imitation click event
   zone && (() => {
-    const files = zone.querySelector('.work-to-roa__form-dropzone-input');
-    files.click();
-    files.addEventListener('change', handleChange);
+    const filesInput = zone.querySelector('.work-to-roa__form-dropzone-input');
+    filesInput.click();
+    filesInput.addEventListener('change', handleChange);
   })();
 }
 
