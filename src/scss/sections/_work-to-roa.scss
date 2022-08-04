@@ -3,7 +3,7 @@
     padding-right: 0;
     &__info {
         margin: auto;
-        margin-bottom: 4.8rem;
+        margin-bottom: 6.4rem;
 
         @include media-breakpoint-up(sm) {
             margin-bottom: 6.7rem;
@@ -17,8 +17,13 @@
         }
 
         @include media-breakpoint-down(sm) {
-            width: 33.5rem;
             margin: auto;
+        }
+
+        & > * {
+            @include media-breakpoint-down(md) {
+                padding: 0 2rem;
+            }
         }
     }
 
@@ -66,7 +71,8 @@
                     border: 1px solid #F3F3F3;
                     padding: 2.2rem 2.4rem 0.9rem 2.4rem;
                     position: relative;
-                    
+                    background: white;
+
                     input {
                         border: none;
                         padding: 0;
@@ -111,7 +117,9 @@
             }
 
             &-checkboxes {
-                margin-top: 1.6rem;
+                &:not(&:first-of-type) {
+                    margin-top: 1.6rem;
+                }
 
                 @include media-breakpoint-down(xs) {
                     justify-content: space-between;
@@ -193,6 +201,12 @@
                     display: inline-block;
                     margin-right: 1.6rem;
 
+                    &:after {
+                        content: "";
+                        display: block;
+                        margin-right: 23px;
+                    }
+
                     &:hover {
                         cursor: pointer;
                     }
@@ -225,9 +239,9 @@
         &-container {
             form {
                 max-width: 100%;
-                padding: 0 2rem;
-            
+
                 @include media-breakpoint-up(sm) {
+                    padding: 0 2rem;
                     margin: auto;
                     // max-width: 33.5rem;
                 }
@@ -252,7 +266,7 @@
                     }
                 }
 
-                & + div {
+                &-block + div {
                     padding-top: 3.2rem;
                 }
             }
@@ -261,13 +275,17 @@
         &-input {
             padding: 2.2rem 2.4rem 0.9rem 2.4rem;
             border: 1px solid $c-grey-9;
+            background-color: white;
 
             &.sm {
                 width: 19.1rem;
             }
 
             &.md {
-                width: 33.5rem;
+                width: 100%;
+                @include media-breakpoint-up(sm) {
+                    width: 33.5rem;
+                }
             }
 
             &.lg {
@@ -286,8 +304,11 @@
         }
 
         &-dragndrop {
-            margin-top: 5.4rem;
+            margin-top: 4rem;
 
+            @include media-breakpoint-up(sm) {
+                margin-top: 5.4rem;
+            }
             &-container {
                 justify-content: space-between;
                 
@@ -498,16 +519,22 @@
         &-btncontainer {
             margin: auto;
             width: 100%;
-            height: 5.6rem;
             margin-top: 6.2rem;
-            margin-bottom: 11.6rem;
-            max-width: 100%;
+            margin-bottom: 6.4rem;
+            max-width: 75rem;
             flex-direction: column;
             align-items: center;
+            @include media-breakpoint-down(md) {
+                padding: 0 2rem;
+            }
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 11.6rem;
+            }
             @include media-breakpoint-up(md) {
                 max-width: 75rem;
             }
             @include media-breakpoint-up(lg) {
+                height: 5.6rem;
                 flex-direction: row;
             }
 
@@ -521,8 +548,8 @@
         &-btn {
             font-weight: 700;
             letter-spacing: 0.821739px;
-            padding: 2.1rem 12.7rem 1.2rem 12.7rem;
-            width: 40rem;
+            width: 33.5rem;
+            height: 5.6rem;
 
             @include media-breakpoint-down(xs) {
                 padding: 2.1rem 0rem 1.2rem 0rem;

@@ -9,7 +9,9 @@
 
     &-item {
         & + & {
-            margin-top: 2.4rem;
+            @include media-breakpoint-down(sm) {
+                margin-top: 2.4rem;
+            }
         }
         span {
             font-weight: 500;

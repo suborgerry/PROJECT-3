@@ -2,7 +2,7 @@
     &__container {
         width: 100%;
         margin: auto;
-        padding: 3.2rem 2rem 12.8rem 2rem;
+        padding: 0rem 2rem 5.8rem 2rem;
 
         @include media-breakpoint-up(lg) {
             padding: 5.6rem 9.5rem 7.2rem 9.5rem;
@@ -29,6 +29,12 @@
             font-weight: 300;
             @extend .c-grey-4;
         }
+
+        & + .wholesale-form-dragndrop {
+            @include media-breakpoint-down(md) {
+                margin-top: 0;
+            }
+        }
     }
 
     &__fields {
@@ -40,7 +46,8 @@
                 border: 1px solid #F3F3F3;
                 padding: 2.2rem 2.4rem 0.9rem 2.4rem;
                 position: relative;
-                
+                background: white;
+
                 input {
                     border: none;
                     padding: 0;
@@ -132,7 +139,7 @@
 
         .round {
             border: 1px solid #F3F3F3;
-            width: 3rem;
+            width: 2rem;
             height: 2rem;
             display: inline-block;
             margin-right: 1.6rem;
@@ -168,30 +175,73 @@
         line-height: 2.5rem;
         letter-spacing: 0.547826px;
         color: #949494;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            &.prefix {
+                width: 12.3rem;
+            }
+
+            &.first-name {
+                width: 27.3rem;
+                margin-left: 4rem;
+            }
+
+            &.last-name {
+                width: 27.4rem;
+                margin-left: 4rem;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            &.first-name {
+                margin-top: 3.2rem;
+            }
+
+            &.last-name {
+                margin-top: 3.2rem;
+            }
+        }
 
         &.sm {
             width: 19.1rem;
         }
 
         &.md {
-            width: 100%;
-
             @include media-breakpoint-up(sm) {
-                width: 35rem;
+                width: 33.5rem;
             }
         }
 
         &.lg {
-            width: 100%;
             & + & {
                 margin-top: 3.2rem;
+            }
+        }
+
+        &-container {
+            & + & {
+                @include media-breakpoint-down(sm) {
+                    margin-top: 4rem;
+                }
             }
         }
     }
 
     &-dragndrop {
-        margin-top: 5.4rem;
+        margin-top: 4rem;
 
+        @include media-breakpoint-up(sm) {
+            margin-top: 5.4rem;
+        }
+
+        .wholesale-form__label {
+            @include media-breakpoint-down(md) {
+                margin-bottom: 2.4rem;
+                display: block;
+            }
+        }
+        
         &-container {
             justify-content: space-between;
             
@@ -212,12 +262,6 @@
         height: 19.2rem;
         transition: all 0.3s ease;
         position: relative;
-
-        &-list {
-            @include media-breakpoint-down(xs) {
-                margin-top: 2.4rem;
-            }
-        }
 
         svg {
             position: relative;
@@ -259,7 +303,16 @@
             display: none;
         }
 
+
         &-list {
+            &:empty {
+                display: none !important;
+            }
+            
+            @include media-breakpoint-down(xs) {
+                margin-top: 2.4rem;
+            }
+
             &-item {
                 width: 33.5rem;
                 height: 5.6rem;
@@ -307,21 +360,28 @@
         line-height: 2.8rem;
         letter-spacing: 0.547826px;
         text-align: center;
-        font-size: 1.6rem;
         border-top: 1px solid #EAEAEA;
         @extend .c-black;
-        margin-top: 3.2rem;
-        padding: 4.8rem 1.5rem 0 1.5rem;
+        margin-top: 4rem;
+        padding: 4rem 1.5rem 0 1.5rem;
+        font-size: 1.4rem;
+        @include media-breakpoint-up(sm) {
+            margin-top: 3.2rem;
+            font-size: 1.6rem;
+        }
     }
 
     &__btn {
         width: 33.5rem;
         height: 5.6rem;
         margin: auto;
+        margin-top: 4rem;
         font-weight: 700;
         font-size: 1.4rem;
         line-height: 2.3rem;
         letter-spacing: 0.821739px;
-        margin-top: 6.4rem;
+        @include media-breakpoint-up(sm) {
+            margin-top: 6.4rem;
+        }
     }
 }
