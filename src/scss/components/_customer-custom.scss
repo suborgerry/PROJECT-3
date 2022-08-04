@@ -1,0 +1,61 @@
+.customer,
+.contact {
+    form {
+        .field:not(:last-of-type) {
+            margin-bottom: 40px;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 54px;
+            }
+        }
+        input {
+            height: 56px !important;
+        }
+        input, textarea {
+            width: 100%;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #545454;
+            border: none !important;
+            background-color: $c-white;
+            padding: 20px 24px 15px;
+            &:focus,
+            &.visited {
+                box-shadow: none !important;
+                & + label {
+                    opacity: 0;
+                }
+            }
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+        label {
+            font-size: 1.4rem !important;
+            font-weight: 300;
+            top: 20px !important;
+            transition: 0.3s !important;
+        }
+        button {
+            width: 100%;
+            height: 56px !important;
+            margin: 40px 0 47px;
+            @include media-breakpoint-up(lg) {
+                margin: 47px 0 55px;
+            }
+        }
+        .button__cancel {
+            width: 100%;
+            margin: 0 0 47px;
+            @include media-breakpoint-up(lg) {
+                margin: 0 0 55px;
+            }
+        }
+    }
+    a:not(.button__cancel) {
+        color: $c-red-1;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="main-collection positioning--{{ s.id }}">
+    <div class="page-width">
+        <nav class="main-collection__links d-none d-md-block">
+            <ul class="list-unstyled">
+                {%- for b in s.blocks -%}
+                <li>
+                    <a href="{{ b.settings.link }}"
+                    class="-item{% if b.settings.link == collection.url %} active-page{% endif %}"
+                    {% if link.current %}aria-current="page"{% endif %}>{{ b.settings.link_name | escape }}</a>
+                </li>
+                {%- endfor -%}
+            </ul>
+        </nav>
+        <h3 class="main-collection__heading text-center text-32px c-grey-1">{{ collection.title | upcase }}</h3>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Main collection",
+    "settings": [                      
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "link",
+            "name": "Link",
+            "settings": [
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Link"
+                },
+                {
+                    "type": "text",
+                    "id": "link_name",
+                    "label": "Link name"
+                }    
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Main collection",
+            "category": "collection"
+        }
+    ]
+}
+{% endschema %}

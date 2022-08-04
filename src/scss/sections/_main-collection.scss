@@ -1,0 +1,33 @@
+.main-collection {
+    &__heading {
+        margin-bottom: 52px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 60px;
+        }
+    }
+    &__links {
+        margin-bottom: 10px;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: wrap;
+            li {
+                a {
+                    display: block;
+                    margin: 0 11px 20px;
+                    text-decoration: none;
+                    color: $c-grey-6;
+                    font-size: 12px;
+                    line-height: 20px;
+                    font-weight: 400;
+                    transition: 0.3s;
+                    &.active-page,
+                    &:hover {
+                        color: $c-black;
+                    }
+                }
+            }
+        }
+    }
+}

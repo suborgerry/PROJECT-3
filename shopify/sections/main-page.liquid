@@ -25,7 +25,7 @@
     </h2>
   {%- endif -%}
   {%- if section.settings.show_content -%}
-    <div class="rte">
+    <div class="rte{% if page.handle == 'contact' %} pb-0{% endif %}">
       {{ page.content }}
     </div>
   {%- endif -%}

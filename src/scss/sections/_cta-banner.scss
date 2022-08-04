@@ -33,6 +33,10 @@
         }
         .description {
             line-height: 30px;
+            font-weight: 400;
+            @include media-breakpoint-up(md) {
+                font-weight: 500;
+            }
         }
         .button {
             font-size: 1.4rem;

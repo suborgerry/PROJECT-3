@@ -1,32 +1,52 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "breadcrumbs": {
+      "type": "breadcrumbs",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "margin_top": 20,
+        "margin_bottom": 30,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
       }
     },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "4a4c345f-ee9a-4a42-bd37-a61517f06eb8": {
+          "type": "link",
+          "settings": {
+            "link": "\/",
+            "link_name": "Homepage"
+          }
+        },
+        "7e00245b-9adf-4293-a312-65a1b033023b": {
+          "type": "link",
+          "settings": {
+            "link": "shopify:\/\/collections\/all",
+            "link_name": "Categories"
+          }
+        },
+        "7be1b1a9-f035-437f-9726-5c6c1be5eb50": {
+          "type": "link",
+          "settings": {
+            "link": "shopify:\/\/collections\/face-masks",
+            "link_name": "Face Mask"
+          }
+        }
+      },
+      "block_order": [
+        "4a4c345f-ee9a-4a42-bd37-a61517f06eb8",
+        "7e00245b-9adf-4293-a312-65a1b033023b",
+        "7be1b1a9-f035-437f-9726-5c6c1be5eb50"
+      ],
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_section": "",
+        "padding_section_sm": ""
       }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "breadcrumbs",
+    "main-collection"
   ]
 }

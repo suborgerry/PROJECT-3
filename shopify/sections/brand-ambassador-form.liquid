@@ -10,72 +10,67 @@
       margin-bottom: {{ section.settings.margin_bottom }}px;
     }
   }
-  @media screen and (min-width: 1440px) {
-    .brand-ambassador-form__container {
-      width: 1340px;
-    }
-  }
 {%- endstyle -%}
 
-<div class="brand-ambassador-form__container mx-auto c-grey-10-bg">
-  <div class="wholesale-form__container  gradient c-grey-10-bg section-{{ section.id }}-margin">
+<div class="brand-ambassador-form__container mx-auto c-grey-10-bg section-{{ section.id }}-margin">
+  <div class="page-width w-100 c-white-bg">
+    {%- if section.settings.heading != blank -%}
+      <h3 class="brand-ambassador-form__heading my-0 text-center c-grey-1">{{ section.settings.heading | remove: '<p>' | remove: '</p>' | upcase }}</h3>
+    {%- endif -%}
+    {%- if section.settings.description != blank -%}
+      <p class="brand-ambassador-form__description my-0 text-18px font-weight-regular text-center d-none d-md-block">{{ section.settings.description }}</p>
+    {%- endif -%}
+  </div>
+  <div class="wholesale-form__container gradient c-grey-10-bg">
     {%- form 'contact', id: 'BrandAmbassadorForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
       <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
         <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">COMPANY NAME</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-name" name="contact[name]" placeholder="Name">
+          <label class="wholesale-form__label">YOUR FIRST NAME</label>
+          <input class="wholesale-form__field md" type="text" id="ContactForm-first-name" name="contact[first-name]" placeholder="First name">
         </div>
         <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">PHONE NUMBER</label>
+          <label class="wholesale-form__label">YOUR LAST NAME</label>
+          <input class="wholesale-form__field md" type="text" id="ContactForm-last-name" name="contact[last-name]" placeholder="Last name">
+        </div>
+      </div>
+      <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+        <div class="wholesale-form__field-container d-flex flex-column">
+          <label class="wholesale-form__label">YOUR EMAIL</label>
+          <input class="wholesale-form__field md" type="text" id="ContactForm-email" name="contact[email]" placeholder="Your email">
+        </div>
+        <div class="wholesale-form__field-container d-flex flex-column">
+          <label class="wholesale-form__label">YOUR PHONE NUMBER</label>
           <input class="wholesale-form__field md" type="text" id="ContactForm-phone" name="contact[phone]" placeholder="Your phone">
         </div>
       </div>
       <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
         <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">SALES TAX ID</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-sales" name="contact[sales]">
-        </div>
-        <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">EMAIL</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-email" name="contact[email]">
-        </div>
-      </div>
-      <div class="wholesale-form__fields d-flex flex-column mt-wtr">
-          <label class="wholesale-form__label">WEBSITE URL</label>
-          <input class="wholesale-form__field lg" type="text" id="ContactForm-web-url" name="contact[web-url]">
-      </div>
-      <div class="wholesale-form__fields d-flex flex-column mt-wtr">
-        <label class="wholesale-form__label">FACEBOOK PAGE</label>
-        <input class="wholesale-form__field lg" type="text" id="ContactForm-facebook" name="contact[facebook]">
-      </div>
-      <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
-        <div class="wholesale-form__field-container d-flex flex-column">
           <label class="wholesale-form__label">CITY</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
+          <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]" placeholder="City">
         </div>
         <div class="wholesale-form__field-container d-flex flex-column">
           <label class="wholesale-form__label">STATE/PROVINCE</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-state" name="contact[state]">
-        </div>
-      </div>
-      <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
-        <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">POSTAL / ZIP CODE</label>
-          <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
-        </div>
-        <div class="wholesale-form__field-container d-flex flex-column">
-          <label class="wholesale-form__label">COUNTRY</label>
-          <input class="wholesale-form__field md" type="disable" value="United States of America" id="ContactForm-state" name="contact[state]">
+          <input class="wholesale-form__field md" type="text" id="ContactForm-state" name="contact[state]" placeholder="State/Province">
         </div>
       </div>
       <div class="wholesale-form__fields d-flex flex-column mt-wtr">
-        <label class="wholesale-form__label">HOW DID YOU HEAR ABOUT US?</label>
-        <input class="wholesale-form__field lg" type="text" id="ContactForm-hear-about" name="contact[hear-about]">
+        <label class="wholesale-form__label">Tell us about yourself and why you should be selected</label>
+        <textarea class="wholesale-form__field lg" name="contact[what-products]" id="ContactForm-tell-about-yourself" placeholder="Tell about yourself"></textarea>
+      </div>
+      <div class="wholesale-form__fields d-flex justify-content-between sm-flex-column flex-wrap mt-wtr">
+        <div class="wholesale-form__field-container d-flex flex-column">
+          <label class="wholesale-form__label">FACEBOOK</label>
+          <input class="wholesale-form__field md" type="text" id="ContactForm-facebook" name="contact[facebook]" placeholder="Facebook">
+        </div>
+        <div class="wholesale-form__field-container d-flex flex-column">
+          <label class="wholesale-form__label">INSTAGRAM</label>
+          <input class="wholesale-form__field md" type="text" id="ContactForm-facebook" name="contact[instagram]" placeholder="Instagram">
+        </div>
       </div>
       {%- comment -%}
       <div class="wholesale-form__text">Thank you for your submission. We will contact you within 1-2 weeks with a response. For further contact, you can reach us at newbusiness@routeoneapparel.com.</div>
       {%- endcomment -%}
-      <button type="submit" class="btn-red-1 wholesale-form__btn" id="submit_wholesale">SUBMIT</button>
+      <button type="submit" class="btn-red-1 wholesale-form__btn" id="submit_brand_ambassador">SUBMIT</button>
     {%- endform -%}
   </div>
 </div>
@@ -86,6 +81,16 @@
   "tag": "section",
   "class": "section wholesale-form",
   "settings": [
+    {
+        "type": "richtext",
+        "id": "heading",
+        "label": "Heading"
+    },
+    {
+        "type": "text",
+        "id": "description",
+        "label": "Description"
+    },
     {
       "type": "range",
       "id": "margin_top",

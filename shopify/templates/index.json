@@ -12,6 +12,8 @@
             "text-right": false,
             "subtitle": "MARYLAND STRONG",
             "title": "STAY SAFE AND SHOP LOCAL WITH OUR MARYLAND MASKS!",
+            "title_mob_smaller_size": false,
+            "sub_heading": "",
             "color": "#ffffff",
             "button-text": "Shop now",
             "button-url": ""
@@ -20,11 +22,13 @@
         "8d200123-46e4-44df-8edd-884ba67303d9": {
           "type": "text",
           "settings": {
-            "img-desktop": "shopify:\/\/shop_images\/Object_1.jpg",
+            "img-desktop": "shopify:\/\/shop_images\/Object_1_a5eaeda8-798b-4aaa-8b63-d7231767d9e5.jpg",
             "overlay": false,
             "text-right": true,
             "subtitle": "MARYLAND STRONG",
             "title": "ALl MAryland Everything",
+            "title_mob_smaller_size": false,
+            "sub_heading": "",
             "color": "#000000",
             "button-text": "shop now",
             "button-url": ""
@@ -36,6 +40,7 @@
         "8d200123-46e4-44df-8edd-884ba67303d9"
       ],
       "settings": {
+        "min_height_bigger": false
       }
     },
     "165791494001a1bb1b": {
