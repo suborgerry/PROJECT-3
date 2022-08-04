@@ -70,7 +70,10 @@
         "margin_top": 48,
         "margin_bottom": 0,
         "margin_top_mob": 52,
-        "margin_bottom_mob": 0
+        "margin_bottom_mob": 0,
+        "form_padding": "11rem 9.5rem",
+        "form_padding_tab": "4.8rem 5.2vw",
+        "form_padding_mob": "4.8rem 2rem"
       }
     },
     "1659090053ee1f49bf": {
@@ -78,7 +81,7 @@
       "settings": {
         "heading": "<p>What our brand ambassadors are saying<strong>!<\/strong><\/p>",
         "video_webm": "",
-        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/7e2d3486e48d4fdb82042cddc3b01927.mp4",
+        "video_mp4": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/8f8ad49b0b4d48e0be8182ccdf3437d1.mp4",
         "video_poster": "shopify:\/\/shop_images\/brand-ambassador-video-poster.jpg",
         "padding_section": "88px 0 0",
         "padding_section_sm": "66px 0 0"

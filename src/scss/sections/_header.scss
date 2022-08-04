@@ -160,6 +160,24 @@
     z-index: 1;
     pointer-events: auto;
 }
+.search__input.field__input {
+    height: 45px;
+    width: 100%;
+    border: 1px solid $c-black;
+    &::placeholder {
+        opacity: 0;
+    }
+    &:focus,
+    &.visited {
+        box-shadow: none !important;
+        & + label {
+            opacity: 0;
+            }
+        }
+    &::placeholder {
+        opacity: 0;
+    }
+}
 .menu-drawer__navigation-container {
     .field::after {
         content: unset;
@@ -167,6 +185,9 @@
     .search__input.field__input {
         padding: 26px 20px 20px 62px;
         height: 70px;
+        width: 100%;
+        background-color: $c-white;
+        border: none;
         &::placeholder {
             opacity: 1;
             font-size: 14px;
