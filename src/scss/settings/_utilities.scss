@@ -65,17 +65,6 @@ a.active-page {
 
 /* base */
 
-.page-width {
-  margin: 0 auto;
-  padding: 0 var(--page-width-x-paddings-mobile);
-}
-
-@media (min-width: 576px) {
-  .page-width {
-    padding: 0 var(--page-width-x-paddings-tablet);
-  }
-}
-
 @media (min-width: 1440px) {
   .page-width {
     padding: 0;
