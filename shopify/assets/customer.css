@@ -383,13 +383,6 @@
   margin-bottom: 0;
 }
 
-.activate button[name='decline'],
-.addresses li > button,
-.addresses form button[type] {
-  background-color: rgba(var(--color-background), var(--alpha-button-background));
-  color: rgb(var(--color-link));
-}
-
 @media only screen and (min-width: 750px) {
   .activate button[name='decline'] {
     margin-top: inherit;
@@ -665,8 +658,8 @@
   }
 }
 
-.addresses form button:first-of-type {
-  margin-right: 1rem;
+.addresses form button {
+  margin: 12px auto !important;
 }
 
 label[for='AddressCountryNew'],
@@ -693,7 +686,7 @@ label[for='AddressProvinceNew'] {
 }
 
 li[data-address] {
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .addresses [aria-expanded='false'] ~ div[id] {
@@ -702,50 +695,19 @@ li[data-address] {
 
 .addresses [aria-expanded='true'] ~ div[id] {
   display: block;
+  margin-top: 24px;
 }
 
 .addresses h2 {
   text-align: left;
 }
 
-li[data-address] > h2 {
-  text-align: center;
-  font-size: calc(var(--font-heading-scale) * 1.8rem);
-  margin-bottom: 0;
-}
-
-@media only screen and (min-width: 750px) {
-  li[data-address] > h2 {
-    font-size: calc(var(--font-heading-scale) * 2.2rem);
-  }
-}
-
 .addresses ul p {
   margin-bottom: 0;
+  margin-top: 5px;
 }
 
 .addresses input[type='checkbox'] {
   margin-top: 2rem;
   margin-left: 0;
-}
-
-@media only screen and (min-width: 750px) {
-  .addresses form > div:nth-of-type(1) {
-    margin-right: 2rem;
-  }
-
-  .addresses form > div:nth-of-type(2) {
-    margin-top: 0;
-  }
-
-  .addresses form > div:nth-of-type(1),
-  .addresses form > div:nth-of-type(2) {
-    box-sizing: border-box;
-    flex-basis: calc(50% - 1rem);
-  }
-}
-
-.addresses form > div:nth-of-type(7),
-.addresses form > div:nth-of-type(7) + div[id] {
-  margin-top: 1.5rem;
 }

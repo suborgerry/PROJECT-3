@@ -1,0 +1,431 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning--{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning--{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="profile positioning--{{ s.id }}">
+    <div class="page-width">
+        <div class="profile__top">
+            <div class="profile__top-box">
+                <h1 class="text-center text-32px">{{ page.title | prepend: 'My ' | upcase }}</h1>
+                <a href="{{ routes.account_logout_url }}" class="btn-logout btn-red-2"> {{ 'customer.log_out' | t }}</a>
+            </div>
+        </div>
+        <div class="profile__double-column column-first">
+                <div class="profile__column">
+                    <h3 class="text-24px-all">{{ 'customer.reset_password.title' | t | upcase }}</h3>
+                    <div class="profile__reset-password">
+                        <div class="customer reset-password">
+                            <svg style="display: none">
+                              <symbol id="icon-error" viewBox="0 0 13 13">
+                                <circle cx="6.5" cy="6.50049" r="5.5" stroke="white" stroke-width="2"/>
+                                <circle cx="6.5" cy="6.5" r="5.5" fill="#EB001B" stroke="#EB001B" stroke-width="0.7"/>
+                                <path d="M5.87413 3.52832L5.97439 7.57216H7.02713L7.12739 3.52832H5.87413ZM6.50076 9.66091C6.88091 9.66091 7.18169 9.37267 7.18169 9.00504C7.18169 8.63742 6.88091 8.34917 6.50076 8.34917C6.12061 8.34917 5.81982 8.63742 5.81982 9.00504C5.81982 9.37267 6.12061 9.66091 6.50076 9.66091Z" fill="white"/>
+                                <path d="M5.87413 3.17832H5.51535L5.52424 3.537L5.6245 7.58083L5.63296 7.92216H5.97439H7.02713H7.36856L7.37702 7.58083L7.47728 3.537L7.48617 3.17832H7.12739H5.87413ZM6.50076 10.0109C7.06121 10.0109 7.5317 9.57872 7.5317 9.00504C7.5317 8.43137 7.06121 7.99918 6.50076 7.99918C5.94031 7.99918 5.46982 8.43137 5.46982 9.00504C5.46982 9.57872 5.94031 10.0109 6.50076 10.0109Z" fill="white" stroke="#EB001B" stroke-width="0.7">
+                              </symbol>
+                            </svg>
+                            {%- form 'reset_customer_password', class: 'mt-0' -%}
+                              {%- if form.errors -%}
+                                <h2 class="form__message" tabindex="-1" autofocus>
+                                  <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+                                  <svg aria-hidden="true" focusable="false" role="presentation">
+                                    <use href="#icon-error" />
+                                  </svg>
+                                  {{ 'templates.contact.form.error_heading' | t }}
+                                </h2>
+                                <ul>
+                                  {%- for field in form.errors -%}
+                                    <li>
+                                      {%- if field == 'form' -%}
+                                        {{ form.errors.messages[field] }}
+                                      {%- else -%}
+                                        <a href="#{{ field }}">
+                                          {{ form.errors.translated_fields[field] | capitalize }}
+                                          {{ form.errors.messages[field] }}
+                                        </a>
+                                      {%- endif -%}
+                                    </li>
+                                  {%- endfor -%}
+                                </ul>
+                              {%- endif -%}
+                          
+                              <h4 class="field__title">{{ 'customer.login_page.password' | t | prepend: 'New ' | upcase }}</h4>
+                              <div class="field">      
+                                <input
+                                  class="field__input check-visited-input"
+                                  type="password"
+                                  name="customer[password]"
+                                  id="password"
+                                  autocomplete="new-password"
+                                  {% if form.errors contains 'password' %}
+                                    aria-invalid="true"
+                                    aria-describedby="password-error"
+                                  {% endif %}
+                                  placeholder="{{ 'customer.reset_password.password' | t }}"
+                                >
+                                <label for="password">
+                                  {{ 'customer.reset_password.password' | t }}
+                                </label>
+                                {%- if form.errors contains 'password' -%}
+                                  <small id="password-error" class="form__message">
+                                    <svg aria-hidden="true" focusable="false" role="presentation">
+                                      <use href="#icon-error" />
+                                    </svg>
+                                    {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}
+                                  </small>
+                                {%- endif -%}
+                              </div>
+                          
+                              <h4 class="field__title">{{ 'customer.reset_password.password_confirm' | t | upcase }}</h4>
+                              <div class="field">      
+                                <input
+                                  class="field__input check-visited-input"
+                                  type="password"
+                                  name="customer[password_confirmation]"
+                                  id="password_confirmation"
+                                  autocomplete="new-password"
+                                  {% if form.errors contains 'password_confirmation' %}
+                                    aria-invalid="true"
+                                    aria-describedby="password_confirmation-error"
+                                  {% endif %}
+                                  placeholder="{{ 'customer.reset_password.password_confirm' | t }}"
+                                >
+                                <label for="password_confirmation">
+                                  {{ 'customer.reset_password.password_confirm' | t }}
+                                </label>
+                                {%- if form.errors contains 'password_confirmation' -%}
+                                  <small id="password_confirmation-error" class="form__message">
+                                    <svg aria-hidden="true" focusable="false" role="presentation">
+                                      <use href="#icon-error" />
+                                    </svg>
+                                    {{ form.errors.translated_fields['password_confirmation'] | capitalize }} {{ form.errors.messages['password_confirmation'] }}
+                                  </small>
+                                {%- endif -%}
+                              </div>
+                          
+                              <button class="button__red">{{ 'customer.reset_password.submit' | t }}</button>
+                            {%- endform -%}
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__column">
+                    <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                </div>
+        </div>
+        <div class="profile__double-column column-second">
+                <div class="profile__column">
+                    <h3 class="text-24px-all">{{ 'Account Address' | upcase }}</h3>
+                    <div class="profile__addresses">
+                        <div class="customer addresses" data-customer-addresses>
+                            <svg style="display: none">
+                            <symbol id="icon-caret" viewBox="0 0 10 6">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                            </symbol>
+                            </svg>
+
+                            <div data-address>
+                                <button class="button__red mt-0" type="button" aria-expanded="false" aria-controls="AddAddress">{{ 'customer.addresses.add_new' | t }}</button>
+                                <div id="AddAddress">
+                                    <h4 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h4>
+                                    {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading', class: 'mt-5' -%}
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.first_name' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                                                <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.last_name' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                                                <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.company' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                                                <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.phone' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                                                <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.address1' | t }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                                        <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.address2' | t }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                                        <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.city' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                                                <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.country' | t | replace: '/', ' or ' }}</h4>
+                                            <div class="field">
+                                                <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+                                                <div class="select">
+                                                <select
+                                                    id="AddressCountryNew"
+                                                    name="address[country]"
+                                                    data-default="{{ form.country }}"
+                                                    autocomplete="country"
+                                                >
+                                                    {{ all_country_option_tags }}
+                                                </select>
+                                                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                    <use href="#icon-caret" />
+                                                </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.province' | t }}</h4>
+                                    <div class="field" id="AddressProvinceContainerNew" style="display: none">
+                                        <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+                                        <div class="select">
+                                        <select
+                                            id="AddressProvinceNew"
+                                            name="address[province]"
+                                            data-default="{{ form.province }}"
+                                            autocomplete="address-level1"
+                                        >
+                                        </select>
+                                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                            <use href="#icon-caret" />
+                                        </svg>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.zip' | t | replace: '/', ' or ' }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                                        <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+                                    </div>
+                                    <div>
+                                        {{ form.set_as_default_checkbox }}
+                                        <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
+                                    </div>
+                                    <div>
+                                        <button class="button__red">{{ 'customer.addresses.add' | t }}</button>
+                                        <button class="button__cancel" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                                    </div>
+                                    {%- endform -%}
+                                </div>
+                            </div>
+
+                            <ul role="list">
+                                {%- for address in customer.addresses -%}
+                                    <li data-address>
+                                    {%- if address == customer.default_address -%}
+                                        <h4>{{ 'customer.addresses.default' | t }}</h4>
+                                    {%- endif -%}
+                                    {{ address | format_address }}
+                                    <button
+                                            class="button__red"
+                                            type="button"
+                                            id="EditFormButton_{{ address.id }}"
+                                            aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+                                            aria-controls="EditAddress_{{ address.id }}"
+                                            aria-expanded="false"
+                                            data-address-id="{{ address.id }}"
+                                        >
+                                            {{ 'customer.addresses.edit' | t }}
+                                        </button>
+                                        <button
+                                            class="button__cancel"
+                                            type="button"
+                                            aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
+                                            data-target="{{ address.url }}"
+                                            data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+                                        >
+                                            {{ 'customer.addresses.delete' | t }}
+                                        </button>
+                                    <div id="EditAddress_{{ address.id }}">
+                                        <h4 class="text-center">{{ 'customer.addresses.edit_address' | t }}</h4>
+                                        {%- form 'customer_address', address, class: 'mt-5' -%}
+                                        <div class="input-group">
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.first_name' | t }}</h4>
+                                                <div class="field">
+                                                    <input class="field__input check-visited-input" type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                                                    <label for="AddressFirstName_{{ form.id }}">{{ 'customer.addresses.first_name' | t }}</label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.last_name' | t }}</h4>
+                                                <div class="field">
+                                                    <input class="field__input check-visited-input" type="text" id="AddressLastName_{{ form.id }}" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                                                    <label for="AddressLastName_{{ form.id }}">{{ 'customer.addresses.last_name' | t }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="input-group">
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.company' | t }}</h4>
+                                                <div class="field">
+                                                    <input class="field__input check-visited-input" type="text" id="AddressCompany_{{ form.id }}" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                                                    <label for="AddressCompany_{{ form.id }}">{{ 'customer.addresses.company' | t }}</label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.phone' | t }}</h4>
+                                                <div class="field">
+                                                    <input class="field__input check-visited-input" type="tel" id="AddressPhone_{{ form.id }}"  name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                                                    <label for="AddressPhone_{{ form.id }}">{{ 'customer.addresses.phone' | t }}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="field__title">{{ 'customer.addresses.address1' | t }}</h4>
+                                        <div class="field">
+                                            <input class="field__input check-visited-input" type="text" id="AddressAddress1_{{ form.id }}" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                                            <label for="AddressAddress1_{{ form.id }}">{{ 'customer.addresses.address1' | t }}</label>
+                                        </div>
+                                        <h4 class="field__title">{{ 'customer.addresses.address2' | t }}</h4>
+                                        <div class="field">
+                                            <input class="field__input check-visited-input" type="text" id="AddressAddress2_{{ form.id }}" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                                            <label for="AddressAddress2_{{ form.id }}">{{ 'customer.addresses.address2' | t }}</label>
+                                        </div>
+                                        <div class="input-group">
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.city' | t }}</h4>
+                                                <div class="field">
+                                                    <input class="field__input check-visited-input" type="text" id="AddressCity_{{ form.id }}" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                                                    <label for="AddressCity_{{ form.id }}">{{ 'customer.addresses.city' | t }}</label>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h4 class="field__title">{{ 'customer.addresses.country' | t | replace: '/', ' or ' }}</h4>
+                                                <div class="field">
+                                                    <label for="AddressCountry_{{ form.id }}">
+                                                    {{ 'customer.addresses.country' | t | replace: '/', ' or ' }}
+                                                    </label>
+                                                    <div class="select">
+                                                    <select
+                                                        id="AddressCountry_{{ form.id }}"
+                                                        name="address[country]"
+                                                        data-address-country-select
+                                                        data-default="{{ form.country }}"
+                                                        data-form-id="{{ form.id }}"
+                                                        autocomplete="country"
+                                                    >
+                                                        {{ all_country_option_tags }}
+                                                    </select>
+                                                    <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                        <use href="#icon-caret" />
+                                                    </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4 class="field__title">{{ 'customer.addresses.province' | t }}</h4>
+                                        <div id="AddressProvinceContainer_{{ form.id }}" style="display:none;">
+                                            <label for="AddressProvince_{{ form.id }}">
+                                            {{ 'customer.addresses.province' | t }}
+                                            </label>
+                                            <div class="select">
+                                            <select
+                                                id="AddressProvince_{{ form.id }}"
+                                                name="address[province]"
+                                                data-default="{{ form.province }}"
+                                                autocomplete="address-level1"
+                                            >
+                                            </select>
+                                            <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                <use href="#icon-caret" />
+                                            </svg>
+                                            </div>
+                                        </div>
+                                        <h4 class="field__title">{{ 'customer.addresses.zip' | t | replace: '/', ' or ' }}</h4>
+                                        <div class="field">
+                                            <input class="field__input check-visited-input" type="text" id="AddressZip_{{ form.id }}" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                                            <label for="AddressZip_{{ form.id }}">{{ 'customer.addresses.zip' | t }}</label>
+                                        </div>
+                                        <div>
+                                            {{ form.set_as_default_checkbox }}
+                                            <label for="address_default_address_{{ form.id }}">
+                                            {{ 'customer.addresses.set_default' | t }}
+                                            </label>
+                                        </div>
+                                        <div>
+                                            <button class="button__red">{{ 'customer.addresses.update' | t }}</button>
+                                            <button class="button__cancel" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                                        </div>
+                                        {%- endform -%}
+                                    </div>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__column">
+                    <h3 class="text-24px-all">{{ 'Wishlist' | upcase }}</h3>
+                </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    window.onload = () => {
+      typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+    }
+</script>
+
+{% schema %}
+{
+    "name": "Profile",
+    "settings": [          
+        {
+            "type": "header",
+            "content": "t:sections.all.padding.section_padding_heading"
+        },
+        {
+            "type": "text",
+            "id": "padding_section",
+            "label": "Padding section"
+        },
+        {
+            "type": "text",
+            "id": "padding_section_sm",
+            "label": "Padding section (mobile)"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Profile",
+            "category": "new"
+        }
+    ]
+}
+{% endschema %}

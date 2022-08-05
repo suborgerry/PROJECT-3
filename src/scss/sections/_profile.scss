@@ -1,0 +1,170 @@
+.profile {
+    .btn-logout {
+        display: block;
+        min-width: 184px;
+        height: 48px;
+        font-weight: 700;
+        padding: 12px 15px;
+        text-align: center;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 32px;
+        @include media-breakpoint-up(lg) {
+            justify-content: flex-end;
+            padding-bottom: 65px;
+        }
+        &-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            @include media-breakpoint-up(md) {
+                flex-direction: row;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 50%;
+            }
+            h1 {
+                @include media-breakpoint-up(lg) {
+                    transform: translateX(-50%);
+                }
+            }
+            .btn-logout {
+                margin: 30px auto 0;
+                @include media-breakpoint-up(md) {
+                    margin: unset;
+                }
+            }
+        }
+    }
+    &__double-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 40px;
+        grid-column-gap: 48px;
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: 1fr 1fr;
+        }
+        &.column-first {
+            border-top: 1px solid $c-grey-8;
+            padding-top: 32px;
+            @include media-breakpoint-up(lg) {
+                padding-top: 40px;
+                grid-row-gap: 72px;
+                padding-bottom: 56px;
+            }
+        }
+        &.column-second {
+            padding-top: 60px;
+            @include media-breakpoint-up(lg) {
+                border-top: 1px solid $c-grey-8;
+                padding-top: 72px;
+                grid-row-gap: 32px;
+            }
+        }
+    }
+    &__column {
+        h3 {
+            text-align: center;
+            margin-bottom: 24px;
+            @include media-breakpoint-up(lg) {
+                text-align: left;
+                margin-bottom: 33px;
+            }
+        }
+    }
+    &__reset-password,
+    &__addresses {
+        background-color: $c-grey-10;
+        padding: 40px 0;
+        @include media-breakpoint-up(lg) {
+            padding: 40px 56px 56px;
+        }
+    }
+    .customer {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: unset !important;
+        form {
+            .field:not(:last-of-type),
+            .input-group .field {
+                margin-bottom: 53px;
+                @include media-breakpoint-up(lg) {
+                    margin-bottom: 42px;
+                }
+            }
+            .field, .select {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .field__title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: left;
+            @include media-breakpoint-up(lg) {
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+        button {
+            width: 100%;
+            max-width: 336px;
+            margin: 53px auto 0;
+            @include media-breakpoint-up(lg) {
+                margin: 48px auto 0;
+            }
+        }
+        li[data-address] {
+            button {
+                margin: 12px auto;
+            }
+        }
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-column-gap: 24px;
+            @include media-breakpoint-up(md) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @include media-breakpoint-up(xl) {
+                grid-column-gap: 48px;
+            }
+        }
+        input:not([type='checkbox']), select {
+            height: 56px !important;
+        }
+        input:not([type='checkbox']), textarea, select {
+            width: 100%;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #545454;
+            border: 1px solid $c-grey-9 !important;
+            background-color: $c-white;
+            padding: 20px 24px 15px;
+            &:focus,
+            &.visited {
+                box-shadow: none !important;
+                & + label {
+                    opacity: 0;
+                }
+            }
+            &::placeholder {
+                opacity: 0;
+            }
+        }
+        label {
+            font-size: 1.4rem !important;
+            font-weight: 300;
+            top: 20px !important;
+            transition: 0.3s !important;
+        }
+    }
+}

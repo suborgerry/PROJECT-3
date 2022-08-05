@@ -971,8 +971,12 @@ if (document.querySelector('.home-hero-slider-init') != null) {
 if (document.querySelector('.check-visited-input') != null) {
   const checkInputs = document.querySelectorAll('.check-visited-input');
     checkInputs.forEach((inp) => {
-      inp.addEventListener('change', () => {
+      function inpCheckVal() {
         inp.value != '' ? inp.classList.add('visited') : inp.classList.remove('visited');
+      }
+      inpCheckVal();
+      inp.addEventListener('change', () => {
+        inpCheckVal();
       });
   });
 }
