@@ -29,10 +29,13 @@
           <img src="{{ item | image_url }}" alt="{{ item.alt }}">
         {% endfor %}
       </div>
-      <div class="product__media-list d-flex">
-        {% for item in product.media %}
-          <img src="{{ item | image_url }}" class="{% if forloop.index == 1 %}active{% endif %}" alt="{{ item.alt }}">
-        {% endfor %}
+      <div class="product__media-list show-more">
+        <div class="product__media-list-container">
+          {% for item in product.media %}
+            <img src="{{ item | image_url }}" class="product__media-img {% if forloop.index == 1 %}active{% endif %}" alt="{{ item.alt }}">
+          {% endfor %}
+        </div>
+        <p class="show-more__btn">+<span class="show-more__count"></span></p>
       </div>
     </div>
     <div class="product-info__wrapper">
