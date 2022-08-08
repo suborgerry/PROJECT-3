@@ -10671,6 +10671,10 @@ main {
     padding: 5.6rem 9.5rem 11rem;
   }
 }
+.brand-ambassador-form__container .wholesale-form__fields-container {
+  max-width: 750px;
+  margin: 0 auto;
+}
 .brand-ambassador-form__heading {
   padding-bottom: 47px;
 }
