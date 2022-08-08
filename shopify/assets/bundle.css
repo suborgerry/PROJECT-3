@@ -5200,13 +5200,13 @@ body {
 main {
   overflow-x: hidden;
 }
-.c-black, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
+.c-black, .product-info__fs p a, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
   color: rgb(var(--color-base-outline-button-labels));
 }
 .c-black-bg {
   background-color: rgb(var(--color-base-outline-button-labels));
 }
-.c-white, .image-with-text__undertext p, .image-with-text__text p, .swiper-pagination__index.swiper-pagination-bullet-active, .btn-red-2:hover, .btn-red-1 {
+.c-white, .product-form__submit span, .image-with-text__undertext p, .image-with-text__text p, .swiper-pagination__index.swiper-pagination-bullet-active, .btn-red-2:hover, .btn-red-1 {
   color: rgb(var(--color-base-background-1));
 }
 .c-white-bg, .wholesale-form__field, .work-to-roa__form-range-pull span, .article-template__comment-field textarea, .article-template__comment-field input, .btn-red-2 {
@@ -5254,7 +5254,7 @@ main {
 .c-grey-3-bg {
   background-color: #6D6D6D;
 }
-.c-grey-4, .product-info__rating .stamped-badge-caption, .wholesale-form__heading .additional-text, .question-form__field input::placeholder, .article-template__comment-field input::placeholder {
+.c-grey-4, .product-info__fs p, .product-info__rating .stamped-badge-caption, .wholesale-form__heading .additional-text, .question-form__field input::placeholder, .article-template__comment-field input::placeholder {
   color: #949494;
 }
 .c-grey-4-bg {
@@ -5266,7 +5266,7 @@ main {
 .c-grey-5-bg, .product__media-list.show-more .show-more__btn, .work-to-roa__form-range-separators span, .work-to-roa__form-range, .blog-categories__slider_buttons div {
   background-color: #EFEFEF;
 }
-.c-grey-6 {
+.c-grey-6, .product-info__share span {
   color: #C4C4C4;
 }
 .c-grey-6-bg, .blog-categories__slider_buttons div.swiper-button-disabled {
@@ -10897,6 +10897,65 @@ main {
   height: 5rem;
   border-radius: 50%;
 }
+.product-info__fs {
+  margin-top: 3.2rem;
+}
+.product-info__fs p {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.704347px;
+}
+.product-info__share {
+  width: 25.8rem;
+  height: 5.9rem;
+  border: 1px solid #CF322D;
+  border-radius: 59px;
+  padding: 2rem 2.4rem 2rem 2.8rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.7rem;
+}
+.product-info__share-links {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 1.6rem;
+  align-self: baseline;
+}
+.product-info__share-links a {
+  grid-row: 1;
+}
+.product-info__share span {
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  text-transform: uppercase;
+  position: relative;
+  top: 0.41rem;
+}
+.product-info__fan_photos {
+  display: grid;
+  grid-template-columns: 12rem;
+  grid-template-rows: auto;
+  grid-column-gap: 1.8rem;
+  margin-top: 4.2rem;
+}
+.product-info__fan_photos img {
+  width: 12rem;
+  height: 12rem;
+  grid-row: 1;
+}
+.product-info__fan_photos-container {
+  margin-top: 4.2rem;
+}
+.product-info__fan_photos-heading {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  letter-spacing: 0.93913px;
+  text-transform: uppercase;
+}
 .product__title {
   font-weight: 700;
   font-size: 2rem;
@@ -10926,4 +10985,17 @@ main {
   width: 4.8rem;
   height: 4.8rem;
   text-align: center;
+}
+.product-form__submit {
+  margin-top: 3.2rem;
+  width: 33.1rem;
+  height: 5.6rem;
+}
+.product-form__submit span {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.93913px;
+  text-transform: uppercase;
 }

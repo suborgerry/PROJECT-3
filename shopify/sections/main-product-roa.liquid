@@ -126,43 +126,53 @@
                 </div>
               {% endfor %}
             </div>
+          {%- when 'fan_photos' -%}
+            <div class="product-info__fan_photos-container">
+              <p class="product-info__fan_photos-heading">Fan photos</p>
+              <div class="product-info__fan_photos">
+                <img src="{{ block.settings.image_1 | img_url }}">
+                <img src="{{ block.settings.image_2 | img_url }}">
+                <img src="{{ block.settings.image_3 | img_url }}">
+                <img src="{{ block.settings.image_4 | img_url }}">
+              </div>
+            </div>
+          {%- when 'free_shipping' -%}
+            <div class="product-info__fs">
+              <p>Free Shipping Over $50 + <a href="{{ block.settings.link }}">Easy Returns</a></p>
+            </div>
           {%- when 'share' -%}
-            <share-button id="Share-{{ section.id }}" class="share-button quick-add-hidden" {{ block.shopify_attributes }}>
-              <button class="share-button__button hidden">
-                {% render 'icon-share' %}
-                {{ block.settings.share_label | escape }}
-              </button>
-              <details id="Details-{{ block.id }}-{{ section.id }}">
-                <summary class="share-button__button">
-                  {% render 'icon-share' %}
-                  {{ block.settings.share_label | escape }}
-                </summary>
-                <div id="Product-share-{{ section.id }}" class="share-button__fallback motion-reduce">
-                  <div class="field">
-                    <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
-                    </span>
-                    <input type="text"
-                          class="field__input"
-                          id="url"
-                          value="{{ product.selected_variant.url | default: product.url | prepend: request.origin }}"
-                          placeholder="{{ 'general.share.share_url' | t }}"
-                          onclick="this.select();"
-                          readonly
-                    >
-                    <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
-                  </div>
-                  <button class="share-button__close hidden no-js-hidden">
-                    {% render 'icon-close' %}
-                    <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
-                  </button>
-                  <button class="share-button__copy no-js-hidden">
-                    {% render 'icon-clipboard' %}
-                    <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-                  </button>
-                </div>
-              </details>
-            </share-button>
-            <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+            {%- assign page_url = shop.secure_url | append: product.url -%}
+
+            <div class="product-info__share d-flex">
+              <span>share</span>
+              <div class="product-info__share-links">
+                {%- if block.settings.facebook -%}
+                  <a target="blank" href="{{ block.settings.facebook_link }}">
+                    <svg width="9" height="18" viewBox="0 0 9 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.663158 10.1046H1.73684C1.83158 10.1046 1.92632 10.1993 1.92632 10.2941V17.052C1.92632 17.3993 2.21053 17.6836 2.55789 17.6836H5.02105C5.36842 17.6836 5.65263 17.3993 5.65263 17.052V10.2941C5.65263 10.1993 5.74737 10.1046 5.84211 10.1046H7.61053C7.92632 10.1046 8.21053 9.88355 8.24211 9.56776L8.65263 7.10461C8.71579 6.72566 8.4 6.34671 8.02105 6.34671H5.93684C5.77895 6.34671 5.65263 6.22039 5.65263 6.0625V4.48355C5.65263 4.07303 5.87368 3.85197 6.28421 3.85197H8.14737C8.49474 3.85197 8.77895 3.56776 8.77895 3.22039V0.694079C8.77895 0.346711 8.49474 0.0625 8.14737 0.0625H5.90526C1.8 0.0625 1.89474 3.37829 1.89474 3.85197V6.15724C1.89474 6.25197 1.8 6.34671 1.70526 6.34671H0.631579C0.284211 6.34671 0 6.63092 0 6.97829V9.44145C0.0315789 9.82039 0.315789 10.1046 0.663158 10.1046Z" fill="#CA3433"/></svg>
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.pinterest -%}
+                  <a target="blank" href="{{ block.settings.pinterest_link }}">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.34286 16.0071C4.11429 16.65 5.30357 16.2 5.52857 15.2357V15.2036C5.65714 14.625 6.3 11.925 6.55714 10.8C6.62143 10.5107 6.62143 10.2214 6.525 9.93214C6.49286 9.64286 6.42857 9.25714 6.42857 8.83929C6.42857 7.52143 7.2 6.525 8.16429 6.525C8.96786 6.525 9.38571 7.13571 9.38571 7.875C9.38571 8.71071 8.87143 9.93214 8.58214 11.0571C8.35714 12.0214 9.06429 12.7929 9.99643 12.7929C11.7 12.7929 12.8571 10.6071 12.8571 8.00357C12.8571 6.04286 11.5393 4.56429 9.12857 4.56429C6.39643 4.56429 4.69286 6.58929 4.69286 8.87143C4.69286 9.64286 4.91786 10.2214 5.27143 10.6393C5.43214 10.8321 5.46429 10.9286 5.4 11.1536C5.36786 11.3143 5.27143 11.7321 5.20714 11.8607C5.14286 12.0857 4.95 12.1821 4.75714 12.0857C3.50357 11.5714 2.925 10.1893 2.925 8.64643C2.925 6.075 5.07857 3.02143 9.35357 3.02143C12.7929 3.02143 15.0429 5.49643 15.0429 8.16429C15.0429 11.7 13.0821 14.3357 10.1893 14.3357C9.57857 14.3357 8.96786 14.1107 8.51786 13.8214C8.22857 13.6286 7.84286 13.7893 7.74643 14.1107C7.58571 14.7214 7.39286 15.4929 7.32857 15.6857C7.29643 15.8464 7.23214 15.975 7.2 16.1357C6.87857 17.0036 7.48929 17.9036 8.38929 17.9679C9.06429 18 9.73929 17.9679 10.4143 17.8714C14.4 17.2286 17.5179 13.95 17.9357 9.93214C18.4821 4.53214 14.2714 0 9 0C4.01786 0 0 4.01786 0 9C0 11.8286 1.31786 14.3357 3.34286 16.0071Z" fill="#CA3433"/></svg>
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.rss -%}
+                  <a target="blank" href="{{ block.settings.rss_link }}">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.11012 14.9149C4.91726 13.9184 4.11369 13.0827 3.08512 12.8899C1.28512 12.5363 -0.289884 14.1113 0.063687 15.9113C0.256544 16.9077 1.06012 17.7434 2.08869 17.9363C3.88869 18.2899 5.43154 16.747 5.11012 14.9149Z" fill="#CA3433"/><path d="M0 0V3.43929C8.03571 3.43929 14.5607 9.96429 14.5607 18H18C18 8.06786 9.93214 0 0 0Z" fill="#CA3433"/><path d="M8.58125 17.9991H12.0205C12.0205 11.3776 6.65268 6.00977 0.03125 6.00977V9.44905C4.72411 9.41691 8.58125 13.2741 8.58125 17.9991Z" fill="#CA3433"/></svg>
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.tumplr -%}
+                  <a target="blank" href="{{ block.settings.tumplr_link }}">
+                    <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.36965 0H4.88119C4.60427 0 4.36196 0.173077 4.29273 0.45C3.80811 2.49231 2.45811 4.22308 0.623498 5.19231C0.415805 5.29615 0.277344 5.53846 0.277344 5.78077V7.89231C0.277344 8.27308 0.588882 8.55 0.935036 8.55H2.28504C2.56196 8.55 2.76965 8.75769 2.76965 9.03462V14.0538C2.76965 14.9192 3.56581 18 7.65042 18C9.13888 18 10.1081 17.4115 10.5927 16.9615C10.8697 16.7192 10.9735 16.3038 10.8004 15.9577L10.4543 15.1615C10.2466 14.7115 9.76196 14.5038 9.31196 14.6769C9.06965 14.7808 8.79273 14.85 8.41196 14.85C7.3735 14.85 6.88888 14.2269 6.88888 13.2923V9.03462C6.88888 8.75769 7.09657 8.55 7.3735 8.55H9.69273C10.0735 8.55 10.3504 8.23846 10.3504 7.89231V5.98846C10.3504 5.60769 10.0389 5.33077 9.69273 5.33077H7.58119C7.23504 5.33077 6.95811 5.05385 6.95811 4.70769V0.588462C6.95811 0.276923 6.68119 0 6.36965 0Z" fill="#CA3433"/></svg>
+                  </a>
+                {%- endif -%}
+                {%- if block.settings.twitter  -%}
+                  <a target="blank" href="{{ block.settings.twitter_link }}">
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.02539 6.97461C2.06289 6.97461 2.06289 6.97461 2.02539 6.97461C1.68789 6.97461 1.35039 6.89961 1.05039 6.82461C0.562891 6.67461 0.112891 7.12461 0.262891 7.57461C0.675391 9.18711 1.95039 10.4621 3.56289 10.7996C3.18789 10.9121 2.81289 10.9496 2.43789 10.9496C2.06289 10.9496 1.80039 11.3621 1.98789 11.6996C2.70039 13.0121 4.08789 13.9121 5.62539 13.9496H6.00039C6.41289 13.9496 6.75039 14.2871 6.75039 14.6996C6.75039 15.1121 6.41289 15.4496 6.00039 15.4496C5.51289 15.4496 4.91289 15.4121 4.31289 15.2621C3.93789 15.1871 3.56289 15.1871 3.22539 15.2996C2.58789 15.5246 1.91289 15.7121 1.20039 15.7871C0.937891 15.8246 0.750391 16.0121 0.750391 16.2746C0.750391 16.4621 0.862891 16.6496 1.05039 16.7246C2.51289 17.3621 4.16289 17.7371 5.88789 17.7371C13.8004 17.7371 18.1504 11.0246 18.1504 5.17461C18.1504 4.83711 18.3004 4.49961 18.5629 4.27461C19.0129 3.89961 19.4254 3.48711 19.8004 2.99961C19.9504 2.81211 19.7629 2.54961 19.5379 2.62461C19.0879 2.77461 18.6379 2.88711 18.1504 2.96211C18.0754 2.96211 18.0379 2.88711 18.1129 2.81211C18.6754 2.39961 19.1629 1.83711 19.4629 1.19961C19.5754 0.974609 19.3504 0.749609 19.1254 0.862109C18.7129 1.08711 18.2629 1.23711 17.8129 1.38711C17.3629 1.53711 16.8379 1.42461 16.4629 1.12461C15.7504 0.562109 14.8129 0.224609 13.8379 0.224609C11.8504 0.224609 10.1629 1.61211 9.67539 3.52461C9.60039 3.86211 9.86289 4.16211 10.2004 4.16211C10.8004 4.12461 11.4004 4.04961 11.8504 3.97461C12.2254 3.89961 12.6004 4.08711 12.7504 4.42461C12.9379 4.87461 12.6754 5.32461 12.2629 5.43711C10.5379 5.92461 8.62539 5.58711 8.62539 5.58711C5.70039 5.17461 3.11289 3.74961 1.23789 1.68711C0.975391 1.38711 0.487891 1.49961 0.375391 1.83711C0.225391 2.28711 0.150391 2.77461 0.150391 3.29961C0.150391 4.83711 0.900391 6.18711 2.02539 6.97461Z" fill="#CA3433"/></svg>
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
           {%- when 'variant_picker' -%}
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
@@ -279,13 +289,7 @@
                       class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
                     {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
-                        <span>
-                          {%- if product.selected_or_first_available_variant.available -%}
-                            {{ 'products.product.add_to_cart' | t }}
-                          {%- else -%}
-                            {{ 'products.product.sold_out' | t }}
-                          {%- endif -%}
-                        </span>
+                        <span>ADD TO BAG</span>
                         <div class="loading-overlay__spinner hidden">
                           <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
                             <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
@@ -470,8 +474,45 @@
       "type": "@app"
     },
     {
+      "type": "free_shipping",
+      "name": "Free shipping",
+      "settings": [
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Policy page link"
+        }
+      ]
+    },
+    {
       "type": "variants",
       "name": "Variants"
+    },
+    {
+      "type": "fan_photos",
+      "name": "Fan photos",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Image 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Image 4"
+        }
+      ]
     },
     {
       "type": "text",
@@ -568,18 +609,59 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "share_label",
-          "label": "t:sections.main-product.blocks.share.settings.text.label",
-          "default": "Share"
+          "type": "checkbox",
+          "id": "facebook",
+          "label": "Share facebook",
+          "default": true
         },
         {
-          "type": "paragraph",
-          "content": "t:sections.main-product.blocks.share.settings.featured_image_info.content"
+          "type": "url",
+          "id": "facebook_link",
+          "label": "Facebook link"
         },
         {
-          "type": "paragraph",
-          "content": "t:sections.main-product.blocks.share.settings.title_info.content"
+          "type": "checkbox",
+          "id": "pinterest",
+          "label": "Share pinterest",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "pinterest_link",
+          "label": "Pinterest link"
+        },
+        {
+          "type": "checkbox",
+          "id": "rss",
+          "label": "Share rss",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "rss_link",
+          "label": "Rss link"
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter",
+          "label": "Share twitter",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "twitter_link",
+          "label": "Twitter link"
+        },
+        {
+          "type": "checkbox",
+          "id": "tumplr",
+          "label": "Share tumplr",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "tumplr_link",
+          "label": "Tumplr link"
         }
       ]
     },
