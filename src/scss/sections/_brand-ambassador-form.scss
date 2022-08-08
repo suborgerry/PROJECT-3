@@ -13,7 +13,7 @@
     &__heading {
         padding-bottom: 47px;
         @include media-breakpoint-up(md) {
-            margin-bottom: 40px;
+            padding-bottom: 40px;
             font-size: 32px;
             line-height: 42px;
         }
