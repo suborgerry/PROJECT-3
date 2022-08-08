@@ -1,4 +1,10 @@
 .columns-with-links {
+    & > .page-width {
+        background-color: $c-grey-10;
+        @include media-breakpoint-up(md) {
+            background-color: unset;
+        }
+    }
     &__main {
         padding: 37px 17px;
         background-color: $c-grey-10;

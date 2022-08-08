@@ -1,5 +1,11 @@
 .customer,
 .contact {
+    .reset-text {
+        @include media-breakpoint-down(md) {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
     form {
         .field:not(:last-of-type) {
             margin-bottom: 40px;
@@ -7,10 +13,10 @@
                 margin-bottom: 54px;
             }
         }
-        input {
+        input:not([type='checkbox']), select {
             height: 56px !important;
         }
-        input, textarea {
+        input:not([type='checkbox']), textarea, select {
             width: 100%;
             font-size: 1.6rem;
             font-weight: 300;
@@ -56,6 +62,17 @@
         text-decoration: none;
         &:hover {
             text-decoration: underline;
+        }
+    }
+}
+
+.contact {
+    form {
+        button {
+            @include media-breakpoint-up(sm) {
+                max-width: 367px;
+                margin: 0 auto;
+            }
         }
     }
 }
