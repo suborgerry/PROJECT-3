@@ -685,7 +685,7 @@ label[for='AddressProvinceNew'] {
   text-align: center;
 }
 
-li[data-address] {
+li[data-address]:not(:first-child) {
   margin-top: 4rem;
 }
 
