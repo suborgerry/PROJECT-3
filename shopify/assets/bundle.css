@@ -5302,6 +5302,12 @@ main {
 .c-grey-11-bg, .blog-categories__slider_buttons div:not(.swiper-button-disabled):hover {
   background-color: #F8F8F8;
 }
+.c-grey-12 {
+  color: #F7F7F7;
+}
+.c-grey-12-bg, .product-form__quantity .quantity__input, .product-form__quantity .quantity__button {
+  background-color: #F7F7F7;
+}
 .button__red, .shopify-challenge__button, .button__cancel {
   padding: 15px 10px;
   display: flex !important;
@@ -10903,4 +10909,21 @@ main {
   font-size: 1.2rem;
   line-height: 1.9rem;
   letter-spacing: 0.704347px;
+}
+.product-form__quantity {
+  margin-top: 1.2rem;
+}
+.product-form__quantity .quantity {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  grid-gap: 0.8rem;
+}
+.product-form__quantity .quantity__button {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+.product-form__quantity .quantity__input {
+  width: 4.8rem;
+  height: 4.8rem;
+  text-align: center;
 }

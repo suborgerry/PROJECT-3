@@ -171,3 +171,28 @@
     letter-spacing: 0.704347px;
     @extend .c-grey-3;
 }
+
+.product-form {
+    &__quantity {
+        margin-top: 1.2rem;
+
+        .quantity {
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            grid-gap: .8rem;
+            
+            &__button {
+                @extend .c-grey-12-bg;
+                width: 4.8rem;
+                height: 4.8rem;
+            }
+
+            &__input {
+                @extend .c-grey-12-bg;
+                width: 4.8rem;
+                height: 4.8rem;
+                text-align: center;
+            }
+        }
+    }
+}

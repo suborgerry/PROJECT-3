@@ -93,14 +93,10 @@
             </div>
           {%- when 'quantity_selector' -%}
             <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-              <label class="form__label" for="Quantity-{{ section.id }}">
-                {{ 'products.product.quantity.label' | t }}
-              </label>
-
               <quantity-input class="quantity">
                 <button class="quantity__button no-js-hidden" name="minus" type="button">
                   <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
-                  {% render 'icon-minus' %}
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.640243 5.36033L5.13389 9.85249C5.33107 10.0492 5.65053 10.0492 5.84821 9.85249C6.04539 9.65581 6.04539 9.33635 5.84821 9.13967L1.71099 5.00394L5.84771 0.868216C6.04489 0.671535 6.04489 0.352076 5.84771 0.154897C5.65053 -0.0417833 5.33058 -0.0417833 5.1334 0.154897L0.639745 4.64705C0.445554 4.8417 0.445554 5.16618 0.640243 5.36033Z" fill="black"/></svg>
                 </button>
                 <input class="quantity__input"
                     type="number"
@@ -112,7 +108,7 @@
                   >
                 <button class="quantity__button no-js-hidden" name="plus" type="button">
                   <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
-                  {% render 'icon-plus' %}
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.35976 4.63967L0.866105 0.14751C0.668927 -0.0491701 0.349466 -0.0491701 0.15179 0.14751C-0.0453884 0.344191 -0.0453884 0.663651 0.15179 0.860332L4.28901 4.99606L0.152288 9.13178C-0.0448904 9.32846 -0.0448904 9.64792 0.152288 9.8451C0.349466 10.0418 0.669425 10.0418 0.866603 9.8451L5.36025 5.35295C5.55445 5.1583 5.55445 4.83382 5.35976 4.63967Z" fill="black"/></svg>                    
                 </button>
               </quantity-input>
             </div>
