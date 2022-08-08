@@ -5,9 +5,21 @@
         margin: auto;
         margin-bottom: 6.4rem;
 
+        p {
+            font-size: 1.6rem;
+
+            @include media-breakpoint-up(sm) {
+                font-size: 1.4rem;
+            }
+        }
+
         @include media-breakpoint-up(sm) {
             margin-bottom: 6.7rem;
-            max-width: 94rem;
+        }
+        
+        @include media-breakpoint-up(lg) {
+            width: 94rem;
+            margin-left: -9.5rem;
         }
     }
 
@@ -123,7 +135,10 @@
 
                 @include media-breakpoint-down(xs) {
                     justify-content: space-between;
-                    margin-top: 3.3rem;
+                    // margin-top: 3.3rem;
+                    .work-to-roa__form-heading {
+                        margin-bottom: 3.2rem;
+                    }
                 }
 
                 &.mt-wtr {
@@ -553,7 +568,7 @@
 
             @include media-breakpoint-down(xs) {
                 padding: 2.1rem 0rem 1.2rem 0rem;
-                width: 100%;
+                // width: 100%;
             }
 
             &#submit_step {
