@@ -14,16 +14,16 @@
   }
 {%- endstyle -%}
 
-<div class="section-{{ section.id }}">
-  <a href="">1</a>
-  <a href="">2</a>
+<div class="product-collection-links__container section-{{ section.id }} d-flex justify-content-between">
+  <a class="product-collection-links__item d-flex" href="{{ product.metafields.custom.first_collection }}">{{ product.metafields.custom.first_collection_name }}</a>
+  <a class="product-collection-links__item d-flex" href="{{ product.metafields.custom.second_collection }}">{{ product.metafields.custom.second_collectin_name }}</a>
 </div>
 
 {% schema %}
 {
   "name": "Link to categories",
   "tag": "section",
-  "class": "section",
+  "class": "section product-collection-links page-width",
   "settings": [
     {
       "type": "header",

@@ -1,0 +1,25 @@
+.product-collection-links {
+    display: none;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+    &__item {
+        width: 58.6rem;
+        height: 6.2rem;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        @extend .c-red-1;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 2.3rem;
+        letter-spacing: 0.821739px;
+
+        &::before {
+            content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDYgMTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjE0NjEwMiA1LjM1MjUyTDQuNjM5NzUgOS44NDQ2OEM0LjgzNjkzIDEwLjA0MTQgNS4xNTYzOSAxMC4wNDE0IDUuMzU0MDcgOS44NDQ2OEM1LjU1MTI1IDkuNjQ4IDUuNTUxMjUgOS4zMjg1NCA1LjM1NDA3IDkuMTMxODZMMS4yMTY4NSA0Ljk5NjEzTDUuMzUzNTcgMC44NjA0MDNDNS41NTA3NSAwLjY2MzcyMyA1LjU1MDc1IDAuMzQ0MjYzIDUuMzUzNTcgMC4xNDcwODRDNS4xNTYzOSAtMC4wNDk1OTYzIDQuODM2NDMgLTAuMDQ5NTk2MyA0LjYzOTI2IDAuMTQ3MDg0TDAuMTQ1NjA1IDQuNjM5MjRDLTAuMDQ4NTg2MyA0LjgzMzg5IC0wLjA0ODU4NjQgNS4xNTgzNyAwLjE0NjEwMiA1LjM1MjUyWiIgZmlsbD0iI0NGMzIyRCIvPgo8L3N2Zz4K);
+            display: block;
+            margin-right: 1.65rem;
+        }
+    }
+}

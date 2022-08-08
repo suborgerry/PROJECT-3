@@ -1,0 +1,140 @@
+.product__media {
+    &-main {
+        width: 61.5rem;
+        height: 64.5rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-list {
+        margin-top: 4.2rem;
+        width: max-content;
+        max-width: 100%;
+        
+        &.show-more {
+            &::after {
+                content: "";
+                display: block;
+                width: 12rem;
+                height: 12rem;
+                @extend .c-grey-5-bg;
+            }
+        }
+
+
+        div {
+            @extend .d-flex, .flex-wrap;
+        }
+
+        img {
+            width: 12rem;
+            height: 12rem;
+            transition: all 0.3 ease;
+
+            &:nth-child(1n+4) {
+                display: none;
+            }
+
+            &:not(.active) {
+                opacity: 0.5;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        img + img {
+            margin-left: 1.2rem;
+        }
+    }
+}
+
+.product-info {
+    &__wrapper {
+        width: 53.4rem;
+        margin-left: 11.2rem;
+    }
+
+    &__rating {
+        margin-top: 3.8rem;
+
+        .stamped-badge-caption {
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            letter-spacing: 0.93913px;
+            @extend .c-grey-4;
+            margin-left: 1.6rem;
+        }
+    }
+
+    &__price {
+        margin-top: 1rem;
+        span {
+            font-weight: 700;
+            font-size: 3.2rem;
+            line-height: 3.8rem;
+        }
+    }
+
+    &__colors {
+        margin-top: 2.6rem;
+        &-container {
+            width: 7.7rem;
+            height: 11.3rem;
+            padding: 1.2rem 1.3rem;
+
+            &.active {
+                border: 1px solid #CF322D;
+                border-radius: 10px;
+                .product-info__colors-round {
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.161604);
+                }
+            }
+
+            &:not(.active) {
+                .product-info__colors-title {
+                    opacity: 0.31;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.704347px;
+            margin-top: 1.9rem;
+        }
+        
+        &-round {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+        }
+    }
+}
+
+.product__title {
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    margin-top: 1.3rem;
+    text-transform: uppercase;
+}
+
+.caption-with-letter-spacing {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    letter-spacing: 0.704347px;
+    @extend .c-grey-3;
+}
