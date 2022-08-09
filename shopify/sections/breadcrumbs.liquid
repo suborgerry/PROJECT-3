@@ -43,7 +43,7 @@
       {{ blog.title | link_to: blog.url }}
       <span>{{ article.title }}</span>
     {% elsif template contains 'customers' %}
-      <span>{{ template.name | capitalize }}</span>
+      <span>{{ 'Profile' | capitalize }}</span>
     {% else %}
       <span>{{ page_title }}</span>
     {% endif %}
