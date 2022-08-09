@@ -1,0 +1,183 @@
+.product-tabs {
+    margin-top: 10.7rem;
+
+    &__buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content;
+    grid-gap: 7.35rem;
+    border-bottom: 1px solid #C4C4C4;
+    padding-bottom: .7rem;
+    }
+
+    &__button {
+        grid-column: 1;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        text-align: center;
+        letter-spacing: 0.93913px;
+        text-transform: uppercase;
+        display: flex;
+        padding: 0 1.15rem;
+        @extend .c-black;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &.active {
+            @extend .c-red-1;
+        }
+
+        span {
+            font-weight: 300;
+            font-size: .8rem;
+            line-height: 2rem;
+            text-align: center;
+            letter-spacing: 0.93913px;
+            text-transform: uppercase;
+            margin-left: .5rem;
+        }
+    }
+
+    
+    &__tab {
+        &:not(.active) {
+            display: none;
+        }
+
+        &.product-reviews {
+            margin-top: 5rem;
+
+            .stamped-header {
+                margin-bottom: 0;
+            }
+            
+            .summary-overview,
+            .stamped-summary-ratings {
+                display: none;
+            }
+            
+            div.stamped-container {
+                margin: 0 !important;
+
+                .stamped-tab-container {
+                    display: none;
+                }
+            }
+
+            div.stamped-reviews {
+                &-filter {
+                    margin-top: -5.6rem;
+
+                    &-label {
+                        display: none !important;
+                    }
+
+                    span.stamped-sort-select-wrapper {
+                        select.stamped-sort-select {
+                            border-radius: 0 !important;
+                            font-weight: 300 !important;
+                            font-size: 1.6rem !important;
+                            line-height: 2.8rem !important;
+                            letter-spacing: 0.547826px;
+                            height: 5.6rem !important;
+                            width: 20.2rem !important;
+                            margin: 0 !important;
+                            color: #000000;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none; 
+                        }
+                    }
+                }
+
+                &-search-text {
+                    display: none !important;
+                }
+            }
+        
+            .stamped-summary {
+                @extend .d-flex;
+
+                &-actions-newquestion {
+                    margin-left: 0;
+                }
+
+                &-actions-newquestion {
+                    display: none;
+                }
+
+                &-actions-newreview {
+                    margin-left: 0 !important;
+                    width: 21.6rem;
+                    height: 5.6rem;
+                    border: 0;
+                    box-shadow: none !important;
+                    text-transform: uppercase;
+                    border-radius: 0;
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    line-height: 2.6rem;
+                    text-align: center;
+                    letter-spacing: 0.93913px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @extend .c-red-1-bg, .c-white;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-details {
+    padding: 3.6rem 1.2rem;
+
+    &__text {
+        max-width: 114.3rem;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        letter-spacing: 0.479348px;
+    }
+
+    &__list {
+        margin-left: 2rem;
+        margin-top: 2.7rem;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-row-gap: 1.6rem;
+        grid-column-gap: 29.1rem;
+
+        &-item {
+            &::marker {
+                color: #CA3433;
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    &__disclamer {
+        margin-top: 3.5rem;
+        &-heading {
+            margin-top: 1.2rem;
+            margin-right: 2rem;
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            letter-spacing: 0.704347px;
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 1.2rem;
+            line-height: 2.3rem;
+            letter-spacing: 0.410869px;
+        }
+    }
+}

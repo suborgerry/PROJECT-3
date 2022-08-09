@@ -207,7 +207,7 @@ button.bg-dark:focus {
 .d-table-cell {
   display: table-cell !important;
 }
-.d-flex {
+.d-flex, .product-tabs__tab.product-reviews .stamped-summary {
   display: flex !important;
 }
 .d-inline-flex {
@@ -5200,22 +5200,22 @@ body {
 main {
   overflow-x: hidden;
 }
-.c-black, .product-info__fs p a, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
+.c-black, .product-tabs__button, .product-info__fs p a, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
   color: rgb(var(--color-base-outline-button-labels));
 }
 .c-black-bg {
   background-color: rgb(var(--color-base-outline-button-labels));
 }
-.c-white, .product-form__submit span, .image-with-text__undertext p, .image-with-text__text p, .swiper-pagination__index.swiper-pagination-bullet-active, .btn-red-2:hover, .btn-red-1 {
+.c-white, .product-tabs__tab.product-reviews .stamped-summary-actions-newreview, .product-form__submit span, .image-with-text__undertext p, .image-with-text__text p, .swiper-pagination__index.swiper-pagination-bullet-active, .btn-red-2:hover, .btn-red-1 {
   color: rgb(var(--color-base-background-1));
 }
 .c-white-bg, .wholesale-form__field, .work-to-roa__form-range-pull span, .article-template__comment-field textarea, .article-template__comment-field input, .btn-red-2 {
   background-color: rgb(var(--color-base-background-1));
 }
-.c-red-1, .product-collection-links__item, .wholesale-form__heading, .work-to-roa__form-container-title, .steps__info em, .list ul li::before, .collapsible-faq__accordion-content em, .btn-red-2 {
+.c-red-1, .product-tabs__button.active, .product-collection-links__item, .wholesale-form__heading, .work-to-roa__form-container-title, .steps__info em, .list ul li::before, .collapsible-faq__accordion-content em, .btn-red-2 {
   color: rgb(var(--color-base-accent-1));
 }
-.c-red-1-bg, .work-to-roa__form-range-pull, .articles-tabs__image.active .articles-tabs__tag:after, .blog-categories__heading h2::after, .btn-red-2:hover, .btn-red-1 {
+.c-red-1-bg, .product-tabs__tab.product-reviews .stamped-summary-actions-newreview, .work-to-roa__form-range-pull, .articles-tabs__image.active .articles-tabs__tag:after, .blog-categories__heading h2::after, .btn-red-2:hover, .btn-red-1 {
   background-color: rgb(var(--color-base-accent-1));
 }
 .c-red-2 {
@@ -11195,4 +11195,142 @@ main {
   text-align: center;
   letter-spacing: 0.93913px;
   text-transform: uppercase;
+}
+.product-tabs {
+  margin-top: 10.7rem;
+}
+.product-tabs__buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: max-content;
+  grid-gap: 7.35rem;
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 0.7rem;
+}
+.product-tabs__button {
+  grid-column: 1;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+  letter-spacing: 0.93913px;
+  text-transform: uppercase;
+  display: flex;
+  padding: 0 1.15rem;
+}
+.product-tabs__button:hover {
+  cursor: pointer;
+}
+.product-tabs__button span {
+  font-weight: 300;
+  font-size: 0.8rem;
+  line-height: 2rem;
+  text-align: center;
+  letter-spacing: 0.93913px;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+.product-tabs__tab:not(.active) {
+  display: none;
+}
+.product-tabs__tab.product-reviews {
+  margin-top: 5rem;
+}
+.product-tabs__tab.product-reviews .stamped-header {
+  margin-bottom: 0;
+}
+.product-tabs__tab.product-reviews .summary-overview,
+.product-tabs__tab.product-reviews .stamped-summary-ratings {
+  display: none;
+}
+.product-tabs__tab.product-reviews div.stamped-container {
+  margin: 0 !important;
+}
+.product-tabs__tab.product-reviews div.stamped-container .stamped-tab-container {
+  display: none;
+}
+.product-tabs__tab.product-reviews div.stamped-reviews-filter {
+  margin-top: -5.6rem;
+}
+.product-tabs__tab.product-reviews div.stamped-reviews-filter-label {
+  display: none !important;
+}
+.product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select {
+  border-radius: 0 !important;
+  font-weight: 300 !important;
+  font-size: 1.6rem !important;
+  line-height: 2.8rem !important;
+  letter-spacing: 0.547826px;
+  height: 5.6rem !important;
+  width: 20.2rem !important;
+  margin: 0 !important;
+  color: #000000;
+  appearance: none;
+}
+.product-tabs__tab.product-reviews div.stamped-reviews-search-text {
+  display: none !important;
+}
+.product-tabs__tab.product-reviews .stamped-summary-actions-newquestion {
+  margin-left: 0;
+}
+.product-tabs__tab.product-reviews .stamped-summary-actions-newquestion {
+  display: none;
+}
+.product-tabs__tab.product-reviews .stamped-summary-actions-newreview {
+  margin-left: 0 !important;
+  width: 21.6rem;
+  height: 5.6rem;
+  border: 0;
+  box-shadow: none !important;
+  text-transform: uppercase;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  letter-spacing: 0.93913px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-tabs__tab.product-reviews .stamped-summary-actions-newreview::before {
+  display: none;
+}
+.product-details {
+  padding: 3.6rem 1.2rem;
+}
+.product-details__text {
+  max-width: 114.3rem;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.479348px;
+}
+.product-details__list {
+  margin-left: 2rem;
+  margin-top: 2.7rem;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-row-gap: 1.6rem;
+  grid-column-gap: 29.1rem;
+}
+.product-details__list-item::marker {
+  color: #CA3433;
+  font-size: 2.5rem;
+}
+.product-details__disclamer {
+  margin-top: 3.5rem;
+}
+.product-details__disclamer-heading {
+  margin-top: 1.2rem;
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  letter-spacing: 0.704347px;
+}
+.product-details__disclamer p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 2.3rem;
+  letter-spacing: 0.410869px;
 }
