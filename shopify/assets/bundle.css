@@ -10845,11 +10845,11 @@ main {
 }
 .profile__block-style.profile__wishlist {
   width: 100vw;
-  padding: 32px var(--page-width-x-paddings-mobile) 22px;
+  padding: 32px var(--page-width-x-paddings-mobile) 24px;
 }
 @media (min-width: 576px) {
   .profile__block-style.profile__wishlist {
-    padding: 32px var(--page-width-x-paddings-tablet) 22px;
+    padding: 32px var(--page-width-x-paddings-tablet) 24px;
   }
 }
 @media (min-width: 992px) {
@@ -10862,6 +10862,72 @@ main {
   .profile__block-style.profile__wishlist {
     padding: 40px 56px 56px;
   }
+}
+.profile__block-style.profile__order {
+  padding: 40px var(--page-width-x-paddings-mobile) 24px;
+}
+@media (min-width: 576px) {
+  .profile__block-style.profile__order {
+    padding: 40px var(--page-width-x-paddings-tablet) 24px;
+  }
+}
+@media (min-width: 992px) {
+  .profile__block-style.profile__order {
+    padding: 40px 40px 35px;
+  }
+}
+@media (min-width: 1200px) {
+  .profile__block-style.profile__order {
+    padding: 40px 56px 35px;
+  }
+}
+.profile__order-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+}
+@media (min-width: 992px) {
+  .profile__order-list {
+    grid-row-gap: 40px;
+  }
+}
+.profile__order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.profile__order-head .head-column {
+  display: flex;
+  flex-direction: column;
+}
+.profile__order-head .order-number {
+  font-family: "Axiforma";
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 30px;
+  color: rgb(var(--color-base-outline-button-labels));
+}
+@media (min-width: 992px) {
+  .profile__order-head .order-number {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+.profile__order-head .order-status,
+.profile__order-head .order-quantity,
+.profile__order-head .order-price {
+  font-size: 12px;
+  line-height: 20px;
+  color: rgb(var(--color-base-outline-button-labels));
+  font-weight: 500;
+}
+@media (min-width: 992px) {
+  .profile__order-head .order-status {
+    margin-top: 18px;
+  }
+}
+.profile__order-head .order-price {
+  margin-top: 9px;
 }
 .profile .customer {
   margin: 0 !important;

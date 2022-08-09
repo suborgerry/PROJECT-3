@@ -95,9 +95,9 @@
         }
         &.profile__wishlist {
             width: 100vw;
-            padding: 32px var(--page-width-x-paddings-mobile) 22px;
+            padding: 32px var(--page-width-x-paddings-mobile) 24px;
             @include media-breakpoint-up(sm) {
-                padding: 32px var(--page-width-x-paddings-tablet) 22px;
+                padding: 32px var(--page-width-x-paddings-tablet) 24px;
             }
             @include media-breakpoint-up(lg) {
                 width: auto;
@@ -106,6 +106,67 @@
             @include media-breakpoint-up(xl) {
                 padding: 40px 56px 56px;
             }
+        }
+        &.profile__order {
+            padding: 40px var(--page-width-x-paddings-mobile) 24px;
+            @include media-breakpoint-up(sm) {
+                padding: 40px var(--page-width-x-paddings-tablet) 24px;
+            }
+            @include media-breakpoint-up(lg) {
+                padding: 40px 40px 35px;
+            }
+            @include media-breakpoint-up(xl) {
+                padding: 40px 56px 35px;
+            }
+        }
+    }
+    &__order-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        @include media-breakpoint-up(lg) {
+            grid-row-gap: 40px;
+        }
+    }
+    &__order {
+        &-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .head-column {
+                display: flex;
+                flex-direction: column;
+            }
+            .order-number {
+                font-family: 'Axiforma';
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 30px;
+                color: $c-black;
+                @include media-breakpoint-up(lg) {
+                    font-size: 16px;
+                    line-height: 20px;
+                }
+            }
+            .order-status,
+            .order-quantity,
+            .order-price {
+                font-size: 12px;
+                line-height: 20px;
+                color: $c-black;
+                font-weight: 500;
+            }
+            .order-status {
+                @include media-breakpoint-up(lg) {
+                    margin-top: 18px;
+                }
+            }
+            .order-price {
+                margin-top: 9px;
+            }
+        }
+        &-details {
+
         }
     }
     .customer {
