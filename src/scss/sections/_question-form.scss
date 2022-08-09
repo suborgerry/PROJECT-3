@@ -122,12 +122,14 @@
             z-index: 2;
             overflow: hidden;
             height: 0;
+            
             li {
                 padding: 1.5rem 2.4rem;
                 font-weight: 300;
                 font-size: 1.6rem;
                 line-height: 2.5rem;
                 letter-spacing: 0.547826px;
+
                 &:hover {
                     background-color: #F8E0E0;
                     color: #CF322D;
@@ -140,9 +142,11 @@
         display: flex;
         justify-content: center;
         margin: 6.4rem 0 23.6rem 0;
+        
         @include media-breakpoint-down(sm) {
             margin: 2rem 0 4rem 0;
         }
+
         button {
             text-transform: uppercase;
             font-weight: 700;
