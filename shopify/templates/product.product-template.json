@@ -57,10 +57,34 @@
             "show_dynamic_checkout": false
           }
         },
+        "f65b7168-7cc3-4cf0-82b2-614222509d6f": {
+          "type": "free_shipping",
+          "settings": {
+            "link": "shopify:\/\/pages\/return-and-exchange-policy"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "facebook": true,
+            "facebook_link": "",
+            "pinterest": true,
+            "pinterest_link": "",
+            "rss": true,
+            "rss_link": "",
+            "twitter": true,
+            "twitter_link": "",
+            "tumplr": true,
+            "tumplr_link": ""
+          }
+        },
+        "7a021fe6-3930-4bf0-bd27-e991457a889e": {
+          "type": "fan_photos",
+          "settings": {
+            "image_1": "shopify:\/\/shop_images\/Group_2_Copy.jpg",
+            "image_2": "shopify:\/\/shop_images\/Group_2_Copy-2.jpg",
+            "image_3": "shopify:\/\/shop_images\/Group_2_Copy-1.jpg",
+            "image_4": "shopify:\/\/shop_images\/Group_2_Copy-3.jpg"
           }
         }
       },
@@ -72,7 +96,9 @@
         "948ec5a5-816d-4c4f-9a5f-65a95c093471",
         "ffb156b2-3094-4cb6-9814-f539e8c4c155",
         "buy_buttons",
-        "share"
+        "f65b7168-7cc3-4cf0-82b2-614222509d6f",
+        "share",
+        "7a021fe6-3930-4bf0-bd27-e991457a889e"
       ],
       "settings": {
         "gallery_layout": "stacked",

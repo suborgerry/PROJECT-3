@@ -148,15 +148,6 @@
 }
 
 /* Form Elements */
-.product-form__input {
-  flex: 0 0 100%;
-  padding: 0;
-  margin: 0 0 1.2rem 0;
-  max-width: 37rem;
-  min-width: fit-content;
-  border: none;
-}
-
 variant-radios,
 variant-selects {
   display: block;
@@ -257,22 +248,6 @@ fieldset.product-form__input .form__label {
   max-width: 25rem;
 }
 
-.product-form__submit {
-  margin-bottom: 1rem;
-}
-
-.no-js .product-form__submit.button--secondary {
-  --color-button: var(--color-base-accent-1);
-  --color-button-text: var(--color-base-solid-button-labels);
-  --alpha-button-background: 1;
-}
-
-.product-form__submit[aria-disabled="true"] + .shopify-payment-button .shopify-payment-button__button[disabled],
-.product-form__submit[disabled] + .shopify-payment-button .shopify-payment-button__button[disabled] {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
 @media screen and (forced-colors: active) {
   .product-form__submit[aria-disabled="true"] {
     color: Window;
@@ -291,7 +266,6 @@ fieldset.product-form__input .form__label {
 
 /* Product info */
 
-.product__info-container .product-form,
 .product__info-container .product__description {
   margin: 2.5rem 0;
 }

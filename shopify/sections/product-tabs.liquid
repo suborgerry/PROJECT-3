@@ -1,0 +1,61 @@
+{%- assign s = section -%}
+{%- assign ss = s.settings -%}
+
+{%- style -%}
+.positioning-{{ s.id }} {
+    padding: {{ ss.padding_section_sm }};
+}
+@media (min-width: 768px) {
+    .positioning-{{ s.id }} {
+        padding: {{ ss.padding_section }};
+    }
+}
+{%- endstyle -%}
+
+<section class="positioning-{{ s.id }} page-width product-tabs">
+    <div class="product-tabs__buttons d-flex">
+        <div class="product-tabs__button active">PRODUCT DETAILS</div>
+        <div class="product-tabs__button">REVIEWS <span>({{ product.metafields.stamped.reviews_count }} REVIEWS)</span></div>
+        <div class="product-tabs__button">SIZE GUIDE</div>
+    </div>
+    <div class="product-tabs__container">
+        <div class="product-tabs__tab product-details">
+            <p class="product-details__text">{{ product.metafields.custom.product_details_text }}</p>
+            <ul class="product-details__list">
+                {%- for detail in product.metafields.custom.product_details.value -%}
+                    <li class="product-details__list-item">{{ detail }}</li>
+                {%- endfor -%}
+            </ul>
+            <div class="product-details__disclamer d-flex">
+                <span class="product-details__disclamer-heading">DISCLAIMER</span>
+                <p>{{ product.metafields.custom.disclamer }}</p>
+            </div>
+        </div>
+        <div class="product-tabs__tab active product-reviews">
+            {{ product.metafields.stamped.reviews }}
+        </div>
+    </div>
+    {% javascript %}
+        (() => {
+            document.querySelector('#stamped-sort-select').style.setProperty('padding-left', '2.4rem', 'important');
+            document.querySelector('#stamped-sort-select').style.setProperty('padding-right', '2.4rem', 'important');
+        })();
+    {% endjavascript %}
+</section>
+
+{% schema %}
+{
+    "name": "Product tabs",
+    "settings": [
+
+    ],
+    "blocks": [
+
+    ],
+    "presets": [
+        {
+            "name": "Product tabs"
+        }
+    ]
+}
+{% endschema %}
