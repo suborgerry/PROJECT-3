@@ -18,6 +18,10 @@
         margin-bottom: 3.2rem;
         border-bottom: 1px solid #EAEAEA;
 
+        @include media-breakpoint-down(sm) {
+            padding-top: 3.2rem;
+        }
+
         &.mt-64 {
             margin-top: 6.4rem;
         }
@@ -82,6 +86,10 @@
         &.second {
             margin-bottom: -3.5rem;
             margin-top: 5.4rem;
+
+            @include media-breakpoint-down(sm) {
+                margin-top: 4rem;
+            }
         }
     }
 
@@ -383,4 +391,8 @@
             margin-top: 6.4rem;
         }
     }
+}
+
+.wholesale-form__label + .wholesale-form__checkboxes {
+    margin-top: 1.6rem;
 }

@@ -10128,6 +10128,11 @@ main {
   margin-bottom: 3.2rem;
   border-bottom: 1px solid #EAEAEA;
 }
+@media (max-width: 767.98px) {
+  .wholesale-form__heading {
+    padding-top: 3.2rem;
+  }
+}
 .wholesale-form__heading.mt-64 {
   margin-top: 6.4rem;
 }
@@ -10180,6 +10185,11 @@ main {
 .wholesale-form__label.second {
   margin-bottom: -3.5rem;
   margin-top: 5.4rem;
+}
+@media (max-width: 767.98px) {
+  .wholesale-form__label.second {
+    margin-top: 4rem;
+  }
 }
 .wholesale-form__checkbox {
   display: flex;
@@ -10431,6 +10441,9 @@ main {
   .wholesale-form__btn {
     margin-top: 6.4rem;
   }
+}
+.wholesale-form__label + .wholesale-form__checkboxes {
+  margin-top: 1.6rem;
 }
 .subscribe__heading {
   margin-bottom: 36px;
