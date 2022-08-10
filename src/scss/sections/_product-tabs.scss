@@ -1,5 +1,61 @@
 .product-tabs {
-    margin-top: 10.7rem;
+    margin-top: 2.9rem;
+    display: none;
+
+    &.mobile {
+        display: block;
+
+        .product-tabs {
+            &__buttons {
+                flex-direction: column;
+                grid-gap: 0;
+            }
+
+            &__button {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                position: relative;
+
+                &:not(:first-child) {
+                    border-top: 1px solid #EAEAEA;
+                }
+
+                &::after {
+                    content: "";
+                    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDE1IDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTQuNDM0NiAxLjcwNzExTDguMDcwNjggOC4wNzEwN0M3LjY4MDE2IDguNDYxNTkgNy4wNDcgOC40NjE1OSA2LjY1NjQ3IDguMDcxMDdMMC4yOTI1MSAxLjcwNzExQy0wLjA5ODAxNDQgMS4zMTY1OCAtMC4wOTgwMTQ0IDAuNjgzNDE3IDAuMjkyNTEgMC4yOTI4OTNDMC42ODMwMzQgLTAuMDk3NjMxNyAxLjMxNjIgLTAuMDk3NjMxNyAxLjcwNjcyIDAuMjkyODkzTDcuMzYzNTggNS45NDk3NUwxMy4wMjA0IDAuMjkyODkzQzEzLjQxMSAtMC4wOTc2MzEyIDE0LjA0NDEgLTAuMDk3NjMxMSAxNC40MzQ2IDAuMjkyODkzQzE0LjgyNTIgMC42ODM0MTggMTQuODI1MiAxLjMxNjU4IDE0LjQzNDYgMS43MDcxMVoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=");
+                    display: block;
+                    position: absolute;
+                    width: 1.5rem;
+                    height: .8rem;
+                    right: 0;
+                    background-size: contain;
+                }
+                
+                span {
+                    display: none;
+                }
+            }
+
+            &__tab {
+                height: 0;
+                // padding: 0;
+                overflow: hidden;
+
+                &.active {
+                    height: max-content;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 10.7rem;
+        display: block;
+
+        &.mobile {
+            display: none;
+        }
+    }
 
     &__buttons {
     width: 100%;
@@ -53,13 +109,108 @@
             .stamped-header {
                 margin-bottom: 0;
             }
+
+            .stamped-review-content-body {
+                font-weight: 700;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                letter-spacing: 0.93913px;
+            }
+
+            .stamped-share-icon {
+                font-weight: 500;
+                font-size: 1.4rem;
+                line-height: 2.2rem;
+                letter-spacing: 0.821739px;
+                text-transform: uppercase;
+                color: #000000;
+                padding: 0;
+
+                .stamped-fa-share-alt {
+                    display: none;
+                }
+            }
+
+            .stamped-rating-holder {
+                font-size: 0;
+
+                a {
+                    font-size: 1.2rem;
+                    line-height: 1.9rem;
+                    letter-spacing: 0.704347px;
+                    color: #CF322D;
+
+                    i::before {
+                        font-size: 1.8rem;
+                    }
+
+                    .stamped-fa {
+                        color: #9B9B9B;
+
+                        &:hover {
+                            color: #CF322D;
+                        }
+                    }
+                }
+
+                a.stamped-thumbs-down {
+                    margin-left: 1.9rem;
+                }
+
+            }
+
+            .stamped-review-header-title {
+                font-family: 'Axiforma';
+            }
             
             .summary-overview,
             .stamped-summary-ratings {
                 display: none;
             }
+
+            .new-review-form {
+                margin-top: 6.5rem !important;
+                border: 0 !important;
+
+                .stamped-form-label {
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    line-height: 2rem;
+                    letter-spacing: 0.93913px;
+                    text-transform: uppercase;
+                    margin-bottom: 2rem;
+                    display: block;
+                }
+
+                .stamped-form-review-rating {
+                    margin-top: 2rem;
+                }
+
+                input.stamped-form-input {
+                    border: 1px solid #F3F3F3;
+                    height: 5.6rem;
+                    padding: 0 2.4rem;
+                }
+
+                .stamped-form-actions {
+                    margin-bottom: 7rem;
+                }
+
+                .stamped-file-uploader-btn {
+                    height: 5.6rem;
+                    display: flex;
+                    align-items: center;
+                }
+                
+                .stamped-button-submit {
+                    height: 5.6rem;
+                    display: flex;
+                    align-items: center;
+                }
+            }
             
             div.stamped-container {
+                max-width: 100%;
                 margin: 0 !important;
 
                 .stamped-tab-container {
@@ -70,12 +221,22 @@
             div.stamped-reviews {
                 &-filter {
                     margin-top: -5.6rem;
+                    border: 0;
+
+                    @include media-breakpoint-down(xs) {
+                        margin-top: 2rem;
+                    }
 
                     &-label {
                         display: none !important;
                     }
 
                     span.stamped-sort-select-wrapper {
+                        @include media-breakpoint-down(xs) {
+                            width: 100%;
+                            display: flex;
+                        }
+
                         select.stamped-sort-select {
                             border-radius: 0 !important;
                             font-weight: 300 !important;
@@ -86,9 +247,15 @@
                             width: 20.2rem !important;
                             margin: 0 !important;
                             color: #000000;
-                            -webkit-appearance: none;
-                            -moz-appearance: none;
-                            appearance: none; 
+                            -moz-appearance:none !important; /* Firefox */
+                            -webkit-appearance:none !important; /* Safari and Chrome */
+                            appearance:none !important;
+
+                            @include media-breakpoint-down(xs) {
+                                width: 100% !important;
+                                max-width: 100% !important;
+                                display: block;
+                            }
                         }
                     }
                 }
@@ -129,6 +296,49 @@
 
                     &::before {
                         display: none;
+                    }
+                }
+            }
+
+            .stamped-review {
+                border: 1px solid #EFEFEF;
+                padding: 4.7rem 4.9rem 5rem 4rem;
+
+                &-avatar {
+                    display: none;
+                }
+
+                &-header {
+                    .created {
+                        font-weight: 500;
+                        font-size: 1.2rem;
+                        line-height: 1.9rem;
+                        letter-spacing: 0.704347px;
+                        color: #949494;
+                    }
+
+                    .author {
+                        font-weight: 700;
+                        font-size: 1.6rem;
+                        line-height: 2rem;
+                        text-align: center;
+                        letter-spacing: 0.93913px;
+                        color: #000000;
+                    }
+
+                    .review-location {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 1.7rem;
+
+                        span + span {
+                            margin-left: .8rem;
+                            font-weight: 500;
+                            font-size: 1.2rem;
+                            line-height: 1.9rem;
+                            letter-spacing: 0.704347px;
+                            color: #949494;
+                        }
                     }
                 }
             }

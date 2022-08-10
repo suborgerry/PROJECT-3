@@ -123,9 +123,9 @@
       ],
       "settings": {
         "heading": "Qualifications",
+        "text": "",
         "margin_heading_bottom": 42,
-        "margin_heading_bottom_mob": 23,
-        "text": ""
+        "margin_heading_bottom_mob": 23
       }
     },
     "1657878017eb724aa6": {
@@ -221,9 +221,9 @@
       ],
       "settings": {
         "heading": "Refunds",
+        "text": "After your return has been processed it will typically take 2-5 days for the funds to shown on your bank statement.",
         "margin_heading_bottom": 28,
-        "margin_heading_bottom_mob": 23,
-        "text": "After your return has been processed it will typically take 2-5 days for the funds to shown on your bank statement."
+        "margin_heading_bottom_mob": 23
       }
     },
     "1658222701996a9457": {
