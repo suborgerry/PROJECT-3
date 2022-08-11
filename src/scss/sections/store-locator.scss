@@ -1,0 +1,381 @@
+
+#storeifyapps-storelocator-shortcode {
+    @include media-breakpoint-down(xs) {
+        width: 100vw;
+        margin-left: -5vw;
+    }
+    .storelocator {
+        &-search {
+            border: 0 !important;
+            padding: 0 !important;
+            
+            .search-address-box {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+    }
+
+    .storeify-stl-header {
+        @extend .c-grey-10-bg;
+        padding: 4.8rem;
+        margin-bottom: 4.8rem;
+
+        @include media-breakpoint-down(xs) {
+            padding: 0;
+            border: 0;
+            margin-bottom: 2rem;
+        }
+
+        .search-address-box {
+            max-width: max-content;
+        }
+
+        .storeify-header-inner {
+            margin-bottom: 0 !important;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+
+            @include media-breakpoint-down(xs) {
+                border: 0;
+                border-radius: 0;
+            }
+
+            .col-md-12 {
+                display: none;
+            }
+
+            .search-radius-box {
+                @include media-breakpoint-down(md) {
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    .input-radius-slt {
+                        max-width: 100%;
+                        width: 100% !important;
+                        margin-top: 2rem;
+                    }
+                }
+            }
+
+            .storeifystorelocator-seach-action-box {
+                &.storeifystorelocator-seach-action-mobile {
+                    display: none !important;
+                }
+
+                @include media-breakpoint-down(md) {
+                    margin-top: 2rem;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            & > div {
+                width: max-content !important;
+                max-width: max-content;
+
+                @include media-breakpoint-down(md) {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                }
+            }
+        }
+
+        .range-radius .slider {
+            @extend .c-red-1-bg;
+            &::-webkit-slider-thumb {
+                height: 1.5rem !important;
+                width: 1.5rem !important;
+                background: #fff !important;
+                border: 5px $c-red-1 solid;
+            }
+        }
+    }
+
+    .map-tab-mobile-bnt {
+        @include media-breakpoint-down(md) {
+            padding: 0 2rem;
+        }
+    }
+
+    .map-tab-mobile-bnt-item {
+        &.active {
+            @include media-breakpoint-down(md) {
+                background-color: $c-red-1 !important;
+                border-color: $c-red-1 !important
+            }
+        }
+    }
+
+    #main-slider-storelocator {
+        overflow-y: auto;
+        @extend .c-grey-10-bg;
+        border: 0;
+
+        @include media-breakpoint-down(lg) {
+            min-height: min-content;
+            max-height: max-content;
+            height: min-content;
+        }
+
+        .item.thumbnail {
+            padding: 0;
+            width: 100%;
+            border: 0;
+            margin-bottom: 0;
+            box-shadow: none;
+            background: transparent;
+
+            &:hover {
+                @extend .c-grey-8-bg;
+            }
+
+            .inner-item {
+                padding: 4.1rem 2.4rem;
+                @extend .d-flex;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    background-image: url("data:image/svg+xml,%3Csvg width='62' height='50' viewBox='0 0 62 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M61.1926 14.2692L51.5772 0.807692C51.1926 0.307692 50.6157 0 50.0003 0H11.5388C10.9234 0 10.3465 0.307692 9.96186 0.807692L0.346471 14.2692C0.231087 14.6154 0.115702 14.9615 0.000317439 15.3077C-0.0381441 19.5769 3.42339 23.0769 7.69263 23.0769C10.0003 23.0769 12.0388 22.0769 13.4619 20.4615C14.8849 22.0769 16.9234 23.0769 19.2311 23.0769C21.5388 23.0769 23.5772 22.0769 25.0003 20.4615C26.4234 22.0769 28.4619 23.0769 30.7695 23.0769C33.0772 23.0769 35.1157 22.0769 36.5388 20.4615C37.9619 22.0769 40.0003 23.0769 42.308 23.0769C44.6157 23.0769 46.6542 22.0769 48.0772 20.4615C49.5003 22.0769 51.5388 23.0769 53.8465 23.0769C58.1157 23.0769 61.5772 19.5769 61.5388 15.3077C61.4234 14.9615 61.308 14.6154 61.1926 14.2692Z' fill='%23CF322D'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M48.0772 25.3691C49.8157 26.3768 51.8041 26.923 53.8464 26.923C55.181 26.923 56.4695 26.6538 57.6926 26.2191V46.1538C57.6926 48.2768 55.9695 49.9999 53.8464 49.9999H50.0003V30.7691H38.4618V49.9999H7.69259C5.56951 49.9999 3.84644 48.2768 3.84644 46.1538V26.173C6.99644 27.2614 10.5734 27.0461 13.4618 25.3691C16.9349 27.3807 21.5272 27.3807 25.0003 25.3691C28.4734 27.3807 33.0618 27.3807 36.5387 25.3691C40.0157 27.3807 44.6003 27.3807 48.0772 25.3691ZM11.5387 42.3076H26.9234V30.7691H11.5387V42.3076Z' fill='%23CF322D'/%3E%3C/svg%3E%0A");
+                    background-size: contain;
+                    position: absolute;
+                    display: block;
+                    width: 6.2rem;
+                    height: 5rem;
+                }
+
+                .item-thumb {
+                    display: none;
+                }
+
+                .item-content {
+                    .item-phone,
+                    .store-name,
+                    .address {
+                        margin-left: 8.5rem;
+                    }
+
+                    .item-phone {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 25px;
+                        margin-bottom: 0;
+
+                        a {
+                            color: #000;
+                            text-decoration: none;
+                        }
+
+                        .material-icons-outlined {
+                            font-size: 0;
+
+                            &::before {
+                                content: "";
+                                background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.7097 14.4764L13.9481 10.7147C13.4778 10.2445 12.8196 10.2445 12.3494 10.7147L10.7507 12.3134C8.68177 14.4764 3.60356 9.39815 5.67246 7.32925L7.27116 5.73056C7.74136 5.26035 7.74136 4.60207 7.27116 4.13186L3.50952 0.370231C3.03932 -0.0999729 2.38103 -0.0999729 1.91083 0.370231L0.78234 1.49872C-1.19252 3.47358 0.688299 8.55178 5.10822 12.8777C9.4341 17.2035 14.5123 19.1784 16.4872 17.2035L17.7097 16.075C18.1799 15.6048 18.1799 14.9466 17.7097 14.4764Z' fill='%23CF322D'/%3E%3C/svg%3E%0A");
+                                background-size: contain;
+                                width: 1.8rem;
+                                height: 1.8rem;
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .address {
+                        margin-left: 8.5rem;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 25px;
+                        margin-bottom: 1.5rem;
+
+                        .material-icons-outlined {
+                            font-size: 0;
+
+                            &::before {
+                                content: "";
+                                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10.125 3.9375C10.125 1.76625 11.8912 0 14.0625 0C16.2338 0 18 1.76625 18 3.9375C18 5.958 14.841 9.53662 14.481 9.93825C14.3741 10.0564 14.2222 10.125 14.0625 10.125C13.9028 10.125 13.7509 10.0564 13.644 9.93825C13.284 9.53662 10.125 5.958 10.125 3.9375ZM12.375 3.9375C12.375 4.869 13.131 5.625 14.0625 5.625C14.994 5.625 15.75 4.869 15.75 3.9375C15.75 3.006 14.994 2.25 14.0625 2.25C13.131 2.25 12.375 3.006 12.375 3.9375Z' fill='%23CF322D'/%3E%3Cpath d='M0.35325 6.60825C0.140625 6.69375 0 6.90075 0 7.13138V17.4375C0 17.6243 0.093375 17.7986 0.2475 17.9032C0.342 17.9662 0.451125 18 0.5625 18C0.633375 18 0.70425 17.9865 0.77175 17.9595L5.625 16.0177V4.5L0.35325 6.60825Z' fill='%23CF322D'/%3E%3Cpath d='M15.318 10.6895C14.9985 11.045 14.5406 11.2497 14.0625 11.2497C13.5844 11.2497 13.1265 11.045 12.807 10.6895C12.6923 10.5624 12.5449 10.3947 12.375 10.1956V17.9997L17.6467 15.8915C17.8605 15.8071 18 15.599 18 15.3695V7.09961C17.0786 8.65998 15.8468 10.1 15.318 10.6895Z' fill='%23CF322D'/%3E%3Cpath d='M9.35437 5.54175L6.75 4.5V16.0177L11.25 17.8177V8.784C10.5311 7.81537 9.78075 6.64875 9.35437 5.54175Z' fill='%23CF322D'/%3E%3C/svg%3E");
+                                background-size: contain;
+                                width: 1.8rem;
+                                height: 1.8rem;
+                                display: block;
+                            }
+                        }
+
+                        a {
+                            color: #000;
+                        }
+                    }
+
+                    .linkdetailstore,
+                    .getdirectionstore {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .map-tab-result {
+        width: 43rem;
+        padding: 0;
+        margin-right: 4.8rem;
+
+        @include media-breakpoint-down(md) {
+            display: flex;
+            width: 100%;
+            max-width: 100%;
+            height: max-content;
+            max-height: max-content;
+            margin-bottom: 2rem;
+        }
+
+        & > *:empty {
+            display: none;
+        }
+
+        .results-slt {
+            .title {
+                display: none;
+            }
+        }
+    }
+
+    .map-tab-ggmap {
+        width: 86.2rem;
+        height: 86.2rem;
+        padding-right: 0;
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 37.7rem;
+        }
+
+        .map_container {
+            height: 100%;
+            #map {
+                height: 100% !important;
+            }
+        }
+    }
+
+    .container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .form-control-storeify {
+        background-color: #fff;
+        border: 1px solid #F3F3F3;
+        width: 33.2rem !important;
+        height: 5.6rem !important;
+        padding-left: 7rem;
+
+        @include media-breakpoint-down(md) {
+            width: 100% !important;
+        }
+    }
+
+    .gr-search-slt {
+        position: relative;
+        display: flex;
+        align-items: center;
+        max-width: max-content;
+        
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &::before {
+            content: "";
+            background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.6749 13.4457L20.7354 19.5062C20.9051 19.6759 20.9051 19.9511 20.7354 20.1209L20.1209 20.7354C19.9511 20.9051 19.676 20.9051 19.5062 20.7354L13.4457 14.6749C12.0266 15.8244 10.2225 16.5164 8.25818 16.5164C3.70464 16.5164 0 12.8117 0 8.25818C0 3.70464 3.7046 0 8.25814 0C12.8117 0 16.5163 3.70464 16.5163 8.25818C16.5163 10.2225 15.8244 12.0266 14.6749 13.4457ZM1.73858 8.25818C1.73858 11.8533 4.66307 14.7778 8.25818 14.7778C11.8533 14.7778 14.7778 11.8533 14.7778 8.25818C14.7778 4.66307 11.8533 1.73858 8.25818 1.73858C4.66307 1.73858 1.73858 4.66307 1.73858 8.25818Z' fill='black'/%3E%3C/svg%3E%0A");
+            display: block;
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            left: 2.4rem;
+        }
+
+        #getbylocal {
+            display: none;
+        }
+    }
+
+    .radius-value-container {
+        #radius-value {
+            label {
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 25px;
+                letter-spacing: 0.547826px;
+                @extend .c-grey-4;
+            }
+
+            .num-range {
+                font-size: 16px;
+                line-height: 25px;
+                letter-spacing: 0.547826px;
+            }
+        }
+    }
+
+    .input-radius-slt {
+        max-width: 33.2rem;
+        width: 33.2rem !important;
+    }
+
+    .storeifystorelocator-seach-action-box {
+        #reset-search {
+            display: none;
+        }
+
+        .seach-action-box {
+            max-width: max-content;
+            min-width: max-content;
+            height: max-content;
+            padding: 0;
+
+            #submit-search {
+                border: 0;
+                padding: 0;
+                width: 33.2rem;
+                height: 5.6rem;
+                background: $c-red-1 !important;
+                font-size: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background: $c-red-4 !important;
+                }
+
+                &::before {
+                    content: "LOCATE A STORE";
+                    display: block;
+                    color: $c-white !important;
+                    font-weight: 700;
+                    font-size: 1.4rem;
+                    line-height: 2.3rem;
+                    letter-spacing: 0.821739px;
+                    text-transform: uppercase;
+                }
+
+                .material-icons-outlined {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .bootstrap-storeifyapps .row {
+        margin: 0;
+    }
+}

@@ -1,29 +1,46 @@
 {
   "sections": {
+    "16602058915c57c75e": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 0,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 0
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
         "padding_top": 60,
-        "padding_bottom": 28,
+        "padding_bottom": 64,
         "padding_top_mob": 44,
-        "padding_bottom_mob": 0,
-        "title_margin_bottom": 32,
+        "padding_bottom_mob": 54,
+        "title_margin_bottom": 0,
         "show_title": true,
-        "show_content": true
+        "show_content": false
       }
     },
-    "165952458929694257": {
-      "type": "contact-form",
+    "1660212750fc400d6a": {
+      "type": "apps",
+      "blocks": {
+        "acc61b9d-8da1-40a5-beaa-e4cb0fdfd1ca": {
+          "type": "shopify:\/\/apps\/store-locator-dealer-locator\/blocks\/storeify-storelocator\/e7003487-cc51-4321-9488-2c47c07a5b17",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "acc61b9d-8da1-40a5-beaa-e4cb0fdfd1ca"
+      ],
       "settings": {
-        "heading": "Contact form",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 60
+        "include_margins": true
       }
     }
   },
   "order": [
+    "16602058915c57c75e",
     "main",
-    "165952458929694257"
+    "1660212750fc400d6a"
   ]
 }
