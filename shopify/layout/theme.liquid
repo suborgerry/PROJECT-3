@@ -212,7 +212,8 @@
     {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
     {{ 'bundle.css' | asset_url | stylesheet_tag }}
     {% comment %} <script src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script> {% endcomment %}
-  </head>
+  {% include 'storeifyapps-storelocator-header' %}
+</head>
 
   <body class="gradient {{ template.suffix}} template-{{ request.page_type | handle }}">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
@@ -273,5 +274,6 @@
     </script>
 
     {% include 'swymSnippet' %}
-  </body>
+  {% include 'storeifyapps-storelocator-footer' %}
+</body>
 </html>
