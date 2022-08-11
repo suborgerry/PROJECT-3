@@ -12,7 +12,7 @@
 }
 {%- endstyle -%}
 
-<section class="main-collection positioning--{{ s.id }}">
+<div class="main-collection positioning--{{ s.id }}">
     <div class="page-width">
         <nav class="main-collection__links d-none d-md-block">
             <ul class="list-unstyled">
@@ -27,11 +27,11 @@
         </nav>
         <h3 class="main-collection__heading text-center text-32px c-grey-1">{{ collection.title | upcase }}</h3>
     </div>
-</section>
+</div>
 
 {% schema %}
 {
-    "name": "Main collection",
+    "name": "Collection head",
     "settings": [                      
         {
             "type": "header",
@@ -68,7 +68,7 @@
     ],
     "presets": [
         {
-            "name": "Main collection",
+            "name": "Collection head",
             "category": "collection"
         }
     ]
