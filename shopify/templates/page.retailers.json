@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 28,
+        "padding_top_mob": 44,
+        "padding_bottom_mob": 0,
+        "title_margin_bottom": 32,
+        "show_title": true,
+        "show_content": true
+      }
+    },
+    "165952458929694257": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "Contact form",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165952458929694257"
+  ]
+}
