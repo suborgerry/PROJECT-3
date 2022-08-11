@@ -1,9 +1,6 @@
 .main-collection {
     &__heading {
         margin-bottom: 52px;
-        @include media-breakpoint-up(md) {
-            margin-bottom: 60px;
-        }
     }
     &__links {
         margin-bottom: 10px;

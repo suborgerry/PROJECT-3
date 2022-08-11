@@ -5369,6 +5369,64 @@ main {
 .shopify-challenge__button {
   margin-top: 24px !important;
 }
+.products-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 6px;
+}
+@media (min-width: 576px) {
+  .products-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .products-list {
+    grid-row-gap: unset;
+  }
+}
+@media (min-width: 992px) {
+  .products-list.col-2-desktop {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 24px;
+  }
+}
+@media (min-width: 992px) {
+  .products-list.col-3-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 12px;
+  }
+}
+@media (min-width: 992px) {
+  .products-list.col-4-desktop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.products-list__item {
+  padding: 10px 10px 12px;
+}
+.products-list__grid-buttons {
+  display: none;
+}
+@media (min-width: 992px) {
+  .products-list__grid-buttons {
+    display: flex;
+  }
+}
+.products-list__grid-buttons .grid-btn {
+  margin-left: 10px;
+  height: 40px;
+  cursor: pointer;
+}
+.products-list__grid-buttons .grid-btn svg {
+  width: auto;
+  height: 100%;
+  transition: 0.3s;
+  color: #C4C4C4;
+}
+.products-list__grid-buttons .grid-btn:hover svg, .products-list__grid-buttons .grid-btn.current-grid svg {
+  color: rgb(var(--color-base-accent-1));
+}
 .article-card {
   max-width: 31.6rem;
   padding-bottom: 4rem;
@@ -10713,11 +10771,6 @@ main {
 }
 .main-collection__heading {
   margin-bottom: 52px;
-}
-@media (min-width: 768px) {
-  .main-collection__heading {
-    margin-bottom: 60px;
-  }
 }
 .main-collection__links {
   margin-bottom: 10px;
