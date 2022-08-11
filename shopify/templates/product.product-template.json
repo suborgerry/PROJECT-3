@@ -101,18 +101,22 @@
         "7a021fe6-3930-4bf0-bd27-e991457a889e"
       ],
       "settings": {
-        "gallery_layout": "stacked",
-        "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "1660202271fb1c5e6e": {
+      "type": "product-tabs",
+      "settings": {
       }
     }
   },
   "order": [
     "165944704240ffd05c",
     "165944811493677dde",
-    "main"
+    "main",
+    "1660202271fb1c5e6e"
   ]
 }

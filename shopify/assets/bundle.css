@@ -10194,7 +10194,7 @@ main {
 .wholesale-form__checkbox {
   display: flex;
   align-items: baseline;
-  width: 20rem;
+  width: 23rem;
 }
 .wholesale-form__checkbox:nth-child(1n+4) {
   margin-top: 3.2rem;
