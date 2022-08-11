@@ -58,12 +58,11 @@
     }
 
     &__buttons {
-    width: 100%;
-    display: grid;
-    grid-template-columns: max-content;
-    grid-gap: 7.35rem;
-    border-bottom: 1px solid #C4C4C4;
-    padding-bottom: .7rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: max-content;
+        grid-gap: 7.35rem;
+        border-bottom: 1px solid #C4C4C4;
     }
 
     &__button {
@@ -77,6 +76,7 @@
         display: flex;
         padding: 0 1.15rem;
         @extend .c-black;
+        padding-bottom: .7rem;
 
         &:hover {
             cursor: pointer;
@@ -84,6 +84,8 @@
 
         &.active {
             @extend .c-red-1;
+            border-bottom: 2px solid $c-red-1;
+            margin-bottom: -1px;
         }
 
         span {

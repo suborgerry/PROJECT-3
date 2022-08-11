@@ -5115,6 +5115,11 @@ p {
 .list-unstyled {
   list-style: none;
 }
+@media (max-width: 991.98px) {
+  .pt-sm-0 {
+    padding-top: 0 !important;
+  }
+}
 .absolute-fill, .collections-brands__item a, .collections-states__block-item::after {
   top: 0;
   left: 0;
@@ -10112,7 +10117,7 @@ main {
 .wholesale-form__container {
   width: 100%;
   margin: auto;
-  padding: 0rem 2rem 5.8rem 2rem;
+  padding: 5.6rem 2rem 5.8rem 2rem;
 }
 @media (min-width: 992px) {
   .wholesale-form__container {
@@ -10156,6 +10161,8 @@ main {
     padding: 2.2rem 2.4rem 0.9rem 2.4rem;
     position: relative;
     background: white;
+    margin-left: 0;
+    margin-right: 0;
   }
   .wholesale-form__fields.date input {
     border: none;
@@ -10371,6 +10378,11 @@ main {
 .wholesale-form-dropzone input {
   display: none;
 }
+@media (max-width: 767.98px) {
+  .wholesale-form-dropzone-list {
+    margin-top: 2.4rem;
+  }
+}
 .wholesale-form-dropzone-list:empty {
   display: none !important;
 }
@@ -10393,6 +10405,11 @@ main {
 }
 .wholesale-form-dropzone-list-item + .wholesale-form-dropzone-list-item {
   margin-top: 0.8rem;
+}
+@media (max-width: 767.98px) {
+  .wholesale-form-dropzone-list-item span {
+    max-width: 80%;
+  }
 }
 .wholesale-form-dropzone-list-item span:not(.close) {
   position: relative;
@@ -11504,6 +11521,47 @@ main {
     font-size: 2rem;
   }
 }
+.product-form__buttons .swym-button-bar {
+  margin: 0;
+  width: 100%;
+}
+.product-form__buttons div.swym-btn-container {
+  margin-top: 3.2rem;
+  width: 33.1rem;
+  height: 5.6rem;
+}
+@media (max-width: 767.98px) {
+  .product-form__buttons div.swym-btn-container {
+    width: 100%;
+  }
+}
+.product-form__buttons div.swym-btn-container > * {
+  height: 100% !important;
+}
+.product-form__buttons div.swym-btn-container button.swym-button {
+  width: 28rem !important;
+  background: rgb(var(--color-base-accent-1)) !important;
+}
+@media (max-width: 767.98px) {
+  .product-form__buttons div.swym-btn-container button.swym-button {
+    width: 30.4rem !important;
+  }
+}
+.product-form__buttons div.swym-btn-container button.swym-button span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  text-align: center;
+  letter-spacing: 0.93913px;
+}
+.product-form__buttons div.swym-btn-container .swym-fave-count {
+  display: inline-flex;
+  max-width: max-content;
+  align-items: center;
+}
+.product-form__buttons div.swym-btn-container .swym-add-to-wishlist.swym-icontext:after {
+  display: none;
+}
 .product-form__quantity {
   margin-top: 1.2rem;
 }
@@ -11523,8 +11581,13 @@ main {
 }
 .product-form__submit {
   margin-top: 3.2rem;
-  width: 33.1rem;
+  width: 31.1rem;
   height: 5.6rem;
+}
+@media (max-width: 767.98px) {
+  .product-form__submit {
+    width: 100%;
+  }
 }
 .product-form__submit span {
   font-weight: 700;
@@ -11594,7 +11657,6 @@ main {
   grid-template-columns: max-content;
   grid-gap: 7.35rem;
   border-bottom: 1px solid #C4C4C4;
-  padding-bottom: 0.7rem;
 }
 .product-tabs__button {
   grid-column: 1;
@@ -11606,9 +11668,14 @@ main {
   text-transform: uppercase;
   display: flex;
   padding: 0 1.15rem;
+  padding-bottom: 0.7rem;
 }
 .product-tabs__button:hover {
   cursor: pointer;
+}
+.product-tabs__button.active {
+  border-bottom: 2px solid rgb(var(--color-base-accent-1));
+  margin-bottom: -1px;
 }
 .product-tabs__button span {
   font-weight: 300;

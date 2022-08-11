@@ -298,6 +298,54 @@
     }
 
     &-form {
+        &__buttons {
+            .swym-button-bar {
+                margin: 0;
+                width: 100%;
+            }
+            
+            div.swym-btn-container {
+                margin-top: 3.2rem;
+                width: 33.1rem;
+                height: 5.6rem;
+
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                }
+
+                & > * {
+                    height: 100% !important;
+                }
+
+                button.swym-button {
+                    width: 28rem !important;
+                    background: $c-red-1 !important;
+
+                    @include media-breakpoint-down(sm) {
+                        width: 30.4rem !important;
+                    }
+
+                    span {
+                        font-weight: 700;
+                        font-size: 1.6rem;
+                        line-height: 2.6rem;
+                        text-align: center;
+                        letter-spacing: 0.93913px;
+                    }
+                }
+
+                .swym-fave-count {
+                    display: inline-flex;
+                    max-width: max-content;
+                    align-items: center;
+                }
+
+                .swym-add-to-wishlist.swym-icontext:after {
+                    display: none;
+                }
+            }
+        }
+
         &__quantity {
             margin-top: 1.2rem;
     
@@ -323,9 +371,13 @@
     
         &__submit {
             margin-top: 3.2rem;
-            width: 33.1rem;
+            width: 31.1rem;
             height: 5.6rem;
     
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+
             span {
                 font-weight: 700;
                 font-size: 16px;
