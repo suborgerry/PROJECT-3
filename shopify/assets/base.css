@@ -205,6 +205,12 @@
   padding: 0 var(--page-width-x-paddings-mobile);
 }
 
+@media (min-width: 576px) {
+  .page-width {
+    padding: 0 var(--page-width-x-paddings-tablet);
+  }
+}
+
 @media (min-width: 1440px) {
   .page-width {
     padding: 0;

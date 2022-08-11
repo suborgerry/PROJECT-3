@@ -19,14 +19,14 @@
     <div class="page-width">
         <div class="profile__top">
             <div class="profile__top-box">
-                <h1 class="text-center text-32px">{{ page.title | prepend: 'My ' | upcase }}</h1>
+                <h1 class="text-center text-32px">{{ 'My profile' | upcase }}</h1>
                 <a href="{{ routes.account_logout_url }}" class="btn-logout btn-red-2"> {{ 'customer.log_out' | t }}</a>
             </div>
         </div>
         <div class="profile__double-column column-first">
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'customer.reset_password.title' | t | upcase }}</h3>
-                    <div class="profile__reset-password">
+                    <div class="profile__reset-password profile__block-style">
                         <div class="customer reset-password">
                             <svg style="display: none">
                               <symbol id="icon-error" viewBox="0 0 13 13">
@@ -122,126 +122,187 @@
                 </div>
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                    <div class="profile__order-list">
+                        {%- for order in customer.orders -%}
+                            <div class="profile__order profile__block-style{% if forloop.first %} opened{% endif %}">
+                                <div class="profile__order-head">
+                                    <div class="head-column">
+                                        <span class="order-number">ORDER #{{ order.order_number }}</span>
+                                        <span class="order-status small-style"><span class="c-grey-3">STATUS: </span>{{ order.fulfillment_status | upcase }}</span>
+                                    </div>
+                                    <div class="head-column">
+                                        <span class="order-quantity small-style">QUANTITY: {{ order.item_count }} {{ order.item_count | pluralize: 'item', 'items' | upcase }}</span>
+                                        <span class="order-price small-style"><span class="c-grey-3">PRICE: </span>{{ order.total_price | money }}</span>
+                                    </div>
+                                    {%- render 'icon-arr-right', class: 'order-arrow' -%}
+                                </div>
+
+                                <div class="profile__order-details">
+                                    {%- for line_item in order.line_items -%}
+                                      <div class="profile__order-details-product">
+                                        <img src="{{ line_item.image | img_url: 'compact' }}" alt="{{ line_item.image.alt }}">
+                                        <div class="product-info-grid">
+                                          <a href="{{ line_item.url }}" class="product-name heading-style">{{ line_item.product.title }}</a>
+                                          <span class="product-price-desk heading-style c-grey-3">
+                                            {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+                                              <dl>
+                                                {%- if line_item.original_price != line_item.final_price -%}
+                                                  <dt>
+                                                    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                  </dt>
+                                                  <dd class="regular-price">
+                                                    <s>{{ line_item.original_price | money }}</s>
+                                                  </dd>
+                                                  <dt>
+                                                    <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                                  </dt>
+                                                  <dd>
+                                                    <span>{{ line_item.final_price | money }}</span>
+                                                  </dd>
+                                                {%- else -%}
+                                                  <dt>
+                                                    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                  </dt>
+                                                  <dd>
+                                                    {{ line_item.original_price | money }}
+                                                  </dd>
+                                                {%- endif -%}
+                                                {%- if line_item.unit_price_measurement -%}
+                                                  <dt>
+                                                    <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                                                  </dt>
+                                                  <dd class="unit-price">
+                                                    <span>
+                                                      {%- capture unit_price_separator -%}
+                                                        <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                                                      {%- endcapture -%}
+                                                      {%- capture unit_price_base_unit -%}
+                                                        {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                                                          {{- line_item.unit_price_measurement.reference_value -}}
+                                                        {%- endif -%}
+                                                        {{ line_item.unit_price_measurement.reference_unit }}
+                                                      {%- endcapture -%}
+                                                      <span data-unit-price>{{ line_item.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                                    </span>
+                                                  </dd>
+                                                {%- endif -%}
+                                              </dl>
+                                            {%- else -%}
+                                              {{ line_item.final_price | money }}
+                                            {%- endif -%}
+                                          </span>
+                                          <div class="product-info">
+                                            {%- unless line_item.product.has_only_default_variant -%}
+                                              <span class="small-style"><span class="c-grey-3">SELECTED: </span>{{ line_item.variant.title }}</span>
+                                            {%- endunless -%}
+                                            <span class="small-style"><span class="c-grey-3">QTY: </span>{{ line_item.quantity }}</span>
+                                          </div>
+                                          <div class="d-flex flex-column align-items-end justify-content-end">
+                                            <span class="product-price-mob small-style c-grey-3">
+                                              {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+                                                <dl>
+                                                  {%- if line_item.original_price != line_item.final_price -%}
+                                                    <dt>
+                                                      <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                    </dt>
+                                                    <dd class="regular-price">
+                                                      <s>{{ line_item.original_price | money }}</s>
+                                                    </dd>
+                                                    <dt>
+                                                      <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                                    </dt>
+                                                    <dd>
+                                                      <span>{{ line_item.final_price | money }}</span>
+                                                    </dd>
+                                                  {%- else -%}
+                                                    <dt>
+                                                      <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                    </dt>
+                                                    <dd>
+                                                      {{ line_item.original_price | money }}
+                                                    </dd>
+                                                  {%- endif -%}
+                                                  {%- if line_item.unit_price_measurement -%}
+                                                    <dt>
+                                                      <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                                                    </dt>
+                                                    <dd class="unit-price">
+                                                      <span>
+                                                        {%- capture unit_price_separator -%}
+                                                          <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                                                        {%- endcapture -%}
+                                                        {%- capture unit_price_base_unit -%}
+                                                          {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                                                            {{- line_item.unit_price_measurement.reference_value -}}
+                                                          {%- endif -%}
+                                                          {{ line_item.unit_price_measurement.reference_unit }}
+                                                        {%- endcapture -%}
+                                                        <span data-unit-price>{{ line_item.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                                      </span>
+                                                    </dd>
+                                                  {%- endif -%}
+                                                </dl>
+                                              {%- else -%}
+                                                {{ line_item.final_price | money }}
+                                              {%- endif -%}
+                                            </span>
+                                            <span class="product-price-total heading-style">
+                                              <span class="d-none d-lg-block mr-2">{{ 'customer.order.total' | t | append: ':' }}</span>
+                                              {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                                <s>{{ line_item.original_line_price | money }}</s>
+                                                <span>{{ line_item.final_line_price | money }}</span>
+                                              {%- else -%}
+                                                {{ line_item.original_line_price | money }}
+                                              {%- endif -%}
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    {%- endfor -%}
+                                    <div class="profile__order-details-addresses">
+                                      <div>
+                                        <h5 class="heading-style">{{ 'customer.order.billing_address' | t | upcase }}</h5>
+                                        <p>
+                                          <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+                                          {{ order.financial_status_label }}
+                                        </p>
+                                        {{ order.billing_address | format_address }}
+                                      </div>
+                                      <div>
+                                        <h5 class="heading-style">{{ 'customer.order.shipping_address' | t | upcase }}</h5>
+                                        <p>
+                                          <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+                                          {{ order.fulfillment_status_label }}
+                                        </p>
+                                        {{ order.shipping_address | format_address }}
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div class="order-date-wrapper">
+                                  <span class="order-date small-style"><span class="c-grey-3">DATE: </span>{{ order.created_at | date: '%d.%m.%Y' }}</span>
+                                  {%- if order.cancelled -%}
+                                        {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                                        <span class="order-date small-style">{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</span>
+                                        <span class="order-date small-style">{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</span>
+                                  {%- endif -%}
+                                </div>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+
                 </div>
         </div>
         <div class="profile__double-column column-second">
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'Account Address' | upcase }}</h3>
-                    <div class="profile__addresses">
+                    <div class="profile__addresses profile__block-style">
                         <div class="customer addresses" data-customer-addresses>
                             <svg style="display: none">
                             <symbol id="icon-caret" viewBox="0 0 10 6">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
                             </symbol>
                             </svg>
-
-                            <div data-address>
-                                <button class="button__red mt-0" type="button" aria-expanded="false" aria-controls="AddAddress">{{ 'customer.addresses.add_new' | t }}</button>
-                                <div id="AddAddress">
-                                    <h4 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h4>
-                                    {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading', class: 'mt-5' -%}
-                                    <div class="input-group">
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.first_name' | t }}</h4>
-                                            <div class="field">
-                                                <input class="field__input check-visited-input" type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
-                                                <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.last_name' | t }}</h4>
-                                            <div class="field">
-                                                <input class="field__input check-visited-input" type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
-                                                <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="input-group">
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.company' | t }}</h4>
-                                            <div class="field">
-                                                <input class="field__input check-visited-input" type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
-                                                <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.phone' | t }}</h4>
-                                            <div class="field">
-                                                <input class="field__input check-visited-input" type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
-                                                <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h4 class="field__title">{{ 'customer.addresses.address1' | t }}</h4>
-                                    <div class="field">
-                                        <input class="field__input check-visited-input" type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
-                                        <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
-                                    </div>
-                                    <h4 class="field__title">{{ 'customer.addresses.address2' | t }}</h4>
-                                    <div class="field">
-                                        <input class="field__input check-visited-input" type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
-                                        <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
-                                    </div>
-                                    <div class="input-group">
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.city' | t }}</h4>
-                                            <div class="field">
-                                                <input class="field__input check-visited-input" type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
-                                                <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <h4 class="field__title">{{ 'customer.addresses.country' | t | replace: '/', ' or ' }}</h4>
-                                            <div class="field">
-                                                <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
-                                                <div class="select">
-                                                <select
-                                                    id="AddressCountryNew"
-                                                    name="address[country]"
-                                                    data-default="{{ form.country }}"
-                                                    autocomplete="country"
-                                                >
-                                                    {{ all_country_option_tags }}
-                                                </select>
-                                                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                                                    <use href="#icon-caret" />
-                                                </svg>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <h4 class="field__title">{{ 'customer.addresses.province' | t }}</h4>
-                                    <div class="field" id="AddressProvinceContainerNew" style="display: none">
-                                        <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
-                                        <div class="select">
-                                        <select
-                                            id="AddressProvinceNew"
-                                            name="address[province]"
-                                            data-default="{{ form.province }}"
-                                            autocomplete="address-level1"
-                                        >
-                                        </select>
-                                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
-                                            <use href="#icon-caret" />
-                                        </svg>
-                                        </div>
-                                    </div>
-                                    <h4 class="field__title">{{ 'customer.addresses.zip' | t | replace: '/', ' or ' }}</h4>
-                                    <div class="field">
-                                        <input class="field__input check-visited-input" type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
-                                        <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
-                                    </div>
-                                    <div>
-                                        {{ form.set_as_default_checkbox }}
-                                        <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
-                                    </div>
-                                    <div>
-                                        <button class="button__red">{{ 'customer.addresses.add' | t }}</button>
-                                        <button class="button__cancel" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
-                                    </div>
-                                    {%- endform -%}
-                                </div>
-                            </div>
 
                             <ul role="list">
                                 {%- for address in customer.addresses -%}
@@ -385,12 +446,121 @@
                                     </li>
                                 {%- endfor -%}
                             </ul>
-
+                            <div data-address>
+                                <button class="button__red mt-0" type="button" aria-expanded="false" aria-controls="AddAddress">{{ 'customer.addresses.add_new' | t }}</button>
+                                <div id="AddAddress">
+                                    <h4 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h4>
+                                    {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading', class: 'mt-5' -%}
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.first_name' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
+                                                <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.last_name' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressLastNameNew" name="address[last_name]" value="{{ form.last_name }}" autocomplete="family-name" placeholder="{{ 'customer.addresses.last_name' | t }}">
+                                                <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.company' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressCompanyNew" name="address[company]" value="{{ form.company }}" autocomplete="organization" placeholder="{{ 'customer.addresses.company' | t }}">
+                                                <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.phone' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="tel" id="AddressPhoneNew" name="address[phone]" value="{{ form.phone }}" autocomplete="tel" placeholder="{{ 'customer.addresses.phone' | t }}">
+                                                <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.address1' | t }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressAddress1New" name="address[address1]" value="{{ form.address1 }}" autocomplete="address-line1" placeholder="{{ 'customer.addresses.address1' | t }}">
+                                        <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.address2' | t }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressAddress2New" name="address[address2]" value="{{ form.address2 }}" autocomplete="address-line2" placeholder="{{ 'customer.addresses.address2' | t }}">
+                                        <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
+                                    </div>
+                                    <div class="input-group">
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.city' | t }}</h4>
+                                            <div class="field">
+                                                <input class="field__input check-visited-input" type="text" id="AddressCityNew" name="address[city]" value="{{ form.city }}" autocomplete="address-level2" placeholder="{{ 'customer.addresses.city' | t }}">
+                                                <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <h4 class="field__title">{{ 'customer.addresses.country' | t | replace: '/', ' or ' }}</h4>
+                                            <div class="field">
+                                                <label for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+                                                <div class="select">
+                                                <select
+                                                    id="AddressCountryNew"
+                                                    name="address[country]"
+                                                    data-default="{{ form.country }}"
+                                                    autocomplete="country"
+                                                >
+                                                    {{ all_country_option_tags }}
+                                                </select>
+                                                <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                                    <use href="#icon-caret" />
+                                                </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.province' | t }}</h4>
+                                    <div class="field" id="AddressProvinceContainerNew" style="display: none">
+                                        <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+                                        <div class="select">
+                                        <select
+                                            id="AddressProvinceNew"
+                                            name="address[province]"
+                                            data-default="{{ form.province }}"
+                                            autocomplete="address-level1"
+                                        >
+                                        </select>
+                                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                                            <use href="#icon-caret" />
+                                        </svg>
+                                        </div>
+                                    </div>
+                                    <h4 class="field__title">{{ 'customer.addresses.zip' | t | replace: '/', ' or ' }}</h4>
+                                    <div class="field">
+                                        <input class="field__input check-visited-input" type="text" id="AddressZipNew" name="address[zip]" value="{{ form.zip }}" autocapitalize="characters" autocomplete="postal-code" placeholder="{{ 'customer.addresses.zip' | t }}">
+                                        <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+                                    </div>
+                                    <div>
+                                        {{ form.set_as_default_checkbox }}
+                                        <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
+                                    </div>
+                                    <div>
+                                        <button class="button__red">{{ 'customer.addresses.add' | t }}</button>
+                                        <button class="button__cancel" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                                    </div>
+                                    {%- endform -%}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'Wishlist' | upcase }}</h3>
+                    <div class="profile__wishlist profile__block-style">
+                        <div id="wishlist-items-container"></div>
+                    </div>
                 </div>
         </div>
     </div>
@@ -401,6 +571,9 @@
       typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
     }
 </script>
+
+<script src="{{ 'customer-orders.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'swym-wishlist.js' | asset_url }}" async="async"></script>
 
 {% schema %}
 {
