@@ -273,7 +273,8 @@
       var lazyLoadInstance = new LazyLoad();
     </script>
 
-    {% include 'swymSnippet' %}
     {% include 'storeifyapps-storelocator-footer' %}
+    {{ 'ajaxinate.min.js' | asset_url | script_tag }}
+    {% include 'swymSnippet' %}
 </body>
 </html>

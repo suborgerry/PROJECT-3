@@ -110,9 +110,13 @@
         }
     }
     & ~ .pagination-wrapper {
+        margin-top: 76px;
+    }
+    & ~ .ajaxinate-pagination {
         margin-top: 18px;
-        @include media-breakpoint-up(lg) {
-            margin-top: 76px;
+        justify-content: center;
+        a {
+            border: 2px solid $c-grey-6;
         }
     }
 }

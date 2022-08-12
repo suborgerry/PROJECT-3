@@ -5494,12 +5494,14 @@ main {
   color: rgb(var(--color-base-accent-1));
 }
 .products-list ~ .pagination-wrapper {
-  margin-top: 18px;
+  margin-top: 76px;
 }
-@media (min-width: 992px) {
-  .products-list ~ .pagination-wrapper {
-    margin-top: 76px;
-  }
+.products-list ~ .ajaxinate-pagination {
+  margin-top: 18px;
+  justify-content: center;
+}
+.products-list ~ .ajaxinate-pagination a {
+  border: 2px solid #C4C4C4;
 }
 .article-card {
   max-width: 31.6rem;

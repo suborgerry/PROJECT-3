@@ -107,7 +107,7 @@
           <div class="collection">
             <div class="loading-overlay gradient"></div>
     
-            <ul id="product-grid" data-id="{{ s.id }}" class="products-list col-4-desktop list-unstyled">
+            <ul id="product-grid" data-id="{{ s.id }}" class="products-list col-4-desktop list-unstyled ajaxinate-container">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -130,9 +130,18 @@
               {%- endfor -%}
             </ul>
     
-            {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '', id: 'AjaxinatePagination' %}
-            {%- endif -%}
+            <div class="ajaxinate-pagination d-none d-lg-flex">
+              {% if paginate.next %}
+                <a class="button__white" href="{{ paginate.next.url }}">MORE PRODUCTS</a>
+              {% endif %}
+            </div>
+           
+            <div class="d-lg-none">
+              {%- if paginate.pages > 1 -%}
+                {% render 'pagination', paginate: paginate, anchor: '' %}
+              {%- endif -%}
+            </div>
+            
           </div>
         {%- endif -%}
       {%- endpaginate -%}
@@ -169,6 +178,10 @@
     btnCol4.classList.add('current-grid');
     productList.classList.add('col-4-desktop');
     productList.classList.remove('col-2-desktop', 'col-3-desktop');
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate();
   });
 </script>
 
