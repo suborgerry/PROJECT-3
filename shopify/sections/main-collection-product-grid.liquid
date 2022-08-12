@@ -114,6 +114,9 @@
                   {%- assign lazy_load = true -%}
                 {%- endif -%}
                 <li class="products-list__item">
+                  <!-- Swym Wishlist Plus EPI Button-->
+                  <button data-with-epi="true" class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}" data-variant-id="{{product.variants[0].id}}" data-product-url="{{ shop.url }}{{ product.url }}">{%- render 'icon-swym' -%}</button>
+                  <!-- Swym Wishlist Plus EPI Button-->
                   {% render 'card-product',
                     card_product: product,
                     show_secondary_image: ss.show_secondary_image,
@@ -122,14 +125,13 @@
                     lazy_load: lazy_load,
                     show_quick_add: ss.enable_quick_add,
                     section_id: s.id
-
                   %}
                 </li>
               {%- endfor -%}
             </ul>
     
             {%- if paginate.pages > 1 -%}
-              {% render 'pagination', paginate: paginate, anchor: '' %}
+              {% render 'pagination', paginate: paginate, anchor: '', id: 'AjaxinatePagination' %}
             {%- endif -%}
           </div>
         {%- endif -%}

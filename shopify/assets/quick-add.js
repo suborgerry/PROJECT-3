@@ -60,7 +60,9 @@ if (!customElements.get('quick-add-modal')) {
     }
 
     preventVariantURLSwitching() {
-      this.modalContent.querySelector('variant-radios,variant-selects').setAttribute('data-update-url', 'false');
+      if (this.modalContent.querySelector('variant-radios,variant-selects') != null) {
+        this.modalContent.querySelector('variant-radios,variant-selects').setAttribute('data-update-url', 'false');
+      }
     }
 
     removeDOMElements() {
