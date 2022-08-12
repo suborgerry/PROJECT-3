@@ -1,0 +1,206 @@
+{%- style -%}
+  .section-{{ section.id }}-margin {
+    margin-top: {{ section.settings.margin_top_mob }}px;
+    margin-bottom: {{ section.settings.margin_bottom_mob }}px;
+  }
+
+  .wholesale-form__btn.{{ section.id }} {
+    margin-top: {{ section.settings.button_margin_top_mob }}px !important;
+    margin-bottom: {{ section.settings.button_margin_bottom_mob }}px !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+
+    .wholesale-form__btn.{{ section.id }} {
+      margin-top: {{ section.settings.button_margin_top }}px !important;
+      margin-bottom: {{ section.settings.button_margin_bottom }}px !important;
+    }
+  }
+
+{%- endstyle -%}
+
+<div class="wholesale-form__container gradient section-{{ section.id }}-margin pt-0">
+  {%- form 'contact', id: 'SubmitDesignForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap">
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">YOUR FIRST NAME</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-first-name" name="contact[first-name]">
+      </div>
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">YOUR LAST NAME</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-last-name" name="contact[last-name]">
+      </div>
+    </div>
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">YOUR EMAIL</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-email" name="contact[email]">
+      </div>
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">PHONE NUMBER</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-phone" name="contact[phone]">
+      </div>
+    </div>
+    <div class="wholesale-form__fields d-flex flex-column mt-wtr mw-750">
+      <label class="wholesale-form__label">ADDRESS</label>
+      <input class="wholesale-form__field lg" type="text" id="ContactForm-address-1" placeholder="Street Address Line 1" name="contact[address-1]">
+      <input class="wholesale-form__field lg" type="text" id="ContactForm-address-2" placeholder="Street Address Line 2" name="contact[address-2]">
+    </div>
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">CITY</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-city" name="contact[city]">
+      </div>
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">STATE/PROVINCE</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-state" name="contact[state]">
+      </div>
+    </div>
+    <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap mt-wtr">
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">POSTAL / ZIP CODE</label>
+        <input class="wholesale-form__field md" type="text" id="ContactForm-zip" name="contact[zip]">
+      </div>
+      <div class="wholesale-form__field-container d-flex flex-column">
+        <label class="wholesale-form__label">COUNTRY</label>
+        <input class="wholesale-form__field md" type="disable" value="United States of America" id="ContactForm-country" name="contact[country]">
+      </div>
+    </div>
+    <div class="wholesale-form__fields d-flex flex-column mt-wtr mw-750">
+      <label class="wholesale-form__label">DISCRIBE YOUR DESIGN IDEA</label>
+      <textarea class="wholesale-form__field lg" name="contact[description-idea]" id="ContactForm-description-idea"></textarea>
+    </div>
+    <div class="wholesale-form-dragndrop mw-750">
+      <label class="wholesale-form__label">ADD A PHOTO OF YOUR IDEA</label>
+      <div class="wholesale-form-dragndrop-container d-flex">
+        <div class="wholesale-form-dropzone d-flex flex-column justify-content-center align-items-center" id="dropzone">
+          <svg width="51" height="56" viewBox="0 0 51 56" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.92242 36.5847H18.8856C18.5322 37.9724 18.3301 39.4109 18.343 40.8994C18.343 43.2711 18.8223 45.5419 19.6926 47.5602H4.49121C1.9931 47.5602 0 45.5671 0 43.0566V4.55402C0 2.04352 1.9931 0 4.49121 0H23.8433V8.18732C23.8433 11.1016 26.215 13.4984 29.1416 13.4984H36.7111V23.8685C36.5965 23.8599 36.4902 23.8513 36.3897 23.8431C36.0477 23.8154 35.771 23.7929 35.4495 23.7929C31.0719 23.7929 27.0601 25.4831 24.0326 28.1324H7.92242C7.36743 28.1324 6.91327 28.5866 6.91327 29.1416C6.91327 29.697 7.36743 30.1508 7.92242 30.1508H22.1151C21.0551 31.5385 20.1972 32.9266 19.5542 34.5663H7.92242C7.36743 34.5663 6.91327 35.0205 6.91327 35.5755C6.91327 36.1309 7.36743 36.5847 7.92242 36.5847ZM20.7022 21.8246H7.92242C7.36743 21.8246 6.91327 22.2787 6.91327 22.8342C6.91327 23.3892 7.36743 23.8433 7.92242 23.8433H20.7022C21.2572 23.8433 21.7114 23.3892 21.7114 22.8342C21.7114 22.2787 21.2572 21.8246 20.7022 21.8246Z" fill="#CF3231"/><path fill-rule="evenodd" clip-rule="evenodd" d="M20.3613 40.9245C20.3613 32.6107 27.1234 25.8491 35.4367 25.8491C43.7505 25.8491 50.5125 32.6107 50.5125 40.9245C50.5125 49.2379 43.7505 55.9999 35.4367 55.9999C27.1234 55.9999 20.3613 49.2379 20.3613 40.9245ZM36.4587 42.0093H40.5714C41.1263 42.0093 41.5805 41.5551 41.5805 41.0001C41.5805 40.4451 41.1268 39.991 40.5714 39.991H36.4587V35.8151C36.4587 35.2601 36.0049 34.8059 35.4495 34.8059C34.8945 34.8059 34.4404 35.2601 34.4404 35.8151V39.991H30.2649C29.7095 39.991 29.2553 40.4451 29.2553 41.0001C29.2553 41.5551 29.7095 42.0093 30.2649 42.0093H34.4404V46.1219C34.4404 46.6769 34.8945 47.1311 35.4495 47.1311C36.0049 47.1311 36.4587 46.6769 36.4587 46.1219V42.0093Z" fill="#CF3231"/><path d="M29.1418 11.4799H35.3236L25.8618 1.52637V8.18713C25.8618 9.99139 27.3251 11.4799 29.1418 11.4799Z" fill="#CF3231"/></svg>
+          <p class="wholesale-form-dropzone-text">Drag & Drop you files here</p>
+          <p class="wholesale-form-dropzone-undertext">Need file manager? Click <span>here</span></p>
+          <input type="file" class="wholesale-form-dropzone-input" id="ContactForm-idea-photo" accept="image/*" name="contact[idea-photo]" multiple>
+        </div>
+        <div class="d-flex flex-column wholesale-form-dropzone-list"></div>
+      </div>
+    </div>
+    <div class="wholesale-form__fields d-flex flex-column mt-wtr mw-750">
+      <label class="wholesale-form__label">What size are you requesting?</label>
+      <textarea class="wholesale-form__field lg" name="contact[size-request]" id="ContactForm-size-request"></textarea>
+    </div>
+    <div class="wholesale-form__fields d-flex flex-column mt-5 mw-750">
+      <div class="wholesale-form__checkboxes d-flex flex-wrap justify-content-between">
+        <div class="wholesale-form__checkbox w-100">
+          <input type="checkbox" id="ContactForm-Drop-Ship" name="contact[additional-presences-acceptable]" value="Drop Ship">
+          <label for="ContactForm-Drop-Ship" style="letter-spacing: -0.00392727px; font-size: 1.2rem"><span class="round" style="top: 10px; position: relative;"></span>A Route One Apparel representative will contact me if my design is chosen (once it has been complete in manufacturing).
+          I will not be contacted if it is not chosen, or if someone submitted the design before me. I understand that I will be compensated for my idea under Route One Apparel terms of use under this agreement.</label>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn-red-1 wholesale-form__btn {{ section.id }}" id="submit_wholesale">SUBMIT DESIGN</button>
+  {%- endform -%}
+</div>
+
+<script src="{{ 'wholesale-form.js' | asset_url }}" defer="defer"></script>
+
+
+{% schema %}
+{
+  "name": "Submit a design form",
+  "tag": "section",
+  "class": "section wholesale-form",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom mobile",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Button submit margins"
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "button_margin_bottom_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin bottom mobile",
+      "default": 56
+    }
+  ],
+  "presets": [
+    {
+      "name": "Submit a design form"
+    }
+  ]
+}
+{% endschema %}

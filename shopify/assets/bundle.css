@@ -5205,6 +5205,9 @@ body {
 main {
   overflow-x: hidden;
 }
+#storeify-sl-btn-trigger-popup {
+  display: none !important;
+}
 .c-black, .product-tabs__button, .product-info__fs p a, .wholesale-form__text, .wholesale-form__label, .work-to-roa__form-heading, .steps__item, .content-withtext__heading, .question-form__field label, .anchors-buttons__item, .article-template__comment-field label, .swiper-pagination__index {
   color: rgb(var(--color-base-outline-button-labels));
 }
@@ -10153,6 +10156,11 @@ main {
 }
 .wholesale-form__fields {
   width: 100%;
+}
+@media (max-width: 767.98px) {
+  .wholesale-form__fields.mt-5 {
+    margin-top: 2.4rem;
+  }
 }
 @media (max-width: 991.98px) {
   .wholesale-form__fields.date {

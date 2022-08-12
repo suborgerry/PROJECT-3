@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "16602538994c91b148": {
+      "type": "breadcrumbs",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 0,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 64,
+        "padding_top_mob": 44,
+        "padding_bottom_mob": 44,
+        "title_margin_bottom": 0,
+        "show_title": true,
+        "show_content": false
+      }
+    },
+    "16602542472887e6bf": {
+      "type": "submit-a-design",
+      "settings": {
+        "margin_top": 40,
+        "margin_bottom": 18,
+        "margin_top_mob": 40,
+        "margin_bottom_mob": 0,
+        "button_margin_top": 64,
+        "button_margin_top_mob": 40,
+        "button_margin_bottom": 0,
+        "button_margin_bottom_mob": 0
+      }
+    }
+  },
+  "order": [
+    "16602538994c91b148",
+    "main",
+    "16602542472887e6bf"
+  ]
+}
