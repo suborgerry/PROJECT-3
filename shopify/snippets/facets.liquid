@@ -34,6 +34,7 @@
       {% if enable_filtering %}
         <div id="FacetsWrapperDesktop">
 
+          {%- comment -%}
           <div class="active-facets active-facets-desktop">
             <div class="active-facets-vertical-filter">
               {%- unless results.filters == empty -%}
@@ -72,16 +73,17 @@
               {% endif %}
             {%- endfor -%}
           </div>
+          {%- endcomment -%}
 
           <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
           {%- for filter in results.filters -%}
             {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
             {% case filter.type %}
             {% when 'boolean' or 'list' %}
-              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical js-filter" data-index="{{ forloop.index }}"{% if forloop.index == 1 %} open{% endif %}>
+              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% else %}{% if forloop.index == 1 %} open{% endif %}{% endif %}>
                 <summary class="facets__summary caption-large focus-offset" aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})">
                   <div>
-                    <span>{{ filter.label | escape }}<span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}"> ({{ filter.active_values.size }})</span></span>
+                    <span class="facets__label">{{ filter.label | escape | upcase }}{%- comment -%}<span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}"> ({{ filter.active_values.size }})</span>{%- endcomment -%}</span>
                     {% render 'icon-caret' %}
                   </div>
                 </summary>
@@ -90,7 +92,12 @@
                     <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                     <ul class="list-unstyled no-js-hidden" role="list">
                       {%- for value in filter.values -%}
-                        <li class="list-menu__item facets__item{% if forloop.index > 10 %} show-more-item hidden{% endif %}">
+                        {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
+                          {%- assign preview_values_size = 5 -%}
+                        {%- else -%}
+                          {%- assign preview_values_size = 10 -%}
+                        {%- endif -%}
+                        <li class="list-menu__item facets__item{% if forloop.index > preview_values_size %} show-more-item hidden{% endif %}">
                           <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
                             <input type="checkbox"
                               name="{{ value.param_name }}"
@@ -100,22 +107,12 @@
                               {% if value.count == 0 and value.active == false %}disabled{% endif %}
                             >
 
-                            <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                              <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                            <svg width="2rem" height="2rem" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                              <rect width="20" height="20" stroke="#F3F3F3" fill="none" stroke-width="1"></rect>
                             </svg>
 
-                            <svg class="icon icon-checkmark"
-                              width="1.1rem"
-                              height="0.7rem"
-                              viewBox="0 0 11 7"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-
-                              <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
-                                stroke="currentColor"
-                                stroke-width="1.75"
-                                stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <svg class="icon icon-checkmark" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="10" height="10" fill="currentColor"/>
                             </svg>
 
                             <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
@@ -137,22 +134,12 @@
                               {% if value.count == 0 and value.active == false %}disabled{% endif %}
                             >
 
-                            <svg width="1.6rem" height="1.6rem" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-                              <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+                            <svg width="2rem" height="2rem" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                              <rect width="20" height="20" stroke="#F3F3F3" fill="none" stroke-width="1"></rect>
                             </svg>
 
-                            <svg class="icon icon-checkmark"
-                              width="1.1rem"
-                              height="0.7rem"
-                              viewBox="0 0 11 7"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-
-                              <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
-                                stroke="currentColor"
-                                stroke-width="1.75"
-                                stroke-linecap="round"
-                                stroke-linejoin="round" />
+                            <svg class="icon icon-checkmark" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="10" height="10" fill="currentColor"/>
                             </svg>
 
                             <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
@@ -162,11 +149,16 @@
                       {%- endfor -%}
                     </ul>
                   </fieldset>
-                  {%- if filter.values.size > 10 -%}
+                  {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
+                    {%- assign preview_values_size = 5 -%}
+                  {%- else -%}
+                    {%- assign preview_values_size = 10 -%}
+                  {%- endif -%}
+                  {%- if filter.values.size > preview_values_size -%}
                     <show-more-button>
-                      <button class="button-show-more link underlined-link no-js-hidden" id="Show-More-{{ forloop.index }}-{{ section.id }}" type="button">
-                        <span class="label-show-more label-text"><span aria-hidden="true">+ </span>{{ 'products.facets.show_more' | t }}</span>
-                        <span class="label-show-less label-text hidden"><span aria-hidden="true">- </span>{{ 'products.facets.show_less' | t }}</span>
+                      <button class="button-show-more no-js-hidden" id="Show-More-{{ forloop.index }}-{{ section.id }}" type="button">
+                        <span class="label-show-more label-text">{{ 'products.facets.show_more' | t }} {{ filter.label | escape }}</span>
+                        <span class="label-show-less label-text hidden">{{ 'products.facets.show_less' | t }} {{ filter.label | escape }}</span>
                       </button>
                     </show-more-button>
                   {%- endif %}
@@ -180,10 +172,10 @@
                   assign uses_comma_decimals = true
                 endif
               %}
-              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical js-filter" data-index="{{ forloop.index }}"{% if forloop.index == 1 %} open{% endif %}>
+              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% else %}{% if forloop.index == 1 %} open{% endif %}{% endif %}>
                 <summary class="facets__summary caption-large focus-offset">
                   <div>
-                    <span>{{ filter.label | escape }}</span>
+                    <span class="facets__label">{{ filter.label | escape | upcase }}</span>
                     {% render 'icon-caret' %}
                   </div>
                 </summary>

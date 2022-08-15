@@ -29,6 +29,7 @@
                 width: 50%;
             }
             h1 {
+                color: $c-grey-1;
                 @include media-breakpoint-up(lg) {
                     transform: translateX(-50%);
                 }
@@ -71,6 +72,7 @@
         h3 {
             text-align: center;
             margin-bottom: 24px;
+            color: $c-grey-1;
             @include media-breakpoint-up(lg) {
                 text-align: left;
                 margin-bottom: 33px;

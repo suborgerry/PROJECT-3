@@ -16,7 +16,7 @@
             "sub_heading": "",
             "color": "#ffffff",
             "button-text": "Shop now",
-            "button-url": ""
+            "button-url": "shopify:\/\/collections\/all"
           }
         },
         "8d200123-46e4-44df-8edd-884ba67303d9": {
@@ -31,7 +31,7 @@
             "sub_heading": "",
             "color": "#000000",
             "button-text": "shop now",
-            "button-url": ""
+            "button-url": "shopify:\/\/collections\/maryland"
           }
         }
       },
@@ -227,7 +227,7 @@
         "img-mobile": "shopify:\/\/shop_images\/Bitmap_2_69b50941-7e16-47c9-88a6-c447b2f9f906.jpg",
         "subtitle": "MARYLAND STRONG",
         "title": "SWEATSHIRTS HOODIES",
-        "url": "",
+        "url": "shopify:\/\/collections\/sweatshirts-hoodies",
         "label": "shop now"
       }
     },
