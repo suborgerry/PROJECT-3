@@ -82,12 +82,79 @@
     </facet-filters-form>
   {%- endif -%}
 
+  {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+  {%- assign results = collection -%}
+  {%- liquid
+      assign sort_by = results.sort_by | default: results.default_sort_by
+      assign total_active_values = 0
+      if results.url
+        assign results_url = results.url
+      else
+        assign terms = results.terms | escape
+        assign results_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+      endif
+  -%}
+  {% if ss.enable_filtering %}
+    <div class="page-width">
+      <div class="active-facets active-facets-desktop products-list__top-filter-results">
+        <div class="active-facets-vertical-filter">
+          <facet-remove class="active-facets__button-wrapper">
+            <a href="{{ results_url }}" class="active-facets__button-remove">
+              {%- render 'icon-filter-result' -%}
+              <span>{{ 'products.facets.clear_all' | t }}</span>
+            </a>
+          </facet-remove>
+        </div>
+        {%- for filter in results.filters -%}
+          {%- for value in filter.active_values -%}
+            <facet-remove>
+              <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                <span class="active-facets__button-inner button button--tertiary">
+                  {%- render 'icon-filter-result' -%}
+                  {{ filter.label }} - {{ value.label | escape }}
+                  <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                </span>
+              </a>
+            </facet-remove>
+          {%- endfor -%}
+          {% if filter.type == "price_range" %}
+            {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+              <facet-remove>
+                <a href="{{ filter.url_to_remove }}" class="active-facets__button active-facets__button--light">
+                  <span class="active-facets__button-inner button button--tertiary">
+                    {%- render 'icon-filter-result' -%}
+                    {{ filter.label }} - {% if filter.min_value.value %}{{ filter.min_value.value | money_without_trailing_zeros }}{% else %}{{ 0 | money_without_trailing_zeros }}{% endif %}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money_without_trailing_zeros }}{%- else -%}{{ filter.range_max | money_without_trailing_zeros }}{%- endif -%}
+                    <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                  </span>
+                </a>
+              </facet-remove>
+            {%- endif -%}
+          {% endif %}
+        {%- endfor -%}  
+      </div>
+    </div>
+  {% endif %}
+
   <div class="facets-vertical page-width">
-    {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
     {%- if ss.enable_filtering or ss.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless ss.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ s.id }}">
-        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting %}
+        <div class="facets__categories">
+          <span class="facets__label mb-0">{{ 'Shop by categories' | upcase }}</span>
+          <ul class="facets__categories-list list-unstyled" role="list">
+            <li class="facets__categories-item"><a {% if collection.url == routes.all_products_collection_url %}class="active-page" {% endif %}href="{{ routes.all_products_collection_url }}">Shop All</a></li>
+            {%- for col in ss.collection_list -%}
+              <li class="facets__categories-item"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
+            {%- endfor -%}
+          </ul>
+          {%- if ss.collection_list.count > 9 -%}
+          <button class="button-show-more" type="button">
+            <span class="label-show-more label-text">{{ 'products.facets.show_more' | t }} Collections</span>
+            <span class="label-show-less label-text hidden">{{ 'products.facets.show_less' | t }} Collections</span>
+          </button>
+          {%- endif -%}
+        </div>
+        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode %}
       </aside>
     {%- endif -%}
 
@@ -230,6 +297,15 @@
     },
     {
       "type": "header",
+      "content": "Collection list"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collections"
+    },    
+    {
+      "type": "header",
       "content": "t:sections.main-collection-product-grid.settings.header__1.content"
     },
     {
@@ -245,6 +321,22 @@
       "default": true,
       "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
     },
+    {
+      "type": "radio",
+      "id": "filter_mode",
+      "label": "Filter mode",
+      "options": [
+        {
+          "value": "usual",
+          "label": "Usual"
+        },
+        {
+          "value": "dropdown",
+          "label": "Dropdown"
+        }
+      ],
+      "default": "usual"
+    },    
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

@@ -26,6 +26,14 @@
             grid-template-columns: repeat(4, 1fr);
         }
     }
+    &__top-filter-results {
+        margin: 4px 0 60px !important;
+        .active-facets-vertical-filter {
+            &:only-child {
+                display: none;
+            }
+        }
+    }
     &__item {
         position: relative;
         padding: 10px 10px 12px;

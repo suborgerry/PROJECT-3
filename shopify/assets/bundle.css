@@ -5150,7 +5150,7 @@ p {
   text-decoration: none;
 }
 a.active-page {
-  color: rgb(var(--color-base-accent-1));
+  color: rgb(var(--color-base-accent-1)) !important;
 }
 :root {
   --page-width-x-paddings-mobile: 2rem;
@@ -5409,6 +5409,12 @@ main {
   .products-list.col-4-desktop {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+.products-list__top-filter-results {
+  margin: 4px 0 60px !important;
+}
+.products-list__top-filter-results .active-facets-vertical-filter:only-child {
+  display: none;
 }
 .products-list__item {
   position: relative;
@@ -5776,7 +5782,6 @@ main {
   top: 0;
   width: 25px;
   height: 25px;
-  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10924,6 +10929,9 @@ main {
     width: 50%;
   }
 }
+.profile__top-box h1 {
+  color: #414240;
+}
 @media (min-width: 992px) {
   .profile__top-box h1 {
     transform: translateX(-50%);
@@ -10972,6 +10980,7 @@ main {
 .profile__column h3 {
   text-align: center;
   margin-bottom: 24px;
+  color: #414240;
 }
 @media (min-width: 992px) {
   .profile__column h3 {
