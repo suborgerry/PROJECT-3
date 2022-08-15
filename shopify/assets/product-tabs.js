@@ -8,7 +8,7 @@ const exchangeTabs = (productTabs) => {
         const element = evt.target;
 
         if(element.classList.contains('product-tabs__button')) {
-            if(window.innerWidth > 992 && !element.classList.contains('active')) {
+            if(window.innerWidth > 991 && !element.classList.contains('active')) {
                 const mainBlock = productTabs.querySelector('#product-tabs-desctop');
                 const targetBlock = mainBlock.querySelector(`.${element.dataset.id}`);
                 const activeBlock = mainBlock.querySelector('.product-tabs__tab.active');

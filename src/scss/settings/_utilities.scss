@@ -14,8 +14,8 @@
   list-style: none;
 }
 
-.pt-sm-0 {
-  @include media-breakpoint-down(md) {
+.pt-smm-0 {
+  @include media-breakpoint-down(sm) {
     padding-top: 0 !important;
   }
 }
