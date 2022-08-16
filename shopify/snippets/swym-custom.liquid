@@ -1,13 +1,13 @@
 <script defer>
     function swymCallbackFn(swat){
       // your API calls go here
-      document.querySelector('.ajaxinate-pagination').addEventListener("click", function(){
-        swat.initializeActionButtons(".swym-button");
+      document.addEventListener("swym:collections-loaded", function(){
+        swat.initializeActionButtons(".products-list");
+        console.log("Swym buttons loaded!");
       })
     }
     if(!window.SwymCallbacks){
       window.SwymCallbacks = [];
     }
     window.SwymCallbacks.push(swymCallbackFn);
-  
 </script>

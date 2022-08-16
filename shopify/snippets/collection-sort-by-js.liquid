@@ -1,0 +1,39 @@
+<script>
+    // Update sort_by query parameter on select change
+    const sortByMain = document.querySelector('.sort-by__main'),
+    sortByItemsList = document.querySelector('.sort-by__items-list'),
+    sortByItem = document.querySelectorAll('.sort-by__item'),
+    sortByMainValue = document.querySelector('.sort-by__main-value');
+  
+    sortByMain.addEventListener('click', sortListAppear);
+    function sortListAppear() {
+      if(sortByItemsList.classList.contains('showed')) {
+        sortByItemsList.classList.remove('showed');
+      } else {
+        sortByItemsList.classList.add('showed');
+      }
+    }
+
+    window.addEventListener('click', e => {
+      const target = e.target;
+      if (!target.closest('.sort-by__main') && !target.closest('.sort-by__item')) {
+        sortByItemsList.classList.remove('showed');
+      }
+    })
+  
+    sortByItem.forEach(function (sorting) {
+      sorting.addEventListener('click', function (e) {
+        const itemName = e.currentTarget.textContent;
+        const itemValue = e.currentTarget.getAttribute('data-value-item');
+        sortByMainValue.textContent = itemName;
+        sortByMainValue.setAttribute('data-value-main', itemValue);
+        if(Shopify.queryParams !== undefined) {
+          Shopify.queryParams.sort_by = itemValue;
+          location.search = new URLSearchParams(Shopify.queryParams).toString();
+        } else {
+          location.search = new URLSearchParams(location.search + '&sort_by=' + itemValue).toString();
+        }
+      });
+    });
+    
+</script>

@@ -345,6 +345,7 @@
 .facets__price {
   display: flex;
   padding: 2rem;
+  background-color: #FFF5F4;
 }
 
 .facets__price .field + .field-currency {
@@ -353,6 +354,9 @@
 
 .facets__price .field {
   align-items: center;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #000;
 }
 
 .facets__price .field-currency {
@@ -361,7 +365,8 @@
 }
 
 .facets__price .field__label {
-  left: 1.5rem;
+  left: 0;
+  top: -25px;
 }
 
 button.facets__button {
@@ -994,7 +999,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets__header-vertical {
-    padding: 1.5rem 2rem 1.5rem 0;
+    padding: 0 2rem 1.5rem 0;
     font-size: 1.4rem;
   }
  
@@ -1022,6 +1027,8 @@ input.mobile-facets__checkbox {
   }
 
   .product-count-vertical {
+    display: flex;
+    align-items: center;
     margin-right: 3.5rem;
   }
 
@@ -1041,7 +1048,7 @@ input.mobile-facets__checkbox {
   }
 
   .facets-vertical .facets__price {
-    padding: 0.5rem 0.5rem 0.5rem 0;
+    padding: 3rem 1rem 1rem 2rem;
   }
 
   .facets-vertical .facets__price .field:last-of-type {

@@ -274,7 +274,8 @@
     </script>
 
     {% include 'storeifyapps-storelocator-footer' %}
-    {{ 'ajaxinate.min.js' | asset_url | script_tag }}
     {% include 'swymSnippet' %}
+    {% include 'swym-custom' %}
+    {{ 'ajaxinate.min.js' | asset_url | script_tag }}
 </body>
 </html>

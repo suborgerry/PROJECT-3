@@ -5904,6 +5904,74 @@ main {
   margin: 48px auto 0;
   max-width: 336px;
 }
+.collection-sortby {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  border-radius: 37px;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.collection-sortby .select-lb {
+  margin: 0;
+}
+.collection-sortby .select-container {
+  position: relative;
+}
+.collection-sortby .select-container svg.icon-caret {
+  position: absolute;
+  right: 0;
+  height: 8px;
+  width: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.collection-sortby .select-container .sort-by__main {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+}
+.collection-sortby .select-container .sort-by__main:focus {
+  outline: none;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list {
+  display: none;
+  position: absolute;
+  left: unset;
+  right: 0;
+  top: 58px;
+  width: 270px;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.07);
+  border: 2px solid #C4C4C4;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item {
+  position: relative;
+  display: block;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item:hover, .collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active {
+  color: #fff;
+  background-color: #C4C4C4;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item svg {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active svg {
+  display: block;
+}
+.showed {
+  display: block !important;
+}
 .header-wrapper {
   display: block;
   position: relative;
