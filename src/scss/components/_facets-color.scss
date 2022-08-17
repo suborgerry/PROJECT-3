@@ -1,0 +1,38 @@
+.facets-color {
+    &__wrapper {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+        span {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .icon-color-checkmark {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translate(-50%, -50%);
+        background: unset;
+        visibility: hidden;
+    }
+    .facet-checkbox {
+        padding: 0.5rem 2rem 0.5rem 0;
+        &:hover {
+            .icon-color-checkmark {
+                visibility: visible;
+            }
+        }
+        .facet-value {
+            transform: translateY(4px);
+        }
+    }
+    .facet-checkbox > input[type='checkbox']:checked ~ .icon-color-checkmark,
+    .mobile-facets__label > input[type='checkbox']:checked ~ .icon-color-checkmark {
+        visibility: visible;
+    }
+}

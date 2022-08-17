@@ -1,0 +1,15 @@
+<div class="facets__categories {{ class }}">
+    <span class="facets__label mb-0">{{ 'Shop by categories' | upcase }}</span>
+    <ul class="facets__categories-list list-unstyled" role="list">
+      <li class="facets__categories-item"><a {% if collection.url == routes.all_products_collection_url %}class="active-page" {% endif %}href="{{ routes.all_products_collection_url }}">Shop All</a></li>
+      {%- for col in collection_list -%}
+        <li class="facets__categories-item{% if forloop.index > 8 %} show-more-categories hidden{% endif %}"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+    {%- if collection_list.count > 8 -%}
+    <span class="button-show-more btn-show-more-cat">
+      <span class="label-show-more-cat label-text">{{ 'products.facets.show_more' | t }} Collections</span>
+      <span class="label-show-less-cat label-text hidden">{{ 'products.facets.show_less' | t }} Collections</span>
+    </span>
+    {%- endif -%}
+</div>

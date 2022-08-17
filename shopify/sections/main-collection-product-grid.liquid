@@ -56,27 +56,26 @@
           <div class="products-list__grid-buttons">
             <span class="grid-btn btn-col-2">{%- render 'icon-col-2' -%}</span>
             <span class="grid-btn btn-col-3">{%- render 'icon-col-3' -%}</span>
-            <span class="grid-btn btn-col-4 current-grid">{%- render 'icon-col-4' -%}</span>
+            <span class="grid-btn btn-col-4">{%- render 'icon-col-4' -%}</span>
           </div>
-          <div class="facet-filters sorting caption">
-            <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
-                <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
-              <div class="select">
+          <div class="collection-sortby">
+            <div class="select-container">
+              <div class="sort-by__main" id="sort-by">
                 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
-                  {%- for option in collection.sort_options -%}
-                    <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
-                  {%- endfor -%}
-                </select>
+                <h5 class="sort-by__main-value" data-value-main="{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.value | upcase }}{% endif %}{% endfor %}">{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.name | upcase }}{% endif %}{% endfor %}</span>
                 {% render 'icon-caret' %}
+            
+                <div class="sort-by__items-list">
+                  {%- for option in collection.sort_options -%}
+                  <div class="sort-by__item {% if option.value == sort_by %}active{% endif %}" data-value-item="{{ option.value }}">
+                    <span>{{ option.name | upcase }}</span>
+                  </div>
+                  {%- endfor -%}
+                </div>
               </div>
             </div>
-            <noscript>
-              <button type="submit" class="facets__button-no-js button button--secondary">{{ 'products.facets.sort_button' | t }}</button>
-            </noscript>
           </div>
+          
         </div> 
       </form>
     </facet-filters-form>
@@ -96,7 +95,7 @@
       endif
   -%}
   {% if ss.enable_filtering %}
-    <div class="page-width">
+    <div class="page-width products-list__top-filter">
       <div class="active-facets active-facets-desktop products-list__top-filter-results">
         <div class="active-facets-vertical-filter">
           <facet-remove class="active-facets__button-wrapper">
@@ -139,22 +138,8 @@
   <div class="facets-vertical page-width">
     {%- if ss.enable_filtering or ss.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless ss.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ s.id }}">
-        <div class="facets__categories">
-          <span class="facets__label mb-0">{{ 'Shop by categories' | upcase }}</span>
-          <ul class="facets__categories-list list-unstyled" role="list">
-            <li class="facets__categories-item"><a {% if collection.url == routes.all_products_collection_url %}class="active-page" {% endif %}href="{{ routes.all_products_collection_url }}">Shop All</a></li>
-            {%- for col in ss.collection_list -%}
-              <li class="facets__categories-item"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
-            {%- endfor -%}
-          </ul>
-          {%- if ss.collection_list.count > 9 -%}
-          <button class="button-show-more" type="button">
-            <span class="label-show-more label-text">{{ 'products.facets.show_more' | t }} Collections</span>
-            <span class="label-show-less label-text hidden">{{ 'products.facets.show_less' | t }} Collections</span>
-          </button>
-          {%- endif -%}
-        </div>
-        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode %}
+        {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: ss.collection_list -%}
+        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode, collection_list: ss.collection_list %}
       </aside>
     {%- endif -%}
 
@@ -174,7 +159,7 @@
           <div class="collection">
             <div class="loading-overlay gradient"></div>
     
-            <ul id="product-grid" data-id="{{ s.id }}" class="products-list col-4-desktop list-unstyled ajaxinate-container">
+            <ul id="product-grid" data-id="{{ s.id }}" class="products-list list-unstyled ajaxinate-container">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
                 {%- if forloop.index > 2 -%}
@@ -216,9 +201,11 @@
   </div>
 </div>
 
+{% render 'collection-sort-by-js' %}
+
 <script>
-  const productList = document.querySelector('.products-list'),
-  btnCol2 = document.querySelector('.btn-col-2'),
+  //Grid columns functionality and storage
+  const btnCol2 = document.querySelector('.btn-col-2'),
   btnCol3 = document.querySelector('.btn-col-3'),
   btnCol4 = document.querySelector('.btn-col-4'),
   allBtnCol = document.querySelectorAll('.grid-btn');
@@ -228,27 +215,88 @@
       btn.classList.remove('current-grid');
     });
   }
+  function col2Active() {
+    btnCol2.classList.add('current-grid');
+    document.querySelector('.products-list').classList.add('col-2-desktop');
+    document.querySelector('.products-list').classList.remove('col-3-desktop', 'col-4-desktop');
+  }
+  function col3Active() {
+    btnCol3.classList.add('current-grid');
+    document.querySelector('.products-list').classList.add('col-3-desktop');
+    document.querySelector('.products-list').classList.remove('col-2-desktop', 'col-4-desktop');
+  }
+  function col4Active() {
+    btnCol4.classList.add('current-grid');
+    document.querySelector('.products-list').classList.add('col-4-desktop');
+    document.querySelector('.products-list').classList.remove('col-2-desktop', 'col-3-desktop');
+  }
   btnCol2.addEventListener('click', () => {
     removeOtherCurrent();
-    btnCol2.classList.add('current-grid');
-    productList.classList.add('col-2-desktop');
-    productList.classList.remove('col-3-desktop', 'col-4-desktop');
+    localStorage.setItem('column', '2');
+    col2Active();
   });
   btnCol3.addEventListener('click', () => {
     removeOtherCurrent();
-    btnCol3.classList.add('current-grid');
-    productList.classList.add('col-3-desktop');
-    productList.classList.remove('col-2-desktop', 'col-4-desktop');
+    localStorage.setItem('column', '3');
+    col3Active();
   });
   btnCol4.addEventListener('click', () => {
     removeOtherCurrent();
-    btnCol4.classList.add('current-grid');
-    productList.classList.add('col-4-desktop');
-    productList.classList.remove('col-2-desktop', 'col-3-desktop');
+    localStorage.setItem('column', '4');
+    col4Active();
   });
 
+  function setColumns() {
+    if(document.querySelector('.products-list') != null) {
+      let columnSelected = localStorage.getItem('column');
+      if (columnSelected != null) {
+        removeOtherCurrent();
+        switch (columnSelected) {
+          case '2':
+            col2Active();
+            break;
+          case '3':
+            col3Active();
+            break;
+          case '4':
+            col4Active();
+            break;
+          default:
+            break;
+        }
+      } else {
+        col4Active();
+      }
+    }
+  }
+  setColumns();
+
+  //Ajaxinate init
   document.addEventListener("DOMContentLoaded", function() {
     var endlessScroll = new Ajaxinate();
+  });
+
+  //Functionality of show more categories
+  const btnShowMoreCat = document.querySelectorAll('.btn-show-more-cat'),
+  labelShowMoreCat = document.querySelectorAll('.label-show-more-cat'),
+  labelShowLessCat = document.querySelectorAll('.label-show-less-cat'),
+  showMoreCat = document.querySelectorAll('.show-more-categories');
+
+  btnShowMoreCat.forEach(btn => {
+    btn.addEventListener('click', () => {
+      function hideToggle(item) {
+        item.classList.toggle('hidden');
+      }
+      showMoreCat.forEach(item => {
+        hideToggle(item);
+      });
+      labelShowMoreCat.forEach(item => {
+        hideToggle(item);
+      });
+      labelShowLessCat.forEach(item => {
+        hideToggle(item);
+      });
+    });
   });
 </script>
 
@@ -263,7 +311,7 @@
       "min": 8,
       "max": 24,
       "step": 4,
-      "default": 16,
+      "default": 20,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
     },
     {

@@ -1,0 +1,20 @@
+
+{%- case value -%}
+    {%- when 'black' -%}
+        <span class="value-{{ value }}" style="background-color: #000000;"></span>
+    {%- when 'blue' -%}
+        <span class="value-{{ value }}" style="background-color: #1D5B99;"></span>
+    {%- when 'green' -%}
+        <span class="value-{{ value }}" style="background-color: #01D51C;"></span>
+    {%- when 'red' -%}
+        <span class="value-{{ value }}" style="background-color: #CF322D;"></span>
+    {%- when 'purple' -%}
+        <span class="value-{{ value }}" style="background-color: #9747FF;"></span>
+    {%- else -%}
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
+            <rect id="backgroundrect" width="30px" height="30px" x="0" y="0" fill="none" stroke="none"/>
+            <g class="currentLayer"><circle cx="15" cy="15" r="15" fill="none" id="svg_1" class="selected" stroke="#c4c4c4" stroke-opacity="1"/></g>
+        </svg>
+{%- endcase -%}
+
+  

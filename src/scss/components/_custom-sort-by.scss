@@ -1,0 +1,85 @@
+.collection-sortby {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    margin-left: 20px;
+    .select-lb {
+      margin: 0;
+    }
+    .select-container {
+      position: relative;
+      svg.icon-caret {
+        position: absolute;
+        right: 10px;
+        height: 10px;
+        width: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        @include media-breakpoint-up(lg) {
+          right: 25px;
+        }
+      }
+      .sort-by__main {
+        position: relative;
+        cursor: pointer;
+        padding: 14px 30px 14px 10px;
+        height: 45px;
+        border: 1px solid $c-grey-5;
+        @include media-breakpoint-up(lg) {
+          padding: 18px 60px 18px 22px;
+          height: 56px;
+        }
+        &:focus {
+          outline: none;
+        }
+        .sort-by__main-value,
+        .sort-by__item {
+          font-size: 12px;
+          font-weight: 700;
+          @include media-breakpoint-up(lg) {
+            font-size: 14px;
+          }
+        }
+        .sort-by__items-list {
+          display: none;
+          position: absolute;
+          left: unset;
+          right: 0;
+          top: 58px;
+          width: 270px;
+          background: #fff;
+          z-index: 10;
+          box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.07);
+          border: 2px solid $c-grey-6;
+          .sort-by__item {
+            position: relative;
+            display: block;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            &:hover, &.active {
+              color: #fff;
+              background-color: $c-grey-6;
+            }
+            svg {
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+              display: none;
+            }
+            &.active {
+                svg {
+                    display: block;
+                }
+            }
+          }
+        }
+    }
+    }
+}
+.showed {
+    display: block !important;
+}
