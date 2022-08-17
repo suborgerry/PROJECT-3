@@ -98,7 +98,8 @@
   border-radius: 0;
   font-size: 1.4rem;
   height: auto;
-  line-height: calc(1 + 0.5 / var(--font-body-scale));
+  line-height: 20px;
+  font-weight: 700;
   margin: 0;
   padding-left: 0;
   padding-right: 1.75rem;
@@ -429,6 +430,10 @@ span.active-facets__button-inner {
   text-decoration: none;
 }
 
+.facets__categories--desktop {
+  display: none;
+}
+
 .facets__categories,
 .facets__display-vertical {
   padding-bottom: 4rem;
@@ -446,7 +451,11 @@ span.active-facets__button-inner {
   color: #414141;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 750px) {
+  .facets__categories--desktop {
+    display: block;
+  }
+  
   .active-facets__button {
     margin-right: 2rem;
   }
@@ -463,11 +472,11 @@ span.active-facets__button-inner {
     margin: 0 -1.2rem -1.2rem;
   }
 
-  .active-facets__button,
+  /* .active-facets__button,
   .active-facets__button-remove {
     margin: 0;
     padding: 1.2rem;
-  }
+  } */
 
   span.active-facets__button-inner {
     padding-bottom: 0.3rem;
@@ -595,13 +604,13 @@ a.active-facets__button.focused .active-facets__button-inner,
 
 .mobile-facets__inner {
   background-color: rgb(var(--color-background));
-  width: calc(100% - 5rem);
+  width: 100%;
   margin-left: auto;
   height: 100%;
   overflow-y: auto;
   pointer-events: all;
   transition: transform var(--duration-short) ease;
-  max-width: 37.5rem;
+  max-width: 45rem;
   display: flex;
   flex-direction: column;
   border-color: rgba(var(--color-foreground), var(--drawer-border-opacity));
@@ -615,7 +624,13 @@ a.active-facets__button.focused .active-facets__button-inner,
   );
 }
 
-.menu-opening .mobile-facets__inner {
+@media (min-width: 576px) {
+  .mobile-facets__inner {
+    width: calc(100% - 5rem);
+  }
+}
+
+.mobile-facets__inner {
   transform: translateX(0);
 }
 
@@ -717,12 +732,12 @@ a.active-facets__button.focused .active-facets__button-inner,
   width: 2.2rem;
 }
 
-details.menu-opening .mobile-facets__close {
+details .mobile-facets__close {
   display: flex;
   opacity: 1;
 }
 
-details.menu-opening .mobile-facets__close svg {
+details .mobile-facets__close svg {
   margin: 0;
 }
 
@@ -798,14 +813,9 @@ details.menu-opening .mobile-facets__close svg {
 }
 
 .js .mobile-facets__submenu {
-  position: absolute;
-  top: 0;
   width: 100%;
-  bottom: 0;
-  left: 0;
   z-index: 3;
-  transform: translateX(100%);
-  visibility: hidden;
+  visibility: visible;
   display: flex;
   flex-direction: column;
 }

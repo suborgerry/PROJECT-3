@@ -76,6 +76,7 @@ class FacetFiltersForm extends HTMLElement {
   static renderProductGridContainer(html) {
     document.getElementById('ProductGridContainer').innerHTML = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductGridContainer').innerHTML;
     setColumns();
+    document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
   }
 
   static renderProductCount(html) {

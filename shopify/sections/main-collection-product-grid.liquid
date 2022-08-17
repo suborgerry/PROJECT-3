@@ -58,48 +58,24 @@
             <span class="grid-btn btn-col-3">{%- render 'icon-col-3' -%}</span>
             <span class="grid-btn btn-col-4">{%- render 'icon-col-4' -%}</span>
           </div>
-          <div class="facet-filters sorting caption">
-            <div class="collection-sortby">
-              <div class="select-container">
-                <div class="sort-by__main" id="sort-by">
-                  {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                  <h4 class="sort-by__main-value" data-value-main="{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.value | upcase }}{% endif %}{% endfor %}">{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.name | upcase }}{% endif %}{% endfor %}</span>
-                  {% render 'icon-caret' %}
-              
-                  <div class="sort-by__items-list">
-                    {%- for option in collection.sort_options  -%}
-                    {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                    <div class="sort-by__item {% if option.value == sort_by %}active{% endif %}" data-value-item="{{ option.value }}">
-                      <span>{{ option.name | upcase }}</span>
-                      {%- comment -%}
-                      {% render 'icon-check' %}
-                      {%- endcomment -%}
-                    </div>
-                    {% endfor %}
+          <div class="collection-sortby">
+            <div class="select-container">
+              <div class="sort-by__main" id="sort-by">
+                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                <h5 class="sort-by__main-value" data-value-main="{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.value | upcase }}{% endif %}{% endfor %}">{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.name | upcase }}{% endif %}{% endfor %}</span>
+                {% render 'icon-caret' %}
+            
+                <div class="sort-by__items-list">
+                  {%- for option in collection.sort_options -%}
+                  <div class="sort-by__item {% if option.value == sort_by %}active{% endif %}" data-value-item="{{ option.value }}">
+                    <span>{{ option.name | upcase }}</span>
                   </div>
+                  {%- endfor -%}
                 </div>
               </div>
             </div>
-            {%- comment -%}
-            <div class="facet-filters__field">
-              <h2 class="facet-filters__label caption-large text-body">
-                <label for="SortBy">{{ 'products.facets.sort_by_label' | t }}</label>
-              </h2>
-              <div class="select">
-                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                <select name="sort_by" class="facet-filters__sort select__select caption-large" id="SortBy" aria-describedby="a11y-refresh-page-message">
-                  {%- for option in collection.sort_options -%}
-                    <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
-                  {%- endfor -%}
-                </select>
-                {% render 'icon-caret' %}
-              </div>
-            </div>
-            <noscript>
-              <button type="submit" class="facets__button-no-js button button--secondary">{{ 'products.facets.sort_button' | t }}</button>
-            </noscript>
-            {%- endcomment -%}
           </div>
+          
         </div> 
       </form>
     </facet-filters-form>
@@ -119,7 +95,7 @@
       endif
   -%}
   {% if ss.enable_filtering %}
-    <div class="page-width">
+    <div class="page-width products-list__top-filter">
       <div class="active-facets active-facets-desktop products-list__top-filter-results">
         <div class="active-facets-vertical-filter">
           <facet-remove class="active-facets__button-wrapper">
@@ -162,22 +138,8 @@
   <div class="facets-vertical page-width">
     {%- if ss.enable_filtering or ss.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless ss.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ s.id }}">
-        <div class="facets__categories">
-          <span class="facets__label mb-0">{{ 'Shop by categories' | upcase }}</span>
-          <ul class="facets__categories-list list-unstyled" role="list">
-            <li class="facets__categories-item"><a {% if collection.url == routes.all_products_collection_url %}class="active-page" {% endif %}href="{{ routes.all_products_collection_url }}">Shop All</a></li>
-            {%- for col in ss.collection_list -%}
-              <li class="facets__categories-item{% if forloop.index > 8 %} show-more-categories hidden{% endif %}"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
-            {%- endfor -%}
-          </ul>
-          {%- if ss.collection_list.count > 8 -%}
-          <button class="button-show-more btn-show-more-cat" type="button">
-            <span class="label-show-more-cat label-text">{{ 'products.facets.show_more' | t }} Collections</span>
-            <span class="label-show-less-cat label-text hidden">{{ 'products.facets.show_less' | t }} Collections</span>
-          </button>
-          {%- endif -%}
-        </div>
-        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode %}
+        {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: ss.collection_list -%}
+        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode, collection_list: ss.collection_list %}
       </aside>
     {%- endif -%}
 
@@ -285,24 +247,26 @@
   });
 
   function setColumns() {
-    let columnSelected = localStorage.getItem('column');
-    if (columnSelected != null) {
-      removeOtherCurrent();
-      switch (columnSelected) {
-        case '2':
-          col2Active();
-          break;
-        case '3':
-          col3Active();
-          break;
-        case '4':
-          col4Active();
-          break;
-        default:
-          break;
+    if(document.querySelector('.products-list') != null) {
+      let columnSelected = localStorage.getItem('column');
+      if (columnSelected != null) {
+        removeOtherCurrent();
+        switch (columnSelected) {
+          case '2':
+            col2Active();
+            break;
+          case '3':
+            col3Active();
+            break;
+          case '4':
+            col4Active();
+            break;
+          default:
+            break;
+        }
+      } else {
+        col4Active();
       }
-    } else {
-      col4Active();
     }
   }
   setColumns();
@@ -313,17 +277,26 @@
   });
 
   //Functionality of show more categories
-  const btnShowMoreCat = document.querySelector('.btn-show-more-cat'),
-  labelShowMoreCat = document.querySelector('.label-show-more-cat'),
-  labelShowLessCat = document.querySelector('.label-show-less-cat'),
+  const btnShowMoreCat = document.querySelectorAll('.btn-show-more-cat'),
+  labelShowMoreCat = document.querySelectorAll('.label-show-more-cat'),
+  labelShowLessCat = document.querySelectorAll('.label-show-less-cat'),
   showMoreCat = document.querySelectorAll('.show-more-categories');
 
-  btnShowMoreCat.addEventListener('click', () => {
-    showMoreCat.forEach(item => {
-      item.classList.toggle('hidden');
+  btnShowMoreCat.forEach(btn => {
+    btn.addEventListener('click', () => {
+      function hideToggle(item) {
+        item.classList.toggle('hidden');
+      }
+      showMoreCat.forEach(item => {
+        hideToggle(item);
+      });
+      labelShowMoreCat.forEach(item => {
+        hideToggle(item);
+      });
+      labelShowLessCat.forEach(item => {
+        hideToggle(item);
+      });
     });
-    labelShowMoreCat.classList.toggle('hidden');
-    labelShowLessCat.classList.toggle('hidden');
   });
 </script>
 

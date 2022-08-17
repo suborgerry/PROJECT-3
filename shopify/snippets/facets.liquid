@@ -90,7 +90,7 @@
                 <div id="Facet-{{ forloop.index }}-{{ section.id }}" class="parent-display facets__display-vertical">
                   <fieldset class="facets-wrap parent-wrap facets-wrap-vertical">
                     <legend class="visually-hidden">{{ filter.label | escape }}</legend>
-                    <ul class="list-unstyled no-js-hidden" role="list">
+                    <ul class="list-unstyled no-js-hidden{% if filter.label == 'Color' %} facets-color{% endif %}" role="list">
                       {%- for value in filter.values -%}
                         {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
                           {%- assign preview_values_size = 5 -%}
@@ -107,15 +107,24 @@
                               {% if value.count == 0 and value.active == false %}disabled{% endif %}
                             >
 
-                            <svg width="2rem" height="2rem" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-                              <rect width="20" height="20" stroke="#F3F3F3" fill="none" stroke-width="1"></rect>
-                            </svg>
+                            {%- if filter.label == 'Color' -%}
+                              {%- assign colour_value = value.label | downcase -%}
+                              <span class="facets-color__wrapper">
+                                {%- render 'facets-color-group', value: colour_value -%}
+                              </span>
+                              <svg class="icon icon-color-checkmark" width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.90625 0.875L2.625 4.15625L1.09375 2.625L0 3.71875L2.625 6.34375L7 1.96875L5.90625 0.875Z" fill="white"/>
+                              </svg>                                
+                            {%- else -%}
+                              <svg width="2rem" height="2rem" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                                <rect width="20" height="20" stroke="#F3F3F3" fill="none" stroke-width="1"></rect>
+                              </svg>
+                              <svg class="icon icon-checkmark" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="10" height="10" fill="currentColor"/>
+                              </svg>
+                            {%- endif -%}
 
-                            <svg class="icon icon-checkmark" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="10" height="10" fill="currentColor"/>
-                            </svg>
-
-                            <span aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
+                            <span class="facet-value" aria-hidden="true">{{ value.label | escape }} ({{ value.count }})</span>
                             <span class="visually-hidden">{{ value.label | escape }} ({% if value.count == 1 %}{{ 'products.facets.product_count_simple.one' | t: count: value.count }}{% else %}{{ 'products.facets.product_count_simple.other' | t: count: value.count }}{% endif %})</span>
                           </label>
                         </li> 
@@ -295,7 +304,7 @@
       </summary>
       <facet-filters-form>
         <form id="FacetFiltersFormMobile" class="mobile-facets">
-          <div class="mobile-facets__inner gradient">
+          <div class="mobile-facets__inner">
             <div class="mobile-facets__header">
               <div class="mobile-facets__header-inner">
                 <h2 class="mobile-facets__heading medium-hide large-up-hide">
@@ -323,8 +332,9 @@
                 </p>
               </div>
             </div>
-            <div class="mobile-facets__main has-submenu gradient">
+            <div class="mobile-facets__main">
               {%- if enable_filtering -%}
+                {%- render 'facets-categories', collection_list: collection_list -%}
                 {%- for filter in results.filters -%}
                   {% case filter.type %}
                   {% when 'boolean' or 'list' %}
@@ -336,7 +346,7 @@
                           <noscript>{% render 'icon-caret' %}</noscript>
                         </div>
                       </summary>
-                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu gradient">
+                      <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu">
                         <button class="mobile-facets__close-button link link--text focus-inset" aria-expanded="true" type="button">
                           {% render 'icon-arrow' %}
                           {{ filter.label | escape }}
@@ -489,6 +499,7 @@
     </details>
   </menu-drawer>
 
+  {%- comment -%}
   <div class="active-facets active-facets-mobile medium-hide large-up-hide">
     {%- for filter in results.filters -%}
       {%- for value in filter.active_values -%}
@@ -523,6 +534,7 @@
       </a>
     </facet-remove>
   </div>
+  {%- endcomment -%}
   <div class="product-count light medium-hide large-up-hide" role="status">
     <h2 class="product-count__text text-body">
       <span id="ProductCount">
