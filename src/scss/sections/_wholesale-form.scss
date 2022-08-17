@@ -223,7 +223,7 @@
         }
 
         &.md {
-            @include media-breakpoint-up(sm) {
+            @include media-breakpoint-up(md) {
                 width: 33.5rem;
             }
         }
@@ -246,7 +246,7 @@
     &-dragndrop {
         margin-top: 4rem;
 
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
             margin-top: 5.4rem;
         }
 

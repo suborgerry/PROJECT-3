@@ -64,7 +64,7 @@
         grid-template-columns: max-content;
         grid-gap: 7.35rem;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
             border-bottom: 1px solid #C4C4C4;
         }
     }
@@ -232,7 +232,10 @@
                 }
 
                 .stamped-form-actions {
-                    margin-bottom: 7rem;
+                    margin-bottom: 0rem;
+                    @include media-breakpoint-up(sm) {
+                        margin-bottom: 7rem;
+                    }
                 }
 
                 .stamped-file-uploader-btn {
@@ -276,9 +279,8 @@
                             display: flex;
                         }
 
-                        select.stamped-sort-select {
+                        select.stamped-sort-select#stamped-sort-select {
                             border-radius: 0 !important;
-                            outline: 1px solid #ccd6e0!important;
                             font-weight: 300 !important;
                             font-size: 1.6rem !important;
                             line-height: 2.8rem !important;
@@ -290,6 +292,13 @@
                             -moz-appearance:none !important; /* Firefox */
                             -webkit-appearance:none !important; /* Safari and Chrome */
                             appearance:none !important;
+                            margin-right: 1px !important;
+                            margin-top: 1px !important;
+            
+                            @media (max-width: 481px) {
+                                border: 1px solid #ccd6e0!important;
+                                border-top: 1px solid #ccd6e0 !important;
+                            }
 
                             @include media-breakpoint-down(xs) {
                                 width: 100% !important;
@@ -400,9 +409,12 @@
         margin-left: 2rem;
         margin-top: 2.7rem;
         display: grid;
-        grid-template-columns: max-content max-content;
         grid-row-gap: 1.6rem;
         grid-column-gap: 29.1rem;
+
+        @include media-breakpoint-up(lg) {
+            grid-template-columns: max-content max-content;
+        }
 
         &-item {
             &::marker {

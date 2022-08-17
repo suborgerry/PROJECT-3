@@ -10437,7 +10437,7 @@ main {
 .wholesale-form__field.sm {
   width: 19.1rem;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .wholesale-form__field.md {
     width: 33.5rem;
   }
@@ -10453,7 +10453,7 @@ main {
 .wholesale-form-dragndrop {
   margin-top: 4rem;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .wholesale-form-dragndrop {
     margin-top: 5.4rem;
   }
@@ -11689,7 +11689,7 @@ main {
 }
 @media (max-width: 767.98px) {
   .product-form__buttons div.swym-btn-container button.swym-button {
-    width: 30.4rem !important;
+    width: calc(100% - 28px) !important;
   }
 }
 .product-form__buttons div.swym-btn-container button.swym-button span {
@@ -11806,7 +11806,7 @@ main {
   grid-template-columns: max-content;
   grid-gap: 7.35rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .product-tabs__buttons {
     border-bottom: 1px solid #C4C4C4;
   }
@@ -11943,7 +11943,12 @@ main {
   padding: 0 2.4rem;
 }
 .product-tabs__tab.product-reviews .new-review-form .stamped-form-actions {
-  margin-bottom: 7rem;
+  margin-bottom: 0rem;
+}
+@media (min-width: 576px) {
+  .product-tabs__tab.product-reviews .new-review-form .stamped-form-actions {
+    margin-bottom: 7rem;
+  }
 }
 .product-tabs__tab.product-reviews .new-review-form .stamped-file-uploader-btn {
   height: 5.6rem;
@@ -11980,9 +11985,8 @@ main {
     display: flex;
   }
 }
-.product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select {
+.product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select#stamped-sort-select {
   border-radius: 0 !important;
-  outline: 1px solid #ccd6e0 !important;
   font-weight: 300 !important;
   font-size: 1.6rem !important;
   line-height: 2.8rem !important;
@@ -11994,9 +11998,17 @@ main {
   /* Firefox */
   /* Safari and Chrome */
   appearance: none !important;
+  margin-right: 1px !important;
+  margin-top: 1px !important;
+}
+@media (max-width: 481px) {
+  .product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select#stamped-sort-select {
+    border: 1px solid #ccd6e0 !important;
+    border-top: 1px solid #ccd6e0 !important;
+  }
 }
 @media (max-width: 575.98px) {
-  .product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select {
+  .product-tabs__tab.product-reviews div.stamped-reviews-filter span.stamped-sort-select-wrapper select.stamped-sort-select#stamped-sort-select {
     width: 100% !important;
     max-width: 100% !important;
     display: block;
@@ -12079,9 +12091,13 @@ main {
   margin-left: 2rem;
   margin-top: 2.7rem;
   display: grid;
-  grid-template-columns: max-content max-content;
   grid-row-gap: 1.6rem;
   grid-column-gap: 29.1rem;
+}
+@media (min-width: 992px) {
+  .product-details__list {
+    grid-template-columns: max-content max-content;
+  }
 }
 .product-details__list-item::marker {
   color: #CA3433;
@@ -12112,12 +12128,17 @@ main {
 @media (max-width: 575.98px) {
   #storeifyapps-storelocator-shortcode {
     width: 100vw;
-    margin-left: -5vw;
+    margin-left: -2rem;
   }
 }
 #storeifyapps-storelocator-shortcode .storelocator-search {
   border: 0 !important;
   padding: 0 !important;
+}
+@media (min-width: 992px) {
+  #storeifyapps-storelocator-shortcode .storelocator-search {
+    margin-bottom: 8.9rem;
+  }
 }
 #storeifyapps-storelocator-shortcode .storelocator-search .search-address-box {
   padding-left: 0 !important;
@@ -12143,6 +12164,8 @@ main {
   justify-content: space-between;
   width: 100%;
   max-width: 100%;
+  flex-wrap: wrap;
+  border: 0;
 }
 @media (max-width: 991.98px) {
   #storeifyapps-storelocator-shortcode .storeify-stl-header .storeify-header-inner {
@@ -12166,6 +12189,11 @@ main {
   #storeifyapps-storelocator-shortcode .storeify-stl-header .storeify-header-inner .search-radius-box .input-radius-slt {
     max-width: 100%;
     width: 100% !important;
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 1206px) {
+  #storeifyapps-storelocator-shortcode .storeify-stl-header .storeify-header-inner .storeifystorelocator-seach-action-box {
     margin-top: 2rem;
   }
 }
@@ -12212,9 +12240,13 @@ main {
 }
 @media (max-width: 1199.98px) {
   #storeifyapps-storelocator-shortcode #main-slider-storelocator {
+    display: flex;
+    flex-wrap: wrap;
     min-height: min-content;
     max-height: max-content;
     height: min-content;
+    width: 100%;
+    max-width: 100%;
   }
 }
 #storeifyapps-storelocator-shortcode #main-slider-storelocator .item.thumbnail {
@@ -12224,6 +12256,12 @@ main {
   margin-bottom: 0;
   box-shadow: none;
   background: transparent;
+  width: 33rem;
+}
+@media (min-width: 992px) {
+  #storeifyapps-storelocator-shortcode #main-slider-storelocator .item.thumbnail {
+    width: 43rem;
+  }
 }
 #storeifyapps-storelocator-shortcode #main-slider-storelocator .item.thumbnail .inner-item {
   padding: 4.1rem 2.4rem;
@@ -12293,15 +12331,14 @@ main {
   display: none;
 }
 #storeifyapps-storelocator-shortcode .map-tab-result {
-  width: 43rem;
+  width: 100%;
+  max-width: 100%;
   padding: 0;
   margin-right: 4.8rem;
 }
 @media (max-width: 991.98px) {
   #storeifyapps-storelocator-shortcode .map-tab-result {
     display: flex;
-    width: 100%;
-    max-width: 100%;
     height: max-content;
     max-height: max-content;
     margin-bottom: 2rem;
@@ -12312,6 +12349,12 @@ main {
 }
 #storeifyapps-storelocator-shortcode .map-tab-result .results-slt .title {
   display: none;
+}
+#storeifyapps-storelocator-shortcode .map-tab-result .list-item-3 {
+  height: min-content;
+  max-height: min-content;
+  min-height: min-content !important;
+  margin-bottom: 2rem;
 }
 #storeifyapps-storelocator-shortcode .map-tab-ggmap {
   width: 86.2rem;
@@ -12409,9 +12452,10 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 #storeifyapps-storelocator-shortcode .storeifystorelocator-seach-action-box .seach-action-box #submit-search:hover {
-  background: #D13026 !important;
+  background: #b8180e !important;
 }
 #storeifyapps-storelocator-shortcode .storeifystorelocator-seach-action-box .seach-action-box #submit-search::before {
   content: "LOCATE A STORE";

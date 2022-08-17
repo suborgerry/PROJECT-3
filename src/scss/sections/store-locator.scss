@@ -2,13 +2,15 @@
 #storeifyapps-storelocator-shortcode {
     @include media-breakpoint-down(xs) {
         width: 100vw;
-        margin-left: -5vw;
+        margin-left: -2rem;
     }
     .storelocator {
         &-search {
             border: 0 !important;
             padding: 0 !important;
-            
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 8.9rem;
+            }            
             .search-address-box {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
@@ -37,6 +39,8 @@
             justify-content: space-between;
             width: 100%;
             max-width: 100%;
+            flex-wrap: wrap;
+            border: 0;
             
             @include media-breakpoint-down(md) {
                 flex-direction: column;
@@ -65,6 +69,11 @@
             }
 
             .storeifystorelocator-seach-action-box {
+
+                @media (max-width: 1206px) {
+                    margin-top: 2rem;
+                }
+
                 &.storeifystorelocator-seach-action-mobile {
                     display: none !important;
                 }
@@ -119,9 +128,13 @@
         border: 0;
 
         @include media-breakpoint-down(lg) {
+            display: flex;
+            flex-wrap: wrap;
             min-height: min-content;
             max-height: max-content;
             height: min-content;
+            width: 100%;
+            max-width: 100%;    
         }
 
         .item.thumbnail {
@@ -131,6 +144,11 @@
             margin-bottom: 0;
             box-shadow: none;
             background: transparent;
+            width: 33rem;
+
+            @include media-breakpoint-up(lg) {
+                width: 43rem;
+            }
 
             &:hover {
                 @extend .c-grey-8-bg;
@@ -222,14 +240,13 @@
     }
 
     .map-tab-result {
-        width: 43rem;
+        width: 100%;
+        max-width: 100%;
         padding: 0;
         margin-right: 4.8rem;
 
         @include media-breakpoint-down(md) {
             display: flex;
-            width: 100%;
-            max-width: 100%;
             height: max-content;
             max-height: max-content;
             margin-bottom: 2rem;
@@ -243,6 +260,13 @@
             .title {
                 display: none;
             }
+        }
+
+        .list-item-3 {
+            height: min-content;
+            max-height: min-content;
+            min-height: min-content !important;
+            margin-bottom: 2rem;
         }
     }
 
@@ -355,9 +379,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: all 0.3s ease;
 
                 &:hover {
-                    background: $c-red-4 !important;
+                    background: #b8180e !important;
                 }
 
                 &::before {

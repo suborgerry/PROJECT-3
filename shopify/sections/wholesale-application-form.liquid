@@ -10,6 +10,16 @@
       margin-bottom: {{ section.settings.margin_bottom }}px;
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .section-{{ section.id }}-margin {
+      padding-top: 0;
+    }
+
+    .mt-wtr {
+      margin-top: 4rem;
+    }
+  }
 {%- endstyle -%}
 
 <div class="wholesale-form__container gradient c-grey-10-bg section-{{ section.id }}-margin">
@@ -69,12 +79,14 @@
       </div>
     </div>
     <label class="wholesale-form__label second mw-750">IN BUSINESS SINCE</label>
-    <div class="wholesale-form__fields date d-flex flex-column mt-wtr mw-750">
-      <div class="d-flex justify-content-between">
-        <input class="wholesale-form__field sm" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
-        <input class="wholesale-form__field sm" type="text" id="ContactForm-day" name="contact[day]" placeholder="Day">
-        <input class="wholesale-form__field sm" type="text" id="ContactForm-year" name="contact[year]" placeholder="Year">
-        <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" name="contact[start-date-busines]"></span>
+    <div class="d-flex mt-wtr mw-750">
+      <div class="wholesale-form__fields date">
+        <div class="d-flex justify-content-between">
+          <input class="wholesale-form__field sm" type="text" id="ContactForm-month" name="contact[month]" placeholder="Month">
+          <input class="wholesale-form__field sm" type="text" id="ContactForm-day" name="contact[day]" placeholder="Day">
+          <input class="wholesale-form__field sm" type="text" id="ContactForm-year" name="contact[year]" placeholder="Year">
+          <span class="NativeDatepicker"><input type="date" class="NativeDatepicker__input" name="contact[start-date-busines]"></span>
+        </div>
       </div>
     </div>
     <div class="wholesale-form__fields d-flex flex-column mt-wtr mw-750">

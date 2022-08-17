@@ -21,10 +21,24 @@
     }
   }
 
+  .wholesale-form__checkbox input:checked + label {
+    color: #818181
+  }
+
+  .wholesale-form-dragndrop .wholesale-form__label {
+    margin-bottom: .5rem;
+  }
+
+  @media (max-width: 767px) {
+    .mt-wtr {
+      margin-top: 4rem;
+    }
+  }
+
 {%- endstyle -%}
 
 <div class="wholesale-form__container gradient section-{{ section.id }}-margin pt-0">
-  {%- form 'contact', id: 'SubmitDesignForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
+  {%- form 'contact', id: 'WholesaleForm', class: 'wholesale-form__fields-container d-flex flex-column' -%}
     <div class="wholesale-form__fields d-flex mw-750 justify-content-between sm-flex-column flex-wrap">
       <div class="wholesale-form__field-container d-flex flex-column">
         <label class="wholesale-form__label">YOUR FIRST NAME</label>

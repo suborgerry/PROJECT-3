@@ -328,7 +328,7 @@
                     background: $c-red-1 !important;
 
                     @include media-breakpoint-down(sm) {
-                        width: 30.4rem !important;
+                        width: calc(100% - 28px) !important;
                     }
 
                     span {
