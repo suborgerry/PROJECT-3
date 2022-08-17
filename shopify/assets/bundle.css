@@ -5410,14 +5410,6 @@ main {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.products-list__top-filter {
-  display: none;
-}
-@media (min-width: 750px) {
-  .products-list__top-filter {
-    display: block;
-  }
-}
 .products-list__top-filter-results {
   margin: 4px 0 60px !important;
 }
@@ -5937,34 +5929,52 @@ main {
     right: 25px;
   }
 }
-.collection-sortby .select-container .sort-by__main {
+.collection-sortby .select-container .sort-by__main,
+.collection-sortby .select-container .sort-by__main-mob {
   position: relative;
   cursor: pointer;
-  padding: 14px 30px 14px 10px;
+  padding: 14px 30px 14px 14px;
   height: 45px;
+  min-width: 183px;
   border: 1px solid #EFEFEF;
 }
 @media (min-width: 992px) {
-  .collection-sortby .select-container .sort-by__main {
+  .collection-sortby .select-container .sort-by__main,
+.collection-sortby .select-container .sort-by__main-mob {
     padding: 18px 60px 18px 22px;
     height: 56px;
   }
 }
-.collection-sortby .select-container .sort-by__main:focus {
+.collection-sortby .select-container .sort-by__main:focus,
+.collection-sortby .select-container .sort-by__main-mob:focus {
   outline: none;
 }
 .collection-sortby .select-container .sort-by__main .sort-by__main-value,
-.collection-sortby .select-container .sort-by__main .sort-by__item {
+.collection-sortby .select-container .sort-by__main .sort-by__main-value-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__main-value,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__main-value-mob {
   font-size: 12px;
   font-weight: 700;
 }
 @media (min-width: 992px) {
   .collection-sortby .select-container .sort-by__main .sort-by__main-value,
-.collection-sortby .select-container .sort-by__main .sort-by__item {
+.collection-sortby .select-container .sort-by__main .sort-by__main-value-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__main-value,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__main-value-mob {
     font-size: 14px;
   }
 }
-.collection-sortby .select-container .sort-by__main .sort-by__items-list {
+.collection-sortby .select-container .sort-by__main .sort-by__item,
+.collection-sortby .select-container .sort-by__main .sort-by__item-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__item,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__item-mob {
+  font-size: 14px;
+  font-weight: 700;
+}
+.collection-sortby .select-container .sort-by__main .sort-by__items-list,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob {
   display: none;
   position: absolute;
   left: unset;
@@ -5976,18 +5986,46 @@ main {
   box-shadow: 1px 8px 12px rgba(0, 0, 0, 0.07);
   border: 2px solid #C4C4C4;
 }
-.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item {
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item-mob,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item-mob,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item-mob {
   position: relative;
   display: block;
   padding: 8px 15px;
   cursor: pointer;
   transition: 0.3s ease;
 }
-.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item:hover, .collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active {
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item:hover, .collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item-mob:hover,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item-mob.active,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item:hover,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item.active,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item-mob:hover,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item-mob.active,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item:hover,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item.active,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item-mob:hover,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item-mob.active,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item:hover,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item.active,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item-mob:hover,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item-mob.active {
   color: #fff;
   background-color: #C4C4C4;
 }
-.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item svg {
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item-mob svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item-mob svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item-mob svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item-mob svg {
   position: absolute;
   width: 10px;
   height: 10px;
@@ -5996,7 +6034,14 @@ main {
   transform: translateY(-50%);
   display: none;
 }
-.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active svg {
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item.active svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list .sort-by__item-mob.active svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item.active svg,
+.collection-sortby .select-container .sort-by__main .sort-by__items-list-mob .sort-by__item-mob.active svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item.active svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list .sort-by__item-mob.active svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item.active svg,
+.collection-sortby .select-container .sort-by__main-mob .sort-by__items-list-mob .sort-by__item-mob.active svg {
   display: block;
 }
 .showed {
@@ -6023,13 +6068,16 @@ main {
   background: unset;
   visibility: hidden;
 }
-.facets-color .facet-checkbox {
+.facets-color .facet-checkbox,
+.facets-color .mobile-facets__label {
   padding: 0.5rem 2rem 0.5rem 0;
 }
-.facets-color .facet-checkbox:hover .icon-color-checkmark {
+.facets-color .facet-checkbox:hover .icon-color-checkmark,
+.facets-color .mobile-facets__label:hover .icon-color-checkmark {
   visibility: visible;
 }
-.facets-color .facet-checkbox .facet-value {
+.facets-color .facet-checkbox .facet-value,
+.facets-color .mobile-facets__label .facet-value {
   transform: translateY(4px);
 }
 .facets-color .facet-checkbox > input[type=checkbox]:checked ~ .icon-color-checkmark,

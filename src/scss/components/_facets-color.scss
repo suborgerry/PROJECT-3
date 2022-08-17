@@ -20,7 +20,8 @@
         background: unset;
         visibility: hidden;
     }
-    .facet-checkbox {
+    .facet-checkbox,
+    .mobile-facets__label {
         padding: 0.5rem 2rem 0.5rem 0;
         &:hover {
             .icon-color-checkmark {
