@@ -9,6 +9,15 @@
         "margin_bottom_mob": 0
       }
     },
+    "1660746332c3411d85": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0\" \/>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -40,6 +49,7 @@
   },
   "order": [
     "16602058915c57c75e",
+    "1660746332c3411d85",
     "main",
     "1660212750fc400d6a"
   ]
