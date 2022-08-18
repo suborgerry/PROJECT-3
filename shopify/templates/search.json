@@ -5,8 +5,8 @@
       "settings": {
         "margin_top": 20,
         "margin_bottom": 31,
-        "margin_top_mob": 20,
-        "margin_bottom_mob": 31
+        "margin_top_mob": 30,
+        "margin_bottom_mob": 43
       }
     },
     "1660771947c514279f": {
@@ -18,8 +18,8 @@
             "heading": "Search Results",
             "heading_size": "h1",
             "heading_posotion": "center",
-            "heading_color": "black",
-            "font_size": 36
+            "heading_color": "#414240",
+            "font_size": 32
           }
         }
       },
@@ -30,19 +30,32 @@
         "color_scheme": "background-1",
         "full_width": true,
         "max_width": 1340,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "main": {
       "type": "main-search-roa",
       "settings": {
+        "padding_top": 72,
+        "padding_top_mob": 44,
+        "padding_bottom": 0,
+        "padding_bottom_mob": 0
+      }
+    },
+    "16608186160159c603": {
+      "type": "articles-categories",
+      "settings": {
+        "padding_top": 72,
+        "padding_bottom": 88,
+        "padding_bottom_mob": 74
       }
     }
   },
   "order": [
     "166077189811a2fdb0",
     "1660771947c514279f",
-    "main"
+    "main",
+    "16608186160159c603"
   ]
 }
