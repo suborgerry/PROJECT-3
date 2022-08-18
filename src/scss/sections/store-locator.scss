@@ -144,9 +144,12 @@
             margin-bottom: 0;
             box-shadow: none;
             background: transparent;
-            width: 33rem;
 
-            @include media-breakpoint-up(lg) {
+            @media (min-width: 1250px) {
+                width: 33rem;
+            }
+
+            @include media-breakpoint-up(xxl) {
                 width: 43rem;
             }
 
@@ -240,12 +243,20 @@
     }
 
     .map-tab-result {
+        padding: 0;
         width: 100%;
         max-width: 100%;
-        padding: 0;
         margin-right: 4.8rem;
 
-        @include media-breakpoint-down(md) {
+        @media (min-width: 1250px) {
+            width: 33rem;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            width: 43rem;
+        }
+
+        @include media-breakpoint-down(lg) {
             display: flex;
             height: max-content;
             max-height: max-content;
@@ -275,7 +286,7 @@
         height: 86.2rem;
         padding-right: 0;
 
-        @include media-breakpoint-down(lg) {
+        @media (max-width: 1250px) {
             width: 100%;
             max-width: 100%;
         }
