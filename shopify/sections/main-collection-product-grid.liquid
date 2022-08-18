@@ -137,7 +137,7 @@
   <div class="facets-vertical page-width">
     {%- if ss.enable_filtering or ss.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless ss.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ s.id }}">
-        {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: ss.collection_list -%}
+        {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: ss.collection_list, filter_mode: ss.filter_mode -%}
         {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode, collection_list: ss.collection_list %}
       </aside>
     {%- endif -%}
@@ -289,6 +289,15 @@
           elem.classList.toggle('hidden');
         }
       });
+    });
+  });
+
+  //Categories dropdown
+  const catDropdown = document.querySelectorAll('.categories-dropdown');
+  catDropdown.forEach((catD) => {
+    let catBtn = catD.firstElementChild;
+    catBtn.addEventListener('click', () => {
+      catD.classList.toggle('active');
     });
   });
 

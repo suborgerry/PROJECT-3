@@ -80,7 +80,7 @@
             {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
             {% case filter.type %}
             {% when 'boolean' or 'list' %}
-              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% else %}{% if forloop.index == 1 %} open{% endif %}{% endif %}>
+              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% endif %}>
                 <summary class="facets__summary caption-large focus-offset" aria-label="{{ filter.label }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})">
                   <div>
                     <span class="facets__label">{{ filter.label | escape | upcase }}{%- comment -%}<span class="facets__selected no-js-hidden{% if filter.active_values.size == 0 %} hidden{% endif %}"> ({{ filter.active_values.size }})</span>{%- endcomment -%}</span>
@@ -181,7 +181,7 @@
                   assign uses_comma_decimals = true
                 endif
               %}
-              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% else %}{% if forloop.index == 1 %} open{% endif %}{% endif %}>
+              <details id="Details-{{ forloop.index }}-{{ section.id }}" class="facets__disclosure-vertical{% if filter_mode == 'usual' %} facets-usual-mode{% endif %} js-filter" data-index="{{ forloop.index }}"{% if filter_mode == 'usual' %} open{% endif %}>
                 <summary class="facets__summary caption-large focus-offset">
                   <div>
                     <span class="facets__label">{{ filter.label | escape | upcase }}</span>
@@ -318,7 +318,7 @@
             </div>
             <div class="mobile-facets__main">
               {%- if enable_filtering -%}
-                {%- render 'facets-categories', collection_list: collection_list -%}
+                {%- render 'facets-categories', collection_list: collection_list, filter_mode: 'dropdown' -%}
                 {%- for filter in results.filters -%}
                   {% case filter.type %}
                   {% when 'boolean' or 'list' %}
