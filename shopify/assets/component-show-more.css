@@ -1,15 +1,11 @@
-
 .button-show-more {
   padding-left: 0;
   justify-content: flex-start;
   display: inline-block;
   text-align: center;
   cursor: pointer;
-}
-
-.button-show-more, 
-.button-show-less {
   margin-top: 1.6rem;
+  width: fit-content;
   font-size: 16px;
   line-height: 26px;
   font-weight: 700;
@@ -20,7 +16,6 @@
   transition: 0.3s;
 }
 
-.button-show-more:hover, 
-.button-show-less:hover {
+.button-show-more:hover {
   background-color: #CF322D;
 }

@@ -60,7 +60,7 @@
           </div>
           <div class="collection-sortby">
             <div class="select-container">
-              <div class="sort-by__main" id="sort-by">
+              <div class="sort-by__main">
                 {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
                 <h5 class="sort-by__main-value" data-value-main="{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.value | upcase }}{% endif %}{% endfor %}">{%- for option in collection.sort_options -%}{% if option.value == sort_by %}{{ option.name | upcase }}{% endif %}{% endfor %}</span>
                 {% render 'icon-caret' %}
@@ -75,7 +75,6 @@
               </div>
             </div>
           </div>
-          
         </div> 
       </form>
     </facet-filters-form>
@@ -95,7 +94,7 @@
       endif
   -%}
   {% if ss.enable_filtering %}
-    <div class="page-width products-list__top-filter">
+    <div class="page-width products-list__top-filter small-hide">
       <div class="active-facets active-facets-desktop products-list__top-filter-results">
         <div class="active-facets-vertical-filter">
           <facet-remove class="active-facets__button-wrapper">
@@ -201,7 +200,8 @@
   </div>
 </div>
 
-{% render 'collection-sort-by-js' %}
+{%- render 'collection-sort-by-js' -%}
+{%- render 'collection-sort-by-mobile-js' -%}
 
 <script>
   //Grid columns functionality and storage
@@ -276,28 +276,22 @@
     var endlessScroll = new Ajaxinate();
   });
 
-  //Functionality of show more categories
-  const btnShowMoreCat = document.querySelectorAll('.btn-show-more-cat'),
-  labelShowMoreCat = document.querySelectorAll('.label-show-more-cat'),
-  labelShowLessCat = document.querySelectorAll('.label-show-less-cat'),
-  showMoreCat = document.querySelectorAll('.show-more-categories');
-
-  btnShowMoreCat.forEach(btn => {
+  //Functionality of show more
+  const showMoreMob = document.querySelectorAll('.btn-show-more-items');
+  showMoreMob.forEach(btn => {
     btn.addEventListener('click', () => {
-      function hideToggle(item) {
-        item.classList.toggle('hidden');
-      }
-      showMoreCat.forEach(item => {
-        hideToggle(item);
+      let prevElemChilds = btn.previousElementSibling.children;
+      btn.children.forEach(label => {
+        label.classList.toggle('hidden');
       });
-      labelShowMoreCat.forEach(item => {
-        hideToggle(item);
-      });
-      labelShowLessCat.forEach(item => {
-        hideToggle(item);
+      prevElemChilds.forEach(elem => {
+        if (elem.classList.contains('show-more-items')) {
+          elem.classList.toggle('hidden');
+        }
       });
     });
   });
+
 </script>
 
 {% schema %}
