@@ -1,24 +1,48 @@
 {
   "sections": {
-    "main": {
-      "type": "main-search",
+    "166077189811a2fdb0": {
+      "type": "breadcrumbs",
       "settings": {
-        "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "article_show_date": true,
-        "article_show_author": false,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 31
+      }
+    },
+    "1660771947c514279f": {
+      "type": "rich-text",
+      "blocks": {
+        "1660771947a7b922e7-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Search Results",
+            "heading_size": "h1",
+            "heading_posotion": "center",
+            "heading_color": "black",
+            "font_size": 36
+          }
+        }
+      },
+      "block_order": [
+        "1660771947a7b922e7-0"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "max_width": 1340,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-search-roa",
+      "settings": {
       }
     }
   },
   "order": [
+    "166077189811a2fdb0",
+    "1660771947c514279f",
     "main"
   ]
 }

@@ -1,0 +1,123 @@
+{{ 'main-search-roa.css' | asset_url | stylesheet_tag }}
+
+<script src="//searchserverapi.com/widgets/shopify/init.js?a=5g0K9g7k7a"></script>
+<div class="main-search__input">
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+    <div class="field">
+      <input
+        class="search__input field__input"
+        id="Search-In-Template"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.search' | t }}"
+      >
+      <input name="options[prefix]" type="hidden" value="last">
+
+      <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+        <svg class="icon icon-search">
+          <use xlink:href="#icon-search">
+        </svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+<div class="snize" id="snize_results"></div>
+<div id="snize_skeleton_results">
+  <div class="snize-header"><span class="snize-search-results-header snize-skeleton-text snize-full-width"></span></div>
+  <div class="snize-horizontal-filters snize-product-filters">
+    <div class="snize-filters-dropdown snize-skeleton-card small"><span
+        class="snize-skeleton-text snize-full-width"></span></div>
+    <div class="snize-filters-dropdown snize-skeleton-card small"><span
+        class="snize-skeleton-text snize-full-width"></span></div>
+    <div class="snize-filters-dropdown snize-skeleton-card small"><span
+        class="snize-skeleton-text snize-full-width"></span></div>
+  </div>
+  <div class="snize-filters-sidebar snize-product-filters">
+    <div class="snize-product-filters-block snize-skeleton-card">
+      <div class="snize-product-filters-title"><span class="snize-skeleton-text snize-full-width"></span></div>
+      <div class="snize-product-filters-list"><span class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span></div>
+    </div>
+    <div class="snize-product-filters-block snize-skeleton-card">
+      <div class="snize-product-filters-title"><span class="snize-skeleton-text snize-full-width"></span></div>
+      <div class="snize-product-filters-list"><span class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span></div>
+    </div>
+    <div class="snize-product-filters-block snize-skeleton-card">
+      <div class="snize-product-filters-title"><span class="snize-skeleton-text snize-full-width"></span></div>
+      <div class="snize-product-filters-list"><span class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span> <span
+          class="snize-skeleton-text snize-full-width"></span></div>
+    </div>
+  </div>
+  <div class="snize-search-results-main-content">
+    <div id="snize-search-results-wrapper" class="snize-search-results-grid-mode snize-three-columns">
+      <ul class="snize-search-results-content">
+        <li class="snize-product">
+          <div class="snize-item snize-skeleton-card">
+            <div class="snize-thumbnail-wrapper">
+              <div class="snize-thumbnail"></div>
+            </div>
+            <div class="snize-overhidden"><span class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span></div>
+          </div>
+        </li>
+        <li class="snize-product">
+          <div class="snize-item snize-skeleton-card">
+            <div class="snize-thumbnail-wrapper">
+              <div class="snize-thumbnail"></div>
+            </div>
+            <div class="snize-overhidden"><span class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span></div>
+          </div>
+        </li>
+        <li class="snize-product">
+          <div class="snize-item snize-skeleton-card">
+            <div class="snize-thumbnail-wrapper">
+              <div class="snize-thumbnail"></div>
+            </div>
+            <div class="snize-overhidden"><span class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span></div>
+          </div>
+        </li>
+        <li class="snize-product">
+          <div class="snize-item snize-skeleton-card">
+            <div class="snize-thumbnail-wrapper">
+              <div class="snize-thumbnail"></div>
+            </div>
+            <div class="snize-overhidden"><span class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span></div>
+          </div>
+        </li>
+        <li class="snize-product">
+          <div class="snize-item snize-skeleton-card">
+            <div class="snize-thumbnail-wrapper">
+              <div class="snize-thumbnail"></div>
+            </div>
+            <div class="snize-overhidden"><span class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span> <span
+                class="snize-skeleton-text snize-full-width"></span></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'main-search-roa.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+  {
+    "name": "Search ROA",
+    "tag": "section",
+    "class": "section page-width"
+  }
+{% endschema %}
