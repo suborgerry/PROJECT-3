@@ -1,0 +1,104 @@
+{%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media (max-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-bottom: {{ section.settings.padding_bottom_mob }}px;
+      }
+    }
+{%- endstyle -%}
+
+<div class="articles-categories d-flex section-{{ section.id }}-padding">
+  <div class="articles-categories__articles">
+    <p class="articles-categories__heading">Articles</p>
+    {% for article in blogs.news.articles limit: 3 %}
+      <a href="{{ article.url }}" class="articles-categories__article d-flex">
+        <img
+          src="{{ article.image.src | image_url }}"
+          alt="{{ article.image.src.alt | escape }}"
+          class="articles-categories__image"
+        >
+        <div class="articles-categories__info">
+          <div>
+            <p class="articles-categories__title">{{ article.title }}</p>
+            <div class="articles-categories__author d-flex">
+              <img
+                {% if article.user.image %} src="{{ article.user.image | img_url }}" {% else %} src="https://cdn.shopify.com/s/files/1/0161/4702/files/360_F_408244382_Ex6k7k8XYzTbiXLNJgIL8gssebpLLBZQ_4e664928-8b1d-4dc4-9fc7-c6f5ea1aab87.jpg?v=1656673223" class="empty" {% endif %}
+              >
+              <div class="info">
+                <p class="info__name">{{ article.user.name }}</p>
+                <p class="info__published">{{ article.published_at | date: "%B %d, %Y" }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="articles-categories__tags">
+            {% for tag in article.tags limit: 5 %}
+              <span>{{ tag }}</span>
+            {% endfor %}
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+  <div class="articles-categories__categories">
+    <p class="articles-categories__heading">Categories</p>
+    {% for collection in collections limit: 3 %}
+      {% comment %} {{- collection.title | link_to: collection.url }} {% endcomment %}
+      <a href="{{ collection.url }}" class="articles-categories__categories-item">
+        {%- render 'face' -%}
+        <span class="categories-item__container">
+          <span class="categories-item__title">{{ collection.title }}</span>
+          <span class="categories-item__text">Officially Licensed Gear</span>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Articles & categories",
+  "tag": "section",
+  "class": "section page-width",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 110,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mob",
+      "min": 0,
+      "max": 110,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Articles & categories"
+    }
+  ]
+}
+{% endschema %}

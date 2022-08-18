@@ -1,0 +1,308 @@
+@keyframes "snize-skeleton-anim" {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.main-search__input {
+    padding: 4.8rem 5.6rem 0 5.6rem;
+    background: #FCFCFC;
+
+    form {
+        padding-bottom: 4.8rem;
+        border-bottom: 1px solid #EAEAEA;
+    }
+
+    .search__button.field__button {
+        left: 2.4rem;
+        top: .5rem;
+    }
+
+    .field {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+}
+
+.search__input.field__input {
+    background: #fff;
+    border: 1px solid #F3F3F3;
+    height: 5.6rem;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    letter-spacing: 0.547826px;
+    padding-left: 7rem;
+}
+
+div.snize {
+    div.snize-header {
+        display: none;
+    }
+
+    div.snize-main-panel {
+        margin: 0;
+        border: 0;
+        padding: 0 5.6rem;
+        width: calc(100% - 11.2rem);
+        margin-bottom: -9.4rem;
+    }
+
+    div.snize-main-panel-dropdown {
+        a.snize-main-panel-dropdown-button {
+            background: #FFFFFF;
+            border: 1px solid #F3F3F3;
+            margin: 0;
+            padding: 0;
+            width: 20.2rem;
+            height: 5.6rem;
+            padding: 2.2rem 2.4rem .9rem 2.4rem;
+            box-sizing: border-box;
+            font-weight: 300;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.547826px;
+            color: #000001;
+        }
+
+        ul.snize-main-panel-dropdown-content {
+            margin: 0;
+            width: 99%;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+
+            a.current {
+                background-image: none;
+            }
+        }
+    }
+
+    div.snize-main-panel-view-mode {
+        display: none;
+    }
+
+    div.snize-main-panel-controls {
+        display: none;
+    }
+
+    div.snize-horizontal-filters {
+        padding: 4.8rem 5.6rem;
+        background: #FCFCFC;
+        margin: 0;
+        margin-top: -2.2rem;
+        margin-bottom: 4.5rem;
+    }
+
+    div.snize-filters-dropdown {
+        + {
+            div.snize-filters-dropdown {
+                margin-left: 4.8rem;
+            }
+        }
+    }
+
+    div.snize-filters-dropdown-title {
+        background: #FFFFFF;
+        border: 1px solid #F3F3F3;
+        width: 25rem;
+        height: 5.6rem;
+        padding: 2.2rem 2.4rem 0.9rem 2.4rem;
+
+        .snize-filters-dropdown-text {
+            font-weight: 300;
+            font-size: 1.6rem;
+            line-height: 2.5rem;
+            letter-spacing: 0.547826px;
+            color: #949494;
+        }
+
+        .snize-product-filters-price-symbol {
+            display: none;
+        }
+    }
+
+    div.snize-filters-dropdown-content {
+        box-shadow: none;
+        border: 1px solid #F3F3F3;
+        margin-top: .8rem;
+        width: 100%;
+
+        ul.snize-product-filters-list {
+            padding: 2.4rem 1.6rem;
+            margin: 0;
+        }
+    }
+
+    div.snize-price-range {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    ul.snize-product-filters-list {
+        li {
+            span.snize-range-divider {
+                display: none;
+            }
+        }
+    }
+
+    .snize-price-range {
+        input.snize-price-range-input {
+            width: 9.4rem;
+            height: 4rem;
+        }
+    }
+
+    .snize-price-range-slider {
+        margin-left: 1.6rem;
+    }
+
+    div.slider-container.snize-theme {
+        .scale {
+            ins {
+                font-weight: 300;
+                line-height: 2.2rem;
+                letter-spacing: 0.479348px;
+                color: #949494;
+            }
+        }
+
+        .back-bar {
+            .pointer {
+                background-color: white;
+                border: 5px solid #CF322D;
+                border-radius: 50%;
+                width: .6rem;
+                height: .6rem;
+            }
+        }
+    }
+
+    i.snize-product-filters-reset {
+        display: none;
+    }
+
+    .snize-product {
+        .snize-size-select-box {
+            display: none;
+        }
+    }
+
+    #snize-search-results-grid-mode {
+        li.snize-product {
+            .snize-options-box {
+                display: none;
+            }
+
+            width: 30.4rem !important;
+            margin: 0;
+            border: 0;
+
+            .snize-simple-options-box {
+                display: none;
+            }
+
+            .snize-description {
+                display: none;
+            }
+        }
+    }
+
+    div.snize-pagination {
+        display: none;
+    }
+}
+
+.div.snize {
+    div.snize-filters-dropdown {
+        margin-right: 0;
+    }
+}
+
+div.snize-search-results#snize_results {
+    li {
+        a {
+            margin: 0;
+            padding: .5rem;
+        }
+    }
+}
+
+div.snize-search-results {
+    ul.snize-search-results-content {
+        display: grid !important;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 4.1rem;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+#snize-search-results-grid-mode {
+    li.snize-product {
+        span.snize-title {
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 2.6rem;
+            text-align: center;
+            letter-spacing: 0.93913px;
+            text-transform: uppercase;
+            color: #000001;
+            margin: auto;
+            max-width: 23rem;
+        }
+    }
+
+    .snize-price-list {
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 2.6rem;
+        letter-spacing: 0.93913px;
+        color: #6D6D6D;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .snize-thumbnail-wrapper {
+        padding: 0;
+    }
+
+    span.snize-thumbnail {
+        width: 30.4rem;
+        height: 32.8rem;
+
+        img {
+            margin: 0 !important;
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+    }
+}
+
+div.snize.snize-options {
+    #snize-search-results-grid-mode {
+        span.snize-overhidden {
+            padding: 0;
+            margin-top: 2.4rem;
+        }
+    }
+}
