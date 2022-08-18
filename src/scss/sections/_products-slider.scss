@@ -1,0 +1,125 @@
+.products-slider {
+    h3 {
+        margin-bottom: 40px;
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 58px;
+        }
+    }
+    &__list {
+        padding: 0 16px;
+        @include media-breakpoint-up(sm) {
+            padding: 0 32px;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 0;
+        }
+        position: relative;
+        .button-prev,
+        .button-next {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            top: 35%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            padding: 10px;
+            z-index: 1;
+            svg {
+                height: 18px;
+                width: auto;
+                color: $c-black;
+            }
+            @include media-breakpoint-up(sm) {
+                width: 44px;
+                height: 44px;
+                svg {
+                    height: 24px;
+                }
+            }
+        }
+        .button-prev {
+            left: -20px;
+            @include media-breakpoint-up(lg) {
+                left: -40px;
+            }
+        }
+        .button-next {
+            right: -20px;
+            @include media-breakpoint-up(lg) {
+                right: -40px;
+            }
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            &:hover + .img-wrapper {
+                .hover-img {
+                    z-index: 1;
+                    opacity: 1;
+                }
+            }
+        }
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 87vw;
+            margin-bottom: 25px;
+            @include media-breakpoint-up(md) {
+                height: 42.5vw;
+            }
+            @include media-breakpoint-up(lg) {
+                height: 27.5vw;
+            }
+            @include media-breakpoint-up(xl) {
+                height: 22.5vw;
+            }
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.3s;
+                &.hover-img  {
+                    z-index: -1;
+                    opacity: 0;
+                }
+            }
+        }
+        .item-type {
+            font-size: 12px;
+            line-height: 20px;
+            font-weight: 500;
+            color: $c-grey-3;
+            margin-bottom: 13px;
+        }
+        .item-title {
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: $c-black;
+        }
+        .price {
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: 500;
+            color: $c-grey-3;
+        }
+    }
+}

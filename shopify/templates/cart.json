@@ -1,59 +1,59 @@
 {
   "sections": {
-    "cart-items": {
-      "type": "main-cart-items",
+    "1660824102f20a3828": {
+      "type": "breadcrumbs",
       "settings": {
-        "show_vendor": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "margin_top": 20,
+        "margin_bottom": 30,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
       }
     },
-    "cart-footer": {
-      "type": "main-cart-footer",
+    "cart-items": {
+      "type": "main-cart-items",
       "blocks": {
-        "subtotal": {
+        "bd9a0620-5166-4d36-8bac-333fb33df6ee": {
           "type": "subtotal",
           "settings": {
           }
         },
-        "buttons": {
+        "cd254fff-b44c-438d-b2da-7ada8c8210de": {
           "type": "buttons",
           "settings": {
           }
         }
       },
       "block_order": [
-        "subtotal",
-        "buttons"
+        "bd9a0620-5166-4d36-8bac-333fb33df6ee",
+        "cd254fff-b44c-438d-b2da-7ada8c8210de"
       ],
       "settings": {
-        "show_cart_note": false
+        "show_vendor": false,
+        "show_cart_note": false,
+        "padding_section": "",
+        "padding_section_sm": ""
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
+    "1660815058d8b6857f": {
+      "type": "product-slider",
       "settings": {
-        "title": "Featured collection",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "show_view_all": true,
-        "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "Most Popular Products",
+        "product_list": [
+          "copy-of-natty-boh-surfer-dude-in-white-red-baseball-hat",
+          "natty-boh-land-of-pleasant-living-surf-white-long-sleeve-shirt",
+          "bohcean-city-on-the-beach-grey-koozie",
+          "eat-sleep-maryland-umd-black-baby-onesie",
+          "probably-cooking-w-old-bay-bamboo-cutting-board",
+          "you-had-me-at-old-bay-blue-kitchen-towel"
+        ],
+        "padding_section": "0 0 72px",
+        "padding_section_sm": "0 0 54px"
       }
     }
   },
   "order": [
+    "1660824102f20a3828",
     "cart-items",
-    "cart-footer",
-    "featured-collection"
+    "1660815058d8b6857f"
   ]
 }
