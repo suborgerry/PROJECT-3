@@ -1,5 +1,5 @@
-<div class="facets__categories {{ class }}{% if filter_mode == 'dropdown' %} categories-dropdown active{% endif %}">
-    <span class="facets__label mb-0">{{ 'Shop by categories' | upcase }}
+<div class="facets__categories {{ class }}{% if filter_mode == 'dropdown' %} categories-dropdown{% if active == true %} active{% endif %}{% endif %}">
+    <span class="facets__label mb-0">{{ heading | upcase }}
       {%- if filter_mode == 'dropdown' -%}
         <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 10 6">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
@@ -8,12 +8,11 @@
     </span>
     <div class="facets__categories-content">
       <ul class="facets__categories-list list-unstyled" role="list">
-        <li class="facets__categories-item"><a {% if collection.url == routes.all_products_collection_url %}class="active-page" {% endif %}href="{{ routes.all_products_collection_url }}">Shop All</a></li>
         {%- for col in collection_list -%}
-          <li class="facets__categories-item{% if forloop.index > 8 %} show-more-items hidden{% endif %}"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
+          <li class="facets__categories-item{% if forloop.index > max_preview_size %} show-more-items hidden{% endif %}"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
         {%- endfor -%}
       </ul>
-      {%- if collection_list.count > 8 -%}
+      {%- if collection_list.count > max_preview_size -%}
       <span class="button-show-more btn-show-more-items">
         <span class="label-show-more-cat label-text">{{ 'products.facets.show_more' | t }} Collections</span>
         <span class="label-show-less-cat label-text hidden">{{ 'products.facets.show_less' | t }} Collections</span>

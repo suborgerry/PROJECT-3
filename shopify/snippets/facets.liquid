@@ -92,7 +92,7 @@
                     <legend class="visually-hidden">{{ filter.label | escape }}</legend>
                     <ul class="list-unstyled no-js-hidden{% if filter.label == 'Color' %} facets-color{% endif %}" role="list">
                       {%- for value in filter.values -%}
-                        {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
+                        {%- if filter.label == 'Color' -%}
                           {%- assign preview_values_size = 5 -%}
                         {%- else -%}
                           {%- assign preview_values_size = 10 -%}
@@ -158,7 +158,7 @@
                       {%- endfor -%}
                     </ul>
                   </fieldset>
-                  {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
+                  {%- if filter.label == 'Color' -%}
                     {%- assign preview_values_size = 5 -%}
                   {%- else -%}
                     {%- assign preview_values_size = 10 -%}
@@ -318,7 +318,10 @@
             </div>
             <div class="mobile-facets__main">
               {%- if enable_filtering -%}
-                {%- render 'facets-categories', collection_list: collection_list, filter_mode: 'dropdown' -%}
+                {%- for b in categories_mobile -%}
+                  {%- if forloop.first -%}{%- assign category_active = true -%}{%- else -%}{%- assign category_active = false -%}{%- endif -%}
+                  {%- render 'facets-categories', collection_list: b.settings.collection_list, heading: b.settings.categories_heading, max_preview_size: b.settings.max_preview_size, filter_mode: 'dropdown', active: category_active -%}
+                {%- endfor -%}
                 {%- for filter in results.filters -%}
                   {% case filter.type %}
                   {% when 'boolean' or 'list' %}
@@ -334,7 +337,7 @@
                           <noscript>{% render 'icon-caret' %}</noscript>
                         </div>
                       </summary>
-                      {%- if filter.label == 'Color' or filter.label == 'Theme' -%}
+                      {%- if filter.label == 'Color' -%}
                         {%- assign preview_values_size = 5 -%}
                       {%- else -%}
                         {%- assign preview_values_size = 10 -%}

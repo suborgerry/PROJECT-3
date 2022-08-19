@@ -50,7 +50,33 @@
   width: calc(100% - 3rem);
 }
 
+.quick-add-modal__more-info {
+  height: 62px;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 23px;
+  font-weight: 700;
+  margin: 3.3rem -2.5rem 0;
+}
+
+.quick-add-modal__more-info a {
+  color: #D13026;
+  text-decoration: none;
+}
+
+.quick-add-modal__more-info a:hover {
+  text-decoration: underline;
+}
+
+
 @media screen and (min-width: 750px) {
+  .quick-add-modal__more-info {
+    margin: 0;
+  }
+
   .quick-add-modal__content {
     margin-top: 10rem;
     width: 80%;
@@ -108,7 +134,7 @@
   background-color: rgb(var(--color-background));
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);
   border-radius: 50%;
-  color: rgba(var(--color-foreground), 0.55);
+  color: rgba(var(--color-foreground));
   display: flex;
   align-items: center;
   justify-content: center;
