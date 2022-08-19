@@ -24,7 +24,7 @@
         "padding_top": 60,
         "padding_bottom": 64,
         "padding_top_mob": 44,
-        "padding_bottom_mob": 54,
+        "padding_bottom_mob": 28,
         "title_margin_bottom": 0,
         "show_title": true,
         "show_content": false
