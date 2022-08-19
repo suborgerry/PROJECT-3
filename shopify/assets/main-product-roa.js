@@ -1,5 +1,6 @@
 // Init function
-const mainFunction = () => {
+
+(() => {
     const photosList = document.querySelector('.product__media-list-container');
     const showMoreBtn = document.querySelector('.show-more__btn');
 
@@ -13,9 +14,9 @@ const mainFunction = () => {
     })();
 
     choiseColor();
-}
+})();
 
-const choiseColor = () => {
+function choiseColor() {
     const colorsContainer = document.querySelector('.product-info__colors');
     
     colorsContainer.addEventListener('click', evt => {
@@ -35,7 +36,7 @@ const choiseColor = () => {
             colorsContainer.querySelector('.active').classList.remove('active');
             colorItem.classList.add('active');
 
-            photosArray && exchangePhotos(photosArray);
+            exchangePhotos(photosArray);
         })();
 
         photosList && checkPhotosCount(photosList);
@@ -43,14 +44,15 @@ const choiseColor = () => {
 
 };
 
-const exchangePhotos = (photosArray) => {
+// Choising variant
+function exchangePhotos(photosArray) {
     const mainPhoto = document.querySelector('.product__media-main').querySelector('img');
     const mainList = document.querySelector('.product__media-list-container');
     
-    mainPhoto.src = photosArray[0].src;
+    photosArray && (mainPhoto.src = photosArray[0].src);
     mainList.innerHTML = "";
 
-    photosArray.forEach((photo, index) => {
+    photosArray && photosArray.forEach((photo, index) => {
         const img = document.createElement('img');
 
         img.src = photo.src;
@@ -63,7 +65,7 @@ const exchangePhotos = (photosArray) => {
     });
 };
 
-const exchangeMainPhoto = evt => {
+function exchangeMainPhoto(evt) {
     const mainPhoto = document.querySelector('.product__media-main').querySelector('img');
     const element = evt.target;
 
@@ -74,9 +76,9 @@ const exchangeMainPhoto = evt => {
     }
 };
 
-const showMorePhoto = evt => {
+function showMorePhoto(evt) {
     const element = evt.target.closest('.show-more__btn');
-    console.log(element);
+
     element && (() => {
         const listContainer = element.parentElement;
         
@@ -84,7 +86,7 @@ const showMorePhoto = evt => {
     })();
 };
 
-const checkPhotosCount = (photosList) => {
+function checkPhotosCount(photosList) {
     if(photosList.childElementCount > 4) {
         const countElem = photosList.parentElement.querySelector('.show-more__count');
         photosList.parentElement.classList.add('show-more');
@@ -95,4 +97,4 @@ const checkPhotosCount = (photosList) => {
     }
 }
 
-document.addEventListener('DOMContentLoaded', mainFunction);
+// document.addEventListener('DOMContentLoaded', mainFunction);
