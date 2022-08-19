@@ -19,7 +19,7 @@
                 {%- for b in s.blocks -%}
                 <li>
                     <a href="{{ b.settings.link }}"
-                    class="-item{% if b.settings.link == collection.url %} active-page{% endif %}"
+                    class="-item{% if b.settings.link == collection.url %} active{% endif %}"
                     {% if link.current %}aria-current="page"{% endif %}>{{ b.settings.link_name | escape }}</a>
                 </li>
                 {%- endfor -%}

@@ -94,7 +94,7 @@
 }
 
 .cart-item__discounted-prices .cart-item__old-price {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .cart-item__old-price {
@@ -102,7 +102,7 @@
 }
 
 .cart-item__final-price {
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .product-option {

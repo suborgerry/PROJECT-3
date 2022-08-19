@@ -19,7 +19,7 @@
                     line-height: 20px;
                     font-weight: 400;
                     transition: 0.3s;
-                    &.active-page,
+                    &.active,
                     &:hover {
                         color: $c-black;
                     }
