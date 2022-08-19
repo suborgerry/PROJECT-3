@@ -334,10 +334,15 @@
               </div>
           {%- endcase -%}
         {%- endfor -%}
+        {%- comment -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
           {{ 'products.product.view_full_details' | t }}
           {% render 'icon-arrow' %}
         </a>
+        {%- endcomment -%}
+        <div class="quick-add-modal__more-info medium-hide large-up-hide">
+          <a href="{{ product.url }}">More information about item</a>
+        </div>
       </div>
     </div>
   </div>

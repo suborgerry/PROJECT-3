@@ -29,7 +29,7 @@
       ],
       "settings": {
         "show_vendor": false,
-        "show_cart_note": false,
+        "show_cart_note": true,
         "padding_section": "",
         "padding_section_sm": ""
       }

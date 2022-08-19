@@ -46,26 +46,55 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "blocks": {
+        "54f2a6b7-b12b-4a41-85e0-2649af37170a": {
+          "type": "categories-list",
+          "settings": {
+            "categories_heading": "Shop by Categories",
+            "collection_list": [
+              "shop-all-products",
+              "new-arrivals",
+              "best-sellers",
+              "gifts-under-25",
+              "sales",
+              "sweatshirts-hoodies",
+              "jackets",
+              "scarves-gloves",
+              "head-wear",
+              "accessories",
+              "baby-youth",
+              "bracelets"
+            ],
+            "max_preview_size": 9
+          }
+        },
+        "ca0c62d9-6ba4-4216-a9b6-d12a73407d2f": {
+          "type": "categories-list",
+          "settings": {
+            "categories_heading": "Shop by Theme",
+            "collection_list": [
+              "maryland",
+              "event-we-love-baltimore",
+              "washington-dc",
+              "america",
+              "natty-boh-gear",
+              "old-bay-apparel",
+              "utz-gear"
+            ],
+            "max_preview_size": 5
+          }
+        }
+      },
+      "block_order": [
+        "54f2a6b7-b12b-4a41-85e0-2649af37170a",
+        "ca0c62d9-6ba4-4216-a9b6-d12a73407d2f"
+      ],
       "settings": {
         "products_per_page": 20,
         "show_secondary_image": true,
         "show_vendor": true,
         "show_rating": true,
         "enable_quick_add": true,
-        "collection_list": [
-          "new-arrivals",
-          "best-sellers",
-          "gifts-under-25",
-          "sales",
-          "sweatshirts-hoodies",
-          "jackets",
-          "scarves-gloves",
-          "head-wear",
-          "accessories",
-          "baby-youth",
-          "bandanas",
-          "drinkware-and-food"
-        ],
         "enable_filtering": true,
         "enable_sorting": true,
         "filter_mode": "usual",

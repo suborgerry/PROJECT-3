@@ -137,8 +137,11 @@
   <div class="facets-vertical page-width">
     {%- if ss.enable_filtering or ss.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless ss.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ s.id }}">
-        {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: ss.collection_list, filter_mode: ss.filter_mode -%}
-        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode, collection_list: ss.collection_list %}
+        {%- for b in s.blocks -%}
+          {%- if forloop.first -%}{%- assign category_active = true -%}{%- else -%}{%- assign category_active = false -%}{%- endif -%}
+          {%- render 'facets-categories', class: 'facets__categories--desktop', collection_list: b.settings.collection_list, heading: b.settings.categories_heading, max_preview_size: b.settings.max_preview_size, filter_mode: ss.filter_mode, active: category_active -%}
+        {%- endfor -%}
+        {% render 'facets', results: collection, enable_filtering: ss.enable_filtering, enable_sorting: ss.enable_sorting, filter_mode: ss.filter_mode, categories_mobile: s.blocks %}
       </aside>
     {%- endif -%}
 
@@ -348,15 +351,6 @@
     },
     {
       "type": "header",
-      "content": "Collection list"
-    },
-    {
-      "type": "collection_list",
-      "id": "collection_list",
-      "label": "Collections"
-    },    
-    {
-      "type": "header",
       "content": "t:sections.main-collection-product-grid.settings.header__1.content"
     },
     {
@@ -411,6 +405,30 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+        "type": "categories-list",
+        "name": "Categories list",
+        "settings": [
+            {
+              "type": "text",
+              "id": "categories_heading",
+              "label": "Categories heading"
+            },
+            {
+              "type": "collection_list",
+              "id": "collection_list",
+              "label": "Collections"
+            }, 
+            {
+              "type": "number",
+              "id": "max_preview_size",
+              "label": "Max preivew size",
+              "default": 10
+            }                                    
+        ]
     }
   ]
 }

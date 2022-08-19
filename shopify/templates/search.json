@@ -37,10 +37,6 @@
     "main": {
       "type": "main-search-roa",
       "settings": {
-        "padding_top": 72,
-        "padding_top_mob": 44,
-        "padding_bottom": 0,
-        "padding_bottom_mob": 0
       }
     },
     "16608186160159c603": {
