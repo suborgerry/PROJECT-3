@@ -165,8 +165,9 @@ cart-items {
 }
 
 .cart__dynamic-checkout-buttons {
-  max-width: 36rem;
+  max-width: 41rem;
   margin: 0 auto;
+  width: 100%;
 }
 
 .cart__blocks > * + * {

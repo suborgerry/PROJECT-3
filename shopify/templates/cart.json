@@ -12,26 +12,30 @@
     "cart-items": {
       "type": "main-cart-items",
       "blocks": {
-        "bd9a0620-5166-4d36-8bac-333fb33df6ee": {
-          "type": "subtotal",
+        "0dd2efb7-030d-4d12-8701-b16ef327bdaa": {
+          "type": "info-column",
           "settings": {
+            "heading": "Return & Exchange policy",
+            "text": "<p>By purchasing from us you agree to our Shipping, Return & Exchange policy. All items in your cart ship together. Some items cannot be returned. Please review our “FAQ” page prior to placing an order to be familiar with our policies. By continuing on to checkout you agree to our terms and policies. High value orders may be subject to a signature verifcation process to ensure you are the correct owner of the card. This verifcation process will be sent by email within.<\/p>"
           }
         },
-        "cd254fff-b44c-438d-b2da-7ada8c8210de": {
-          "type": "buttons",
+        "14838725-e283-405b-a70d-7e78b868096b": {
+          "type": "info-column",
           "settings": {
+            "heading": "Privacy Policy",
+            "text": "<p>Domestic shipping is a flat $5 for any amount of products you purchase under $50.  Free shipping for orders over $50 after all discounts have been applied. International orders may be subject for additional fees.<\/p><p>All Route One Apparel items are shipped via USPS and include a delivery confirmation number. Items leave our facility and arrive to you based on your selected shipping preference. If you need your order rush delivered, please use our Contact tab to reach out to us.<\/p>"
           }
         }
       },
       "block_order": [
-        "bd9a0620-5166-4d36-8bac-333fb33df6ee",
-        "cd254fff-b44c-438d-b2da-7ada8c8210de"
+        "0dd2efb7-030d-4d12-8701-b16ef327bdaa",
+        "14838725-e283-405b-a70d-7e78b868096b"
       ],
       "settings": {
         "show_vendor": false,
         "show_cart_note": true,
-        "padding_section": "",
-        "padding_section_sm": ""
+        "padding_section": "0 0 120px",
+        "padding_section_sm": "0 0 42px"
       }
     },
     "1660815058d8b6857f": {
