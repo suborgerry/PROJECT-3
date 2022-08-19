@@ -308,12 +308,15 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
 
   .main-search__input,
   div.snize div.snize-horizontal-filters {
-    width: 100vw;
-    margin-left: -3.3rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    width: 100%;
   }
 
   div.snize div.snize-main-panel {
-    margin-left: 2.3rem;
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -321,6 +324,10 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   div.snize div.snize-main-panel {
     padding: 0;
     width: 100%;
+  }
+
+  div.snize-search-results ul.snize-search-results-content {
+    grid-template-columns: auto;
   }
 
   div.snize-search-results#snize_results a {
@@ -332,15 +339,20 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   }
 
   div.snize div.snize-horizontal-filters {
-    margin-top: 9.6rem;
+    margin-top: 11.6rem;
     padding: 0;
   }
 
   div.snize div.snize-filters-dropdown + div.snize-filters-dropdown {
-    margin: 0;
+    margin: 2rem 0 0 0;
   }
 
-  .main-search__input form {
-    padding-bottom: 2.4rem;
+  div.snize div.snize-price-range {
+    justify-content: space-around;
+  }
+
+  div.snize .snize-price-range-slider {
+    width: 100%;
+    margin-left: 0;
   }
 }

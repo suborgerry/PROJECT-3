@@ -1,55 +1,41 @@
 {%- assign s = section -%}
 {%- assign ss = s.settings -%}
 
-{%- if ss.show_news and ss.show_sort_buttons -%}
-    <div class="blog-categories__sort d-flex">
-        <div class="blog-categories__sort_container d-flex">
-            <span>sort by date</span>
-            <div class="blog-categories__sort_buttons d-flex down">
-                <button class="sort-up d-flex"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.42857 0L11.9959 6.75H0.861265L6.42857 0Z" fill="#CF322D"/></svg></button>
-                <button class="sort-down d-flex"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.57143 7L0.00412332 0.249999L11.1387 0.25L5.57143 7Z" fill="#EFEFEF"/></svg></button>
+{%- unless current_tags.first -%}
+    {%- if ss.show_news and ss.show_sort_buttons -%}
+        <div class="blog-categories__sort d-flex">
+            <div class="blog-categories__sort_container d-flex">
+                <span>sort by date</span>
+                <div class="blog-categories__sort_buttons d-flex down">
+                    <button class="sort-up d-flex"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.42857 0L11.9959 6.75H0.861265L6.42857 0Z" fill="#CF322D"/></svg></button>
+                    <button class="sort-down d-flex"><svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.57143 7L0.00412332 0.249999L11.1387 0.25L5.57143 7Z" fill="#EFEFEF"/></svg></button>
+                </div>
             </div>
         </div>
-    </div>
-{%- endif -%}
-<div class="blog-categories section-{{ s.id }}-padding">
-    <div class="blog-categories__heading d-flex justify-content-between">
-        <h2 class="d-flex flex-column {{ ss.title_position }} ">{%- if ss.show_news -%}{{ ss.show_news_title }}{%- else -%}{{ ss.articles_tag | upcase }}{%- endif -%}</h2>
-        {%- if ss.type_pagination == 'top' -%}
-            <div class="blog-categories__slider_buttons sb-{{ s.id }} d-flex">
-                <div class="button-prev prev-{{ s.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639266 5.36033L5.13292 9.85249C5.3301 10.0492 5.64956 10.0492 5.84723 9.85249C6.04441 9.65581 6.04441 9.33635 5.84723 9.13967L1.71001 5.00394L5.84674 0.868216C6.04391 0.671535 6.04391 0.352076 5.84674 0.154897C5.64956 -0.0417833 5.3296 -0.0417833 5.13242 0.154897L0.638769 4.64705C0.444578 4.8417 0.444578 5.16618 0.639266 5.36033Z" fill="black"/></svg></div>
-                <div class="button-next next-{{ s.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></div>
-            </div>
-        {%- elsif ss.type_pagination == 'center' -%}
-            <div class="blog-categories__slider_buttons sb-{{ s.id }} d-flex center">
-                <div class="button-prev prev-{{ s.id }} flex-center"><svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.13473 12.8648L11.9195 23.646C12.3927 24.118 13.1594 24.118 13.6338 23.646C14.1071 23.1739 14.1071 22.4072 13.6338 21.9352L3.70452 12.0095L13.6327 2.08372C14.1059 1.61168 14.1059 0.84498 13.6327 0.371752C13.1594 -0.100281 12.3915 -0.100281 11.9183 0.371752L1.13353 11.1529C0.667476 11.6201 0.667476 12.3988 1.13473 12.8648Z" fill="black"/></svg></div>
-                <div class="button-next next-{{ s.id }} flex-center"><svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8653 11.1352L2.08051 0.354025C1.60728 -0.118008 0.840575 -0.118008 0.366152 0.354025C-0.107077 0.826058 -0.107077 1.59276 0.366152 2.0648L10.2955 11.9905L0.367347 21.9163C-0.105882 22.3883 -0.105882 23.155 0.367347 23.6282C0.840575 24.1003 1.60848 24.1003 2.0817 23.6282L12.8665 12.8471C13.3325 12.3799 13.3325 11.6012 12.8653 11.1352Z" fill="black"/></svg></div>
-            </div>
-        {%- endif -%}
-    </div>
-    <div class="blog-categories__container acb-{{ s.id }}">
-        <div class="swiper-wrapper down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
-            {% assign article_counter = 0 %}
-            {%- if ss.show_news -%}
-                {% assign articles = blog.articles | sort: 'published_at' %}
-
-                {%- paginate blog.articles by blog.articles_count -%}
-                    {%- for article in articles -%}
-                        {% assign article_counter = article_counter | plus: 1 %}
-                        {%- render 'article-card-blog',
-                            article: article,
-                            tag: article.tags[0]
-                        -%}
-                        {%- if article_counter == ss.articles_range -%}
-                            {% break %}
-                        {%- endif -%}
-                    {%- endfor -%}
-                {%- endpaginate -%}
+    {%- endif -%}
+    <div class="blog-categories section-{{ s.id }}-padding">
+        <div class="blog-categories__heading d-flex justify-content-between">
+            <h2 class="d-flex flex-column {{ ss.title_position }} ">{%- if ss.show_news -%}{{ ss.show_news_title }}{%- else -%}{{ ss.articles_tag | upcase }}{%- endif -%}</h2>
+            {%- if ss.type_pagination == 'top' -%}
+                <div class="blog-categories__slider_buttons sb-{{ s.id }} d-flex">
+                    <div class="button-prev prev-{{ s.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639266 5.36033L5.13292 9.85249C5.3301 10.0492 5.64956 10.0492 5.84723 9.85249C6.04441 9.65581 6.04441 9.33635 5.84723 9.13967L1.71001 5.00394L5.84674 0.868216C6.04391 0.671535 6.04391 0.352076 5.84674 0.154897C5.64956 -0.0417833 5.3296 -0.0417833 5.13242 0.154897L0.638769 4.64705C0.444578 4.8417 0.444578 5.16618 0.639266 5.36033Z" fill="black"/></svg></div>
+                    <div class="button-next next-{{ s.id }} flex-center"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></div>
+                </div>
+            {%- elsif ss.type_pagination == 'center' -%}
+                <div class="blog-categories__slider_buttons sb-{{ s.id }} d-flex center">
+                    <div class="button-prev prev-{{ s.id }} flex-center"><svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.13473 12.8648L11.9195 23.646C12.3927 24.118 13.1594 24.118 13.6338 23.646C14.1071 23.1739 14.1071 22.4072 13.6338 21.9352L3.70452 12.0095L13.6327 2.08372C14.1059 1.61168 14.1059 0.84498 13.6327 0.371752C13.1594 -0.100281 12.3915 -0.100281 11.9183 0.371752L1.13353 11.1529C0.667476 11.6201 0.667476 12.3988 1.13473 12.8648Z" fill="black"/></svg></div>
+                    <div class="button-next next-{{ s.id }} flex-center"><svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.8653 11.1352L2.08051 0.354025C1.60728 -0.118008 0.840575 -0.118008 0.366152 0.354025C-0.107077 0.826058 -0.107077 1.59276 0.366152 2.0648L10.2955 11.9905L0.367347 21.9163C-0.105882 22.3883 -0.105882 23.155 0.367347 23.6282C0.840575 24.1003 1.60848 24.1003 2.0817 23.6282L12.8665 12.8471C13.3325 12.3799 13.3325 11.6012 12.8653 11.1352Z" fill="black"/></svg></div>
+                </div>
             {%- endif -%}
-            {%- unless ss.show_news -%}
-                {%- paginate blog.articles by blog.articles_count -%}
-                    {%- for article in blog.articles -%}
-                        {% if article.tags contains ss.articles_tag %}
+        </div>
+        <div class="blog-categories__container acb-{{ s.id }}">
+            <div class="swiper-wrapper down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
+                {% assign article_counter = 0 %}
+                {%- if ss.show_news -%}
+                    {% assign articles = blog.articles | sort: 'published_at' %}
+    
+                    {%- paginate blog.articles by blog.articles_count -%}
+                        {%- for article in articles -%}
                             {% assign article_counter = article_counter | plus: 1 %}
                             {%- render 'article-card-blog',
                                 article: article,
@@ -58,35 +44,51 @@
                             {%- if article_counter == ss.articles_range -%}
                                 {% break %}
                             {%- endif -%}
-                        {% endif %}
-                    {%- endfor -%}
-                {%- endpaginate -%}
-            {%- endunless -%}
+                        {%- endfor -%}
+                    {%- endpaginate -%}
+                {%- endif -%}
+                {%- unless ss.show_news -%}
+                    {%- paginate blog.articles by blog.articles_count -%}
+                        {%- for article in blog.articles -%}
+                            {% if article.tags contains ss.articles_tag %}
+                                {% assign article_counter = article_counter | plus: 1 %}
+                                {%- render 'article-card-blog',
+                                    article: article,
+                                    tag: article.tags[0]
+                                -%}
+                                {%- if article_counter == ss.articles_range -%}
+                                    {% break %}
+                                {%- endif -%}
+                            {% endif %}
+                        {%- endfor -%}
+                    {%- endpaginate -%}
+                {%- endunless -%}
+            </div>
         </div>
+    
+        {%- if ss.use_pagination -%}
+            <div class="pagination-container pc-{{ s.id }} flex-center">
+                <button type="button" data-class="prev-{{ s.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639511 5.36033L5.13316 9.85249C5.33034 10.0492 5.6498 10.0492 5.84748 9.85249C6.04466 9.65581 6.04466 9.33635 5.84748 9.13967L1.71026 5.00394L5.84698 0.868216C6.04416 0.671535 6.04416 0.352076 5.84698 0.154897C5.6498 -0.0417833 5.32984 -0.0417833 5.13266 0.154897L0.639013 4.64705C0.444822 4.8417 0.444822 5.16618 0.639511 5.36033Z" fill="black"/></svg></button>
+                <div class="swiper-pagination-{{ s.id }} swiper-pagination"></div>
+                <button type="button" data-class="next-{{ s.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></button>
+            </div>
+        {%- endif -%}
     </div>
-
-    {%- if ss.use_pagination -%}
-        <div class="pagination-container pc-{{ s.id }} flex-center">
-            <button type="button" data-class="prev-{{ s.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.639511 5.36033L5.13316 9.85249C5.33034 10.0492 5.6498 10.0492 5.84748 9.85249C6.04466 9.65581 6.04466 9.33635 5.84748 9.13967L1.71026 5.00394L5.84698 0.868216C6.04416 0.671535 6.04416 0.352076 5.84698 0.154897C5.6498 -0.0417833 5.32984 -0.0417833 5.13266 0.154897L0.639013 4.64705C0.444822 4.8417 0.444822 5.16618 0.639511 5.36033Z" fill="black"/></svg></button>
-            <div class="swiper-pagination-{{ s.id }} swiper-pagination"></div>
-            <button type="button" data-class="next-{{ s.id }}"><svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.36073 4.63967L0.867082 0.14751C0.669904 -0.0491701 0.350443 -0.0491701 0.152767 0.14751C-0.0444118 0.344191 -0.0444118 0.663651 0.152767 0.860332L4.28999 4.99606L0.153265 9.13178C-0.0439139 9.32846 -0.0439139 9.64792 0.153265 9.8451C0.350443 10.0418 0.670402 10.0418 0.86758 9.8451L5.36123 5.35295C5.55542 5.1583 5.55542 4.83382 5.36073 4.63967Z" fill="black"/></svg></button>
-        </div>
-    {%- endif -%}
-</div>
-<script src="{{ 'swiper.min.js' | asset_url }}"></script>
-<script src="{{ 'blog-functions.js' | asset_url }}"></script>
-<script>
-    {%- if ss.mobile_cards -%}
-        if(window.innerWidth > 576) {
+    <script src="{{ 'swiper.min.js' | asset_url }}"></script>
+    <script src="{{ 'blog-functions.js' | asset_url }}"></script>
+    <script>
+        {%- if ss.mobile_cards -%}
+            if(window.innerWidth > 576) {
+                getSwiper('{{ s.id | escape }}');
+            }
+        {% else %}
             getSwiper('{{ s.id | escape }}');
-        }
-    {% else %}
-        getSwiper('{{ s.id | escape }}');
-    {%- endif -%}
-    {%- if ss.show_news -%}sortingByDate('.acb-{{ s.id | escape }}');{%- endif -%}
-    {%- if article_counter <=4 -%}hiddenSlideBtn('{{ s.id | escape }}');{%- endif -%}
-    {%- if ss.use_pagination -%}getPagination('{{ s.id | escape }}');{%- endif -%}
-</script>
+        {%- endif -%}
+        {%- if ss.show_news -%}sortingByDate('.acb-{{ s.id | escape }}');{%- endif -%}
+        {%- if article_counter <=4 -%}hiddenSlideBtn('{{ s.id | escape }}');{%- endif -%}
+        {%- if ss.use_pagination -%}getPagination('{{ s.id | escape }}');{%- endif -%}
+    </script>
+{%- endunless -%}
 
 {% schema %}
 {

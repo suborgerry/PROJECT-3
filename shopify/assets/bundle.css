@@ -7142,6 +7142,9 @@ main {
     max-width: 31.6rem;
   }
 }
+.blog-categories__container .tags .article-card {
+  margin-bottom: 4.8rem;
+}
 .blog-categories__container .swiper-wrapper {
   height: auto;
 }
@@ -12907,6 +12910,11 @@ main {
     flex-direction: column;
   }
 }
+@media (max-width: 991.98px) {
+  .articles-categories {
+    flex-direction: column-reverse;
+  }
+}
 .articles-categories__heading {
   font-weight: 400;
   font-size: 3.2rem;
@@ -12916,8 +12924,18 @@ main {
   color: #414240;
   margin-bottom: 3.2rem;
 }
+@media (max-width: 767.98px) {
+  .articles-categories__heading {
+    text-align: center;
+  }
+}
 .articles-categories__article {
   text-decoration: none;
+}
+@media (max-width: 575.98px) {
+  .articles-categories__article {
+    flex-direction: column;
+  }
 }
 .articles-categories__article + .articles-categories__article {
   margin-top: 6.4rem;
@@ -12927,11 +12945,22 @@ main {
   height: 24rem;
   object-fit: cover;
 }
+@media (max-width: 767.98px) {
+  .articles-categories__image {
+    width: 100%;
+    height: 24.7rem;
+  }
+}
 .articles-categories__info {
   margin-left: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 575.98px) {
+  .articles-categories__info {
+    margin-left: 0;
+  }
 }
 .articles-categories__title {
   font-weight: 700;
@@ -12940,8 +12969,18 @@ main {
   text-transform: uppercase;
   max-width: 43.4rem;
 }
+@media (max-width: 575.98px) {
+  .articles-categories__title {
+    margin-top: 1.6rem;
+  }
+}
 .articles-categories__author {
   margin-top: 2.8rem;
+}
+@media (max-width: 575.98px) {
+  .articles-categories__author {
+    margin-top: 2.4rem;
+  }
 }
 .articles-categories__author img {
   width: 6.4rem;
@@ -12983,6 +13022,11 @@ main {
   text-transform: uppercase;
   color: #6D6D6D;
 }
+@media (max-width: 575.98px) {
+  .articles-categories__tags {
+    margin-top: 2.4rem;
+  }
+}
 .articles-categories__categories {
   display: flex;
   flex-direction: column;
@@ -12990,6 +13034,16 @@ main {
 @media (max-width: 1199.98px) {
   .articles-categories__categories {
     margin-top: 4.8rem;
+  }
+}
+@media (max-width: 1199.98px) {
+  .articles-categories__categories {
+    margin-top: 0;
+  }
+}
+@media (max-width: 575.98px) {
+  .articles-categories__categories {
+    align-items: center;
   }
 }
 .articles-categories__categories-item {
