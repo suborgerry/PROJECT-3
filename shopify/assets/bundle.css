@@ -11817,6 +11817,7 @@ main {
 .product-info__fan_photos img {
   width: 12rem;
   height: 12rem;
+  max-width: 12rem !important;
 }
 .product-info__fan_photos-container {
   margin-top: 4.2rem;
@@ -12332,7 +12333,11 @@ main {
   #storeifyapps-storelocator-shortcode .storeify-stl-header {
     padding: 0;
     border: 0;
-    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  #storeifyapps-storelocator-shortcode .storeify-stl-header {
+    margin-bottom: 2.8rem;
   }
 }
 #storeifyapps-storelocator-shortcode .storeify-stl-header .search-address-box {
@@ -12350,6 +12355,12 @@ main {
 @media (max-width: 991.98px) {
   #storeifyapps-storelocator-shortcode .storeify-stl-header .storeify-header-inner {
     flex-direction: column;
+  }
+}
+@media (min-width: 576px) and (max-width: 1199.98px) {
+  #storeifyapps-storelocator-shortcode .storeify-stl-header .storeify-header-inner {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 @media (max-width: 575.98px) {
@@ -12891,6 +12902,11 @@ main {
 .articles-categories {
   justify-content: space-between;
 }
+@media (max-width: 1199.98px) {
+  .articles-categories {
+    flex-direction: column;
+  }
+}
 .articles-categories__heading {
   font-weight: 400;
   font-size: 3.2rem;
@@ -12970,6 +12986,11 @@ main {
 .articles-categories__categories {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1199.98px) {
+  .articles-categories__categories {
+    margin-top: 4.8rem;
+  }
 }
 .articles-categories__categories-item {
   width: 41.4rem;

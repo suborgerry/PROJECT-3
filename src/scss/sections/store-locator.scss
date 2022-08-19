@@ -26,7 +26,10 @@
         @include media-breakpoint-down(xs) {
             padding: 0;
             border: 0;
-            margin-bottom: 2rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 2.8rem;
         }
 
         .search-address-box {
@@ -44,6 +47,11 @@
             
             @include media-breakpoint-down(md) {
                 flex-direction: column;
+            }
+
+            @include media-breakpoint-between(sm, lg) {
+                padding-top: 0;
+                padding-bottom: 0;
             }
 
             @include media-breakpoint-down(xs) {

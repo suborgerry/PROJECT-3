@@ -46,7 +46,6 @@
   <div class="articles-categories__categories">
     <p class="articles-categories__heading">Categories</p>
     {% for collection in collections limit: 3 %}
-      {% comment %} {{- collection.title | link_to: collection.url }} {% endcomment %}
       <a href="{{ collection.url }}" class="articles-categories__categories-item">
         {%- render 'face' -%}
         <span class="categories-item__container">

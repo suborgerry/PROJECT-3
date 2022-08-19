@@ -35,7 +35,7 @@ const choiseColor = () => {
             colorsContainer.querySelector('.active').classList.remove('active');
             colorItem.classList.add('active');
 
-            exchangePhotos(photosArray);
+            photosArray && exchangePhotos(photosArray);
         })();
 
         photosList && checkPhotosCount(photosList);
