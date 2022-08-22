@@ -5220,7 +5220,7 @@ main {
 .c-white-bg, .wholesale-form__field, .work-to-roa__form-range-pull span, .article-template__comment-field textarea, .article-template__comment-field input, .btn-red-2 {
   background-color: rgb(var(--color-base-background-1));
 }
-.c-red-1, .product-collection-links__item, .wholesale-form__heading, .work-to-roa__form-container-title, .steps__info em, .list ul li::before, .collapsible-faq__accordion-content em, .btn-red-2 {
+.c-red-1, .product-collection-links__item, .wholesale-form__heading, .input-with-label.required .work-to-roa__form-heading::after, .work-to-roa__form-container-title, .steps__info em, .list ul li::before, .collapsible-faq__accordion-content em, .btn-red-2 {
   color: rgb(var(--color-base-accent-1));
 }
 .c-red-1-bg, #storeifyapps-storelocator-shortcode .storeify-stl-header .range-radius .slider, .product-tabs__tab.product-reviews .stamped-summary-actions-newreview, .product-tabs__tab.product-reviews #stamped-button-submit, .work-to-roa__form-range-pull, .articles-tabs__image.active .articles-tabs__tag:after, .blog-categories__heading h2::after, .btn-red-2:hover, .btn-red-1 {
@@ -10402,6 +10402,14 @@ main {
 .input-with-label {
   display: flex;
   flex-direction: column;
+}
+.input-with-label.required .work-to-roa__form-heading::after {
+  content: "required";
+  display: block;
+  font-size: 1.2rem;
+}
+.input-with-label.required .work-to-roa__form-input {
+  border-color: rgb(var(--color-base-accent-1));
 }
 #ContactForm #step_1.active ~ .work-to-roa__form-btncontainer {
   justify-content: center !important;

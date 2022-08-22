@@ -20,7 +20,7 @@
     <ul class="blog-tags__list list-style-none flex-wrap">
         {%- for block in s.blocks -%}
             <li class="blog-tags__item">
-                <a class="font-weight-regular text-12px font-axiforma-medium c-black" src="{{ block.settings.link }}">{{ block.settings.name }}</a>
+                <a class="font-weight-regular text-12px font-axiforma-medium c-black" href="/blogs/news/tagged/{{ block.settings.name }}">{{ block.settings.name }}</a>
             </li>
         {%- endfor -%}
     </ul>

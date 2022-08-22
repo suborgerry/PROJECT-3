@@ -242,11 +242,31 @@ function handlePercents() {
 
 // Toggle steps
 const toggleStepsForvard = () => {
+  let checkRequiredField = true;
+  
   for (const [i, step] of steps.entries()) {
     if(step.classList.contains('active') && step.dataset.step != 4) {
-      step.classList.remove('active');
-      steps[i+1].classList.add('active');
-      break;
+
+      const requiredFields = step.querySelectorAll('input[required="required"]');
+      console.log(requiredFields);
+      
+      requiredFields && requiredFields.forEach(field => {
+        if(field.value.length == 0) {
+          field.parentElement.classList.add('required');
+          console.log(field.value);
+          checkRequiredField = false;
+        } else if(field.parentElement.classList.contains('required')) {
+          field.parentElement.classList.remove('required');
+        }
+      });
+
+      if (checkRequiredField) {
+        step.classList.remove('active');
+        steps[i+1].classList.add('active');
+        break; 
+      } else {
+        step.querySelector('.required').scrollIntoView({block: "center", behavior: "smooth"});
+      }
     }
   }
 };

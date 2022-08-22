@@ -50,9 +50,9 @@ div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
     border: 1px solid #F3F3F3 !important;
     margin: 0 !important;
     padding: 0 !important;
-    width: 20.2rem;
+    width: 25rem;
     height: 5.6rem;
-    padding: 2.2rem 2.4rem .9rem 2.4rem !important;
+    padding: 2.2rem 2.2rem .9rem 2.4rem !important;
     box-sizing: border-box;
     font-weight: 300;
     font-size: 1.6rem !important;
@@ -60,6 +60,10 @@ div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
     letter-spacing: 0.547826px;
     color: #000001 !important;
     border-radius: 0 !important;
+}
+
+div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button .caret {
+  /* display: none; */
 }
 
 div.snize div.snize-main-panel-view-mode {

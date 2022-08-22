@@ -2,7 +2,8 @@
 {%- assign ss = s.settings -%}
 
 {% if current_tags.first %}
-    
+    <h2 class="d-flex flex-column">{{ current_tags.first | upcase }}</h2>
+
     <div class="blog-categories section-{{ s.id }}-padding">
         <div class="blog-categories__container acb-{{ s.id }}">
             <div class="d-flex flex-wrap justify-content-between tags down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
