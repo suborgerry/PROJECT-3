@@ -100,6 +100,29 @@
             }
         }
     }
+    &__order-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+        .order-date {
+            margin-top: 0 !important;
+            @include media-breakpoint-up(lg) {
+                margin-top: 5px !important;
+            }
+        }
+        .icon-calendar {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            color: $c-red-1;
+            transform: translateY(2px);
+        }
+    }
     &__block-style {
         background-color: $c-grey-10;
         padding: 40px var(--page-width-x-paddings-mobile);
@@ -198,38 +221,6 @@
                 @include media-breakpoint-up(lg) {
                     bottom: calc(50% + 12px);
                 }
-            }
-        }
-        .heading-style {
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 26px;
-        }
-        .small-style {
-            font-size: 12px;
-            line-height: 20px;
-            color: $c-black;
-            font-weight: 500;
-        }
-        .order-status {
-            @include media-breakpoint-up(lg) {
-                margin-top: 18px;
-            }
-        }
-        .order-price {
-            margin-top: 9px;
-            text-align: right;
-        }
-        .order-date-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-        .order-date {
-            margin-top: 10px;
-            @include media-breakpoint-up(lg) {
-                margin-top: 24px;
             }
         }
         &-details {
@@ -344,6 +335,38 @@
                     padding: 24px 0 32px;
                 }
             }
+        }
+    }
+    .heading-style {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .small-style {
+        font-size: 12px;
+        line-height: 20px;
+        color: $c-black;
+        font-weight: 500;
+    }
+    .order-status {
+        @include media-breakpoint-up(lg) {
+            margin-top: 18px;
+        }
+    }
+    .order-price {
+        margin-top: 9px;
+        text-align: right;
+    }
+    .order-date-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .order-date {
+        margin-top: 10px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 24px;
         }
     }
     .customer {

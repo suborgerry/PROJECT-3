@@ -205,17 +205,17 @@
             {%- endif -%}
             <small class="caption-large rte pb-0">
               {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
-                {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url | upcase }}
+                {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
               {%- elsif cart.taxes_included -%}
                 {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t | upcase }}
               {%- elsif shop.shipping_policy.body != blank -%}
-                {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url | upcase }}
+                {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
               {%- else -%}
                 {{ 'sections.cart.taxes_and_shipping_at_checkout' | t | upcase }}
               {%- endif -%}
             </small>
             <div class="summary-flex">
-              <span class="summary-heading">{{ 'sections.cart.subtotal' | t | upcase }}</span>
+              <span class="summary-heading">{{ 'sections.cart.headings.total' | t | upcase }}</span>
               <span class="summary-amount c-red-1">{{ cart.total_price | money }}</span>
             </div>
           </div>
@@ -250,27 +250,7 @@
   </div>
 </div>
 
-<script>
-  const cartInfoCol = document.querySelectorAll('.accordion-btn');
-  cartInfoCol && cartInfoCol.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.classList.toggle('opened');
-    });
-  });
-
-  lineItem = document.querySelectorAll('.quantity-line-item');
-  lineItem.forEach(elem => {
-    let updateLink = elem.parentElement.nextElementSibling;
-    let attrLink = updateLink.getAttribute('href');
-
-    elem.addEventListener('change', ()=> {
-      elem.setAttribute('value', elem.value);
-      attrLink += elem.value;
-      updateLink.setAttribute('href', attrLink);
-      updateLink.click();
-    });
-  });
-</script>
+{{ 'custom-cart.js' | asset_url | script_tag }}
 
 {% schema %}
 {

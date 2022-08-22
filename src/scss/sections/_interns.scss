@@ -80,6 +80,9 @@
                     font-weight: 500;
                 }
             }
+            a.button__red {
+                max-width: 276px;
+            }
             &.opened {
                 .item-heading {
                     svg {

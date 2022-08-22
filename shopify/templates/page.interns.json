@@ -16,42 +16,54 @@
           "type": "accordion-item",
           "settings": {
             "item_heading": "Operations Intern",
-            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>",
+            "link_name": "Apply Now",
+            "link_url": "#"
           }
         },
         "5a6212d0-7a26-4e02-8e3d-e540963f62c1": {
           "type": "accordion-item",
           "settings": {
             "item_heading": "Graphic Designer \/ Product Development",
-            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>",
+            "link_name": "",
+            "link_url": ""
           }
         },
         "f10d7e02-7cb3-4511-ac3f-7a4883759869": {
           "type": "accordion-item",
           "settings": {
             "item_heading": "Marketing Intern",
-            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>",
+            "link_name": "",
+            "link_url": ""
           }
         },
         "75797f06-3088-4725-8e1d-f9ed330bd324": {
           "type": "accordion-item",
           "settings": {
             "item_heading": "Blogging\/PR Intern",
-            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>",
+            "link_name": "",
+            "link_url": ""
           }
         },
         "b56b25fe-6f1d-4b21-8032-f78b2070cae0": {
           "type": "accordion-item",
           "settings": {
             "item_heading": "Photographer\/Videographer Intern",
-            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>"
+            "item_description": "<p><strong>Include:<\/strong> Assistant work, inventory control, fulfillment, customer service assistance, handling emails, observing operation gaps and finding solutions.<\/p>",
+            "link_name": "",
+            "link_url": ""
           }
         },
         "5c972447-d5d4-40e2-b87d-4a18206a119c": {
           "type": "accordion-item",
           "settings": {
             "item_heading": "Or, create your own internship position!",
-            "item_description": ""
+            "item_description": "",
+            "link_name": "",
+            "link_url": ""
           }
         }
       },
@@ -78,6 +90,9 @@
         "shadow_opacity": 40,
         "heading": "<p>Do you want to join us<strong>?<\/strong><\/p>",
         "description": "<p>You will be working alongside talented, passionate and innovative people who work together to bring state pride to everyone, everywhere<\/p>",
+        "description_max_width": 760,
+        "description_margin_top": 38,
+        "description_margin_top_mob": 38,
         "btn_name": "START THE INTERNSHIP",
         "btn_link": "#",
         "padding_section": "100px 0px 105px 0px",

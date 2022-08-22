@@ -138,6 +138,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                        -webkit-appearance: button-bevel;
                     }
                 }
                 &--total {
@@ -192,12 +193,12 @@
             padding-right: 16px;
             font-size: 16px;
             line-height: 26px;
-            font-weight: 500;
+            font-weight: 700;
         }
         .summary-amount {
             font-size: 16px;
             line-height: 26px;
-            font-weight: 600;
+            font-weight: 800;
         }
         &-list {
             display: grid;

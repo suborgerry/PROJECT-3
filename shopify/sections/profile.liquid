@@ -24,6 +24,7 @@
             </div>
         </div>
         <div class="profile__double-column column-first">
+                {%- assign customerTags = customer.tags | downcase -%}
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'customer.reset_password.title' | t | upcase }}</h3>
                     <div class="profile__reset-password profile__block-style">
@@ -119,7 +120,6 @@
                             {%- endform -%}
                         </div>
                     </div>
-                    {%- assign customerTags = customer.tags | downcase -%}
                     {%- if customerTags contains 'wholesale' -%}
                       <div class="profile__wholesale">
                         <h5 class="profile__wholesale-heading text-center">{{ ss.heading }}</h5>
@@ -128,7 +128,32 @@
                     {%- endif -%}
                 </div>
                 <div class="profile__column">
-                    <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                    {%- if customerTags contains 'wholesale' -%}
+                      <div class="profile__order-dates">
+                        <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                        {% paginate customer.orders by 20 %}
+                          <span class="order-date small-style"><span class="c-grey-3">DATE: </span>
+                              {%- for order in customer.orders -%}
+                                {%- if forloop.first -%}
+                                  {%- assign from_date = order.created_at | date: '%d.%m.%Y' -%}
+                                {%- elsif forloop.last -%}
+                                  {%- assign to_date = order.created_at | date: '%d.%m.%Y' -%}
+                                {%- endif -%}
+                                {%- if forloop.last -%}
+                                  {%- if from_date == to_date or from_date == nil or to_date == nil -%}
+                                    {{ from_date }}
+                                  {%- else -%}
+                                    {{ from_date }}-{{ to_date }}
+                                  {%- endif -%}
+                                  {%- render 'icon-calendar' -%}
+                                {%- endif -%}
+                              {%- endfor -%}
+                          </span>
+                        {% endpaginate %}
+                      </div>
+                    {%- else -%}
+                      <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                    {%- endif -%}
                     {% paginate customer.orders by 20 %}
                       {%- if customer.orders.size > 0 -%}
                       <div class="profile__order-list">
