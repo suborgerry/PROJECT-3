@@ -86,14 +86,12 @@
 }
 
 .card--media .card__inner .card__content {
-  padding: calc(var(--card-image-padding) + 1rem);
   position: relative;
 }
 
 .card__content {
   display: grid;
   grid-template-rows: minmax(0,1fr) max-content minmax(0,1fr);
-  padding: 1rem;
   width: 100%;
   flex-grow: 1;
 }
@@ -121,6 +119,12 @@
   align-self: flex-end;
   grid-row-start: 3;
   justify-self: flex-start;
+}
+
+.card__badge .icon-sale {
+  color: #F44336;
+  width: 5rem;
+  height: 5rem;
 }
 
 .card__badge.top {

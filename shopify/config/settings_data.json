@@ -94,6 +94,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
     "currency_code_enabled": false,
     "gradient_accent_1": "",
     "gradient_accent_2": "",

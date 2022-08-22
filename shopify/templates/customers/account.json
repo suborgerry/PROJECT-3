@@ -12,6 +12,9 @@
     "main": {
       "type": "profile",
       "settings": {
+        "heading": "Looking to apply for a Wholesale Account?",
+        "btn_name": "Apply Here",
+        "btn_link": "shopify:\/\/pages\/route-one-apparel-wholesale-application",
         "padding_section": "0 0 80px",
         "padding_section_sm": ""
       }

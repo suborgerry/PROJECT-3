@@ -10,6 +10,9 @@
 
 .discounts__discount svg {
   color: rgba(var(--color-button), var(--alpha-button-background));
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 }
 
 .discounts__discount--position {

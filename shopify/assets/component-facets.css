@@ -347,6 +347,10 @@
   background-color: #FFF5F4;
 }
 
+.facets__price .field__input {
+  width: 100%;
+}
+
 .facets__price .field + .field-currency {
   margin-left: 2rem;
 }
@@ -586,6 +590,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   display: flex;
   justify-content: center;
   background-color: #000;
+  height: 47px;
 }
 
 .mobile-facets__clear-wrapper .mobile-facets__clear {
@@ -822,7 +827,6 @@ details.menu-opening .mobile-facets__close svg {
   right: 0px;
   bottom: 0px;
   display: block;
-  background-color: rgba(var(--color-foreground), 0.04);
 }
 
 .mobile-facets__summary {

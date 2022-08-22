@@ -1,5 +1,5 @@
 .profile {
-    .btn-logout {
+    .btn-white-red {
         display: block;
         min-width: 184px;
         height: 48px;
@@ -34,7 +34,7 @@
                     transform: translateX(-50%);
                 }
             }
-            .btn-logout {
+            .btn-white-red {
                 margin: 30px auto 0;
                 @include media-breakpoint-up(md) {
                     margin: unset;
@@ -68,6 +68,27 @@
             }
         }
     }
+    &__wholesale {
+        margin: 40px 0 0;
+        @include media-breakpoint-up(lg) {
+            margin: 80px 0 40px;
+        }
+        &-heading {
+            font-family: 'Axiforma';
+            font-size: 14px;
+            line-height: 22px;
+            margin-bottom: 15px;
+            @include media-breakpoint-up(lg) {
+                margin-bottom: 30px;
+                font-size: 28px;
+                line-height: 46px;
+                font-weight: 700;
+            }
+        }
+        a {
+            max-width: 336px;
+        }
+    }
     &__column {
         h3 {
             text-align: center;
@@ -77,6 +98,29 @@
                 text-align: left;
                 margin-bottom: 33px;
             }
+        }
+    }
+    &__order-dates {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+            margin-bottom: 0;
+        }
+        .order-date {
+            margin-top: 0 !important;
+            @include media-breakpoint-up(lg) {
+                margin-top: 5px !important;
+            }
+        }
+        .icon-calendar {
+            width: 15px;
+            height: 15px;
+            margin-left: 5px;
+            color: $c-red-1;
+            transform: translateY(2px);
         }
     }
     &__block-style {
@@ -177,38 +221,6 @@
                 @include media-breakpoint-up(lg) {
                     bottom: calc(50% + 12px);
                 }
-            }
-        }
-        .heading-style {
-            font-weight: bold;
-            font-size: 16px;
-            line-height: 26px;
-        }
-        .small-style {
-            font-size: 12px;
-            line-height: 20px;
-            color: $c-black;
-            font-weight: 500;
-        }
-        .order-status {
-            @include media-breakpoint-up(lg) {
-                margin-top: 18px;
-            }
-        }
-        .order-price {
-            margin-top: 9px;
-            text-align: right;
-        }
-        .order-date-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-        .order-date {
-            margin-top: 10px;
-            @include media-breakpoint-up(lg) {
-                margin-top: 24px;
             }
         }
         &-details {
@@ -323,6 +335,38 @@
                     padding: 24px 0 32px;
                 }
             }
+        }
+    }
+    .heading-style {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .small-style {
+        font-size: 12px;
+        line-height: 20px;
+        color: $c-black;
+        font-weight: 500;
+    }
+    .order-status {
+        @include media-breakpoint-up(lg) {
+            margin-top: 18px;
+        }
+    }
+    .order-price {
+        margin-top: 9px;
+        text-align: right;
+    }
+    .order-date-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    .order-date {
+        margin-top: 10px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 24px;
         }
     }
     .customer {

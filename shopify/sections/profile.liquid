@@ -20,10 +20,11 @@
         <div class="profile__top">
             <div class="profile__top-box">
                 <h1 class="text-center text-32px">{{ 'My profile' | upcase }}</h1>
-                <a href="{{ routes.account_logout_url }}" class="btn-logout btn-red-2"> {{ 'customer.log_out' | t }}</a>
+                <a href="{{ routes.account_logout_url }}" class="btn-white-red btn-red-2"> {{ 'customer.log_out' | t }}</a>
             </div>
         </div>
         <div class="profile__double-column column-first">
+                {%- assign customerTags = customer.tags | downcase -%}
                 <div class="profile__column">
                     <h3 class="text-24px-all">{{ 'customer.reset_password.title' | t | upcase }}</h3>
                     <div class="profile__reset-password profile__block-style">
@@ -119,86 +120,64 @@
                             {%- endform -%}
                         </div>
                     </div>
+                    {%- if customerTags contains 'wholesale' -%}
+                      <div class="profile__wholesale">
+                        <h5 class="profile__wholesale-heading text-center">{{ ss.heading }}</h5>
+                        <a href="{{ ss.btn_link }}" class="btn-white-red btn-red-2 mx-auto" target="_blank">{{ ss.btn_name }}</a>
+                      </div>
+                    {%- endif -%}
                 </div>
                 <div class="profile__column">
-                    <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
-                    <div class="profile__order-list">
-                        {%- for order in customer.orders -%}
-                            <div class="profile__order profile__block-style{% if forloop.first %} opened{% endif %}">
-                                <div class="profile__order-head">
-                                    <div class="head-column">
-                                        <span class="order-number">ORDER #{{ order.order_number }}</span>
-                                        <span class="order-status small-style"><span class="c-grey-3">STATUS: </span>{{ order.fulfillment_status | upcase }}</span>
-                                    </div>
-                                    <div class="head-column">
-                                        <span class="order-quantity small-style">QUANTITY: {{ order.item_count }} {{ order.item_count | pluralize: 'item', 'items' | upcase }}</span>
-                                        <span class="order-price small-style"><span class="c-grey-3">PRICE: </span>{{ order.total_price | money }}</span>
-                                    </div>
-                                    {%- render 'icon-arr-right', class: 'order-arrow' -%}
-                                </div>
+                    {%- if customerTags contains 'wholesale' -%}
+                      <div class="profile__order-dates">
+                        <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                        {% paginate customer.orders by 20 %}
+                          <span class="order-date small-style"><span class="c-grey-3">DATE: </span>
+                              {%- for order in customer.orders -%}
+                                {%- if forloop.first -%}
+                                  {%- assign from_date = order.created_at | date: '%d.%m.%Y' -%}
+                                {%- elsif forloop.last -%}
+                                  {%- assign to_date = order.created_at | date: '%d.%m.%Y' -%}
+                                {%- endif -%}
+                                {%- if forloop.last -%}
+                                  {%- if from_date == to_date or from_date == nil or to_date == nil -%}
+                                    {{ from_date }}
+                                  {%- else -%}
+                                    {{ from_date }}-{{ to_date }}
+                                  {%- endif -%}
+                                  {%- render 'icon-calendar' -%}
+                                {%- endif -%}
+                              {%- endfor -%}
+                          </span>
+                        {% endpaginate %}
+                      </div>
+                    {%- else -%}
+                      <h3 class="text-24px-all">{{ 'My Orders' | upcase }}</h3>
+                    {%- endif -%}
+                    {% paginate customer.orders by 20 %}
+                      {%- if customer.orders.size > 0 -%}
+                      <div class="profile__order-list">
+                          {%- for order in customer.orders -%}
+                              <div class="profile__order profile__block-style{% if forloop.first %} opened{% endif %}">
+                                  <div class="profile__order-head">
+                                      <div class="head-column">
+                                          <span class="order-number">ORDER #{{ order.order_number }}</span>
+                                          <span class="order-status small-style"><span class="c-grey-3">STATUS: </span>{{ order.fulfillment_status | upcase }}</span>
+                                      </div>
+                                      <div class="head-column">
+                                          <span class="order-quantity small-style">QUANTITY: {{ order.item_count }} {{ order.item_count | pluralize: 'item', 'items' | upcase }}</span>
+                                          <span class="order-price small-style"><span class="c-grey-3">PRICE: </span>{{ order.total_price | money }}</span>
+                                      </div>
+                                      {%- render 'icon-arr-right', class: 'order-arrow' -%}
+                                  </div>
 
-                                <div class="profile__order-details">
-                                    {%- for line_item in order.line_items -%}
-                                      <div class="profile__order-details-product">
-                                        <img src="{{ line_item.image | img_url: 'compact' }}" alt="{{ line_item.image.alt }}">
-                                        <div class="product-info-grid">
-                                          <a href="{{ line_item.url }}" class="product-name heading-style">{{ line_item.product.title }}</a>
-                                          <span class="product-price-desk heading-style c-grey-3">
-                                            {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
-                                              <dl>
-                                                {%- if line_item.original_price != line_item.final_price -%}
-                                                  <dt>
-                                                    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-                                                  </dt>
-                                                  <dd class="regular-price">
-                                                    <s>{{ line_item.original_price | money }}</s>
-                                                  </dd>
-                                                  <dt>
-                                                    <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
-                                                  </dt>
-                                                  <dd>
-                                                    <span>{{ line_item.final_price | money }}</span>
-                                                  </dd>
-                                                {%- else -%}
-                                                  <dt>
-                                                    <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
-                                                  </dt>
-                                                  <dd>
-                                                    {{ line_item.original_price | money }}
-                                                  </dd>
-                                                {%- endif -%}
-                                                {%- if line_item.unit_price_measurement -%}
-                                                  <dt>
-                                                    <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
-                                                  </dt>
-                                                  <dd class="unit-price">
-                                                    <span>
-                                                      {%- capture unit_price_separator -%}
-                                                        <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
-                                                      {%- endcapture -%}
-                                                      {%- capture unit_price_base_unit -%}
-                                                        {%- if line_item.unit_price_measurement.reference_value != 1 -%}
-                                                          {{- line_item.unit_price_measurement.reference_value -}}
-                                                        {%- endif -%}
-                                                        {{ line_item.unit_price_measurement.reference_unit }}
-                                                      {%- endcapture -%}
-                                                      <span data-unit-price>{{ line_item.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
-                                                    </span>
-                                                  </dd>
-                                                {%- endif -%}
-                                              </dl>
-                                            {%- else -%}
-                                              {{ line_item.final_price | money }}
-                                            {%- endif -%}
-                                          </span>
-                                          <div class="product-info">
-                                            {%- unless line_item.product.has_only_default_variant -%}
-                                              <span class="small-style"><span class="c-grey-3">SELECTED: </span>{{ line_item.variant.title }}</span>
-                                            {%- endunless -%}
-                                            <span class="small-style"><span class="c-grey-3">QTY: </span>{{ line_item.quantity }}</span>
-                                          </div>
-                                          <div class="d-flex flex-column align-items-end justify-content-end">
-                                            <span class="product-price-mob small-style c-grey-3">
+                                  <div class="profile__order-details">
+                                      {%- for line_item in order.line_items -%}
+                                        <div class="profile__order-details-product">
+                                          <img src="{{ line_item.image | img_url: 'compact' }}" alt="{{ line_item.image.alt }}">
+                                          <div class="product-info-grid">
+                                            <a href="{{ line_item.url }}" class="product-name heading-style">{{ line_item.product.title }}</a>
+                                            <span class="product-price-desk heading-style c-grey-3">
                                               {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
                                                 <dl>
                                                   {%- if line_item.original_price != line_item.final_price -%}
@@ -246,51 +225,114 @@
                                                 {{ line_item.final_price | money }}
                                               {%- endif -%}
                                             </span>
-                                            <span class="product-price-total heading-style">
-                                              <span class="d-none d-lg-block mr-2">{{ 'customer.order.total' | t | append: ':' }}</span>
-                                              {%- if line_item.original_line_price != line_item.final_line_price -%}
-                                                <s>{{ line_item.original_line_price | money }}</s>
-                                                <span>{{ line_item.final_line_price | money }}</span>
-                                              {%- else -%}
-                                                {{ line_item.original_line_price | money }}
-                                              {%- endif -%}
-                                            </span>
+                                            <div class="product-info">
+                                              {%- unless line_item.product.has_only_default_variant -%}
+                                                <span class="small-style"><span class="c-grey-3">SELECTED: </span>{{ line_item.variant.title }}</span>
+                                              {%- endunless -%}
+                                              <span class="small-style"><span class="c-grey-3">QTY: </span>{{ line_item.quantity }}</span>
+                                            </div>
+                                            <div class="d-flex flex-column align-items-end justify-content-end">
+                                              <span class="product-price-mob small-style c-grey-3">
+                                                {%- if line_item.original_price != line_item.final_price or line_item.unit_price_measurement -%}
+                                                  <dl>
+                                                    {%- if line_item.original_price != line_item.final_price -%}
+                                                      <dt>
+                                                        <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                      </dt>
+                                                      <dd class="regular-price">
+                                                        <s>{{ line_item.original_price | money }}</s>
+                                                      </dd>
+                                                      <dt>
+                                                        <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                                      </dt>
+                                                      <dd>
+                                                        <span>{{ line_item.final_price | money }}</span>
+                                                      </dd>
+                                                    {%- else -%}
+                                                      <dt>
+                                                        <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                      </dt>
+                                                      <dd>
+                                                        {{ line_item.original_price | money }}
+                                                      </dd>
+                                                    {%- endif -%}
+                                                    {%- if line_item.unit_price_measurement -%}
+                                                      <dt>
+                                                        <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
+                                                      </dt>
+                                                      <dd class="unit-price">
+                                                        <span>
+                                                          {%- capture unit_price_separator -%}
+                                                            <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'accessibility.unit_price_separator' | t }}&nbsp;</span>
+                                                          {%- endcapture -%}
+                                                          {%- capture unit_price_base_unit -%}
+                                                            {%- if line_item.unit_price_measurement.reference_value != 1 -%}
+                                                              {{- line_item.unit_price_measurement.reference_value -}}
+                                                            {%- endif -%}
+                                                            {{ line_item.unit_price_measurement.reference_unit }}
+                                                          {%- endcapture -%}
+                                                          <span data-unit-price>{{ line_item.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
+                                                        </span>
+                                                      </dd>
+                                                    {%- endif -%}
+                                                  </dl>
+                                                {%- else -%}
+                                                  {{ line_item.final_price | money }}
+                                                {%- endif -%}
+                                              </span>
+                                              <span class="product-price-total heading-style">
+                                                <span class="d-none d-lg-block mr-2">{{ 'customer.order.total' | t | append: ':' }}</span>
+                                                {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                                  <s>{{ line_item.original_line_price | money }}</s>
+                                                  <span>{{ line_item.final_line_price | money }}</span>
+                                                {%- else -%}
+                                                  {{ line_item.original_line_price | money }}
+                                                {%- endif -%}
+                                              </span>
+                                            </div>
                                           </div>
                                         </div>
+                                      {%- endfor -%}
+                                      <div class="profile__order-details-addresses">
+                                        <div>
+                                          <h5 class="heading-style">{{ 'customer.order.billing_address' | t | upcase }}</h5>
+                                          <p>
+                                            <strong>{{ 'customer.order.payment_status' | t }}:</strong>
+                                            {{ order.financial_status_label }}
+                                          </p>
+                                          {{ order.billing_address | format_address }}
+                                        </div>
+                                        <div>
+                                          <h5 class="heading-style">{{ 'customer.order.shipping_address' | t | upcase }}</h5>
+                                          <p>
+                                            <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
+                                            {{ order.fulfillment_status_label }}
+                                          </p>
+                                          {{ order.shipping_address | format_address }}
+                                        </div>
                                       </div>
-                                    {%- endfor -%}
-                                    <div class="profile__order-details-addresses">
-                                      <div>
-                                        <h5 class="heading-style">{{ 'customer.order.billing_address' | t | upcase }}</h5>
-                                        <p>
-                                          <strong>{{ 'customer.order.payment_status' | t }}:</strong>
-                                          {{ order.financial_status_label }}
-                                        </p>
-                                        {{ order.billing_address | format_address }}
-                                      </div>
-                                      <div>
-                                        <h5 class="heading-style">{{ 'customer.order.shipping_address' | t | upcase }}</h5>
-                                        <p>
-                                          <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
-                                          {{ order.fulfillment_status_label }}
-                                        </p>
-                                        {{ order.shipping_address | format_address }}
-                                      </div>
-                                    </div>
-                                </div>
+                                  </div>
 
-                                <div class="order-date-wrapper">
-                                  <span class="order-date small-style"><span class="c-grey-3">DATE: </span>{{ order.created_at | date: '%d.%m.%Y' }}</span>
-                                  {%- if order.cancelled -%}
-                                        {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
-                                        <span class="order-date small-style">{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</span>
-                                        <span class="order-date small-style">{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</span>
-                                  {%- endif -%}
-                                </div>
-                            </div>
-                        {%- endfor -%}
-                    </div>
-
+                                  <div class="order-date-wrapper">
+                                    <span class="order-date small-style"><span class="c-grey-3">DATE: </span>{{ order.created_at | date: '%d.%m.%Y' }}</span>
+                                    {%- if order.cancelled -%}
+                                          {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                                          <span class="order-date small-style">{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</span>
+                                          <span class="order-date small-style">{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</span>
+                                    {%- endif -%}
+                                  </div>
+                              </div>
+                          {%- endfor -%}
+                      </div>
+                      {%- else -%}
+                        <h3 class="text-24px-all">{{ 'customer.orders.none' | t }}</h3>
+                      {%- endif -%}
+                      {%- if paginate.pages > 1 -%}
+                        {%- if paginate.parts.size > 0 -%}
+                          {% render 'pagination', paginate: paginate, anchor: '' %}
+                        {%- endif -%}
+                      {%- endif -%}
+                    {% endpaginate %}
                 </div>
         </div>
         <div class="profile__double-column column-second">
@@ -578,7 +620,26 @@
 {% schema %}
 {
     "name": "Profile",
-    "settings": [          
+    "settings": [
+        {
+          "type": "header",
+          "content": "Wholesale account"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "btn_name",
+          "label": "Button name"
+        },            
+        {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button link"
+        },
         {
             "type": "header",
             "content": "t:sections.all.padding.section_padding_heading"
