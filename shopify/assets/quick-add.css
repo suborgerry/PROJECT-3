@@ -53,13 +53,17 @@
 .quick-add-modal__more-info {
   height: 62px;
   background-color: #F5F5F5;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   font-size: 14px;
   line-height: 23px;
   font-weight: 700;
   margin: 3.3rem -2.5rem 0;
+}
+
+.template-collection .quick-add-modal__more-info {
+  display: flex;
 }
 
 .quick-add-modal__more-info a {
