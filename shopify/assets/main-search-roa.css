@@ -27,6 +27,10 @@
     position: relative;
 }
 
+#snize_results.snize-mobile-design.snize-new-version #snize-search-results-grid-mode.snize-two-columns li.snize-product {
+  border: none !important;
+}
+
 .search__input.field__input {
     background: #fff;
     border: 1px solid #F3F3F3;
