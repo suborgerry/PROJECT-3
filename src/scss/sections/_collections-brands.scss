@@ -101,6 +101,8 @@
             @include media-breakpoint-up(lg) {
                 width: 25px;
                 height: 25px;
+                min-width: 25px;
+                min-height: 25px;
                 margin-top: unset;
                 margin-left: 30px;
             }

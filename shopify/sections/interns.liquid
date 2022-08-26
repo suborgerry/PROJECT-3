@@ -34,11 +34,11 @@
                     <span class="item-heading">{%- if b.settings.item_description != blank -%}{%- render 'icon-arr' -%}{%- endif -%}{{ b.settings.item_heading }}</span>
                     {%- if b.settings.item_description != blank -%}
                         <div class="item-description">
-                            {{ b.settings.item_description }}
+                            <span>{{ b.settings.item_description | remove: '<p>' | remove: '</p>' }}</span>
+                            {%- if b.settings.link_name != blank -%}
+                                <a href="{{ b.settings.link_url }}" class="button__red--small">{{ b.settings.link_name }}</a>
+                            {%- endif -%}
                         </div>
-                        {%- if b.settings.link_name != blank -%}
-                            <a href="{{ b.settings.link_url }}" class="button__red">{{ b.settings.link_name }}</a>
-                        {%- endif -%}
                     {%- endif -%}
                 </div>
             {%- endfor -%}

@@ -1,19 +1,404 @@
 
 {%- case value -%}
+    {%- when 'aqua' -%}
+        <span class="value-{{ value }}" style="background-color: #00FFFF;"></span>
+    {%- when 'berry' -%}
+        <span class="value-{{ value }}" style="background-color: #AB0B23;"></span>
     {%- when 'black' -%}
         <span class="value-{{ value }}" style="background-color: #000000;"></span>
+    {%- when 'black/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'black/brown/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#99643D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="white"/>
+        </svg>
+    {%- when 'black/gold' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#FFD700"/>
+        </svg>
+    {%- when 'black/gold/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFD700"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#CF322D"/>
+        </svg>
+    {%- when 'black/grey' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#7B7B7D"/>
+        </svg>
+    {%- when 'black/orange' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30L15 0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0L15 30Z" fill="#F7941D"/>
+        </svg>
+    {%- when 'black/pink' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30L15 0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0L15 30Z" fill="#F898C8"/>
+        </svg>
+    {%- when 'black/purple' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#9747FF"/>
+        </svg>
+    {%- when 'black/purple/gold' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#9747FF"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFD700"/>
+        </svg>
+    {%- when 'black/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#CF322D"/>
+        </svg>
+    {%- when 'black/red/green' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#01D51C"/>
+        </svg>        
+    {%- when 'black/red/khaki' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#F0E68C"/>
+        </svg>
+    {%- when 'black/red/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="white"/>
+        </svg>        
+    {%- when 'black/red/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFFF00"/>
+        </svg>       
+    {%- when 'black/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="white"/>
+        </svg>
+    {%- when 'black/white/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="white"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#CF322D"/>
+        </svg>
+    {%- when 'black/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#FFFF00"/>
+        </svg>
+    {%- when 'black/yellow/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFFF00"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="black"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#CF322D"/>
+        </svg>
     {%- when 'blue' -%}
         <span class="value-{{ value }}" style="background-color: #1D5B99;"></span>
+    {%- when 'blue/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 15C30 6.71573 23.2843 0 15 0L15 30C23.2843 30 30 23.2843 30 15Z" fill="black"/>
+            <path d="M15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30L15 0Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'blue/grey' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#1D5B99"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#7B7B7D"/>
+        </svg>
+    {%- when 'blue/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#1D5B99"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#CF322D"/>
+        </svg>    
+    {%- when 'blue/red/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#1D5B99"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="white"/>
+        </svg>
+    {%- when 'blue/red/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#1D5B99"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFFF00"/>
+        </svg>
+    {%- when 'bright salmon' -%}
+        <span class="value-{{ value }}" style="background-color: #FF9E85;"></span>
+    {%- when 'brown' -%}
+        <span class="value-{{ value }}" style="background-color: #99643D;"></span>
+    {%- when 'brown/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#99643D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'brown/pink' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#99643D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#F898C8"/>
+        </svg>
+    {%- when 'burgundy' -%}
+        <span class="value-{{ value }}" style="background-color: #64313E;"></span>
+    {%- when 'camo' -%}
+        <img src="{{ 'icon-camo.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'charcoal' -%}
+        <span class="value-{{ value }}" style="background-color: #36454F;"></span>
+    {%- when 'classic' -%}
+        <span class="value-{{ value }}" style="background-color: #DFD3BB;"></span>
+    {%- when 'cobalt' -%}
+        <span class="value-{{ value }}" style="background-color: #043D9C;"></span>
+    {%- when 'dark grey heather' -%}
+        <span class="value-{{ value }}" style="background-color: #4F4F4F;"></span>
+    {%- when 'deep heather' -%}
+        <img src="{{ 'icon-deep-heather.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'denim' -%}
+        <span class="value-{{ value }}" style="background-color: #1560BD;"></span>
+    {%- when 'denim triblend' -%}
+        <img src="{{ 'icon-denim-triblend.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'dust' -%}
+        <span class="value-{{ value }}" style="background-color: #C9C1B5;"></span>
+    {%- when 'gold' -%}
+        <span class="value-{{ value }}" style="background-color: #FFD700;"></span>
+    {%- when 'graphite' -%}
+        <span class="value-{{ value }}" style="background-color: #41424C;"></span>
     {%- when 'green' -%}
         <span class="value-{{ value }}" style="background-color: #01D51C;"></span>
-    {%- when 'red' -%}
-        <span class="value-{{ value }}" style="background-color: #CF322D;"></span>
+    {%- when 'green tie dye' -%}
+        <img src="{{ 'icon-green-tie-dye.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'green/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#01D51C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="black"/>
+        </svg>
+    {%- when 'green/black/tan' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="black"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#01D51C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#D2B48C"/>
+        </svg>
+    {%- when 'green/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#01D51C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="white"/>
+        </svg>
+    {%- when 'green/white/orange' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="white"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#01D51C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#F7941D"/>
+        </svg>
+    {%- when 'grey' -%}
+        <span class="value-{{ value }}" style="background-color: #7B7B7D;"></span>
+    {%- when 'grey/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#7B7B7D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="black"/>
+        </svg>
+    {%- when 'grey/blue/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#076AFF"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#7B7B7D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#E1150E"/>
+        </svg>
+    {%- when 'grey/red/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#7B7B7D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'heather navy' -%}
+        <span class="value-{{ value }}" style="background-color: #364062;"></span>
+    {%- when 'khaki/red/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#F0E68C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFFF00"/>
+        </svg>
+    {%- when 'light pink' -%}
+        <span class="value-{{ value }}" style="background-color: #FFB6C1;"></span>
+    {%- when 'lime' -%}
+        <span class="value-{{ value }}" style="background-color: #00FF00;"></span>
+    {%- when 'lime green/navy' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#00FF00"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#313B7B"/>
+        </svg>
+    {%- when 'md flag' -%}
+        <img src="{{ 'icon-md-flag.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'maroon' -%}
+        <span class="value-{{ value }}" style="background-color: #6F100F;"></span>
+    {%- when 'mauve' -%}
+        <span class="value-{{ value }}" style="background-color: #E0B0FF;"></span>
+    {%- when 'mint' -%}
+        <span class="value-{{ value }}" style="background-color: #33A37E;"></span>
+    {%- when 'mustard' -%}
+        <span class="value-{{ value }}" style="background-color: #FFDB58;"></span>
+    {%- when 'natural' -%}
+        <span class="value-{{ value }}" style="background-color: #E5D3BF;"></span>
+    {%- when 'navy' -%}
+        <span class="value-{{ value }}" style="background-color: #313B7B;"></span>
+    {%- when 'navy/gold' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 15C30 6.71573 23.2843 0 15 0L15 30C23.2843 30 30 23.2843 30 15Z" fill="#FFD700"/>
+            <path d="M15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30L15 0Z" fill="#313B7B"/>
+        </svg>
+    {%- when 'navy/green' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M30 15C30 6.71573 23.2843 0 15 0L15 30C23.2843 30 30 23.2843 30 15Z" fill="#01D51C"/>
+            <path d="M15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30L15 0Z" fill="#313B7B"/>
+        </svg>
+    {%- when 'oatmeal' -%}
+        <span class="value-{{ value }}" style="background-color: #EAE4D8;"></span>
+    {%- when 'orange' -%}
+        <span class="value-{{ value }}" style="background-color: #F7941D;"></span>
+    {%- when 'orange/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#F7941D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="black"/>
+        </svg>
+    {%- when 'orange/black/white' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="black"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#F7941D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="white"/>
+        </svg>
+    {%- when 'pale yellow' -%}
+        <span class="value-{{ value }}" style="background-color: #FFFFA7;"></span>
+    {%- when 'pink' -%}
+        <span class="value-{{ value }}" style="background-color: #F898C8;"></span>
+    {%- when 'pink/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#F898C8"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#1D5B99"/>
+        </svg>
     {%- when 'purple' -%}
         <span class="value-{{ value }}" style="background-color: #9747FF;"></span>
+    {%- when 'purple/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#9747FF"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="black"/>
+        </svg>
+    {%- when 'purple/black/gold' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="black"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#9747FF"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFD700"/>
+        </svg>
+    {%- when 'purple/gold/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFD700"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#9747FF"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="black"/>
+        </svg>
+    {%- when 'red' -%}
+        <span class="value-{{ value }}" style="background-color: #CF322D;"></span>
+    {%- when 'red/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#CF322D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="black"/>
+        </svg>
+    {%- when 'red/black/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="black"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#CF322D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFFF00"/>
+        </svg>
+    {%- when 'red/brown' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#CF322D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#99643D"/>
+        </svg>  
+    {%- when 'red/yellow/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFFF00"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#CF322D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="black"/>
+        </svg>
+    {%- when 'red/yellow/black/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.5 27.3609C2.57372 24.6558 0 20.1285 0 15C0 9.87152 2.57372 5.34417 6.5 2.6391V27.3609Z" fill="#CF322D"/>
+            <path d="M15 30V0C11.8442 0 8.91603 0.974546 6.5 2.6391V27.3609C8.91603 29.0255 11.8442 30 15 30Z" fill="#FFFF00"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.5 27.3609C21.084 29.0255 18.1558 30 15 30V0C18.1558 0 21.084 0.974546 23.5 2.6391V27.3609Z" fill="black"/>
+            <path d="M30 15C30 9.87152 27.4263 5.34417 23.5 2.6391V27.3609C27.4263 24.6558 30 20.1285 30 15Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'red/yellow/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFFF00"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="#CF322D"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'royal' -%}
+        <span class="value-{{ value }}" style="background-color: #4169E1;"></span>
+    {%- when 'sand' -%}
+        <span class="value-{{ value }}" style="background-color: #E4C9B0;"></span>
+    {%- when 'silver' -%}
+        <span class="value-{{ value }}" style="background-color: #B1B8BA;"></span>
+    {%- when 'sky' -%}
+        <span class="value-{{ value }}" style="background-color: #71BCE1;"></span>
+    {%- when 'tan' -%}
+        <span class="value-{{ value }}" style="background-color: #D2B48C;"></span>
+    {%- when 'tan/maroon' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="#D2B48C"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#6F100F"/>
+        </svg>
+    {%- when 'teal' -%}
+        <span class="value-{{ value }}" style="background-color: #0E8385;"></span>
+    {%- when 'tie dye' -%}
+        <img src="{{ 'icon-tie-dye.png' | asset_url }}" alt="{{ value }}">
+    {%- when 'white' -%}
+        <span class="value-{{ value }}" style="background-color: #FFFFFF;"></span>
+    {%- when 'white/green' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#01D51C"/>
+        </svg>
+    {%- when 'white/orange/black' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#F7941D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="black"/>
+        </svg>
+    {%- when 'white/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0 15C0 23.2843 6.71573 30 15 30V0C6.71573 0 0 6.71573 0 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0V30Z" fill="#CF322D"/>
+        </svg>
+    {%- when 'white/red/blue' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#1D5B99"/>
+        </svg>
+    {%- when 'white/red/yellow' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#CF322D"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#FFFF00"/>
+        </svg>
+    {%- when 'white/yellow/red' -%}
+        <svg viewBox="0 0 30 30" fill="none">
+            <path d="M15 -6.55671e-07C9.44788 -8.98362e-07 4.6003 3.01649 2.00673 7.5L15 15L27.995 7.50291C25.4018 3.0178 20.5533 -4.12928e-07 15 -6.55671e-07Z" fill="#FFFF00"/>
+            <path d="M-6.55671e-07 15C-1.01779e-06 23.2843 6.71573 30 15 30L15 15L2.00673 7.5C0.730457 9.7063 -5.36245e-07 12.2678 -6.55671e-07 15Z" fill="white"/>
+            <path d="M15 30C23.2843 30 30 23.2843 30 15C30 12.269 29.2702 9.70855 27.995 7.50291L15 15L15 30Z" fill="#CF322D"/>
+        </svg>
+    {%- when 'yellow' -%}
+        <span class="value-{{ value }}" style="background-color: #FFFF00;"></span>
     {%- else -%}
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none">
-            <rect id="backgroundrect" width="30px" height="30px" x="0" y="0" fill="none" stroke="none"/>
-            <g class="currentLayer"><circle cx="15" cy="15" r="15" fill="none" id="svg_1" class="selected" stroke="#c4c4c4" stroke-opacity="1"/></g>
+        <svg fill="none">
+            <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+            <g class="currentLayer"><circle cx="50%" cy="50%" r="50%" fill="none" id="svg_1" class="selected" stroke="#c4c4c4" stroke-opacity="1"/></g>
         </svg>
 {%- endcase -%}
 

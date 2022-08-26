@@ -22,7 +22,7 @@
         "7e00245b-9adf-4293-a312-65a1b033023b": {
           "type": "link",
           "settings": {
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify:\/\/collections\/shop-all-products",
             "link_name": "Categories"
           }
         },
@@ -32,12 +32,36 @@
             "link": "shopify:\/\/collections\/face-masks",
             "link_name": "Face Mask"
           }
+        },
+        "6b3ba9d1-7a2e-4ebb-a464-f2360411ae7b": {
+          "type": "wholesale-link",
+          "settings": {
+            "link": "\/",
+            "link_name": "Homepage"
+          }
+        },
+        "213a7e85-306a-49cc-bb59-cb99ff75258a": {
+          "type": "wholesale-link",
+          "settings": {
+            "link": "shopify:\/\/collections\/ws-shop-all-products",
+            "link_name": "Categories"
+          }
+        },
+        "3757a2ce-929e-4926-b5f5-c18a027cac96": {
+          "type": "wholesale-link",
+          "settings": {
+            "link": "shopify:\/\/collections\/face-masks",
+            "link_name": "Face Masks"
+          }
         }
       },
       "block_order": [
         "4a4c345f-ee9a-4a42-bd37-a61517f06eb8",
         "7e00245b-9adf-4293-a312-65a1b033023b",
-        "7be1b1a9-f035-437f-9726-5c6c1be5eb50"
+        "7be1b1a9-f035-437f-9726-5c6c1be5eb50",
+        "6b3ba9d1-7a2e-4ebb-a464-f2360411ae7b",
+        "213a7e85-306a-49cc-bb59-cb99ff75258a",
+        "3757a2ce-929e-4926-b5f5-c18a027cac96"
       ],
       "settings": {
         "padding_section": "",

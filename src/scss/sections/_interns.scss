@@ -72,16 +72,21 @@
             .item-description {
                 font-size: 14px;
                 line-height: 24px;
+                font-weight: 300;
+                color: $c-black;
                 visibility: hidden;
                 opacity: 0;
                 height: 0;
                 transition: 0.3s;
+                & > span {
+                    padding-right: 10px;
+                }
                 strong {
                     font-weight: 500;
                 }
-            }
-            a.button__red {
-                max-width: 276px;
+                a.button__red--small {
+                    max-width: 276px;
+                }
             }
             &.opened {
                 .item-heading {

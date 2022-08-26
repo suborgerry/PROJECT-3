@@ -80,7 +80,7 @@
                   }
                 }
               </style>
-              <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button btn-red-1 image-with-text__button {{ section.id }}" {{ block.shopify_attributes }}>
+              <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button btn-red-1 click-me image-with-text__button {{ section.id }}" {{ block.shopify_attributes }}>
                 {{ block.settings.button_label | escape }}
               </a>
             {%- endif -%}
