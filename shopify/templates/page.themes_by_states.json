@@ -3,6 +3,10 @@
     "1656940775a7ea42a6": {
       "type": "breadcrumbs",
       "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
       }
     },
     "main": {

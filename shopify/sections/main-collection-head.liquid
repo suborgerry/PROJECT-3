@@ -16,12 +16,27 @@
     <div class="page-width">
         <nav class="main-collection__links d-none d-md-block">
             <ul class="list-unstyled">
+                {%- assign customerTags = customer.tags | downcase -%}
+
                 {%- for b in s.blocks -%}
-                <li>
-                    <a href="{{ b.settings.link }}"
-                    class="-item{% if b.settings.link == collection.url %} active{% endif %}"
-                    {% if link.current %}aria-current="page"{% endif %}>{{ b.settings.link_name | escape }}</a>
-                </li>
+
+                    {%- if customerTags contains 'wholesale' -%}
+                        {%- if b.settings.link contains 'shop-all-products' -%}
+                            {%- assign link_to = '/collections/ws-shop-all-products' -%}
+                        {%- elsif col.url contains 'new-arrivals' -%}
+                            {%- assign link_to = '/collections/ws-new-arrivals' -%}
+                        {%- else -%}
+                            {%- assign link_to = b.settings.link -%}
+                        {%- endif -%}
+                    {%- else -%}
+                        {%- assign link_to = b.settings.link -%}
+                    {%- endif -%}
+
+                    <li>
+                        <a href="{{ link_to }}"
+                        class="-item{% if link_to == collection.url %} active{% endif %}"
+                        {% if link.current %}aria-current="page"{% endif %}>{{ b.settings.link_name | escape }}</a>
+                    </li>
                 {%- endfor -%}
             </ul>
         </nav>
