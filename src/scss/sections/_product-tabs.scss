@@ -347,6 +347,18 @@
                         display: none;
                     }
                 }
+
+                &-keywords {
+                    margin-top: 8rem;
+
+                    @include media-breakpoint-down(sm) {
+                        margin-bottom: 6rem;
+                    }
+
+                    ul.stamped-summary-keywords-list {
+                        overflow: visible;
+                    }
+                }
             }
 
             .stamped-review {
@@ -389,6 +401,18 @@
                             color: #949494;
                         }
                     }
+                }
+            }
+
+            input.stamped-button.stamped-button-primary.button.button-primary.btn.btn-primary {
+                background-color: $c-red-1;
+                border: 0;
+                font-weight: 700;
+                font-size: 1.6rem;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: $c-red-3;
                 }
             }
         }

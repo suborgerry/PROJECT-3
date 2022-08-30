@@ -5562,7 +5562,7 @@ main {
   margin: 2rem 0 2.6rem;
 }
 .article-card__excerpt {
-  letter-spacing: 0.479348px;
+  padding: 0 1rem;
 }
 .article-card__btn {
   padding: 16px 65px;
@@ -7169,7 +7169,7 @@ main {
   }
 }
 .blog-categories-tabs .blog-categories {
-  margin-top: 8.4rem;
+  margin-top: 5rem;
 }
 .blog-categories-tabs .blog-categories:not(.active) {
   display: none;
@@ -11803,6 +11803,7 @@ main {
   }
 }
 .product-info__colors {
+  flex-wrap: wrap;
   margin-top: 2.6rem;
 }
 .product-info__colors-container {
@@ -11829,6 +11830,8 @@ main {
   line-height: 1.9rem;
   letter-spacing: 0.704347px;
   margin-top: 1.9rem;
+  overflow-wrap: break-word;
+  width: 100%;
 }
 .product-info__colors-round {
   width: 5rem;
@@ -12302,6 +12305,17 @@ main {
 .product-tabs__tab.product-reviews .stamped-summary-actions-newreview::before {
   display: none;
 }
+.product-tabs__tab.product-reviews .stamped-summary-keywords {
+  margin-top: 8rem;
+}
+@media (max-width: 767.98px) {
+  .product-tabs__tab.product-reviews .stamped-summary-keywords {
+    margin-bottom: 6rem;
+  }
+}
+.product-tabs__tab.product-reviews .stamped-summary-keywords ul.stamped-summary-keywords-list {
+  overflow: visible;
+}
 .product-tabs__tab.product-reviews .stamped-review {
   border: 1px solid #EFEFEF;
   padding: 4.7rem 4.9rem 5rem 4rem;
@@ -12336,6 +12350,16 @@ main {
   line-height: 1.9rem;
   letter-spacing: 0.704347px;
   color: #949494;
+}
+.product-tabs__tab.product-reviews input.stamped-button.stamped-button-primary.button.button-primary.btn.btn-primary {
+  background-color: rgb(var(--color-base-accent-1));
+  border: 0;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.product-tabs__tab.product-reviews input.stamped-button.stamped-button-primary.button.button-primary.btn.btn-primary:hover {
+  background-color: rgb(var(--color-base-accent-3));
 }
 .product-details {
   padding: 3.6rem 1.2rem;

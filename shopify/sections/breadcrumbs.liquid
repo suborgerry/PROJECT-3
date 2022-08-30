@@ -21,7 +21,7 @@
     {% if collection.url %}
       {{ collection.title | link_to: collection.url }}
     {% elsif routes.collections_url %}
-        <a href="{{ routes.collections_url }}">collections</a>
+        <a href="/collections/all">Collections</a>
     {% endif %}
     <span>{{ product.title }}</span>
     {% elsif template contains 'collection' and collection.handle %}

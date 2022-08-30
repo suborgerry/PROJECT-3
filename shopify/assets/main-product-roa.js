@@ -25,7 +25,7 @@ function choiseColor() {
         let colorItem; 
 
         if(element.classList.contains('product-info__colors-container') && !element.classList.contains('active')) {
-            colorItem = element
+            colorItem = element;
         } else if(element.parentElement.classList.contains('product-info__colors-container') && !element.parentElement.classList.contains('active')) {
             colorItem = element.parentElement;
         }
@@ -36,6 +36,7 @@ function choiseColor() {
             colorsContainer.querySelector('.active').classList.remove('active');
             colorItem.classList.add('active');
 
+            updateVariant(colorItem.dataset.id);
             exchangePhotos(photosArray);
         })();
 
@@ -44,18 +45,23 @@ function choiseColor() {
 
 };
 
+function updateVariant(id) {
+    console.log(id);
+    document.querySelector('.product-form').querySelector('form').querySelector('[name="id"]').value = id;
+}
+
 // Choising variant
 function exchangePhotos(photosArray) {
     const mainPhoto = document.querySelector('.product__media-main').querySelector('img');
     const mainList = document.querySelector('.product__media-list-container');
     
-    photosArray && (mainPhoto.src = photosArray[0].src);
+    photosArray && (mainPhoto.src = photosArray[0]);
     mainList.innerHTML = "";
 
     photosArray && photosArray.forEach((photo, index) => {
         const img = document.createElement('img');
 
-        img.src = photo.src;
+        img.src = photo;
         img.classList.add('product__media-img');
 
         photo.alt && img.setAttribute('alt', photo.alt);

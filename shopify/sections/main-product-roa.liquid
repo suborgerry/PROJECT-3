@@ -123,7 +123,7 @@
           {%- when 'variants' -%}
             <div class="d-flex product-info__colors">
               {% for variant in product.variants %}
-                <div class="product-info__colors-container d-flex flex-column align-items-center {% if forloop.index == 1 %}active{% endif %}" data-photos='{{ variant.metafields.custom.photos.value | json }}'>
+                <div data-id="{{ variant.id }}" class="product-info__colors-container d-flex flex-column align-items-center {% if forloop.index == 1 %}active{% endif %}" data-photos='{{ variant.metafields.custom.photos.value | json }}'>
                   {% if product.options contains "Color" %}
                     <div class="product-info__colors-round" style="background: {{ variant.metafields.custom.color | remove: "[" | remove: "]" | remove: '"' }}"></div>
                   {% endif %}

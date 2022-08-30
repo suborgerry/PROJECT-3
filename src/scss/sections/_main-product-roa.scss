@@ -161,6 +161,7 @@
         }
     
         &__colors {
+            flex-wrap: wrap;
             margin-top: 2.6rem;
             &-container {
                 width: 7.7rem;
@@ -192,6 +193,8 @@
                 line-height: 1.9rem;
                 letter-spacing: 0.704347px;
                 margin-top: 1.9rem;
+                overflow-wrap: break-word;
+                width: 100%;
             }
             
             &-round {

@@ -38,8 +38,10 @@
         text-transform: uppercase;
         margin: 2rem 0 2.6rem;
     }
+
     &__excerpt {
-        letter-spacing: 0.479348px;
+        padding: 0 1rem;
+        // letter-spacing: 0.479348px;
     }
     &__btn {
         padding: 16px 65px;
