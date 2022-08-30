@@ -5344,6 +5344,27 @@ main {
   border: solid 1px rgb(var(--color-base-accent-3));
   background-color: rgb(var(--color-base-accent-3));
 }
+.button__red--small {
+  padding: 2px 4px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 150px;
+  background-color: rgb(var(--color-base-accent-1));
+  color: rgb(var(--color-base-background-1));
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.94px;
+  transition: 0.3s;
+  border: solid 1px rgb(var(--color-base-accent-1));
+  text-decoration: none;
+}
+.button__red--small:hover {
+  border: solid 1px rgb(var(--color-base-accent-3));
+  background-color: rgb(var(--color-base-accent-3));
+}
 .button__cancel {
   color: rgb(var(--color-base-outline-button-labels));
   border: solid 1px rgb(var(--color-base-outline-button-labels));
@@ -6067,10 +6088,15 @@ main {
   overflow: hidden;
   margin-right: 10px;
 }
-.facets-color__wrapper span {
+.facets-color__wrapper span, .facets-color__wrapper svg, .facets-color__wrapper img {
   display: block;
   width: 100%;
   height: 100%;
+  border-radius: 50%;
+  border: 1px solid #C4C4C4;
+}
+.facets-color__wrapper img {
+  object-fit: cover;
 }
 .facets-color .icon-color-checkmark {
   position: absolute;
@@ -6079,6 +6105,9 @@ main {
   transform: translate(-50%, -50%);
   background: unset;
   visibility: hidden;
+}
+.facets-color .icon-color-checkmark path {
+  stroke: #C4C4C4;
 }
 .facets-color .facet-checkbox,
 .facets-color .mobile-facets__label {
@@ -6095,6 +6124,29 @@ main {
 .facets-color .facet-checkbox > input[type=checkbox]:checked ~ .icon-color-checkmark,
 .facets-color .mobile-facets__label > input[type=checkbox]:checked ~ .icon-color-checkmark {
   visibility: visible;
+}
+.click-me {
+  animation: shakeme 3s infinite;
+}
+@keyframes shakeme {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(0.7);
+  }
+  10% {
+    transform: scale(1.3);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  30% {
+    transform: scale(1.1);
+  }
 }
 .header-wrapper {
   display: block;
@@ -8593,6 +8645,8 @@ main {
   .collections-brands__item svg.icon-play {
     width: 25px;
     height: 25px;
+    min-width: 25px;
+    min-height: 25px;
     margin-top: unset;
     margin-left: 30px;
   }
@@ -9840,15 +9894,20 @@ main {
 .interns__accordion-item .item-description {
   font-size: 14px;
   line-height: 24px;
+  font-weight: 300;
+  color: rgb(var(--color-base-outline-button-labels));
   visibility: hidden;
   opacity: 0;
   height: 0;
   transition: 0.3s;
 }
+.interns__accordion-item .item-description > span {
+  padding-right: 10px;
+}
 .interns__accordion-item .item-description strong {
   font-weight: 500;
 }
-.interns__accordion-item a.button__red, .interns__accordion-item a.button__cancel, .interns__accordion-item a.shopify-challenge__button {
+.interns__accordion-item .item-description a.button__red--small {
   max-width: 276px;
 }
 .interns__accordion-item.opened .item-heading svg {

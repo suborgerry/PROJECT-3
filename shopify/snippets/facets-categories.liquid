@@ -8,8 +8,23 @@
     </span>
     <div class="facets__categories-content">
       <ul class="facets__categories-list list-unstyled" role="list">
+        {%- assign customerTags = customer.tags | downcase -%}
+
         {%- for col in collection_list -%}
-          <li class="facets__categories-item{% if forloop.index > max_preview_size %} show-more-items hidden{% endif %}"><a {% if col.url == collection.url %}class="active-page"{% endif %} href="{{ col.url }}">{{ col.title }}</a></li>
+
+          {%- if customerTags contains 'wholesale' -%}
+            {%- if col.url contains 'shop-all-products' -%}
+              {%- assign col_url = '/collections/ws-shop-all-products' -%}
+            {%- elsif col.url contains 'new-arrivals' -%}
+              {%- assign col_url = '/collections/ws-new-arrivals' -%}
+            {%- else -%}
+              {%- assign col_url = col.url -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- assign col_url = col.url -%}
+          {%- endif -%}
+          
+          <li class="facets__categories-item{% if forloop.index > max_preview_size %} show-more-items hidden{% endif %}"><a {% if col_url == collection.url %}class="active-page"{% endif %} href="{{ col_url }}">{{ col.title }}</a></li>
         {%- endfor -%}
       </ul>
       {%- if collection_list.count > max_preview_size -%}

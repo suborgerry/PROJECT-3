@@ -17,10 +17,35 @@
     .wholesale-form__container {
       padding: {{ section.settings.form_padding }} !important;
     }
+    .wholesale-form__field.md {
+      width: auto;
+      min-width: 25.3rem;
+    }
+    wholesale-form__field-container:nth-child(2n+2) {
+      align-items: flex-end;
+    }
+    wholesale-form__field-container:nth-child(2n+2) .wholesale-form__field.md {
+      margin: 0 0 0 auto;
+    }
   }
   @media screen and (max-width: 575px) {
     .wholesale-form__btn {
       margin-top: 4.8rem; 
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .wholesale-form__field.md {
+      width: 28rem;
+    }
+  }
+  @media screen and (min-width: 860px) {
+    .wholesale-form__field.md {
+      width: 30rem;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    .wholesale-form__field.md {
+      width: 33.5rem;
     }
   }
 {%- endstyle -%}
