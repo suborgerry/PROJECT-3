@@ -9205,7 +9205,7 @@ main {
   height: 100%;
   object-fit: cover;
 }
-@media (min-width: 576px) and (max-width: 767.98px) {
+@media (min-width: 500px) and (max-width: 767.98px) {
   .image-with-text__media-item img {
     height: 50rem;
   }
@@ -10044,6 +10044,12 @@ main {
     top: 0;
     right: -8rem;
   }
+}
+.work-to-roa__form-fields select.work-to-roa__form-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
 }
 @media (max-width: 767.98px) {
   .work-to-roa__form-fields.date-2 {

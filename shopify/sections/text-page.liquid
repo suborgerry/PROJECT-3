@@ -4,6 +4,14 @@
     padding-bottom: {{ section.settings.padding_bottom_mob }}px;
   }
 
+  @media screen and (max-width: 749px) {
+  
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.margin_top_mob }}px;
+    }
+
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -13,7 +21,7 @@
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="text-page gradient section-{{ section.id }}-padding">
+  <div class="text-page gradient section-{{ section.id }}-padding section-{{ section.id }}-margin">
     <div class="text-page__blocks">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -98,6 +106,16 @@
       "unit": "px",
       "label": "Padding bottom mobile",
       "default": 10
+    },
+    {
+      "type": "range",
+      "id": "margin_top_mob",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Margin top mobile",
+      "default": 0
     }
   ],
   "blocks": [

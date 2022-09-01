@@ -65,8 +65,9 @@
             object-fit: cover;
 
 
-            @include media-breakpoint-between(sm, sm) {
+            @media (min-width: 500px) and (max-width: 767.98px) {
                 height: 50rem;
+
             }
 
             &.desctop {
