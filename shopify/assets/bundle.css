@@ -10240,6 +10240,7 @@ main {
 @media (max-width: 767.98px) {
   .work-to-roa__form-dragndrop-container {
     flex-direction: column;
+    margin-top: 2.2rem;
   }
 }
 .work-to-roa__form-dropzone {
