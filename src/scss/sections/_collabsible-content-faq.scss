@@ -20,6 +20,9 @@
         transform: rotate(180deg);
         height: 0.9rem;
         width: 1.7rem;
+        position: absolute;
+        right: 0;
+        top: 1rem;
     }
     details[open] {
         summary {
@@ -62,6 +65,7 @@
             display: flex;
             // align-items: center;
             justify-content: space-between;
+            position: relative;
         }
     }
 }

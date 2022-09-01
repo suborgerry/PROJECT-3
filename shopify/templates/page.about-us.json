@@ -3,6 +3,10 @@
     "1657808406782f3a64": {
       "type": "breadcrumbs",
       "settings": {
+        "margin_top": 20,
+        "margin_bottom": 31,
+        "margin_top_mob": 20,
+        "margin_bottom_mob": 43
       }
     },
     "main": {
@@ -10,6 +14,9 @@
       "settings": {
         "padding_top": 0,
         "padding_bottom": 28,
+        "padding_top_mob": 0,
+        "padding_bottom_mob": 0,
+        "title_margin_bottom": 0,
         "show_title": true,
         "show_content": false
       }

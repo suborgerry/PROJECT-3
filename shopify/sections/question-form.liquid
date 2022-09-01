@@ -1,9 +1,7 @@
-{% comment %} {{ 'section-contact-form.css' | asset_url | stylesheet_tag }} {% endcomment %}
-
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: 4rem;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
   }
 
   @media screen and (min-width: 750px) {
@@ -162,6 +160,16 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding mobile",
+      "default": 40
     }
   ],
   "blocks": [

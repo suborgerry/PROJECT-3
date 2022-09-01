@@ -1,9 +1,13 @@
+.rich-text__blocks  h2 {
+  margin-bottom: 7.4rem;
+}
+
 #snize_results.snize-mobile-design.snize-new-version div.snize-main-panel-mobile-filters {
   margin: 0;
   width: 100%;
   max-width: 100%;
   position: relative;
-  z-index: 999;
+  z-index: 9;
 }
 
 #snize_results.snize-mobile-design.snize-new-version div.snize-main-panel-mobile-filters a {
@@ -16,6 +20,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+div.snize#snize_results.snize-mobile-design li.snize-product .snize-price-list .snize-price {
+  color: #6D6D6D;
+  text-align: center;
+  display: block;
 }
 
 #snize_results.snize-mobile-design.snize-new-version div.snize-main-panel-dropdown {
@@ -66,7 +76,7 @@ div.snize div.snize-main-panel {
     border: 0;
     padding: 0 5.6rem;
     width: calc(100% - 11.2rem);
-    margin-bottom: -9.4rem;
+    margin-bottom: -9rem;
 }
 
 div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
@@ -231,10 +241,10 @@ div.snize #snize-search-results-grid-mode li.snize-product .snize-description {
 }
 
 #snize-search-results-grid-mode li.snize-product span.snize-title {
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  text-align: center;
+  font-weight: 700 !important;
+  font-size: 1.6rem !important;
+  line-height: 2.6rem !important;
+  text-align: center !important;
   letter-spacing: 0.93913px;
   text-transform: uppercase;
   color: #000001;
@@ -250,6 +260,9 @@ div.snize #snize-search-results-grid-mode li.snize-product .snize-description {
   color: #6D6D6D;
   text-align: center;
   margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #snize-search-results-grid-mode .snize-thumbnail-wrapper {
@@ -276,6 +289,10 @@ div.snize #snize-search-results-grid-mode li.snize-product .snize-description {
 div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   padding: 0;
   margin-top: 2.4rem;
+}
+
+#snize_filters_dropdown_stock_status {
+  display: none !important;
 }
 
 #snize-modal-mobile-filters-dialog,
@@ -320,15 +337,27 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   }
 }
 
+@media (max-width: 1360px) {
+  div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
+    width: 21rem;
+  }
+}
+
 @media (max-width: 1300px) {
   div.snize div.snize-main-panel {
     position: relative;
     display: flex;
     margin-top: -3rem;
+    top: 7rem;
+  }
+
+  div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
+    width: 25rem;
   }
 
   div.snize div.snize-horizontal-filters {
-    padding-top: 10.8rem;
+    /* padding-top: 10.8rem; */
+    margin-top: -10.2rem;
   }
 }
 
@@ -337,6 +366,10 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     display: flex;
     flex-direction: column;
     padding-top: 11.2rem;
+  }
+
+  div.snize div.snize-main-panel {
+    top: 0;
   }
 
   div.snize div.snize-filters-dropdown {
@@ -403,6 +436,17 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     flex-direction: column;
     width: 100%;
     margin: auto;
+    margin-left: -2.5rem;
+    padding: 0 2.5rem 2rem 2.5rem;
+    background: #FCFCFC;
+  }
+
+  .main-search__input {
+    width: 100vw;
+    margin-left: -2.5rem;
+    padding: 2rem 2.5rem 2rem 2.5rem;
+    background: #FCFCFC;
+
   }
 
   div.snize div.snize-main-panel {
@@ -446,12 +490,17 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   }
 
   div.snize .snize-price-range-slider {
-    width: 100%;
+    width: 100% !important;
     margin-left: 0;
-    left: 38%;
+    left: 47% !important;
   }
 
   #snize-modal-mobile-filters-dialog div.slider-container.snize-theme .back-bar .pointer {
     width: 9px;
+    height: 9px;
+  }
+
+  .rich-text__blocks  h2 {
+    margin-bottom: 4.4rem;
   }
 }

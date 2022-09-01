@@ -2,26 +2,28 @@
 {%- assign ss = s.settings -%}
 
 {% if current_tags.first %}
-    <h2 class="d-flex flex-column">{{ current_tags.first | upcase }}</h2>
+    <div class="shopify-section section page-width blog-categories-section">
+        <h2 class="d-flex flex-column">{{ current_tags.first | upcase }}</h2>
 
-    <div class="blog-categories section-{{ s.id }}-padding">
-        <div class="blog-categories__container acb-{{ s.id }}">
-            <div class="d-flex flex-wrap justify-content-between tags down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
-                {% assign article_counter = 0 %}
-                {%- paginate blog.articles by blog.articles_count -%}
-                    {%- for article in blog.articles -%}
-                        {% if article.tags contains current_tags.first %}
-                            {% assign article_counter = article_counter | plus: 1 %}
-                            {%- render 'article-card-blog',
-                                article: article,
-                                tag: article.tags[0]
-                            -%}
-                            {%- if article_counter == ss.articles_range -%}
-                                {% break %}
-                            {%- endif -%}
-                        {% endif %}
-                    {%- endfor -%}
-                {%- endpaginate -%}
+        <div class="blog-categories section-{{ s.id }}-padding">
+            <div class="blog-categories__container acb-{{ s.id }}">
+                <div class="d-flex flex-wrap justify-content-between tags down m{%- if ss.mobile_cards -%}obile{%- endif -%}">
+                    {% assign article_counter = 0 %}
+                    {%- paginate blog.articles by blog.articles_count -%}
+                        {%- for article in blog.articles -%}
+                            {% if article.tags contains current_tags.first %}
+                                {% assign article_counter = article_counter | plus: 1 %}
+                                {%- render 'article-card-blog',
+                                    article: article,
+                                    tag: article.tags[0]
+                                -%}
+                                {%- if article_counter == ss.articles_range -%}
+                                    {% break %}
+                                {%- endif -%}
+                            {% endif %}
+                        {%- endfor -%}
+                    {%- endpaginate -%}
+                </div>
             </div>
         </div>
     </div>
@@ -31,8 +33,6 @@
 {% schema %}
 {
     "name": "Blog by tag",
-    "tag": "section",
-    "class": "section page-width blog-categories-section",
     "settings": [
         {
             "type": "range",

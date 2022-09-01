@@ -7057,9 +7057,17 @@ main {
 .blog-categories-section {
   margin-bottom: 6.2rem;
 }
+.blog-categories-section:empty {
+  display: none;
+}
 .blog-categories__sort {
   justify-content: flex-end;
   margin-bottom: 8.5rem;
+}
+@media (max-width: 767.98px) {
+  .blog-categories__sort {
+    margin-bottom: 2.5rem;
+  }
 }
 .blog-categories__sort_container {
   align-items: flex-end;
@@ -8709,6 +8717,9 @@ main {
   transform: rotate(180deg);
   height: 0.9rem;
   width: 1.7rem;
+  position: absolute;
+  right: 0;
+  top: 1rem;
 }
 .collapsible-faq details[open] summary svg {
   transform: rotate(0deg);
@@ -8752,6 +8763,7 @@ main {
 .collapsible-faq__accordion summary {
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .anchors-buttons {
   display: flex;
@@ -8985,6 +8997,11 @@ main {
 }
 .content-withtext__text {
   letter-spacing: 0.479348px;
+}
+@media (max-width: 767.98px) {
+  .content-withtext__text {
+    font-size: 1.6rem;
+  }
 }
 .content-withtext__collage {
   margin-top: 5.6rem;
@@ -11887,9 +11904,9 @@ main {
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 1.9rem;
-  letter-spacing: 0.704347px;
+  letter-spacing: 0.204347px;
   margin-top: 1.9rem;
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
   width: 100%;
 }
 .product-info__colors-round {

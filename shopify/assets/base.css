@@ -292,7 +292,7 @@ body,
   max-width: 96.4rem;
   width: 100%;
   margin: auto;
-  padding-bottom: 11.6rem;
+  padding-bottom: 7.2rem;
 }
 
 .rte strong {
@@ -317,6 +317,10 @@ body,
 }
 
 @media (max-width: 768px) {
+  .rte {
+    padding-bottom: 5.6rem;
+  }
+
   .rte .page-title {
     margin-bottom: 6.9rem;
   }

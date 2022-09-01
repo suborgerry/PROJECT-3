@@ -11,12 +11,23 @@
             }
         }
     }
+
     &-section {
         margin-bottom: 6.2rem;
+
+        &:empty {
+            display: none;
+        }
     }
+
     &__sort {
         justify-content: flex-end;
         margin-bottom: 8.5rem;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 2.5rem;
+        }
+
         &_container {
             align-items: flex-end;
             @include media-breakpoint-down(md) {
