@@ -150,9 +150,11 @@
         button {
             text-transform: uppercase;
             font-weight: 700;
-            padding: 2.2rem 6.5rem 1.1rem 6.5rem;
+            // padding: 2.2rem 6.5rem 1.1rem 6.5rem;
             letter-spacing: 0.821739px;
             font-size: 1.4rem;
+            width: 22.8rem;
+            height: 5.6rem;
             @include media-breakpoint-down(xs) {
                 width: 100%;
             }

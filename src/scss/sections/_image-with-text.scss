@@ -58,10 +58,17 @@
         @include media-breakpoint-up(md) {
             position: absolute !important;
         }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
+
+            @include media-breakpoint-between(sm, sm) {
+                height: 50rem;
+            }
+
             &.desctop {
                 display: none;
                 @include media-breakpoint-up(md) {

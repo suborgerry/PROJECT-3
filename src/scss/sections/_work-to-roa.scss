@@ -3,7 +3,7 @@
     padding-right: 0;
     &__info {
         margin: auto;
-        margin-bottom: 6.4rem;
+        margin-bottom: 4.8rem;
 
         p {
             font-size: 1.6rem;
@@ -261,7 +261,7 @@
                     // max-width: 33.5rem;
                 }
 
-                @include media-breakpoint-up(lg) {
+                @include media-breakpoint-up(md) {
                     max-width: 75rem;
                     padding: 0;
                 }
@@ -346,7 +346,7 @@
             position: relative;
 
             &-list {
-                @include media-breakpoint-down(xs) {
+                @include media-breakpoint-down(sm) {
                     margin-top: 2.4rem;
                 }
             }
@@ -394,7 +394,7 @@
             &-list {
                 &-item {
                     width: 33.5rem;
-                    height: 5.6rem;
+                    min-height: 5.6rem;
                     position: relative;
                     background: #FFFAFA;
                     display: flex;
@@ -413,6 +413,7 @@
                             position: relative;
                             bottom: 2px;
                             left: 1.7rem;
+                            max-width: 80%;
 
                             svg {
                                 margin-right: 1.7rem;

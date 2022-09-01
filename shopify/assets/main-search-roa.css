@@ -11,7 +11,7 @@
 }
 
 #snize_results.snize-mobile-design.snize-new-version div.snize-main-panel-mobile-filters a {
-  border: 1px solid #e8e9eb;
+  border: 1px solid #F3F3F3;
   border-radius: 17px;
   color: #000001;
   padding: 0;
@@ -20,6 +20,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #fff;
+}
+
+#snize-modal-mobile-filters-dialog ul.snize-product-filters-list {
+  margin-top: 7rem;
+}
+
+#snize-modal-mobile-filters-dialog div.snize-product-filter-opener:nth-child(2) {
+  display: none;
 }
 
 div.snize#snize_results.snize-mobile-design li.snize-product .snize-price-list .snize-price {
@@ -267,6 +276,7 @@ div.snize #snize-search-results-grid-mode li.snize-product .snize-description {
 
 #snize-search-results-grid-mode .snize-thumbnail-wrapper {
   padding: 0;
+  overflow: hidden;
 }
 
 #snize-search-results-grid-mode span.snize-thumbnail {
@@ -351,6 +361,10 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     top: 7rem;
   }
 
+  div.snize-search-results {
+    margin-top: 7.6rem;
+  }
+
   div.snize div.snize-main-panel-dropdown a.snize-main-panel-dropdown-button {
     width: 25rem;
   }
@@ -358,6 +372,7 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
   div.snize div.snize-horizontal-filters {
     /* padding-top: 10.8rem; */
     margin-top: -10.2rem;
+    padding-bottom: 8.2rem;
   }
 }
 
@@ -437,16 +452,21 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     width: 100%;
     margin: auto;
     margin-left: -2.5rem;
-    padding: 0 2.5rem 2rem 2.5rem;
+    padding: 2.5rem;
     background: #FCFCFC;
   }
 
-  .main-search__input {
-    width: 100vw;
-    margin-left: -2.5rem;
-    padding: 2rem 2.5rem 2rem 2.5rem;
-    background: #FCFCFC;
+  div.snize div.slider-container.snize-theme {
+    width: 90% !important;
+  }
 
+  .main-search__input {
+    /* width: 100vw;
+    margin-left: -2.5rem;
+    padding: 2rem 2.5rem 2rem 2.5rem; */
+    background: #FCFCFC;
+    padding-bottom: 3.3rem;
+    border-bottom: 1px solid #F3F3F3;
   }
 
   div.snize div.snize-main-panel {
@@ -493,6 +513,7 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     width: 100% !important;
     margin-left: 0;
     left: 47% !important;
+    transform: translateX(-47%) !important;
   }
 
   #snize-modal-mobile-filters-dialog div.slider-container.snize-theme .back-bar .pointer {
@@ -502,5 +523,9 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
 
   .rich-text__blocks  h2 {
     margin-bottom: 4.4rem;
+  }
+
+  div.snize-search-results {
+    margin-top: 0;
   }
 }

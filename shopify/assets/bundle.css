@@ -6752,6 +6752,7 @@ main {
 .footer__big-img {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 .footer__big-img svg {
   height: 100%;
@@ -8952,9 +8953,10 @@ main {
 .question-form .contact__button button {
   text-transform: uppercase;
   font-weight: 700;
-  padding: 2.2rem 6.5rem 1.1rem 6.5rem;
   letter-spacing: 0.821739px;
   font-size: 1.4rem;
+  width: 22.8rem;
+  height: 5.6rem;
 }
 @media (max-width: 575.98px) {
   .question-form .contact__button button {
@@ -9203,6 +9205,11 @@ main {
   height: 100%;
   object-fit: cover;
 }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .image-with-text__media-item img {
+    height: 50rem;
+  }
+}
 .image-with-text__media-item img.desctop {
   display: none;
 }
@@ -9349,13 +9356,13 @@ main {
 @media (max-width: 991.98px) {
   .steps {
     align-items: center;
-    padding: 6.4rem 2rem;
+    padding: 6.4rem 0;
     flex-direction: column;
   }
 }
 @media (max-width: 767.98px) {
   .steps-container {
-    padding: 0;
+    padding: 0 2rem;
   }
 }
 .steps-container__heading {
@@ -9941,7 +9948,7 @@ main {
 }
 .work-to-roa__info {
   margin: auto;
-  margin-bottom: 6.4rem;
+  margin-bottom: 4.8rem;
 }
 .work-to-roa__info p {
   font-size: 1.6rem;
@@ -10168,7 +10175,7 @@ main {
     margin: auto;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .work-to-roa__form-container form {
     max-width: 75rem;
     padding: 0;
@@ -10247,7 +10254,7 @@ main {
   transition: all 0.3s ease;
   position: relative;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .work-to-roa__form-dropzone-list {
     margin-top: 2.4rem;
   }
@@ -10287,7 +10294,7 @@ main {
 }
 .work-to-roa__form-dropzone-list-item {
   width: 33.5rem;
-  height: 5.6rem;
+  min-height: 5.6rem;
   position: relative;
   background: #FFFAFA;
   display: flex;
@@ -10304,6 +10311,7 @@ main {
   position: relative;
   bottom: 2px;
   left: 1.7rem;
+  max-width: 80%;
 }
 .work-to-roa__form-dropzone-list-item span:not(.close) svg {
   margin-right: 1.7rem;
@@ -10566,6 +10574,12 @@ main {
   .wholesale-form__heading + .wholesale-form-dragndrop {
     margin-top: 0;
   }
+}
+.wholesale-form__field-container select.work-to-roa__form-input {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
 }
 .wholesale-form__fields {
   width: 100%;
@@ -13336,11 +13350,6 @@ main {
 }
 @media (max-width: 1199.98px) {
   .articles-categories {
-    flex-direction: column;
-  }
-}
-@media (max-width: 991.98px) {
-  .articles-categories {
     flex-direction: column-reverse;
   }
 }
@@ -13356,6 +13365,11 @@ main {
 @media (max-width: 767.98px) {
   .articles-categories__heading {
     text-align: center;
+  }
+}
+@media (max-width: 1199.98px) {
+  .articles-categories__articles {
+    margin-top: 7.2rem;
   }
 }
 .articles-categories__article {

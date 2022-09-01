@@ -2,10 +2,6 @@
     justify-content: space-between;
 
     @include media-breakpoint-down(lg) {
-        flex-direction: column;
-    }
-
-    @include media-breakpoint-down(md) {
         flex-direction: column-reverse;
     }
 
@@ -20,6 +16,12 @@
 
         @include media-breakpoint-down(sm) {
             text-align: center;
+        }
+    }
+
+    &__articles {
+        @include media-breakpoint-down(lg) {
+            margin-top: 7.2rem;
         }
     }
     
