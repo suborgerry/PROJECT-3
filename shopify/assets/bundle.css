@@ -13382,7 +13382,7 @@ main {
 .articles-categories__article {
   text-decoration: none;
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .articles-categories__article {
     flex-direction: column;
   }
@@ -13506,6 +13506,10 @@ main {
 .articles-categories__categories-item + .articles-categories__categories-item {
   margin-top: 1.6rem;
 }
+.articles-categories__categories-item svg {
+  width: 8.7rem;
+  height: 8rem;
+}
 .categories-item__container {
   display: flex;
   flex-direction: column;
@@ -13518,6 +13522,7 @@ main {
   line-height: 2.6rem;
   color: #D13026;
   text-decoration: none;
+  max-width: 20rem;
 }
 .categories-item__text {
   font-weight: 500;

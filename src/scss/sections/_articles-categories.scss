@@ -28,7 +28,7 @@
     &__article {
         text-decoration: none;
 
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
             flex-direction: column;
         }
 
@@ -156,6 +156,11 @@
             & + & {
                 margin-top: 1.6rem;
             }
+
+            svg {
+                width: 8.7rem;
+                height: 8rem;
+            }
         }
     }
 }
@@ -174,6 +179,7 @@
         line-height: 2.6rem;
         color: #D13026;
         text-decoration: none;
+        max-width: 20rem;
     }
 
     &__text {
