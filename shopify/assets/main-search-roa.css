@@ -471,7 +471,7 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     margin-left: -2.5rem;
     padding: 2rem 2.5rem 2rem 2.5rem; */
     background: #FCFCFC;
-    width: 102vw;
+    width: calc(100% + 5rem);
     margin: auto;
     margin-left: -2.5rem;
     padding: 2.5rem;
