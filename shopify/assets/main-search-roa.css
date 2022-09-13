@@ -471,12 +471,11 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
     margin-left: -2.5rem;
     padding: 2rem 2.5rem 2rem 2.5rem; */
     background: #FCFCFC;
-    padding-bottom: 2.4rem;
-    border-bottom: 1px solid #F3F3F3;
-    width: 100%;
-    padding: 0;
-    padding-top: 2.7rem;
-    padding-bottom: 2rem;
+    width: 102vw;
+    margin: auto;
+    margin-left: -2.5rem;
+    padding: 2.5rem;
+    padding-bottom: 0;
   }
 
   div.snize div.snize-main-panel {
@@ -491,7 +490,8 @@ div.snize.snize-options #snize-search-results-grid-mode span.snize-overhidden {
 
   .main-search__input form {
     border-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #F3F3F3;
   }
 
   #snize_results.snize-mobile-design.snize-new-version div.snize-main-panel-dropdown {
