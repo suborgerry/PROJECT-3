@@ -5701,7 +5701,7 @@ main {
   width: 100%;
   font-size: 1.6rem;
   font-weight: 300;
-  color: #545454;
+  color: #949494;
   border: none !important;
   background-color: rgb(var(--color-base-background-1));
   padding: 20px 24px 15px;
@@ -8741,7 +8741,12 @@ main {
   font-size: 2rem;
   line-height: 2.6rem;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1075px) {
+  .collapsible-faq__accordion-title {
+    max-width: 80rem;
+  }
+}
+@media (max-width: 991.98px) {
   .collapsible-faq__accordion-title {
     max-width: 80%;
   }
@@ -9966,7 +9971,6 @@ main {
 @media (min-width: 992px) {
   .work-to-roa__info {
     width: 94rem;
-    margin-left: -9.5rem;
   }
 }
 .work-to-roa__step:not(.active) {
@@ -11709,7 +11713,7 @@ main {
   width: 100%;
   font-size: 1.6rem;
   font-weight: 300;
-  color: #545454;
+  color: #949494;
   border: 1px solid #F3F3F3 !important;
   background-color: rgb(var(--color-base-background-1));
   padding: 20px 24px 15px;
